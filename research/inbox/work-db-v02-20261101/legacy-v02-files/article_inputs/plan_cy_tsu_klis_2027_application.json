@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.2.0",
+  "cycle_id": "cy_tsu_klis_2027",
+  "plan_id": "plan_cy_tsu_klis_2027_application",
+  "series_key": "application",
+  "official_source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+  "title": "筑波大学・知識情報・図書館学類 2027年度AC入試｜出願の準備",
+  "facts": [
+    {
+      "id": "fact_t02",
+      "field_key": "web_application_open",
+      "statement": "インターネット出願登録の開始は2026年8月6日9時。",
+      "value": {
+        "datetime": "2026-08-06T09:00:00+09:00"
+      },
+      "evidence": "PDF閲覧ページ4／2 入学者選抜日程の概要"
+    },
+    {
+      "id": "fact_t03",
+      "field_key": "web_application_close",
+      "statement": "インターネット出願登録の締切は2026年9月2日9時。",
+      "value": {
+        "datetime": "2026-09-02T09:00:00+09:00"
+      },
+      "evidence": "PDF閲覧ページ4／2 入学者選抜日程の概要"
+    },
+    {
+      "id": "fact_t04",
+      "field_key": "mail_window",
+      "statement": "出願書類の郵送は2026年9月1日～9月3日必着。",
+      "value": {
+        "deadline_rule": "必着",
+        "end": "2026-09-03",
+        "start": "2026-09-01"
+      },
+      "evidence": "PDF閲覧ページ4／2 入学者選抜日程の概要"
+    },
+    {
+      "id": "fact_t10",
+      "field_key": "statement_length",
+      "statement": "志願理由書は所定の様式で800字以内。",
+      "value": {
+        "max_characters": 800
+      },
+      "evidence": "PDF閲覧ページ7／6 出願書類等"
+    },
+    {
+      "id": "fact_t11",
+      "field_key": "recommendation_format",
+      "statement": "自己推薦書本文は様式・枚数自由で、根拠資料を添付する。",
+      "value": {
+        "format": "自由",
+        "length_limit": "指定なし",
+        "supporting_materials": true
+      },
+      "evidence": "PDF閲覧ページ7／6 出願書類等"
+    },
+    {
+      "id": "fact_t12",
+      "field_key": "common_test",
+      "statement": "AC入試では大学入学共通テストの受験を必要としない。",
+      "value": {
+        "required": false
+      },
+      "evidence": "PDF閲覧ページ6／5 出願資格"
+    }
+  ],
+  "unsupported_claims": [
+    "面接官人数",
+    "過去の質問例",
+    "個人の合否可能性"
+  ],
+  "publication_allowed": false
+}

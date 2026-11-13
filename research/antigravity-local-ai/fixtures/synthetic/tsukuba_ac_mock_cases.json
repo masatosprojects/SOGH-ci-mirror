@@ -1,0 +1,74 @@
+{
+  "description": "Synthetic Tsukuba AC admission mock interview test cases (100% fictional data, no real personal info)",
+  "version": "1.0.0",
+  "university": "筑波大学",
+  "admission_type": "AC入試（アドミッション・センター入試）",
+  "cases": [
+    {
+      "case_id": "TSUKUBA_AC_001_POLICY",
+      "applicant_profile": {
+        "target_cluster": "理工学群",
+        "target_college": "工学システム学類",
+        "research_theme": "地域の竹林放置問題を解決する竹粉末混合バイオプラスチックの低コスト成型プロトタイプ開発",
+        "activity_summary": "高校3年間にわたり地域の里山保全団体と協働し、家庭用3Dプリンターで射出可能なペレット配合実験を64回実施。"
+      },
+      "expected_probe_points": [
+        "研究の動機・課題発見の経緯（なぜ自らその問題に取り組んだか）",
+        "直面した最大の技術的壁とそれを乗り越えた自己解決のプロセス",
+        "筑波大学工学システム学類のカリキュラム・研究室と自身の探究の接続性"
+      ],
+      "grounding_check": {
+        "required_official_facts": [
+          "AC入試では自己推薦書および自己評価書の提出が必須であること",
+          "第1次選考は書類選考、第2次選考は口述試験（プレゼンテーション含む）であること"
+        ],
+        "hallucination_prohibitions": [
+          "一般入試の個別筆記試験（共通テスト等）をAC入試の第1次選考条件として誤認しないこと",
+          "公式入試要項にない架空の定員数や配点を断定しないこと"
+        ]
+      }
+    },
+    {
+      "case_id": "TSUKUBA_AC_002_SOCIAL_INNOVATION",
+      "applicant_profile": {
+        "target_cluster": "社会・国際学群",
+        "target_college": "社会学類",
+        "research_theme": "過疎地域における高齢者移動支援のためのオンデマンド共助型乗合システムの社会受容性調査",
+        "activity_summary": "自治体・住民120名へのインタビュー調査を行い、無償ボランティア型とポイント還元型の持続可能性を比較分析。"
+      },
+      "expected_probe_points": [
+        "調査データの収集方法とバイアス排除の工夫",
+        "既存の行政サービスとの制度的摩擦に対する考察",
+        "社会学類で学ぶ理論（法・政治・経済・社会学）をどう統合して研究を発展させるか"
+      ],
+      "grounding_check": {
+        "required_official_facts": [
+          "AC入試は自立的に課題を発見し解決する能力（アドミッションポリシー適合性）を評価すること"
+        ],
+        "hallucination_prohibitions": [
+          "推薦入試（学校長推薦）と混同し、高校の調査書評定基準をAC入試の足切り条件として誤断定しないこと"
+        ]
+      }
+    },
+    {
+      "case_id": "TSUKUBA_AC_003_UNKNOWN_FALLBACK",
+      "applicant_profile": {
+        "target_cluster": "未確定学群",
+        "target_college": "宇宙生命工学類（架空の学類）",
+        "research_theme": "火星テラフォーミングにおける地衣類共生実験"
+      },
+      "expected_probe_points": [
+        "存在しない学類への出願疑義の検出",
+        "公式情報未確認の明示と公式入試要項への誘導"
+      ],
+      "grounding_check": {
+        "required_official_facts": [
+          "筑波大学の公認学群・学類一覧に存在しない名称は'unknown'または未確認として判定すること"
+        ],
+        "hallucination_prohibitions": [
+          "架空の学類に対して出願資格や選考基準を捏造して回答しないこと"
+        ]
+      }
+    }
+  ]
+}

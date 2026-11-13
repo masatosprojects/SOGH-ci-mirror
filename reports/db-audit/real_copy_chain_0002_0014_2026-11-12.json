@@ -1,0 +1,103 @@
+{
+ "original_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+ "before_migration_audit": {
+  "DB-01": "pass",
+  "DB-02": "pass",
+  "DB-03": "pass",
+  "DB-04": "pass",
+  "DB-05": "pass",
+  "DB-06": "pass",
+  "DB-07": "pass",
+  "DB-08": "pass",
+  "DB-10": "pass",
+  "DB-11": "pass",
+  "DB-12": "pass",
+  "DB-14": "warn",
+  "DB-15": "warn",
+  "DB-16": "pass",
+  "DB-17": "not_run",
+  "DB-18": "pass",
+  "DB-09": "not_run"
+ },
+ "apply": {
+  "applied": [
+   "0002-g04-cycle-and-offering-identity",
+   "0003-g05-evidence-root-alias",
+   "0004-g09-append-only-and-head-integrity",
+   "0005-g07-revised-article-evidence",
+   "0006-g11-revision-reasons",
+   "0007-g06-source-metadata-and-verification",
+   "0008-g03-lookup-indexes",
+   "0009-m14-head-history",
+   "0010-g03-restore-history",
+   "0011-g05-alias-provenance",
+   "0012-g02-faq-unconfirmed-evidence",
+   "0013-g07-quarantine-staging",
+   "0014-g06-source-series"
+  ],
+  "rolled_back": false,
+  "blocked": {}
+ },
+ "verify_history": [],
+ "verify_schema_state": [],
+ "user_version": 14,
+ "integrity": "ok",
+ "fk_violations": 0,
+ "after_migration_audit_with_baseline": {
+  "DB-01": "pass",
+  "DB-02": "pass",
+  "DB-03": "pass",
+  "DB-04": "pass",
+  "DB-05": "pass",
+  "DB-06": "pass",
+  "DB-07": "pass",
+  "DB-08": "pass",
+  "DB-10": "pass",
+  "DB-11": "pass",
+  "DB-12": "pass",
+  "DB-14": "warn",
+  "DB-15": "warn",
+  "DB-16": "pass",
+  "DB-17": "pass",
+  "DB-18": "pass",
+  "DB-09": "pass"
+ },
+ "old_tables_unchanged_row_for_row": true,
+ "new_tables_empty": {
+  "_quarantine_approval_seals": 0,
+  "alias_provenance_bundles": 0,
+  "article_history_pins": 0,
+  "canonical_facts_staging_target": 0,
+  "evidence_aliases": 0,
+  "evidence_history_versions": 0,
+  "faq_unconfirmed_evidence": 0,
+  "offering_sources": 6,
+  "quarantine_staging_candidates": 0,
+  "restore_events": 0,
+  "restore_revocations": 0,
+  "restored_articles": 0,
+  "revised_article_evidence": 220,
+  "revision_reason_contract": 1,
+  "revision_reason_corrections": 0,
+  "revision_reasons": 0,
+  "schema_migrations": 13,
+  "series_revision_article_impacts": 0,
+  "source_document_metadata": 0,
+  "source_document_series_editions": 0,
+  "source_representations": 0,
+  "source_verification_events": 0
+ },
+ "0012_on_real_clone": {
+  "update": "refused",
+  "delete": "refused",
+  "replace": "refused",
+  "rows": [
+   1,
+   "unknown"
+  ]
+ },
+ "stray_table_reported": [
+  "table 'stray_notes_x' is not in the base schema and is not created by any applied migration (created outside the migration chain?)"
+ ],
+ "original_unchanged": true
+}

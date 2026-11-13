@@ -1,0 +1,48 @@
+{
+  "scanned_at": "2026-11-07T23:30:00+09:00",
+  "system": {
+    "model": "ASUS TUF Gaming FX505DY",
+    "os": "Microsoft Windows 11",
+    "cpu": {
+      "identifier": "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+      "model_name": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+      "cores": 4,
+      "logical_processors": 8,
+      "measured_inference_threads": 2,
+      "measured_throughput_prompt_tok_s": 25.1,
+      "measured_throughput_gen_tok_s": 9.4
+    },
+    "gpu": {
+      "discrete": "AMD Radeon RX 560X (Polaris 11 / 21)",
+      "vram_gb": 4.0,
+      "integrated": "AMD Radeon Vega 8 Graphics",
+      "runtime_acceleration": "CPU pure execution (gpu_layers=0 / Vulkan offload blocked to avoid thermal runaway)"
+    },
+    "memory": {
+      "total_physical_ram_mb": 8001.9,
+      "available_physical_ram_mb_measured": 3367.7,
+      "memory_load_percent": 57,
+      "preflight_gate_floor_mb": 2200.0,
+      "emergency_floor_mb": 700.0,
+      "note": "Antigravity IDE coexists cleanly with >3,200MB free RAM, safely exceeding 2,200MB preflight ceiling"
+    },
+    "storage": {
+      "c_drive_total_gb": 474.8,
+      "c_drive_used_gb": 102.8,
+      "c_drive_free_gb": 372.0,
+      "ssd_status": "Ample free storage (>370GB)"
+    },
+    "thermal_sensors": {
+      "primary_cpu_die": "HWiNFO64 Shared Memory SM2 (CPU Tctl/Tdie, requires HWiNFO64 running)",
+      "fallback_acpi": "Motherboard ACPI Thermal Zone (\\_tz.thrm)",
+      "measured_operating_temp_c": "51.0 - 57.0 C (Well below 76.0 C fail-close ceiling)",
+      "emergency_abort_threshold_c": 76.0,
+      "safety_status": "COMPONENT_TEMP_VERIFIED_SAFE_WITH_WATCHDOG"
+    },
+    "safety_governance": {
+      "user_hold_active": true,
+      "hold_file": "HOLD_REAL_MODEL_RUN.txt",
+      "execution_status": "REAL_MODEL_RUNS_ON_USER_HOLD"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+[
+ {
+  "columns_changed": {
+   "admission_cycles": {
+    "added": [
+     "admission_method",
+     "case_id",
+     "department",
+     "exam_year",
+     "faculty",
+     "fiscal_year",
+     "university"
+    ],
+    "removed": [
+     "cycle_status",
+     "entry_year",
+     "id",
+     "round_name",
+     "route_id",
+     "updated_at"
+    ]
+   },
+   "article_versions": {
+    "added": [
+     "article_id",
+     "artifact_path",
+     "body",
+     "case_id",
+     "input_hash",
+     "publish_allowed",
+     "series",
+     "title"
+    ],
+    "removed": [
+     "approved_at",
+     "created_at",
+     "generation_model",
+     "id",
+     "input_fingerprint",
+     "markdown_path",
+     "plan_id",
+     "prompt_version",
+     "review_status",
+     "version_no"
+    ]
+   },
+   "source_documents": {
+    "added": [
+     "local_path",
+     "retrieved_at",
+     "revision_clearance",
+     "sha256",
+     "url"
+    ],
+    "removed": [
+     "canonical_url",
+     "created_at",
+     "id",
+     "issued_at",
+     "license_notes",
+     "publisher",
+     "source_kind",
+     "title"
+    ]
+   }
+  },
+  "from": "v0_2_sample_db",
+  "tables_added": [
+   "admission_offerings",
+   "article_evidence",
+   "cycle_dimensions",
+   "cycle_editions",
+   "facts",
+   "legacy_fact_links",
+   "legacy_imports",
+   "legacy_records",
+   "qa_runs",
+   "schema_versions",
+   "source_pages"
+  ],
+  "tables_in_both": [
+   "admission_cycles",
+   "article_versions",
+   "source_documents"
+  ],
+  "tables_removed": [
+   "academic_units",
+   "admission_routes",
+   "article_plans",
+   "article_series",
+   "article_version_facts",
+   "audit_events",
+   "experience_observations",
+   "experience_reports",
+   "fact_claims",
+   "fact_evidence",
+   "publications",
+   "selection_stages",
+   "source_snapshots",
+   "universities"
+  ],
+  "to": "v0_3_national_v1"
+ },
+ {
+  "columns_changed": {},
+  "from": "v0_3_national_v1",
+  "tables_added": [
+   "article_heads",
+   "batch_evidence",
+   "evidence_heads",
+   "evidence_revisions",
+   "revised_articles",
+   "update_batches",
+   "update_events"
+  ],
+  "tables_in_both": [
+   "admission_cycles",
+   "admission_offerings",
+   "article_evidence",
+   "article_versions",
+   "cycle_dimensions",
+   "cycle_editions",
+   "facts",
+   "legacy_fact_links",
+   "legacy_imports",
+   "legacy_records",
+   "qa_runs",
+   "schema_versions",
+   "source_documents",
+   "source_pages"
+  ],
+  "tables_removed": [],
+  "to": "v0_5_updates_v2"
+ }
+]

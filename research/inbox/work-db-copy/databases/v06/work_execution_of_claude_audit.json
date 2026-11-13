@@ -1,0 +1,332 @@
+{
+  "target_kind": "copied_real_db",
+  "copy_identity": {
+    "file_name": "v06.sqlite",
+    "sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+    "bytes": 1519616
+  },
+  "schema": {
+    "tables": [
+      "admission_cycles",
+      "admission_offerings",
+      "article_evidence",
+      "article_heads",
+      "article_versions",
+      "batch_evidence",
+      "cycle_dimensions",
+      "cycle_editions",
+      "evidence_heads",
+      "evidence_revisions",
+      "facts",
+      "legacy_fact_links",
+      "legacy_imports",
+      "legacy_records",
+      "qa_runs",
+      "revised_articles",
+      "schema_versions",
+      "source_documents",
+      "source_pages",
+      "update_batches",
+      "update_events"
+    ],
+    "indexes": [],
+    "triggers": [],
+    "schema_versions": [
+      "admissions-v0.3-source-facts",
+      "admissions-v0.4-additive-dimensions",
+      "admissions-v0.5-qa-gated-revisions"
+    ],
+    "user_version": 0,
+    "has_schema_migrations": false,
+    "diff_from_baseline": {
+      "tables_removed": [],
+      "tables_added": [],
+      "columns_removed": {},
+      "columns_added": {},
+      "indexes_removed": [],
+      "indexes_added": [],
+      "triggers_removed": [],
+      "triggers_added": []
+    },
+    "baseline_identity": {
+      "file_name": "v05.sqlite",
+      "sha256": "b4bb9d1a3f2590fe3321cb235933c796be87a2bb4ec9642b4f21f5c67acfa228",
+      "bytes": 1482752
+    }
+  },
+  "lineage": "flat",
+  "original_source_comparison": "not_run",
+  "table_row_counts": {
+    "admission_cycles": 5,
+    "admission_offerings": 6,
+    "article_evidence": 129,
+    "article_heads": 6,
+    "article_versions": 21,
+    "batch_evidence": 55,
+    "cycle_dimensions": 5,
+    "cycle_editions": 5,
+    "evidence_heads": 5,
+    "evidence_revisions": 9,
+    "facts": 46,
+    "legacy_fact_links": 27,
+    "legacy_imports": 1,
+    "legacy_records": 121,
+    "qa_runs": 7,
+    "revised_articles": 22,
+    "schema_versions": 3,
+    "source_documents": 4,
+    "source_pages": 169,
+    "update_batches": 29,
+    "update_events": 15
+  },
+  "invariants": {
+    "DB-01": {
+      "title": "integrity and foreign keys",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-02": {
+      "title": "cycle identity (university / faculty / department / method / entry year) and exam year",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-03": {
+      "title": "source documents and page hashes",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-04": {
+      "title": "facts agree with their cycle (year, method, school) and with their own record",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-05": {
+      "title": "revision parents, ancestry, heads",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-06": {
+      "title": "articles cite only evidence of their own cycle; never publishable; heads are revisions of their base",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-07": {
+      "title": "update batches: states, bound QA, events, unrecovered candidates",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-08": {
+      "title": "no two revisions of one logical fact with identical content",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-10": {
+      "title": "cycle_dimensions agrees with admission_cycles about the entry / exam year",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-11": {
+      "title": "every fact / revision uses a registered fact_key and a value of the registered shape",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-12": {
+      "title": "each quote of a fact is on the stored page it cites (the stored copy, not the original)",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "DB-14": {
+      "title": "append-only tables are protected by triggers (structure; needs no rows)",
+      "status": "warn",
+      "problems": [
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "admission_cycles",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "source_documents",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "source_pages",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "facts",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "article_versions",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "article_evidence",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "evidence_revisions",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "revised_articles",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "update_batches",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "update_events",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "legacy_imports",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        },
+        {
+          "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows",
+          "table": "legacy_records",
+          "missing": [
+            "DELETE",
+            "UPDATE"
+          ],
+          "severity": "warn"
+        }
+      ],
+      "problem_count": 12
+    },
+    "DB-15": {
+      "title": "lookup columns are indexed (structure; needs no rows)",
+      "status": "warn",
+      "problems": [
+        {
+          "what": "a lookup column has no index that starts with it",
+          "table": "evidence_revisions",
+          "column": "case_id",
+          "severity": "warn"
+        },
+        {
+          "what": "a lookup column has no index that starts with it",
+          "table": "article_versions",
+          "column": "case_id",
+          "severity": "warn"
+        },
+        {
+          "what": "a lookup column has no index that starts with it",
+          "table": "revised_articles",
+          "column": "base_article_id",
+          "severity": "warn"
+        },
+        {
+          "what": "a lookup column has no index that starts with it",
+          "table": "batch_evidence",
+          "column": "evidence_id",
+          "severity": "warn"
+        },
+        {
+          "what": "a lookup column has no index that starts with it",
+          "table": "update_events",
+          "column": "batch_id",
+          "severity": "warn"
+        }
+      ],
+      "problem_count": 5
+    },
+    "DB-09": {
+      "title": "history preserved against an older copy",
+      "status": "pass",
+      "problems": []
+    }
+  },
+  "summary": {
+    "fail": [],
+    "warn": [
+      "DB-14",
+      "DB-15"
+    ],
+    "not_run": [],
+    "pass": [
+      "DB-01",
+      "DB-02",
+      "DB-03",
+      "DB-04",
+      "DB-05",
+      "DB-06",
+      "DB-07",
+      "DB-08",
+      "DB-09",
+      "DB-10",
+      "DB-11",
+      "DB-12"
+    ]
+  },
+  "ok": true,
+  "execution_actor": "Work executing pinned Claude code; not Claude independent execution",
+  "qa_commit": "b84d3a41015570edb4ff1e8646b495222eaea7fb"
+}

@@ -1,0 +1,226 @@
+{
+  "mutations": 317,
+  "detected": 301,
+  "survived": 16,
+  "detection_rate": 0.9495,
+  "by_class": {
+    "body": {
+      "mutations": 141,
+      "detected": 139
+    },
+    "as_of_date": {
+      "mutations": 12,
+      "detected": 0
+    },
+    "citation_id": {
+      "mutations": 164,
+      "detected": 162
+    }
+  },
+  "per_article": [
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "baseline_ok": true,
+      "mutations": 95,
+      "detected": 91,
+      "survived": 4,
+      "by_class": {
+        "body": {
+          "mutations": 40,
+          "detected": 39
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 52,
+          "detected": 52
+        }
+      },
+      "survivors": [
+        {
+          "class": "as_of_date",
+          "offset": 71,
+          "from": "2026",
+          "to": "2027",
+          "context": "式要項で確認  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 76,
+          "from": "11",
+          "to": "12",
+          "context": "認  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 79,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "body",
+          "offset": 1035,
+          "from": "1",
+          "to": "2",
+          "context": "-02-49cb4d]  第1次選考の合格者には、面接・口"
+        }
+      ]
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "baseline_ok": true,
+      "mutations": 47,
+      "detected": 43,
+      "survived": 4,
+      "by_class": {
+        "body": {
+          "mutations": 16,
+          "detected": 15
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 28,
+          "detected": 28
+        }
+      },
+      "survivors": [
+        {
+          "class": "as_of_date",
+          "offset": 68,
+          "from": "2026",
+          "to": "2027",
+          "context": "と準備の整理  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 73,
+          "from": "11",
+          "to": "12",
+          "context": "理  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 76,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "body",
+          "offset": 265,
+          "from": "1",
+          "to": "2",
+          "context": "-09-49cb4d]  第1次選考の合格者には、面接・口"
+        }
+      ]
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "baseline_ok": true,
+      "mutations": 129,
+      "detected": 125,
+      "survived": 4,
+      "by_class": {
+        "body": {
+          "mutations": 66,
+          "detected": 66
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 60,
+          "detected": 59
+        }
+      },
+      "survivors": [
+        {
+          "class": "as_of_date",
+          "offset": 61,
+          "from": "2026",
+          "to": "2027",
+          "context": "式要項で確認  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 66,
+          "from": "11",
+          "to": "12",
+          "context": "認  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 69,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "citation_id",
+          "offset": 894,
+          "from": "10",
+          "to": "11",
+          "context": "る方式です。[EV-K27-10-91dad1]  要項に記"
+        }
+      ]
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "baseline_ok": true,
+      "mutations": 46,
+      "detected": 42,
+      "survived": 4,
+      "by_class": {
+        "body": {
+          "mutations": 19,
+          "detected": 19
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 24,
+          "detected": 23
+        }
+      },
+      "survivors": [
+        {
+          "class": "as_of_date",
+          "offset": 58,
+          "from": "2026",
+          "to": "2027",
+          "context": "と準備の整理  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 63,
+          "from": "11",
+          "to": "12",
+          "context": "理  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 66,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "citation_id",
+          "offset": 471,
+          "from": "10",
+          "to": "11",
+          "context": "る方式です。[EV-K27-10-91dad1]  面接は日"
+        }
+      ]
+    }
+  ]
+}

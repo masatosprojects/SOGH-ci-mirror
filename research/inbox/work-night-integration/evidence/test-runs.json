@@ -1,0 +1,46 @@
+{
+  "labels": [
+    "SELF_VALIDATED",
+    "SYNTHETIC_ONLY"
+  ],
+  "runs": [
+    {
+      "kind": "current Work baseline, not patched",
+      "xml_sha256": "80cf27420ed8336fa10048ebdf463386a15d644ba9f8ff75bd81173fd498e400",
+      "tests": 247,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "kind": "isolated patched Work regression",
+      "xml_sha256": "9f25944288e4e446a4e57c79abe8a58de74d67bbeb99eb8fd028cdb71e482eca",
+      "tests": 247,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "kind": "Work-authored synthetic negative tests",
+      "xml_sha256": "78347453a2500fe6fa0b365a4f4b45e2dff701a1457b542c4b050a1653d63ae0",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "kind": "unchanged Claude synthetic regression, rerun by Work",
+      "xml_sha256": "b5bc33d3945b243176b03c82abbbc56aa0e2e216c316a1b1390625ae240eead7",
+      "tests": 88,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "not_independent_review_of_Work_changes": true,
+  "baseline_and_patched_are_not_summed": true,
+  "initial_failures": [
+    "4 initial assertions assumed stage had no candidate evidence; corrected oracle to compare ALL tables to pre-finalize snapshot",
+    "browser smoke initially used eval blocked by CSP; switched test to locator wait; CSP unchanged"
+  ]
+}

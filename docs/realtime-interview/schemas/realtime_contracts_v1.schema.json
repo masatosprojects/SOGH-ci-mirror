@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sogh.invalid/schemas/realtime_contracts_v1.schema.json",
+  "title": "SOGH realtime interview contracts V1.1 (PROPOSED, provisional names; V1.1 = FeedbackReportV2 may state \"判定できない\" with no evidence, and may not fabricate evidence for it)",
+  "description": "Structural rules only. Cross-field rules that a schema cannot express (text equals its SHA, a span exists in the answer, numbers appear in the context, the seq has no gap) are in docs/realtime-interview/INTERFACE_CONTRACTS_V1.md and must be implemented by the validator that Work builds. Nothing here approves a provider, a cost or a deployment.",
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9._:\\-]{1,128}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ms": {"type": "integer", "minimum": 0},
+    "year": {"type": "integer", "minimum": 2000, "maximum": 2100},
+
+    "InterviewContextV2": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract_version", "snapshot_id", "issuer", "created_at", "expires_at", "context_sha256", "scope", "fiscal_year_mapping", "official_facts", "experience_reports", "interview_is_official"],
+      "properties": {
+        "contract_version": {"const": "interview-context-v2"},
+        "snapshot_id": {"$ref": "#/$defs/id"},
+        "issuer": {"type": "string", "minLength": 1, "maxLength": 128},
+        "created_at": {"type": "string", "format": "date-time"},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "context_sha256": {"$ref": "#/$defs/sha256"},
+        "scope": {
+          "type": "object", "additionalProperties": false,
+          "required": ["case_id", "university", "faculty", "department", "offering", "method", "entry_year", "exam_year", "stage"],
+          "properties": {
+            "case_id": {"$ref": "#/$defs/id"}, "university": {"type": "string", "minLength": 1}, "faculty": {"type": "string", "minLength": 1},
+            "department": {"type": ["string", "null"]}, "offering": {"type": "string", "minLength": 1}, "method": {"type": "string", "minLength": 1},
+            "entry_year": {"$ref": "#/$defs/year"}, "exam_year": {"oneOf": [{"$ref": "#/$defs/year"}, {"type": "null"}]},
+            "entry_month": {"type": ["integer", "null"], "minimum": 1, "maximum": 12}, "stage": {"type": "string", "minLength": 1}
+          }
+        },
+        "fiscal_year_mapping": {
+          "type": "object", "additionalProperties": false, "required": ["target", "basis", "decided_by"],
+          "properties": {"target": {"const": "sandbox.fiscal_year"}, "basis": {"enum": ["entry_year", "exam_year"]}, "decided_by": {"enum": ["user", "pending"]}}
+        },
+        "official_facts": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["fact_id", "label", "status", "value", "version_id", "source_ref"],
+            "properties": {
+              "fact_id": {"$ref": "#/$defs/id"}, "label": {"type": "string", "minLength": 1}, "status": {"enum": ["confirmed", "unknown"]},
+              "value": {"type": ["string", "null"]}, "version_id": {"$ref": "#/$defs/id"},
+              "source_ref": {"oneOf": [{"type": "null"}, {
+                "type": "object", "additionalProperties": false, "required": ["document_id", "revision_id", "sha256", "page", "span_start", "span_end"],
+                "properties": {"document_id": {"$ref": "#/$defs/id"}, "revision_id": {"$ref": "#/$defs/id"}, "sha256": {"$ref": "#/$defs/sha256"},
+                               "page": {"type": "integer", "minimum": 1}, "span_start": {"type": "integer", "minimum": 0}, "span_end": {"type": "integer", "minimum": 1}}}]}
+            },
+            "allOf": [
+              {"if": {"properties": {"status": {"const": "unknown"}}}, "then": {"properties": {"value": {"type": "null"}, "source_ref": {"type": "null"}}}},
+              {"if": {"properties": {"status": {"const": "confirmed"}}}, "then": {"properties": {"value": {"type": "string", "minLength": 1}, "source_ref": {"type": "object"}}}}
+            ]
+          }
+        },
+        "experience_reports": {"type": "object", "additionalProperties": false, "required": ["count", "items"], "properties": {"count": {"type": "integer", "minimum": 0}, "items": {"type": "array"}}},
+        "interview_is_official": {"type": "boolean"}
+      }
+    },
+
+    "InterviewSessionPlan": {
+      "type": "object", "additionalProperties": false,
+      "required": ["plan_id", "session_id", "categories", "total_seconds", "max_followups_per_question", "max_total_followups", "end_policy", "mode", "interviewer_count", "recording"],
+      "properties": {
+        "plan_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"},
+        "categories": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["name", "min_questions", "max_questions"],
+          "properties": {"name": {"type": "string", "minLength": 1}, "min_questions": {"type": "integer", "minimum": 0}, "max_questions": {"type": "integer", "minimum": 1}}}},
+        "total_seconds": {"type": "integer", "minimum": 60, "maximum": 7200},
+        "max_followups_per_question": {"type": "integer", "minimum": 0, "maximum": 2},
+        "max_total_followups": {"type": "integer", "minimum": 0, "maximum": 5},
+        "end_policy": {"enum": ["finish_current_question", "cut"]},
+        "time_warning_ms": {"type": "array", "items": {"$ref": "#/$defs/ms"}},
+        "mode": {"enum": ["text", "voice", "voice_avatar"]},
+        "interviewer_count": {"const": 1},
+        "difficulty": {"enum": ["standard", "detailed", "time_pressed"]},
+        "recording": {"enum": ["none", "memory", "stored"]},
+        "consent_id": {"$ref": "#/$defs/id"}
+      },
+      "allOf": [{"if": {"properties": {"recording": {"const": "stored"}}}, "then": {"required": ["consent_id"]}}]
+    },
+
+    "QuestionProposal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["proposal_id", "session_id", "after_turn_id", "answer_turn_id", "answer_span", "text", "category", "intent", "origin", "grounding", "claims_official", "budget", "proposer", "status"],
+      "properties": {
+        "proposal_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"},
+        "after_turn_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]}, "answer_turn_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "answer_span": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}}]},
+        "text": {"type": "string", "minLength": 1, "maxLength": 400},
+        "category": {"type": "string", "minLength": 1},
+        "intent": {"enum": ["clarify", "deepen_reason", "role", "evidence", "consistency", "verification_method", "transition"]},
+        "origin": {"const": "ai_generated"},
+        "grounding": {"type": "object", "additionalProperties": false, "required": ["official_fact_ids", "fact_version_ids", "uses_unknown"],
+          "properties": {"official_fact_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "fact_version_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "uses_unknown": {"const": false}}},
+        "claims_official": {"type": "boolean"},
+        "budget": {"type": "object", "additionalProperties": false, "required": ["followups_used", "followups_remaining", "remaining_ms", "expected_duration_ms"],
+          "properties": {"followups_used": {"type": "integer", "minimum": 0}, "followups_remaining": {"type": "integer", "minimum": 0}, "remaining_ms": {"$ref": "#/$defs/ms"}, "expected_duration_ms": {"$ref": "#/$defs/ms"}}},
+        "proposer": {"type": "object", "additionalProperties": false, "required": ["provider_id", "model_id", "prompt_version"],
+          "properties": {"provider_id": {"type": "string", "minLength": 1}, "model_id": {"type": "string", "minLength": 1}, "prompt_version": {"type": "string", "minLength": 1}, "temperature": {"type": "number", "minimum": 0, "maximum": 2}}},
+        "status": {"const": "proposed"}
+      },
+      "allOf": [
+        {"if": {"properties": {"claims_official": {"const": true}}}, "then": {"properties": {"grounding": {"properties": {"official_fact_ids": {"minItems": 1}, "fact_version_ids": {"minItems": 1}}}}}},
+        {"if": {"properties": {"answer_turn_id": {"type": "string"}}, "required": ["answer_turn_id"]}, "then": {"properties": {"answer_span": {"type": "array"}}}}
+      ]
+    },
+
+    "ValidatedQuestion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["proposal_id", "status", "validated_text", "validated_text_sha256", "checks", "validator_version"],
+      "properties": {
+        "proposal_id": {"$ref": "#/$defs/id"}, "status": {"enum": ["validated", "rejected", "replaced_by_fallback"]},
+        "validated_text": {"type": ["string", "null"], "maxLength": 400}, "validated_text_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "checks": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["code", "result"],
+          "properties": {"code": {"enum": ["V-GUARD", "V-PII", "V-SENS", "V-GROUND", "V-UNKNOWN", "V-SCOPE", "V-BUDGET", "V-QUOTE", "V-REPEAT", "V-FORM", "V-DISCLOSURE", "V-INJECTION"]}, "result": {"enum": ["pass", "fail"]}, "detail": {"type": "string"}}}},
+        "validator_version": {"type": "string", "minLength": 1}, "fallback_question_id": {"$ref": "#/$defs/id"}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"const": "validated"}}}, "then": {"properties": {"validated_text": {"type": "string", "minLength": 1}, "validated_text_sha256": {"$ref": "#/$defs/sha256"}, "checks": {"items": {"properties": {"result": {"const": "pass"}}}}}}},
+        {"if": {"properties": {"status": {"const": "replaced_by_fallback"}}}, "then": {"required": ["fallback_question_id"]}}
+      ]
+    },
+
+    "TurnEvent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["event_id", "session_id", "seq", "kind", "turn_id", "generation_id", "role", "origin", "text", "text_status", "t_start_ms", "t_end_ms", "source", "idempotency_key"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"}, "seq": {"type": "integer", "minimum": 0},
+        "kind": {"enum": ["utterance_started", "partial", "final", "cancelled", "barge_in", "silence", "state_changed", "error"]},
+        "turn_id": {"$ref": "#/$defs/id"}, "generation_id": {"type": "integer", "minimum": 0},
+        "role": {"enum": ["interviewer", "candidate", "system"]},
+        "origin": {"enum": ["ai_practice_material", "official_fact_based", "follow_up_to_the_answer", "user_input", "llm_proposed_validated", "system"]},
+        "question_id": {"type": ["string", "null"]}, "basis": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+        "followup_of": {"type": ["string", "null"]}, "quote": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}}]},
+        "text": {"type": "string"}, "text_status": {"enum": ["partial", "final"]},
+        "t_start_ms": {"$ref": "#/$defs/ms"}, "t_end_ms": {"$ref": "#/$defs/ms"},
+        "source": {"enum": ["stt", "controller", "typed", "system"]}, "segment_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "idempotency_key": {"$ref": "#/$defs/id"}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "final"}}}, "then": {"properties": {"text_status": {"const": "final"}}}},
+        {"if": {"properties": {"kind": {"const": "partial"}}}, "then": {"properties": {"text_status": {"const": "partial"}}}}
+      ]
+    },
+
+    "AudioSegment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["segment_id", "session_id", "turn_id", "direction", "codec", "sample_rate_hz", "channels", "t_start_ms", "t_end_ms", "storage"],
+      "properties": {
+        "segment_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"}, "turn_id": {"$ref": "#/$defs/id"}, "direction": {"enum": ["in", "out"]},
+        "codec": {"enum": ["pcm16"]}, "sample_rate_hz": {"enum": [16000, 24000, 48000]}, "channels": {"const": 1},
+        "t_start_ms": {"$ref": "#/$defs/ms"}, "t_end_ms": {"$ref": "#/$defs/ms"},
+        "storage": {"enum": ["none", "memory", "encrypted_store"]}, "consent_id": {"$ref": "#/$defs/id"}, "retention_days": {"type": "integer", "minimum": 1, "maximum": 30}, "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "allOf": [{"if": {"properties": {"storage": {"const": "encrypted_store"}}}, "then": {"required": ["consent_id", "retention_days", "sha256"]}}]
+    },
+
+    "SpeechInstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["instruction_id", "generation_id", "turn_id", "source", "text", "text_sha256", "language", "interruptible", "deadline_ms"],
+      "properties": {
+        "instruction_id": {"$ref": "#/$defs/id"}, "generation_id": {"type": "integer", "minimum": 0}, "turn_id": {"$ref": "#/$defs/id"},
+        "source": {"enum": ["validated_question", "fixed_phrase"]}, "validated_question_id": {"$ref": "#/$defs/id"}, "fixed_phrase_id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 600}, "text_sha256": {"$ref": "#/$defs/sha256"}, "language": {"const": "ja"},
+        "voice_id": {"$ref": "#/$defs/id"}, "pace": {"type": "number", "minimum": 0.8, "maximum": 1.2},
+        "pause_before_ms": {"type": "integer", "minimum": 0, "maximum": 3000}, "pause_after_ms": {"type": "integer", "minimum": 0, "maximum": 5000},
+        "interruptible": {"type": "boolean"}, "deadline_ms": {"$ref": "#/$defs/ms"}
+      },
+      "allOf": [
+        {"if": {"properties": {"source": {"const": "validated_question"}}}, "then": {"required": ["validated_question_id"]}},
+        {"if": {"properties": {"source": {"const": "fixed_phrase"}}}, "then": {"required": ["fixed_phrase_id"]}}
+      ]
+    },
+
+    "AvatarInstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["instruction_id", "generation_id", "speech_instruction_id", "state", "gesture", "intensity", "ai_label_visible", "identity"],
+      "properties": {
+        "instruction_id": {"$ref": "#/$defs/id"}, "generation_id": {"type": "integer", "minimum": 0}, "speech_instruction_id": {"$ref": "#/$defs/id"},
+        "state": {"enum": ["idle_listening", "speaking", "thinking", "attentive", "closing"]},
+        "gesture": {"enum": ["nod_small", "nod_slow", "blink", "gaze_camera", "none"]},
+        "intensity": {"type": "number", "minimum": 0, "maximum": 1}, "ai_label_visible": {"const": true},
+        "identity": {"type": "object", "additionalProperties": false, "required": ["avatar_id", "license_ref"], "properties": {"avatar_id": {"$ref": "#/$defs/id"}, "license_ref": {"type": "string", "minLength": 1}}}
+      }
+    },
+
+    "ConsentRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["consent_id", "session_id", "subject_pseudonym", "age_band", "scopes", "consent_text_sha256", "granted_at", "expires_at"],
+      "properties": {
+        "consent_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"}, "subject_pseudonym": {"$ref": "#/$defs/id"}, "age_band": {"enum": ["under18", "18plus", "unknown"]},
+        "scopes": {"type": "object", "additionalProperties": false,
+          "required": ["audio_processing", "video_processing", "transcript_retention", "recording_retention", "send_to_provider", "experience_sharing"],
+          "properties": {
+            "audio_processing": {"type": "boolean"}, "video_processing": {"type": "boolean"}, "transcript_retention": {"enum": ["none", "session", "days_30"]}, "recording_retention": {"enum": ["none", "session", "days_30"]},
+            "send_to_provider": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["provider_id", "purpose", "data_kinds", "region", "retention", "training_use"],
+              "properties": {"provider_id": {"type": "string", "minLength": 1}, "purpose": {"type": "string", "minLength": 1}, "data_kinds": {"type": "array", "minItems": 1, "items": {"enum": ["audio", "video", "transcript", "profile_text"]}},
+                             "region": {"type": "string", "minLength": 1}, "retention": {"type": "string", "minLength": 1}, "training_use": {"enum": ["no", "yes"]}}}},
+            "experience_sharing": {"type": "boolean"}
+          }},
+        "consent_text_sha256": {"$ref": "#/$defs/sha256"}, "granted_at": {"type": "string", "format": "date-time"}, "expires_at": {"type": "string", "format": "date-time"}, "revoked_at": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "allOf": [
+        {"if": {"properties": {"age_band": {"enum": ["under18", "unknown"]}}}, "then": {"properties": {"scopes": {"properties": {"send_to_provider": {"maxItems": 0}, "recording_retention": {"const": "none"}, "video_processing": {"const": false}}}}}}
+      ]
+    },
+
+    "FeedbackReportV2": {
+      "type": "object", "additionalProperties": false,
+      "required": ["report_id", "session_id", "rubric_version", "generator", "items", "coverage", "limits", "inference_from_appearance"],
+      "properties": {
+        "report_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"}, "rubric_version": {"type": "string", "minLength": 1},
+        "generator": {"type": "object", "additionalProperties": false, "required": ["kind"], "properties": {"kind": {"enum": ["rule", "llm"]}, "provider_id": {"type": "string"}, "model_id": {"type": "string"}, "prompt_version": {"type": "string"}}},
+        "items": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["key", "label", "stage", "reason", "evidence", "improvement_example", "uncertainty"],
+          "properties": {"key": {"type": "string"}, "label": {"type": "string"}, "stage": {"enum": ["要改善", "一部できている", "できている", "判定できない"]}, "reason": {"type": "string", "minLength": 1},
+            "evidence": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["turn_id", "start", "end"],
+              "properties": {"turn_id": {"$ref": "#/$defs/id"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}, "segment_id": {"$ref": "#/$defs/id"}}}},
+            "improvement_example": {"type": "string"}, "uncertainty": {"type": "string", "minLength": 1}},
+          "allOf": [{"if": {"required": ["stage"], "properties": {"stage": {"const": "判定できない"}}}, "then": {"properties": {"evidence": {"maxItems": 0}}}, "else": {"properties": {"evidence": {"minItems": 1}}}}]}},
+        "coverage": {"type": "object", "additionalProperties": false, "required": ["planned_categories", "asked_categories", "unasked_categories"],
+          "properties": {"planned_categories": {"type": "array", "items": {"type": "string"}}, "asked_categories": {"type": "array", "items": {"type": "string"}}, "unasked_categories": {"type": "array", "items": {"type": "string"}}}},
+        "limits": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "comparison_with_previous": {"type": ["object", "null"]},
+        "inference_from_appearance": {"const": false}
+      }
+    },
+
+    "ProviderUsageRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["usage_id", "session_id", "provider_id", "model_id", "model_version_or_snapshot", "kind", "t_start_ms", "t_end_ms", "units", "price_basis", "cost_estimate", "cost_billed", "region", "data_policy_ref", "status", "retries"],
+      "properties": {
+        "usage_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"}, "provider_id": {"type": "string", "minLength": 1}, "model_id": {"type": "string", "minLength": 1}, "model_version_or_snapshot": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["stt", "llm", "tts", "avatar", "realtime", "transport", "feedback_llm"]},
+        "t_start_ms": {"$ref": "#/$defs/ms"}, "t_end_ms": {"$ref": "#/$defs/ms"},
+        "units": {"type": "object", "additionalProperties": false, "properties": {"audio_seconds_in": {"type": "number", "minimum": 0}, "audio_seconds_out": {"type": "number", "minimum": 0}, "input_tokens": {"type": "integer", "minimum": 0}, "output_tokens": {"type": "integer", "minimum": 0}, "avatar_seconds": {"type": "number", "minimum": 0}}},
+        "price_basis": {"type": "object", "additionalProperties": false, "required": ["price_version", "retrieved_on", "currency"], "properties": {"price_version": {"type": "string", "minLength": 1}, "retrieved_on": {"type": "string", "format": "date"}, "currency": {"enum": ["USD", "JPY"]}}},
+        "cost_estimate": {"type": "number", "minimum": 0}, "cost_billed": {"type": ["number", "null"], "minimum": 0},
+        "region": {"type": "string", "minLength": 1}, "data_policy_ref": {"type": "string", "minLength": 1}, "status": {"enum": ["ok", "error", "cancelled"]}, "retries": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

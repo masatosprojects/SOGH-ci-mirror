@@ -1,0 +1,1050 @@
+{
+  "evidence": {
+    "EV-T27-01-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-01-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "quota",
+      "value": {
+        "count": 5,
+        "period": "AC_2027_KLIS",
+        "qualifier": "募集人員どおりに合格者を決定しない場合がある",
+        "unit": "名"
+      },
+      "scope": "department_and_method",
+      "proofs": [
+        {
+          "normalized_end": 939,
+          "normalized_start": 820,
+          "page": 5,
+          "pattern": "知識情報・図書館学類(?P<policy>.*?)?(?P<count>\\d+)体育専門学群",
+          "quote": "知識情報・図書館学類 \n 社会における情報の伝達や知識の創造に関して幅広く興味を持ち，関連した課題\nを自ら発見し，分析・解決していく能力を評価します。課題の分析結果を論理的に説\n明することや，説得力のある提案ができることも評価します。 \n5 \n体育専門学群",
+          "quote_normalized": "知識情報・図書館学類社会における情報の伝達や知識の創造に関して幅広く興味を持ち,関連した課題を自ら発見し,分析・解決していく能力を評価します。課題の分析結果を論理的に説明することや,説得力のある提案ができることも評価します。5体育専門学群"
+        },
+        {
+          "normalized_end": 1161,
+          "normalized_start": 1019,
+          "page": 5,
+          "pattern": "※この入試の合格者にふさわしい志願者がいない.*?決定されます。",
+          "quote": "※この入試の合格者にふさわしい志願者がいないと判断した場合は，募集人員どおりに合格者を決定することはせずに，個別学力検査等の\n募集人員によって，その人員を充足します。ただし，個別学力検査等で充足する欠員の数は，個別学力検査等より前に実施される他の入試\nの入学手続者数も含めて決定されます。",
+          "quote_normalized": "※この入試の合格者にふさわしい志願者がいないと判断した場合は,募集人員どおりに合格者を決定することはせずに,個別学力検査等の募集人員によって,その人員を充足します。ただし,個別学力検査等で充足する欠員の数は,個別学力検査等より前に実施される他の入試の入学手続者数も含めて決定されます。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false,
+      "quota": 5
+    },
+    "EV-T27-02-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-02-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "policy",
+      "value": {
+        "text": "情報・知識への関心、課題の発見と分析・解決、論理的説明や説得力のある提案を評価"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 891,
+          "normalized_start": 830,
+          "page": 5,
+          "pattern": "社会における情報の伝達や知識の創造に関して幅広く興味を持ち.*?評価します。",
+          "quote": "社会における情報の伝達や知識の創造に関して幅広く興味を持ち，関連した課題\nを自ら発見し，分析・解決していく能力を評価します。",
+          "quote_normalized": "社会における情報の伝達や知識の創造に関して幅広く興味を持ち,関連した課題を自ら発見し,分析・解決していく能力を評価します。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-03-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-03-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "first_stage",
+      "value": {
+        "text": "提出書類で選考し、自己推薦書と志願理由書を重視"
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 1250,
+          "normalized_start": 1174,
+          "page": 5,
+          "pattern": "出願時に提出された書類等により,第1次選考合格者を決定します。.*?重視します。",
+          "quote": "出願時に提出された書類等により，第1 次選考合格者を決定します。\n特に自己推薦書（本文，活動経過報告書及びその根拠となる添付資料），志願理由書を重視します。",
+          "quote_normalized": "出願時に提出された書類等により,第1次選考合格者を決定します。特に自己推薦書(本文,活動経過報告書及びその根拠となる添付資料),志願理由書を重視します。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-04-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-04-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "interview",
+      "value": {
+        "minutes": 30,
+        "qualifier": "必要に応じて試験時間を延長する場合がある",
+        "type": "individual_interview_and_oral_exam"
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 1411,
+          "normalized_start": 1373,
+          "page": 5,
+          "pattern": "個別に(?P<minutes>\\d+)分程度行います。なお,必要に応じ試験時間を延長する場合があります。",
+          "quote": "個別に30 分程度行います。\nなお，必要に応じ試験時間を延長する場合があります。",
+          "quote_normalized": "個別に30分程度行います。なお,必要に応じ試験時間を延長する場合があります。"
+        },
+        {
+          "normalized_end": 1304,
+          "normalized_start": 1258,
+          "page": 5,
+          "pattern": "第1次選考の合格者に対し,面接・口述試験を行い.*?総合的に判定します。",
+          "quote": "第1次選考の合格者に対し，面接・口述試験を行い，提出書類等の内容を含めて総合的に判定しま\nす。",
+          "quote_normalized": "第1次選考の合格者に対し,面接・口述試験を行い,提出書類等の内容を含めて総合的に判定します。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-05-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-05-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "online_period",
+      "value": {
+        "end": "2026-09-02T09:00:00+09:00",
+        "qualifier": "出願登録と検定料の払い込み",
+        "start": "2026-08-06T09:00:00+09:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 905,
+          "normalized_start": 862,
+          "page": 9,
+          "pattern": "\\(1\\)出願登録・検定料の払い込み令和(?P<year>\\d+)年(?P<sm>\\d+)月(?P<sd>\\d+)日\\([^)]+\\)(?P<sh>\\d+):(?P<smin>\\d+)[~〜～](?P<em>\\d+)月(?P<ed>\\d+)日\\([^)]+\\)(?P<eh>\\d+):(?P<emin>\\d+)",
+          "quote": "（1）出願登録・検定料の払い込み\n 令和8 年8 月6 日（木）9：00～9 月2 日（水）9:00",
+          "quote_normalized": "(1)出願登録・検定料の払い込み令和8年8月6日(木)9:00~9月2日(水)9:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-06-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-06-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "postal_period",
+      "value": {
+        "end": "2026-09-03",
+        "qualifier": "郵送必着・持参不可",
+        "start": "2026-09-01",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1054,
+          "normalized_start": 1015,
+          "page": 9,
+          "pattern": "\\(2\\)出願書類の郵送令和(?P<year>\\d+)年(?P<sm>\\d+)月(?P<sd>\\d+)日\\([^)]+\\)[~〜～](?P<em>\\d+)月(?P<ed>\\d+)日\\([^)]+\\)郵送必着\\(持参不可\\)",
+          "quote": "（2）出願書類の郵送\n令和8 年9 月1 日（火）～9 月3 日（木）郵送必着（持参不可）",
+          "quote_normalized": "(2)出願書類の郵送令和8年9月1日(火)~9月3日(木)郵送必着(持参不可)"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-07-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-07-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "eligibility",
+      "value": {
+        "details_page": 6,
+        "logic": "any_of_1_to_3",
+        "qualifier": "各区分の条件と個別資格審査の期限は要項で確認"
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 30,
+          "normalized_start": 0,
+          "page": 6,
+          "pattern": "5出願資格次の\\(1\\)[~〜～]\\(3\\)のいずれかに該当する者とします。",
+          "quote": "5 出願資格 \n次の（1）～（3）のいずれかに該当する者とします。",
+          "quote_normalized": "5出願資格次の(1)~(3)のいずれかに該当する者とします。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-08-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-08-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "common_test",
+      "value": {
+        "required": false
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 697,
+          "normalized_start": 676,
+          "page": 6,
+          "pattern": "大学入学共通テストの受験は必要としません。",
+          "quote": "大学入学共通テストの受験は必要としません。",
+          "quote_normalized": "大学入学共通テストの受験は必要としません。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-09-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-09-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "second_stage_date",
+      "value": {
+        "dates": [
+          "2026-10-08"
+        ],
+        "qualifier": "社会状況等により変更の場合がある",
+        "selection": "specified_day"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 566,
+          "normalized_start": 548,
+          "page": 11,
+          "pattern": "知識情報・図書館学類(?P<month>\\d+)月(?P<day>\\d+)日\\([^)]+\\)",
+          "quote": "知識情報・図書館学類 \n10 月8 日（木）",
+          "quote_normalized": "知識情報・図書館学類10月8日(木)"
+        },
+        {
+          "normalized_end": 299,
+          "normalized_start": 276,
+          "page": 4,
+          "pattern": "第2次選考\\(面接・口述試験\\)令和(?P<year>\\d+)年10月7日",
+          "quote": "第2 次選考（面接・口述試験） \n令和8 年10 月7 日",
+          "quote_normalized": "第2次選考(面接・口述試験)令和8年10月7日"
+        },
+        {
+          "normalized_end": 230,
+          "normalized_start": 200,
+          "page": 12,
+          "pattern": "今後の社会状況等によっては,実施日を変更する場合があります。",
+          "quote": "今後の社会状況等によっては，実施日を変更する場合があります。",
+          "quote_normalized": "今後の社会状況等によっては,実施日を変更する場合があります。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-10-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-10-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "final_result",
+      "value": {
+        "date": "2026-11-02",
+        "time": "10:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 513,
+          "normalized_start": 483,
+          "page": 12,
+          "pattern": "\\(2\\)最終合格者発表・通知令和(?P<year>\\d+)年(?P<month>\\d+)月(?P<day>\\d+)日\\([^)]+\\)(?P<hour>\\d+):(?P<minute>\\d+)",
+          "quote": "（2） 最終合格者発表・通知 \n令和8 年11 月2 日(月) 10:00",
+          "quote_normalized": "(2)最終合格者発表・通知令和8年11月2日(月)10:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-11-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-11-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "first_stage_result",
+      "value": {
+        "date": "2026-10-01",
+        "time": "10:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 250,
+          "normalized_start": 224,
+          "page": 4,
+          "pattern": "第1次選考結果発表令和(?P<year>\\d+)年(?P<month>\\d+)月(?P<day>\\d+)日\\([^)]+\\)(?P<hour>\\d+):(?P<minute>\\d+)",
+          "quote": "第1 次選考結果発表 \n令和8 年10 月1 日（木）10:00",
+          "quote_normalized": "第1次選考結果発表令和8年10月1日(木)10:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-12-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-12-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "statement_length",
+      "value": {
+        "language": "Japanese",
+        "max_characters": 800,
+        "specified_form": true
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 390,
+          "normalized_start": 363,
+          "page": 7,
+          "pattern": "志願する理由を(?P<characters>\\d+)字以内にまとめて記入してください。",
+          "quote": "志願する理由を800 字以内にまとめて記入してください。",
+          "quote_normalized": "志願する理由を800字以内にまとめて記入してください。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-13-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-13-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "recommendation_format",
+      "value": {
+        "body_format": "自由",
+        "body_pages": "自由",
+        "cover_and_activity_report": "specified_forms",
+        "supporting_materials": true
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 100,
+          "normalized_start": 69,
+          "page": 7,
+          "pattern": "本文は様式・枚数自由で,その根拠となる資料を添付してください。",
+          "quote": "本文は様式・枚数自由で，その根拠とな\nる資料を添付してください。",
+          "quote_normalized": "本文は様式・枚数自由で,その根拠となる資料を添付してください。"
+        },
+        {
+          "normalized_end": 180,
+          "normalized_start": 100,
+          "page": 7,
+          "pattern": "表紙は,大学入試情報サイト「入試日程と募集要項」ページから所定の「自己推薦書\\(表紙\\)」と「活動経過報告書」をダウンロードし,所要事項を記入して使用してください。",
+          "quote": "表紙は，大学入試情報サイト「入試日程と募集要\n項」ページから所定の「自己推薦書（表紙）」と「活動経過報告書」をダウンロ\nードし，所要事項を記入して使用してください。",
+          "quote_normalized": "表紙は,大学入試情報サイト「入試日程と募集要項」ページから所定の「自己推薦書(表紙)」と「活動経過報告書」をダウンロードし,所要事項を記入して使用してください。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-T27-14-49cb4d": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "アドミッションセンター入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-T27-14-49cb4d",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "interview_scope",
+      "value": {
+        "topic_types": [
+          "出願書類",
+          "学習能力",
+          "知識",
+          "意欲"
+        ]
+      },
+      "scope": "all_tsukuba_AC",
+      "proofs": [
+        {
+          "normalized_end": 1376,
+          "normalized_start": 1304,
+          "page": 5,
+          "pattern": "面接・口述試験では,主に,出願時に提出された自己推薦書等の内容及び志願する学群・学類に必要な学習適応性\\(学習能力,知識,意欲等\\)について,個別に",
+          "quote": "面接・口述試験では，主に，出願時に提出された自己推薦書等の内容及び志願する学群・学類に必\n要な学習適応性（学習能力，知識，意欲等）について，個別に",
+          "quote_normalized": "面接・口述試験では,主に,出願時に提出された自己推薦書等の内容及び志願する学群・学類に必要な学習適応性(学習能力,知識,意欲等)について,個別に"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-01-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-01-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "quota",
+      "value": {
+        "count": 150,
+        "entry_months": [
+          4,
+          9
+        ],
+        "period": "all_AO_held_in_2026",
+        "qualifier": "年度内に実施するAO入試の合計であり、夏秋AO単独の枠ではない",
+        "summer_autumn_only_count": null,
+        "unit": "名"
+      },
+      "scope": "faculty_annual_AO_aggregate",
+      "proofs": [
+        {
+          "normalized_end": 64,
+          "normalized_start": 17,
+          "page": 8,
+          "pattern": "環境情報学部(?P<count>\\d+)名※募集人員は、(?P<year>\\d+)年度に実施するAO入試\\(4月入学/9月入学\\)の合計数",
+          "quote": "環境情報学部 150 名 \n※募集人員は、2026 年度に実施するAO 入試（4 月入学／9 月入学）の合計数",
+          "quote_normalized": "環境情報学部150名※募集人員は、2026年度に実施するAO入試(4月入学/9月入学)の合計数"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false,
+      "quota": 150
+    },
+    "EV-K27-02-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-02-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "entry",
+      "value": {
+        "months": [
+          "2027-04",
+          "2027-09"
+        ]
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 332,
+          "normalized_start": 309,
+          "page": 8,
+          "pattern": "2026夏秋AO(?P<first>\\d+)年4月、(?P<second>\\d+)年9月",
+          "quote": "2026 夏秋AO \n2027 年4 月、2027 年9 月",
+          "quote_normalized": "2026夏秋AO2027年4月、2027年9月"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-03-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-03-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "online_period",
+      "value": {
+        "end": "2026-09-01T15:00:00+09:00",
+        "qualifier": "オンライン申請。期間内にシステム休止あり",
+        "start": "2026-08-03T10:00:00+09:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 238,
+          "normalized_start": 201,
+          "page": 9,
+          "pattern": "オンライン申請(?P<year>\\d+)年(?P<sm>\\d+)月(?P<sd>\\d+)日\\([^)]+\\)(?P<sh>\\d+):(?P<smin>\\d+)[~〜～](?P<em>\\d+)月(?P<ed>\\d+)日\\([^)]+\\)(?P<eh>\\d+):(?P<emin>\\d+)",
+          "quote": "オンライン申請   \n \n2026 年8 月3 日（月）10:00 \n～ 9 月1 日（火）15:00",
+          "quote_normalized": "オンライン申請2026年8月3日(月)10:00~9月1日(火)15:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-04-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-04-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "maintenance",
+      "value": {
+        "end": "2026-08-18T10:00:00+09:00",
+        "qualifier": "メンテナンス中はログイン等ができない",
+        "start": "2026-08-07T16:30:00+09:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 317,
+          "normalized_start": 238,
+          "page": 9,
+          "pattern": "以下の期間は、メンテナンスのためオンライン出願システムを休止いたします\\(ログイン等できません\\)。(?P<year>\\d+)年(?P<sm>\\d+)月(?P<sd>\\d+)日\\([^)]+\\)(?P<sh>\\d+):(?P<smin>\\d+)[~〜～](?P<em>\\d+)月(?P<ed>\\d+)日\\([^)]+\\)(?P<eh>\\d+):(?P<emin>\\d+)",
+          "quote": "以下の期間は、メンテナンスのためオン\nライン出願システムを休止いたします\n（ログイン等できません）。 \n2026 年8 月 7 日（金）16:30 \n～ 8 月18 日（火）10:00",
+          "quote_normalized": "以下の期間は、メンテナンスのためオンライン出願システムを休止いたします(ログイン等できません)。2026年8月7日(金)16:30~8月18日(火)10:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-05-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-05-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "postal_period",
+      "value": {
+        "end": "2026-09-02",
+        "qualifier": "日本国内は締切日消印有効、海外は締切日必着",
+        "start": "2026-09-01",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 402,
+          "normalized_start": 349,
+          "page": 9,
+          "pattern": "出願書類の提出\\(郵送\\)(?P<year>\\d+)年(?P<sm>\\d+)月(?P<sd>\\d+)日\\([^)]+\\)[~〜～](?P<em>\\d+)月(?P<ed>\\d+)日\\([^)]+\\)※※日本国内は締切日消印有効海外は締切日必着",
+          "quote": "出願書類の提出（郵送）  \n \n2026 年9 月1 日（火） ～ 9 月2 日（水）※ \n※日本国内は締切日消印有効 海外は締切日必着",
+          "quote_normalized": "出願書類の提出(郵送)2026年9月1日(火)~9月2日(水)※※日本国内は締切日消印有効海外は締切日必着"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-06-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-06-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "eligibility",
+      "value": {
+        "details_page": 10,
+        "logic": "all_of_1_to_4",
+        "qualifier": "学歴等の条件に加え、第一志望・合格時の入学確約など全ての条件が必要"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 185,
+          "normalized_start": 162,
+          "page": 10,
+          "pattern": "出願者共通以下の1\\.[~〜～]4\\.の条件を全て満たす者",
+          "quote": "出願者共通  \n以下の1.～4.の条件を全て満たす者",
+          "quote_normalized": "出願者共通以下の1.~4.の条件を全て満たす者"
+        },
+        {
+          "normalized_end": 1471,
+          "normalized_start": 1387,
+          "page": 10,
+          "pattern": "2\\.総合政策学部・環境情報学部への志望理由や入学後の構想が明確であり、第一志望としていずれかの学部での勉学を希望する者。また、合格した場合に入学することを確約できる者。",
+          "quote": "２. \n総合政策学部・環境情報学部への志望理由や入学後の構想が明確であり、第一志望としていずれか \nの学部での勉学を希望する者。また、合格した場合に入学することを確約できる者。",
+          "quote_normalized": "2.総合政策学部・環境情報学部への志望理由や入学後の構想が明確であり、第一志望としていずれかの学部での勉学を希望する者。また、合格した場合に入学することを確約できる者。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-07-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-07-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "second_stage_date",
+      "value": {
+        "dates": [
+          "2026-10-24",
+          "2026-10-25"
+        ],
+        "qualifier": "いずれか。集合日時は大学の指定に従う。延期等の場合あり",
+        "selection": "one_of_not_both"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 224,
+          "normalized_start": 183,
+          "page": 16,
+          "pattern": "環境情報学部●(?P<year>\\d+)年(?P<m1>\\d+)月(?P<d1>\\d+)日\\([^)]+\\)●(?P=year)年(?P<m2>\\d+)月(?P<d2>\\d+)日\\([^)]+\\)のいずれか",
+          "quote": "環境情報学部 \n●2026 年10 月24 日（土） \n●2026 年10 月25 日（日） \nのいずれか",
+          "quote_normalized": "環境情報学部●2026年10月24日(土)●2026年10月25日(日)のいずれか"
+        },
+        {
+          "normalized_end": 823,
+          "normalized_start": 753,
+          "page": 31,
+          "pattern": "不測の事態により、所定の日程通りに入学試験や合格発表等を実施することが困難であると本学が判断した場合、延期等の対応措置をとることがあります。",
+          "quote": "不測の事態により、所定の日程通りに入学試験や合格発表等を実施することが困難であると本学が判\n断した場合、延期等の対応措置をとることがあります。",
+          "quote_normalized": "不測の事態により、所定の日程通りに入学試験や合格発表等を実施することが困難であると本学が判断した場合、延期等の対応措置をとることがあります。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-08-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-08-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "interview",
+      "value": {
+        "minutes": 30,
+        "qualifier": "実施時間の枠。待機時間が長くなる場合もあり、実質質疑時間とは区別する",
+        "type": "allocated_time_window_not_net_question_time"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 501,
+          "normalized_start": 479,
+          "page": 31,
+          "pattern": "面接試験の実施時間の枠は一人(?P<minutes>\\d+)分程度です。",
+          "quote": "面接試験の実施時間の枠は一人30 分程度です。",
+          "quote_normalized": "面接試験の実施時間の枠は一人30分程度です。"
+        },
+        {
+          "normalized_end": 476,
+          "normalized_start": 372,
+          "page": 31,
+          "pattern": "1次選考合格者に対して面接試験を湘南藤沢キャンパスにて行います。.*?総合的に判断します。",
+          "quote": "1 次選考合格者に対して面接試験を湘南藤沢キャンパスにて行います。1 次選考合格発表時に指示された\n日時・場所に受験票と筆記用具を持参のうえ、集合してください。最終合否は1 次選考の評価とあわせ\nて総合的に判断します。",
+          "quote_normalized": "1次選考合格者に対して面接試験を湘南藤沢キャンパスにて行います。1次選考合格発表時に指示された日時・場所に受験票と筆記用具を持参のうえ、集合してください。最終合否は1次選考の評価とあわせて総合的に判断します。"
+        },
+        {
+          "normalized_end": 968,
+          "normalized_start": 941,
+          "page": 31,
+          "pattern": "実施の順番によって、待機時間が長くなる場合があります。",
+          "quote": "実施の順番によって、待機時間が長く\nなる場合があります。",
+          "quote_normalized": "実施の順番によって、待機時間が長くなる場合があります。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-09-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-09-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "final_result",
+      "value": {
+        "date": "2026-11-02",
+        "time": "11:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1188,
+          "normalized_start": 1159,
+          "page": 31,
+          "pattern": "2次選考合格発表期間(?P<year>\\d+)年(?P<month>\\d+)月(?P<day>\\d+)日\\([^)]+\\)(?P<hour>\\d+):(?P<minute>\\d+)[~〜～]",
+          "quote": "2 次選考合格発表期間 \n2026 年11 月2 日（月）11:00 ～",
+          "quote_normalized": "2次選考合格発表期間2026年11月2日(月)11:00~"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-10-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-10-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "first_stage",
+      "value": {
+        "text": "オンライン入力・提出書類（資料を含む）により選考"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 103,
+          "normalized_start": 77,
+          "page": 8,
+          "pattern": "入力・提出された書類\\(資料を含む\\)により選考します。",
+          "quote": "入力・提出された書類（資料を含む）により選考します。",
+          "quote_normalized": "入力・提出された書類(資料を含む)により選考します。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-11-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-11-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "first_stage_result",
+      "value": {
+        "date": "2026-10-08",
+        "time": "11:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 162,
+          "normalized_start": 128,
+          "page": 31,
+          "pattern": "1次選考合格発表受験票の発行期間(?P<year>\\d+)年(?P<month>\\d+)月(?P<day>\\d+)日\\([^)]+\\)(?P<hour>\\d+):(?P<minute>\\d+)",
+          "quote": "1 次選考合格発表 \n受験票の発行期間 \n2026 年 10 月8 日（木）11:00",
+          "quote_normalized": "1次選考合格発表受験票の発行期間2026年10月8日(木)11:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-12-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-12-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "personal_statement",
+      "value": {
+        "essay_max_en_chars": 4000,
+        "essay_max_ja_chars": 2000,
+        "free_format_a4_pages_max": 2,
+        "free_format_max_mb": 10
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1103,
+          "normalized_start": 1065,
+          "page": 19,
+          "pattern": "1は、日本語を選択した場合(?P<ja>\\d+)字以内で、英語を選択した場合(?P<en>\\d+)字以内",
+          "quote": "①は、日本語を選択した場合2000 字以内で、英語を選択した場合4000 字以内",
+          "quote_normalized": "1は、日本語を選択した場合2000字以内で、英語を選択した場合4000字以内"
+        },
+        {
+          "normalized_end": 1163,
+          "normalized_start": 1126,
+          "page": 19,
+          "pattern": "2は(?P<mb>\\d+)メガバイト以内のPDFファイル\\(A4サイズの用紙(?P<pages>\\d+)枚以内の大きさ\\)",
+          "quote": "②は10 メガバイト以内のPDF ファイル（A4 サイズの用紙2 枚以内の大きさ）",
+          "quote_normalized": "2は10メガバイト以内のPDFファイル(A4サイズの用紙2枚以内の大きさ)"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-13-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-13-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "optional_materials",
+      "value": {
+        "max_items": 10
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1343,
+          "normalized_start": 1321,
+          "page": 19,
+          "pattern": "資料として(?P<count>\\d+)点まで提出することができます。",
+          "quote": "資料として10 点ま\nで提出することができます。",
+          "quote_normalized": "資料として10点まで提出することができます。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-14-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-14-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "referees",
+      "value": {
+        "evaluators_required": 2,
+        "must_complete_before_submission": true
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 775,
+          "normalized_start": 721,
+          "page": 13,
+          "pattern": "評価者(?P<count>\\d+)名による評価の入力が必要です。評価者の入力が完了するまで、オンライン申請を完了することはできません。",
+          "quote": "評価者2 名による評価の入力が必要です。\n評価者の入力が完了するまで、オンライン申請を完了することはできません。",
+          "quote_normalized": "評価者2名による評価の入力が必要です。評価者の入力が完了するまで、オンライン申請を完了することはできません。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-15-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-15-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "generative_ai_policy",
+      "value": {
+        "allowed": "学びを深める補助として利用",
+        "not_accepted": "AI生成の出願書類を本人独自成果物とすること"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1440,
+          "normalized_start": 1310,
+          "page": 3,
+          "pattern": "生成AIを自身の学びを深めるためのひとつの補助的ツールとして利用することはかまいませんが、.*?生成AIによって生成されたものを受験生独自の成果物とはみなしません。",
+          "quote": "生成AI を自身の学びを深\nめるためのひとつの補助的ツールとして利用することはかまいませんが、出願時に提出が求められている\n「志望理由」「入学後の学習計画」「自己アピール」「任意提出資料」について、生成AI によって生成され\nたものを受験生独自の成果物とはみなしません。",
+          "quote_normalized": "生成AIを自身の学びを深めるためのひとつの補助的ツールとして利用することはかまいませんが、出願時に提出が求められている「志望理由」「入学後の学習計画」「自己アピール」「任意提出資料」について、生成AIによって生成されたものを受験生独自の成果物とはみなしません。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-K27-16-91dad1": {
+      "university": "慶應義塾大学",
+      "faculty": "環境情報学部",
+      "department": null,
+      "admission_method": "2026夏秋AO入試",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-K27-16-91dad1",
+      "source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "interview_language",
+      "value": {
+        "choice_required": true,
+        "languages": [
+          "日本語",
+          "英語"
+        ],
+        "preference_options": [
+          "日本語",
+          "英語",
+          "どちらでも可"
+        ]
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 564,
+          "normalized_start": 501,
+          "page": 31,
+          "pattern": "面接は、日本語または英語で行います。出願時に、面接で使用する言語\\(「日本語」・「英語」・「どちらでも可」\\)を選択してください。",
+          "quote": "面接は、日本語または英語で行います。出願時に、面接で使用する言語（｢日本語｣・｢英語｣・｢どちら\nでも可｣）を選択してください。",
+          "quote_normalized": "面接は、日本語または英語で行います。出願時に、面接で使用する言語(「日本語」・「英語」・「どちらでも可」)を選択してください。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    }
+  },
+  "articles": [
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "claim": {
+        "university": "筑波大学",
+        "faculty": "情報学群",
+        "department": "知識情報・図書館学類",
+        "admission_method": "アドミッションセンター入試",
+        "fiscal_year": 2027
+      },
+      "text": "# 【2027年度入学】筑波大学 情報学群 知識情報・図書館学類 アドミッションセンター入試｜出願・選考の要点を公式要項で確認\n\n作業基準日：2026-11-01。保存した公式要項の内容を整理した未公開草案です。記載する出願期間・面接日は既に経過しています。制度と実施日程の振り返り、および次の手続の確認に使ってください。\n\n## 最初に押さえたい募集枠と出願条件\n\n知識情報・図書館学類のAC入試の募集人員は5名[EV-T27-01-49cb4d]です。ただし、募集人員どおりに合格者を決定しない場合があると要項に記されています。\n\n出願資格は募集要項p.6の（1）〜（3）のいずれかに該当することが条件です。各区分の学歴・卒業見込みや個別の入学資格審査などの条件は、原文の全体を確認してください。ここでは個人の出願可否の判定は行いません。[EV-T27-07-49cb4d]\n\nこのAC入試では、大学入学共通テストの受験は必要としないと要項に記載されています。[EV-T27-08-49cb4d]\n\n## オンライン申請と郵送を分けて確認する\n\nオンラインでの登録・申請期間は2026年8月6日 09:00〜2026年9月2日 09:00です。出願登録と検定料の払い込みを行う期間です。[EV-T27-05-49cb4d]\n\n郵送書類の提出期間は2026年9月1日〜2026年9月3日です。書類は郵送必着で、持参はできません。オンラインの締切と郵送の扱いを分けて確認してください。[EV-T27-06-49cb4d]\n\n## 選考と結果発表\n\n第1次選考は、提出書類で選考し、自己推薦書と志願理由書を重視する方式です。[EV-T27-03-49cb4d]\n\n要項に記載された第1次選考の結果発表は、2026年10月1日 10:00（日本時間）からです。[EV-T27-11-49cb4d]\n\n対象の学部・学類の第2次選考日は2026年10月8日と要項に記載されています。社会状況等によって実施日が変更される場合もあります。[EV-T27-09-49cb4d]\n\n要項に記載された最終段階の合格発表は、2026年11月2日 10:00（日本時間）からです。[EV-T27-10-49cb4d]\n\n## 書類と面接をつなげて準備する\n\n情報・知識への関心、課題の発見と分析・解決、論理的説明や説得力のある提案を評価する方針です。[EV-T27-02-49cb4d]\n\n第1次選考の合格者には、面接・口述試験を個別に30分程度[EV-T27-04-49cb4d]実施し、提出書類なども含めて総合的に判定します。必要に応じて試験時間を延長する場合があるため、所要時間を固定して考えないようにしましょう。\n\n## 出願書類の指定を先に確認する\n\n志願理由書は所定の様式を使い、800字以内でまとめる指定です。作成前に様式と記入欄を確認してください。[EV-T27-12-49cb4d]\n\n自己推薦書の本文は様式・枚数自由で、根拠となる資料を添付します。一方、表紙と活動経過報告書には所定の様式を使います。本文の自由度と、指定様式の必要性を分けて確認してください。[EV-T27-13-49cb4d]\n\n### 読者向けの整理のしかた（編集上の助言）\n\nまず自分が該当する出願資格と証明書類を原文で照合し、オンライン手続と郵送を別々のチェック欄に整理してください。次に、提出した説明と面接で伝える内容に食い違いがないか確認すると、準備することを具体化できます。この助言は合否を保証するものではありません。\n\n## 確認してから次の行動へ\n\n最新情報は大学公式サイトでご確認ください。訂正や当日の案内が出ている場合は、その内容を優先してください。出願資格の個別判定と公開前の最新版確認は別途必要です。\n\n## 根拠資料\n\n- [EV-T27-01-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-02-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-03-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-04-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-05-49cb4d] 公式募集要項 PDF p.9：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=9\n- [EV-T27-06-49cb4d] 公式募集要項 PDF p.9：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=9\n- [EV-T27-07-49cb4d] 公式募集要項 PDF p.6：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=6\n- [EV-T27-08-49cb4d] 公式募集要項 PDF p.6：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=6\n- [EV-T27-09-49cb4d] 公式募集要項 PDF p.4・11・12：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=11\n- [EV-T27-10-49cb4d] 公式募集要項 PDF p.12：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=12\n- [EV-T27-11-49cb4d] 公式募集要項 PDF p.4：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=4\n- [EV-T27-12-49cb4d] 公式募集要項 PDF p.7：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=7\n- [EV-T27-13-49cb4d] 公式募集要項 PDF p.7：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=7\n"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "claim": {
+        "university": "筑波大学",
+        "faculty": "情報学群",
+        "department": "知識情報・図書館学類",
+        "admission_method": "アドミッションセンター入試",
+        "fiscal_year": 2027
+      },
+      "text": "# 【2027年度入学】筑波大学 情報学群 知識情報・図書館学類 アドミッションセンター入試｜面接の公式情報と準備の整理\n\n作業基準日：2026-11-01。保存した公式要項の内容を整理した未公開草案です。記載する出願期間・面接日は既に経過しています。制度と実施日程の振り返り、および次の手続の確認に使ってください。\n\n## 面接の日程と所要時間の読み方\n\n対象の学部・学類の第2次選考日は2026年10月8日と要項に記載されています。社会状況等によって実施日が変更される場合もあります。[EV-T27-09-49cb4d]\n\n第1次選考の合格者には、面接・口述試験を個別に30分程度[EV-T27-04-49cb4d]実施し、提出書類なども含めて総合的に判定します。必要に応じて試験時間を延長する場合があるため、所要時間を固定して考えないようにしましょう。\n\n## 大学が示している選考の前提\n\n第1次選考は、提出書類で選考し、自己推薦書と志願理由書を重視する方式です。[EV-T27-03-49cb4d]\n\n情報・知識への関心、課題の発見と分析・解決、論理的説明や説得力のある提案を評価する方針です。[EV-T27-02-49cb4d]\n\n要項は、提出した自己推薦書等の内容と、志願する学群・学類に必要な学習適応性（学習能力・知識・意欲等）を面接・口述試験で扱うとしています。これは公表された範囲の説明であり、個別の過去の質問内容を示すものではありません。[EV-T27-14-49cb4d]\n\n出願資格は募集要項p.6の（1）〜（3）のいずれかに該当することが条件です。各区分の学歴・卒業見込みや個別の入学資格審査などの条件は、原文の全体を確認してください。ここでは個人の出願可否の判定は行いません。[EV-T27-07-49cb4d]\n\n## 結果を確認する\n\n要項に記載された最終段階の合格発表は、2026年11月2日 10:00（日本時間）からです。[EV-T27-10-49cb4d]\n\n### 練習を組み立てるヒント（編集上の助言）\n\n提出した書類を読み直し、自分が取り組んだこと、その理由、調べた方法、分かったこと、今後学びたいことを自分の言葉で説明できるか確かめてみてください。答えに詰まった部分は、根拠と説明のつながりを見直す手がかりになります。\n\nこれは練習のための整理例です。大学が実際に尋ねた過去問や、非公表の採点基準を再現したものではありません。予定時間だけを目安に暗記するより、質問に応じて説明を組み立てられる状態を目指すとよいでしょう。\n\n## 確認してから次の行動へ\n\n最新情報は大学公式サイトでご確認ください。訂正や当日の案内が出ている場合は、その内容を優先してください。出願資格の個別判定と公開前の最新版確認は別途必要です。\n\n## 根拠資料\n\n- [EV-T27-02-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-03-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-04-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n- [EV-T27-07-49cb4d] 公式募集要項 PDF p.6：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=6\n- [EV-T27-09-49cb4d] 公式募集要項 PDF p.4・11・12：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=11\n- [EV-T27-10-49cb4d] 公式募集要項 PDF p.12：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=12\n- [EV-T27-14-49cb4d] 公式募集要項 PDF p.5：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf#page=5\n"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "claim": {
+        "university": "慶應義塾大学",
+        "faculty": "環境情報学部",
+        "department": null,
+        "admission_method": "2026夏秋AO入試",
+        "fiscal_year": 2027
+      },
+      "text": "# 【2027年度入学】慶應義塾大学 環境情報学部 2026夏秋AO入試｜出願・選考の要点を公式要項で確認\n\n作業基準日：2026-11-01。保存した公式要項の内容を整理した未公開草案です。記載する出願期間・面接日は既に経過しています。制度と実施日程の振り返り、および次の手続の確認に使ってください。\n\n## 最初に押さえたい募集枠と出願条件\n\n募集要項に記載された環境情報学部の募集人員は150名[EV-K27-01-91dad1]です。この人数は、2026年度に実施するAO入試（4月入学・9月入学）の合計です。夏秋AO単独の募集枠として読み替えないよう注意してください。\n\n入学時期は2027年4月または2027年9月です。出願時に選ぶ入学時期を確認してください。[EV-K27-02-91dad1]\n\n出願資格は募集要項p.10の共通条件（1）〜（4）を全て満たすことが必要です。学歴等の条件だけでなく、第一志望としての勉学希望、合格した場合の入学確約などの条件もあります。自分の区分と証明書類を原文に照らして確認してください。[EV-K27-06-91dad1]\n\n## オンライン申請と郵送を分けて確認する\n\nオンラインでの登録・申請期間は2026年8月3日 10:00〜2026年9月1日 15:00です。期間内にはシステム休止日があるため、下記の休止期間も確認してください。[EV-K27-03-91dad1]\n\n要項に記載されたシステム休止期間は2026年8月7日 16:30〜2026年8月18日 10:00です。メンテナンス中はログイン等ができないため、手続きの計画からこの時間帯を外す必要があります。[EV-K27-04-91dad1]\n\n郵送書類の提出期間は2026年9月1日〜2026年9月2日です。日本国内は締切日消印有効、海外は締切日必着です。オンラインの締切と郵送の扱いを分けて確認してください。[EV-K27-05-91dad1]\n\n## 選考と結果発表\n\n第1次選考は、オンライン入力・提出書類（資料を含む）により選考する方式です。[EV-K27-10-91dad1]\n\n要項に記載された第1次選考の結果発表は、2026年10月8日 11:00（日本時間）からです。[EV-K27-11-91dad1]\n\n対象の学部・学類の第2次選考日は2026年10月24日・2026年10月25日のいずれかと要項に記載されています。集合日時は大学の指定に従ってください。不測の事態により延期等となる場合もあります。[EV-K27-07-91dad1]\n\n要項に記載された最終段階の合格発表は、2026年11月2日 11:00（日本時間）からです。[EV-K27-09-91dad1]\n\n## 書類と面接をつなげて準備する\n\n面接試験の実施時間の枠は一人30分程度[EV-K27-08-91dad1]です。これは要項上の実施時間枠です。実質的な質疑時間が同じ長さだとは断定できません。待機時間が長くなる場合もあるため、集合日時と大学からの案内を確認してください。\n\n## 出願書類の指定を先に確認する\n\n志望理由・入学後の学習計画・自己アピールは、文章と自由記述を組み合わせます。文章は日本語2000字以内、英語4000字以内です。自由記述はA4サイズ2枚以内、10メガバイト以内のPDFという指定です。[EV-K27-12-91dad1]\n\n任意提出資料は10点まで提出できます。必要性と、自分の活動や構想とのつながりを整理して選んでください。[EV-K27-13-91dad1]\n\nオンライン申請には評価者2名[EV-K27-14-91dad1]による評価入力が必要です。評価者の入力が完了するまではオンライン申請を完了できないため、本人が行う作業と評価者側の作業の進み方を分けて管理してください。\n\n生成AIを自身の学びを深める補助的なツールとして使うことは認められていますが、AIが生成した志望理由・学習計画・自己アピール・任意提出資料を受験生独自の成果物とはみなさないとされています。出願書類は自分で考え、自分の責任で作成することが前提です。[EV-K27-15-91dad1]\n\n### 読者向けの整理のしかた（編集上の助言）\n\nまず自分が該当する出願資格と証明書類を原文で照合し、オンライン手続と郵送を別々のチェック欄に整理してください。次に、提出した説明と面接で伝える内容に食い違いがないか確認すると、準備することを具体化できます。この助言は合否を保証するものではありません。\n\n## 確認してから次の行動へ\n\n最新情報は大学公式サイトでご確認ください。訂正や当日の案内が出ている場合は、その内容を優先してください。出願資格の個別判定と公開前の最新版確認は別途必要です。\n\n## 根拠資料\n\n- [EV-K27-01-91dad1] 公式募集要項 PDF p.8：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=8\n- [EV-K27-02-91dad1] 公式募集要項 PDF p.8：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=8\n- [EV-K27-03-91dad1] 公式募集要項 PDF p.9：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=9\n- [EV-K27-04-91dad1] 公式募集要項 PDF p.9：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=9\n- [EV-K27-05-91dad1] 公式募集要項 PDF p.9：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=9\n- [EV-K27-06-91dad1] 公式募集要項 PDF p.10：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=10\n- [EV-K27-07-91dad1] 公式募集要項 PDF p.16・31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=16\n- [EV-K27-08-91dad1] 公式募集要項 PDF p.31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=31\n- [EV-K27-09-91dad1] 公式募集要項 PDF p.31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=31\n- [EV-K27-10-91dad1] 公式募集要項 PDF p.8：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=8\n- [EV-K27-11-91dad1] 公式募集要項 PDF p.31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=31\n- [EV-K27-12-91dad1] 公式募集要項 PDF p.19：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=19\n- [EV-K27-13-91dad1] 公式募集要項 PDF p.19：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=19\n- [EV-K27-14-91dad1] 公式募集要項 PDF p.13：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=13\n- [EV-K27-15-91dad1] 公式募集要項 PDF p.3：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=3\n"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "claim": {
+        "university": "慶應義塾大学",
+        "faculty": "環境情報学部",
+        "department": null,
+        "admission_method": "2026夏秋AO入試",
+        "fiscal_year": 2027
+      },
+      "text": "# 【2027年度入学】慶應義塾大学 環境情報学部 2026夏秋AO入試｜面接の公式情報と準備の整理\n\n作業基準日：2026-11-01。保存した公式要項の内容を整理した未公開草案です。記載する出願期間・面接日は既に経過しています。制度と実施日程の振り返り、および次の手続の確認に使ってください。\n\n## 面接の日程と所要時間の読み方\n\n対象の学部・学類の第2次選考日は2026年10月24日・2026年10月25日のいずれかと要項に記載されています。集合日時は大学の指定に従ってください。不測の事態により延期等となる場合もあります。[EV-K27-07-91dad1]\n\n面接試験の実施時間の枠は一人30分程度[EV-K27-08-91dad1]です。これは要項上の実施時間枠です。実質的な質疑時間が同じ長さだとは断定できません。待機時間が長くなる場合もあるため、集合日時と大学からの案内を確認してください。\n\n## 大学が示している選考の前提\n\n第1次選考は、オンライン入力・提出書類（資料を含む）により選考する方式です。[EV-K27-10-91dad1]\n\n面接は日本語または英語で行われます。出願時に希望する言語を「日本語」「英語」「どちらでも可」から選ぶため、出願画面の指定も確認してください。[EV-K27-16-91dad1]\n\n出願資格は募集要項p.10の共通条件（1）〜（4）を全て満たすことが必要です。学歴等の条件だけでなく、第一志望としての勉学希望、合格した場合の入学確約などの条件もあります。自分の区分と証明書類を原文に照らして確認してください。[EV-K27-06-91dad1]\n\n## 結果を確認する\n\n要項に記載された最終段階の合格発表は、2026年11月2日 11:00（日本時間）からです。[EV-K27-09-91dad1]\n\n### 練習を組み立てるヒント（編集上の助言）\n\n提出した書類を読み直し、自分が取り組んだこと、その理由、調べた方法、分かったこと、今後学びたいことを自分の言葉で説明できるか確かめてみてください。答えに詰まった部分は、根拠と説明のつながりを見直す手がかりになります。\n\nこれは練習のための整理例です。大学が実際に尋ねた過去問や、非公表の採点基準を再現したものではありません。予定時間だけを目安に暗記するより、質問に応じて説明を組み立てられる状態を目指すとよいでしょう。\n\n## 確認してから次の行動へ\n\n最新情報は大学公式サイトでご確認ください。訂正や当日の案内が出ている場合は、その内容を優先してください。出願資格の個別判定と公開前の最新版確認は別途必要です。\n\n## 根拠資料\n\n- [EV-K27-06-91dad1] 公式募集要項 PDF p.10：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=10\n- [EV-K27-07-91dad1] 公式募集要項 PDF p.16・31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=16\n- [EV-K27-08-91dad1] 公式募集要項 PDF p.31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=31\n- [EV-K27-09-91dad1] 公式募集要項 PDF p.31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=31\n- [EV-K27-10-91dad1] 公式募集要項 PDF p.8：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=8\n- [EV-K27-16-91dad1] 公式募集要項 PDF p.31：https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6#page=31\n"
+    }
+  ]
+}

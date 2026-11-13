@@ -1,0 +1,101 @@
+[
+  {
+    "run_id": "047aa39659f5481b9b9c13e2878fa223",
+    "success": true,
+    "versioning": {
+      "success": true,
+      "requires_review": false,
+      "safe_without_review": true,
+      "exit_code": 0,
+      "report_path": "outputs\\updates-v2\\monitor\\reports\\versions-c7bbc40d34bf4c0695bc6824d0b53c67-impact.json",
+      "summary": {
+        "evidence": 47,
+        "evidence_intact": 47,
+        "evidence_moved": 0,
+        "evidence_page_changed": 0,
+        "evidence_reworded": 0,
+        "evidence_value_change": 0,
+        "evidence_missing": 0,
+        "evidence_unassessed": 0,
+        "articles": 13,
+        "articles_republish_required": 0,
+        "articles_unassessed": 0,
+        "articles_review": 0,
+        "articles_ok": 13
+      },
+      "republish_required": [],
+      "articles_to_review": [],
+      "unassessed_evidence": []
+    }
+  },
+  {
+    "run_id": "117ab1f37b3f4478a6b8a894b2421874",
+    "success": true,
+    "versioning": {
+      "success": true,
+      "requires_review": false,
+      "safe_without_review": true,
+      "exit_code": 0,
+      "report_path": "outputs\\updates-v2\\monitor\\reports\\versions-2e72f25a97db4d1ca19ed5f4aab62c4c-impact.json",
+      "summary": {
+        "evidence": 50,
+        "evidence_intact": 50,
+        "evidence_moved": 0,
+        "evidence_page_changed": 0,
+        "evidence_reworded": 0,
+        "evidence_value_change": 0,
+        "evidence_missing": 0,
+        "evidence_unassessed": 0,
+        "articles": 13,
+        "articles_republish_required": 0,
+        "articles_unassessed": 0,
+        "articles_review": 0,
+        "articles_ok": 13
+      },
+      "republish_required": [],
+      "articles_to_review": [],
+      "unassessed_evidence": [],
+      "source_differences": []
+    }
+  },
+  {
+    "run_id": "398a252949b54cdabf12967343813e4f",
+    "success": true,
+    "versioning": {
+      "success": true,
+      "requires_review": false,
+      "safe_without_review": true,
+      "exit_code": 0,
+      "report_path": "outputs\\updates-v2\\monitor\\reports\\versions-abc2478b51ad4bd98bebe79662319528-impact.json",
+      "summary": {
+        "evidence": 50,
+        "evidence_intact": 50,
+        "evidence_moved": 0,
+        "evidence_page_changed": 0,
+        "evidence_reworded": 0,
+        "evidence_value_change": 0,
+        "evidence_missing": 0,
+        "evidence_unassessed": 0,
+        "articles": 13,
+        "articles_republish_required": 0,
+        "articles_unassessed": 0,
+        "articles_review": 0,
+        "articles_ok": 13
+      },
+      "republish_required": [],
+      "articles_to_review": [],
+      "unassessed_evidence": [],
+      "source_differences": [
+        {
+          "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+          "old_sha256": "2312426eb77548dde53076468397a727ffaa003c6ebefc0b319f89e708b299aa",
+          "new_sha256": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+          "change_class": "byte_only",
+          "diff_report_path": "outputs\\updates-v2\\monitor\\reports\\versions-abc2478b51ad4bd98bebe79662319528-diff-31.json",
+          "changed_blocks": 0,
+          "value_changed_blocks": 0
+        }
+      ]
+    }
+  }
+]

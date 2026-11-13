@@ -1,0 +1,22 @@
+{
+  "audited_at": "2026-11-01",
+  "subject": "Work PR #42 (research/inbox/work-faq-v3)",
+  "audited_head": "b23a9f956d41a6e95128653b40f493a15d305c85",
+  "head_at_posting": "d638d85f3121a181ba98e15cb8585b537d3b30f7",
+  "head_relation": "d638d85 = b23a9f9 + merge of master b22519f; its tree equals the audited trial-merge tree bf4967446fdf8ce3fd7b76338167e7e5c602b9ba",
+  "verdict": "PASS_WITH_WARNINGS",
+  "independence_level": "B (Work's copies read by Claude on the same PC); original DB not_run",
+  "issue_12_complete": false,
+  "m1": "NOT ACCEPTED",
+  "trial_merge_onto_master_b22519f": {"conflicts": 0, "files_changed_outside_work_faq_v3": 0},
+  "regression_on_merged_tree": {"tests_total": 931, "passed": 931, "failed": 0, "skipped": 0, "baseline_changes": 0, "pipeline_tests_passed": 93},
+  "effective_view_from_v06_db_only": {"copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578", "evidence": 50, "articles": 13, "evidence_ids_only_in_db": 0, "evidence_ids_only_in_delivered_view": 0, "article_texts_equal_to_db": 13, "common_key_record_mismatches": 0},
+  "v05_to_v06": {"facts_rows_identical": true, "evidence_revisions_old_rows_changed": 0, "evidence_revisions_added": ["EV-U-61c185ec5771"], "evidence_id_swapped_in_effective_view": {"EV-U-467264a91b3e": "EV-U-61c185ec5771"}, "articles_changed": 2, "articles_unchanged": 11, "old_article_ids_missing": 0, "old_article_texts_changed": 0, "db_audit": {"pass": ["DB-01", "DB-02", "DB-03", "DB-04", "DB-05", "DB-06", "DB-07", "DB-08", "DB-09", "DB-10", "DB-11", "DB-12"], "warn": ["DB-14", "DB-15"], "fail": [], "original_source_comparison": "not_run"}},
+  "faq_five_conditions": {"fields": 5, "values": {"ai_text_underline_required": true, "simple_spellcheck_underline_required": false, "human_advice_underline_required": false, "human_advice_activity_report_required": true, "ai_visual_disclosure_required": true}, "proof_references": 6, "unique_source_ranges": 5, "quotes_found_once_in_saved_html": 6, "stored_offsets_reproduced": 6, "saved_html_sha256_recomputed_equal": true, "live_page_raw_sha256_equal_to_saved": true, "live_quotes_found": 6},
+  "original_source_quote_check": {"evidence_checked": 50, "pass": 49, "fail": 0, "not_run": 1, "not_run_ids": ["EV-U-b9e7fb33158b"], "note": "48 by PDF (SHA recomputed, quote on the stated page) + the FAQ (HTML); the Keio notice HTML original is not on this PC"},
+  "stage_issue_12": {"records_with_stage_in_delivered_view": 0, "ordinal_flips_detected": "10/14", "missed": 4, "missed_records": ["EV-T27-04-49cb4d", "EV-U-2895dfe26d3b"], "with_in_memory_assignment_not_work_data": "14/14", "completed": false},
+  "fullview": {"evidence": 50, "articles": 13, "passed": 3, "failed": 0, "not_run": 2, "unverified_meanings": 20, "id_collisions": 0, "flips_detected": "82/83", "flips_silent_miss": 1},
+  "claude_own_mutations_on_faq_section": {"total": 26, "detected": 22, "missed": 4, "missed_kind": "negation or narrowing of the AI-text underline condition in new wording"},
+  "id_reuse_and_g05": {"id_overlap_facts_revisions": 0, "other_delivery_same_id_different_identity": 0, "g05_resolved": false, "g04_resolved": false},
+  "not_counted": ["Work's own qa/*.json", "CI results (read only)"]
+}

@@ -1,0 +1,796 @@
+{
+  "current_editions": [
+    {
+      "source_id": "tsukuba-guidelines_index",
+      "sha256": "ea1d45010aef7f5d53c922d6284b99dbbb72295180e0bfe35b4d105e0d8c6fdd",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-news",
+      "sha256": "d82a2164135ca9809f934696bd1e27027bf855cbc12b6464bacc94c4820b4b72",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-changes",
+      "sha256": "aa6c2e5fad3404bbb780ddb15b2665bdd8d1f298f7dc2835268874ca0caf0907",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-faq",
+      "sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-general_exam_correction_not_AC",
+      "sha256": "a47c6a6b2f92855540d2579edcc35b92e1db0d8847f2eb87e347bee49f69052d",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-AC_fee_refund_notice",
+      "sha256": "3318e0986e22a7144bd6fd41e955d7e03b1ac15338d5dd0a0c77b90eab88ab7a",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-original_pdf",
+      "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-guidelines_index",
+      "sha256": "87519ed85f76f64e2751b0c1103c8af8a1d812a893a53773fcb27e8b527fbb70",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-news",
+      "sha256": "dc71e0364dafb855832014dad0a026f6ef84ddf653994393116c5d44f4277980",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-all_admissions_news",
+      "sha256": "32f7c73644958850e14b89029878bdca0565668367ea1932bfe38c1d84d92776",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-faq_index",
+      "sha256": "4d5087bb2f70d4e81fa6cdafc72c25854b42f390af945d8ee56166cbb0b3885b",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-emergency_maintenance",
+      "sha256": "d38b9db4c1da977109b2ac1b44f028afb8c5ec58d2116f71c11a375b202c764c",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-2027_AO_change",
+      "sha256": "56e810a7841dcf7fe72ff33a8ad9a292d2babf8caf4433401ba09f4cd393f55d",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-2027_AO_change_detail",
+      "sha256": "90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-2027_AO_advance_notice",
+      "sha256": "b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-release_notice",
+      "sha256": "fc75225b368cff99afee89637c4b37b6437403d243a91f4169ca849badccd170",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-original_pdf",
+      "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "niigata-guidelines_index",
+      "sha256": "68c30d2f23105c400816ea329a6f741ba0eb1b886e938070d5002b6bb0c09c61",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "niigata-original_pdf",
+      "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-news_page_2",
+      "sha256": "d815638d6b1ca66bb9d2a31c650b58bd6cf182a04da0144d005a49eb5627d790",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-news_page_3",
+      "sha256": "a9a2d7a6b22cb8226216444e93fe99634e65034ce0c2f2237042202fa5189662",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-news_page_4",
+      "sha256": "5849f632edc06bf914cea5adfc49b5bfb70287bc13e0a72b69c1275ad8af9d81",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "keio-news_page_5",
+      "sha256": "5064058ae59a163c53c42b84c562f1db708fedab93fc7cfedb54e3f57783c9a6",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-2027_changes_pdf",
+      "sha256": "1b566bdf8780b4d58b86731e13c6f453274cf0c43248764744828f419a7d0407",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-disaster_fee_waiver",
+      "sha256": "2b97f244d3de5eb9e1b7709691cbe924a995899baca4aa80f845296c5c07df91",
+      "retrieved_at": "2026-11-01"
+    },
+    {
+      "source_id": "tsukuba-refund_details",
+      "sha256": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+      "retrieved_at": "2026-11-01"
+    }
+  ],
+  "evidence": {
+    "EV-T27-01-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "quota",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "intact"
+        },
+        {
+          "page": 5,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-02-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "policy",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-03-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "first_stage",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-04-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "intact"
+        },
+        {
+          "page": 5,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-05-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "online_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-06-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "postal_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-07-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "eligibility",
+      "proofs": [
+        {
+          "page": 6,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-08-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "common_test",
+      "proofs": [
+        {
+          "page": 6,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-09-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "second_stage_date",
+      "proofs": [
+        {
+          "page": 11,
+          "status": "intact"
+        },
+        {
+          "page": 4,
+          "status": "intact"
+        },
+        {
+          "page": 12,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-10-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "final_result",
+      "proofs": [
+        {
+          "page": 12,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-11-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "first_stage_result",
+      "proofs": [
+        {
+          "page": 4,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-12-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "statement_length",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-13-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "recommendation_format",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        },
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-14-49cb4d": {
+      "status": "intact",
+      "snapshot": "tsukuba-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview_scope",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-01-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "quota",
+      "proofs": [
+        {
+          "page": 8,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-02-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "entry",
+      "proofs": [
+        {
+          "page": 8,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-03-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "online_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-04-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "maintenance",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-05-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "postal_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-06-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "eligibility",
+      "proofs": [
+        {
+          "page": 10,
+          "status": "intact"
+        },
+        {
+          "page": 10,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-07-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "second_stage_date",
+      "proofs": [
+        {
+          "page": 16,
+          "status": "intact"
+        },
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-08-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        },
+        {
+          "page": 31,
+          "status": "intact"
+        },
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-09-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "final_result",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-10-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "first_stage",
+      "proofs": [
+        {
+          "page": 8,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-11-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "first_stage_result",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-12-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "personal_statement",
+      "proofs": [
+        {
+          "page": 19,
+          "status": "intact"
+        },
+        {
+          "page": 19,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-13-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "optional_materials",
+      "proofs": [
+        {
+          "page": 19,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-14-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "referees",
+      "proofs": [
+        {
+          "page": 13,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-15-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "generative_ai_policy",
+      "proofs": [
+        {
+          "page": 3,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-16-91dad1": {
+      "status": "intact",
+      "snapshot": "keio-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview_language",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-N27-01-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "quota",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-N27-02-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "common_test",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-N27-03-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview_scope",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-N27-04-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-N27-05-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "postal_period",
+      "proofs": [
+        {
+          "page": 38,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-H27-01-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "quota",
+      "proofs": [
+        {
+          "page": 17,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-H27-02-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "common_test",
+      "proofs": [
+        {
+          "page": 17,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-H27-03-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview_scope",
+      "proofs": [
+        {
+          "page": 18,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-H27-04-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "interview",
+      "proofs": [
+        {
+          "page": 18,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-H27-05-2d1ee8": {
+      "status": "intact",
+      "snapshot": "niigata-original_pdf",
+      "same_edition": true,
+      "fact_key": "postal_period",
+      "proofs": [
+        {
+          "page": 38,
+          "status": "intact"
+        }
+      ]
+    }
+  },
+  "articles": {
+    "tsukuba-klis-ac-2027:overview:39b5d2172672c192": {
+      "status": "ok",
+      "cited": [
+        "EV-T27-01-49cb4d",
+        "EV-T27-02-49cb4d",
+        "EV-T27-03-49cb4d",
+        "EV-T27-04-49cb4d",
+        "EV-T27-05-49cb4d",
+        "EV-T27-06-49cb4d",
+        "EV-T27-07-49cb4d",
+        "EV-T27-08-49cb4d",
+        "EV-T27-09-49cb4d",
+        "EV-T27-10-49cb4d",
+        "EV-T27-11-49cb4d",
+        "EV-T27-12-49cb4d",
+        "EV-T27-13-49cb4d"
+      ],
+      "reasons": []
+    },
+    "tsukuba-klis-ac-2027:interview:f57bf5213da13d66": {
+      "status": "ok",
+      "cited": [
+        "EV-T27-02-49cb4d",
+        "EV-T27-03-49cb4d",
+        "EV-T27-04-49cb4d",
+        "EV-T27-07-49cb4d",
+        "EV-T27-09-49cb4d",
+        "EV-T27-10-49cb4d",
+        "EV-T27-14-49cb4d"
+      ],
+      "reasons": []
+    },
+    "keio-environment-ao-2026s-2027:overview:c763723defb99d32": {
+      "status": "ok",
+      "cited": [
+        "EV-K27-01-91dad1",
+        "EV-K27-02-91dad1",
+        "EV-K27-03-91dad1",
+        "EV-K27-04-91dad1",
+        "EV-K27-05-91dad1",
+        "EV-K27-06-91dad1",
+        "EV-K27-07-91dad1",
+        "EV-K27-08-91dad1",
+        "EV-K27-09-91dad1",
+        "EV-K27-10-91dad1",
+        "EV-K27-11-91dad1",
+        "EV-K27-12-91dad1",
+        "EV-K27-13-91dad1",
+        "EV-K27-14-91dad1",
+        "EV-K27-15-91dad1"
+      ],
+      "reasons": []
+    },
+    "keio-environment-ao-2026s-2027:interview:b9609d0168420d09": {
+      "status": "ok",
+      "cited": [
+        "EV-K27-06-91dad1",
+        "EV-K27-07-91dad1",
+        "EV-K27-08-91dad1",
+        "EV-K27-09-91dad1",
+        "EV-K27-10-91dad1",
+        "EV-K27-16-91dad1"
+      ],
+      "reasons": []
+    },
+    "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f": {
+      "status": "ok",
+      "cited": [
+        "EV-N27-01-2d1ee8",
+        "EV-N27-02-2d1ee8",
+        "EV-N27-04-2d1ee8",
+        "EV-N27-05-2d1ee8"
+      ],
+      "reasons": []
+    },
+    "niigata-law-recommendation-I-2027:documents:1085376afccdcc39": {
+      "status": "ok",
+      "cited": [
+        "EV-N27-01-2d1ee8",
+        "EV-N27-05-2d1ee8"
+      ],
+      "reasons": []
+    },
+    "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68": {
+      "status": "ok",
+      "cited": [
+        "EV-N27-02-2d1ee8",
+        "EV-N27-03-2d1ee8",
+        "EV-N27-04-2d1ee8"
+      ],
+      "reasons": []
+    },
+    "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a": {
+      "status": "ok",
+      "cited": [
+        "EV-H27-01-2d1ee8",
+        "EV-H27-02-2d1ee8",
+        "EV-H27-04-2d1ee8",
+        "EV-H27-05-2d1ee8"
+      ],
+      "reasons": []
+    },
+    "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6": {
+      "status": "ok",
+      "cited": [
+        "EV-H27-01-2d1ee8",
+        "EV-H27-05-2d1ee8"
+      ],
+      "reasons": []
+    },
+    "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859": {
+      "status": "ok",
+      "cited": [
+        "EV-H27-02-2d1ee8",
+        "EV-H27-03-2d1ee8",
+        "EV-H27-04-2d1ee8"
+      ],
+      "reasons": []
+    }
+  },
+  "republish_required": [],
+  "articles_to_review": [],
+  "articles_unassessed": [],
+  "unassessed_evidence": [],
+  "summary": {
+    "evidence": 40,
+    "evidence_intact": 40,
+    "evidence_moved": 0,
+    "evidence_page_changed": 0,
+    "evidence_reworded": 0,
+    "evidence_value_change": 0,
+    "evidence_missing": 0,
+    "evidence_unassessed": 0,
+    "articles": 10,
+    "articles_republish_required": 0,
+    "articles_unassessed": 0,
+    "articles_review": 0,
+    "articles_ok": 10
+  }
+}

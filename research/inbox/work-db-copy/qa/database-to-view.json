@@ -1,0 +1,9 @@
+{
+  "db_copy_matches_delivered_active_view": true,
+  "effective_evidence": 50,
+  "current_articles": 13,
+  "db_copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+  "db_copy_unchanged": true,
+  "scope": "Work read-only checks; not independent Claude execution",
+  "original_sources_on_github": false
+}

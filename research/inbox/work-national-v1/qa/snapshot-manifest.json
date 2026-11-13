@@ -1,0 +1,184 @@
+[
+  {
+    "source_id": "tsukuba-guidelines_index",
+    "url": "https://ac.tsukuba.ac.jp/apply/application-guidelines/",
+    "sha256": "ea1d45010aef7f5d53c922d6284b99dbbb72295180e0bfe35b4d105e0d8c6fdd",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-news",
+    "url": "https://ac.tsukuba.ac.jp/",
+    "sha256": "d82a2164135ca9809f934696bd1e27027bf855cbc12b6464bacc94c4820b4b72",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-changes",
+    "url": "https://ac.tsukuba.ac.jp/examination/announcement/",
+    "sha256": "aa6c2e5fad3404bbb780ddb15b2665bdd8d1f298f7dc2835268874ca0caf0907",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-faq",
+    "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+    "sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-general_exam_correction_not_AC",
+    "url": "https://ac.tsukuba.ac.jp/news/13516/",
+    "sha256": "a47c6a6b2f92855540d2579edcc35b92e1db0d8847f2eb87e347bee49f69052d",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-AC_fee_refund_notice",
+    "url": "https://ac.tsukuba.ac.jp/news/13380/",
+    "sha256": "3318e0986e22a7144bd6fd41e955d7e03b1ac15338d5dd0a0c77b90eab88ab7a",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-original_pdf",
+    "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+    "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+    "retrieved_at": "2026-11-01",
+    "page_count": 15
+  },
+  {
+    "source_id": "keio-guidelines_index",
+    "url": "https://www.keio.ac.jp/ja/admissions/faculty/examinations/ao-sfc-pem/",
+    "sha256": "87519ed85f76f64e2751b0c1103c8af8a1d812a893a53773fcb27e8b527fbb70",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-news",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/",
+    "sha256": "dc71e0364dafb855832014dad0a026f6ef84ddf653994393116c5d44f4277980",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-all_admissions_news",
+    "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/",
+    "sha256": "32f7c73644958850e14b89029878bdca0565668367ea1932bfe38c1d84d92776",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-faq_index",
+    "url": "https://www.keio.ac.jp/ja/admissions/faculty/faq/",
+    "sha256": "4d5087bb2f70d4e81fa6cdafc72c25854b42f390af945d8ee56166cbb0b3885b",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-emergency_maintenance",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+    "sha256": "d38b9db4c1da977109b2ac1b44f028afb8c5ec58d2116f71c11a375b202c764c",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-2027_AO_change",
+    "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/20240303-01/",
+    "sha256": "56e810a7841dcf7fe72ff33a8ad9a292d2babf8caf4433401ba09f4cd393f55d",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-2027_AO_change_detail",
+    "url": "https://www.keio.ac.jp/files/90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+    "sha256": "90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-2027_AO_advance_notice",
+    "url": "https://www.keio.ac.jp/files/b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+    "sha256": "b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-release_notice",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/20260518/",
+    "sha256": "fc75225b368cff99afee89637c4b37b6437403d243a91f4169ca849badccd170",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-original_pdf",
+    "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+    "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+    "retrieved_at": "2026-11-01",
+    "page_count": 40
+  },
+  {
+    "source_id": "niigata-guidelines_index",
+    "url": "https://www.niigata-u.ac.jp/admissions/faculty/recommendation/",
+    "sha256": "68c30d2f23105c400816ea329a6f741ba0eb1b886e938070d5002b6bb0c09c61",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "niigata-original_pdf",
+    "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+    "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+    "retrieved_at": "2026-11-01",
+    "page_count": 69
+  },
+  {
+    "source_id": "keio-news_page_2",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=2",
+    "sha256": "d815638d6b1ca66bb9d2a31c650b58bd6cf182a04da0144d005a49eb5627d790",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-news_page_3",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=3",
+    "sha256": "a9a2d7a6b22cb8226216444e93fe99634e65034ce0c2f2237042202fa5189662",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-news_page_4",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=4",
+    "sha256": "5849f632edc06bf914cea5adfc49b5bfb70287bc13e0a72b69c1275ad8af9d81",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "keio-news_page_5",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=5",
+    "sha256": "5064058ae59a163c53c42b84c562f1db708fedab93fc7cfedb54e3f57783c9a6",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-2027_changes_pdf",
+    "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/R9_nyusi_henkouten_202608ide.pdf",
+    "sha256": "1b566bdf8780b4d58b86731e13c6f453274cf0c43248764744828f419a7d0407",
+    "retrieved_at": "2026-11-01",
+    "page_count": 7
+  },
+  {
+    "source_id": "tsukuba-disaster_fee_waiver",
+    "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/20260825140500.pdf",
+    "sha256": "2b97f244d3de5eb9e1b7709691cbe924a995899baca4aa80f845296c5c07df91",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  },
+  {
+    "source_id": "tsukuba-refund_details",
+    "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+    "sha256": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+    "retrieved_at": "2026-11-01",
+    "page_count": 1
+  }
+]

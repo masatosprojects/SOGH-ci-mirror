@@ -1,0 +1,22 @@
+{
+  "event_id": "EVT-20261106-TSUKUBA-001",
+  "source_url": "https://admission.example.com/mock_ac_guideline_update.html",
+  "university": "筑波大学",
+  "target_academic_year": 2027,
+  "target_admission_type": "AC入試",
+  "detected_at": "2026-11-06T23:00:00+09:00",
+  "change_type": "guideline_text_revision",
+  "checksum_before": "9a41e3824654577fe1c880a9cde1dd38",
+  "checksum_after": "9a115f621ddc7f0fde9afcc4ec291176",
+  "simulated_diff": {
+    "section": "2. 出願書類の提出方法",
+    "before_text": "出願書類はすべて書留速達郵便にて指定期日までに郵送すること。",
+    "after_text": "出願書類のうち自己評価書および活動報告書は、指定WebポータルからのPDFアップロード提出とし、原本証明書のみ郵送すること。"
+  },
+  "pipeline_routing": {
+    "requires_llm_analysis": true,
+    "analysis_scope": "extract_submission_method_change",
+    "target_schema": "AdmissionGuidelineRevisionCandidate",
+    "safety_gate": "human_verification_pending"
+  }
+}

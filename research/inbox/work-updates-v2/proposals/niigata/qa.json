@@ -1,0 +1,16 @@
+{
+  "qa_commit": "475a1f55ae09bae188f3c5266fa261030f84e9a3",
+  "articles": [
+    {
+      "article_id": "niigata-law-recommendation-I-2027:documents:fe1a364610ace53a",
+      "ok": true,
+      "findings": []
+    },
+    {
+      "article_id": "niigata-humanities-recommendation-II-2027:documents:7a26531500f83178",
+      "ok": true,
+      "findings": []
+    }
+  ],
+  "active": false
+}

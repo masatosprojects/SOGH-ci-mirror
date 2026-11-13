@@ -1,0 +1,239 @@
+{
+  "kind": "disposable_copied_real_db",
+  "at": "2026-11-01T22:05:44.483549+00:00",
+  "note": "Output artifacts only; initial source identity and preservation comparisons are in the two harness reports. No DB content is uploaded.",
+  "artifacts": {
+    "g4-initial/_reference/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/S1/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/S2/child-before-candidate_crash-6636.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/S2/copy.sqlite": {
+      "sha256": "f1b342e72f9d857d125a138807879fa2eb37d9064dc5b7c58c74cf32776d4567",
+      "bytes": 1744896
+    },
+    "g4-initial/S2/rec-before.sqlite": {
+      "sha256": "6d2a33019025a82909eed4e9b09f686e1166df743f5bb6f09a8ce34e4e353032",
+      "bytes": 1744896
+    },
+    "g4-initial/S3/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/S3/copy.sqlite": {
+      "sha256": "b0b5ebaa9d8b71470237892f36a5fed5069e10281f496f9a5e13810d582e7d56",
+      "bytes": 1744896
+    },
+    "g4-initial/S4/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/S4/child-before-rollback_last-1820.sqlite": {
+      "sha256": "55047c6c682c3d3c2b3ad245d6b002fa87067452f42ff824c4ce8330f1dca5be",
+      "bytes": 1744896
+    },
+    "g4-initial/S4/copy.sqlite": {
+      "sha256": "76d31cf122022d500692d7ac39860f76215c37a31fe4a06d3d31d6271d1be852",
+      "bytes": 1753088
+    },
+    "g4-initial/S5/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/S5/copy.sqlite": {
+      "sha256": "7553f7147701f3aee9b7eb8608d318f44fa927e28dbb92b3c13e601608e4164f",
+      "bytes": 1748992
+    },
+    "g4-initial/S6/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X1/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X1/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X10/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_0/child-before-stage_once-10516.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_0/child-before-stage_once-4392.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_0/copy.sqlite": {
+      "sha256": "79c9010472f046ec156ff5d8e13f60f941764941e804978b37ae9d4b92dee5fa",
+      "bytes": 1748992
+    },
+    "g4-initial/X11_1/child-before-stage_once-16720.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_1/child-before-stage_once-8292.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_1/copy.sqlite": {
+      "sha256": "98ae8e6a3bf6afa80790f578f818d70dc1a20c4df4755db9444f8b65ef57e4f4",
+      "bytes": 1748992
+    },
+    "g4-initial/X11_2/child-before-stage_once-20588.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_2/child-before-stage_once-9312.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X11_2/copy.sqlite": {
+      "sha256": "a0648123240e20f80935b45dacc027f39f1b1d5da40660aee28b2d37b4d52e02",
+      "bytes": 1748992
+    },
+    "g4-initial/X12/b.sqlite": {
+      "sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "bytes": 7
+    },
+    "g4-initial/X12/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X2/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X2/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X3/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X3/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X4/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X4/copy.sqlite": {
+      "sha256": "cd76646f4bf58d08ec7e222dcdcca39f904056cf21f5a1bb432d1aa5f4096f67",
+      "bytes": 1744896
+    },
+    "g4-initial/X5/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X5/copy.sqlite": {
+      "sha256": "17c29240079a3341985d7550d1a557d63c70f2c0323e40f8101d1d88cd8abb0a",
+      "bytes": 1744896
+    },
+    "g4-initial/X6/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X6/copy.sqlite": {
+      "sha256": "e201378606c976d303fbe42be475a13df93d680b43e78f5221c7823d7b33459a",
+      "bytes": 1744896
+    },
+    "g4-initial/X7/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X7/copy.sqlite": {
+      "sha256": "3ed6df69b0e01152b11599f8831d43b41858eef60276fbd2962542439b082ac2",
+      "bytes": 1744896
+    },
+    "g4-initial/X8/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X8/copy.sqlite": {
+      "sha256": "e1c930e0cd769a3b14b7d3b002030911a6632b4bf30ef2ef5b9b07021b983957",
+      "bytes": 1744896
+    },
+    "g4-initial/X9A/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X9A/copy.sqlite": {
+      "sha256": "6e57262340f7d7ca5723e38e774d72956f536a2b8970533996d7f4ae29754327",
+      "bytes": 1761280
+    },
+    "g4-initial/X9B/child-before-finalize_crash-13828.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X9B/copy.sqlite": {
+      "sha256": "905a0c013f6a4dce93322bbd53613057fe118268e6d30e457987bb9954259445",
+      "bytes": 1744896
+    },
+    "g4-initial/X9B/rb.sqlite": {
+      "sha256": "3d40283415af562ad8ed88d2adb9241b04f41b79e6e987215445e053ac362d40",
+      "bytes": 1744896
+    },
+    "g4-initial/X9C/b.sqlite": {
+      "sha256": "1e95e6418bb39df5f28e750f9cba92067138295bbd6c934270e595efeaea68ef",
+      "bytes": 1744896
+    },
+    "g4-initial/X9C/copy.sqlite": {
+      "sha256": "bfa48017a5d4e0cbb0c48ea6da9d77f8d0bc678620635cdbada5a3240bb47587",
+      "bytes": 1761280
+    },
+    "additive-initial/A2/copy.sqlite": {
+      "sha256": "bd00307a823a2e34a3a6755733263dffcda01033b14e084e856c73a21f041399",
+      "bytes": 1744896
+    },
+    "additive-initial/A5/copy.sqlite": {
+      "sha256": "7ff297708b11d72acbb67ef9bab313fe97f1a0cfa83d3c747307f76b658b356c",
+      "bytes": 1519616
+    },
+    "additive-initial/A6/copy.sqlite": {
+      "sha256": "bb9cc647192a101ed720c14dbe477fa6ee45ba1a797c367e4c34d2707c9fc40d",
+      "bytes": 1744896
+    },
+    "additive-initial/B1/copy.sqlite": {
+      "sha256": "bd470c202cd5aa81d06e35fdf797fd12ee9a93703f945073ac1a8794de61586b",
+      "bytes": 1744896
+    },
+    "additive-initial/B2/copy.sqlite": {
+      "sha256": "17bafdeb51aee9b78ff85619b665b52e92928d9bcf6f4a0571bef724f03b71c1",
+      "bytes": 1744896
+    },
+    "additive-initial/B6_restored.sqlite": {
+      "sha256": "e548aa5c453cff67cd3bfe3edd8be4adc92dfaa3ca7970f3cca71d63985b0f09",
+      "bytes": 1744896
+    },
+    "additive-initial/B7/copy.sqlite": {
+      "sha256": "b6d52851c377538c22eb4d007d090819188dfeaaab05ca5e703b575647178fb2",
+      "bytes": 1744896
+    },
+    "additive-initial/C1/copy.sqlite": {
+      "sha256": "b79787a11128c60d5b6a1cedf8bc7544d56ed14a99b8893f9bea879624074493",
+      "bytes": 1744896
+    },
+    "additive-initial/D1/copy.sqlite": {
+      "sha256": "be555968f64b837077215bf18f1525bd76863ade35b329d5d23c8fc874f2c126",
+      "bytes": 1744896
+    },
+    "additive-initial/E1/copy.sqlite": {
+      "sha256": "03f08c79e96a557c600823d2d64d10f8eb9c9e06be9e1932478a0477c47562ed",
+      "bytes": 1744896
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "base_record": {
+    "evidence_id": "EV-U-d3bea8f5a272",
+    "logical_id": "tsukuba-ac-ai-faq",
+    "case_id": null,
+    "university": "筑波大学",
+    "faculty": null,
+    "department": null,
+    "admission_method": "アドミッションセンター入試",
+    "fiscal_year": null,
+    "fact_key": "generative_ai_policy",
+    "value": {
+      "allowed": "生成AI使用時の表示方法がFAQで案内されている",
+      "not_accepted": ""
+    },
+    "scope": "general_admission_faq",
+    "scope_status": "unknown",
+    "scope_reverification": "required",
+    "source_url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+    "source_sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+    "source_pdf_sha256": null,
+    "source_kind": "html",
+    "retrieved_at": "2026-11-01",
+    "source_role": "faq",
+    "published_date": null,
+    "applicability": "公式FAQのAC入試節に限定。適用年度・学類・実施年の対象は原典から確定できない（UNKNOWN、STR-076）。特定の年度・学類の出願可否や選考の判定、模擬面接の事実断定の根拠にしない",
+    "proofs": [
+      {
+        "page": 1,
+        "quote": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？\n文章チェックも含め、生成AIが実際に生成・修正した箇所には、すべて下線を引いてください。また、その修正によって間接的にでも内容が影響された場合には、影響した箇所すべてに下線を引いてください。Microsoft WORD等の文書校正機能による単純な誤字脱字修正の場合は、下線を引く必要はありません。他人の添削・助言による修正等には、下線を引く必要はありませんが、活動経過報告書での記載は必須です。",
+        "normalized_start": 7918,
+        "normalized_end": 8146,
+        "section": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
+        "source_kind": "html"
+      },
+      {
+        "page": 1,
+        "quote": "生成AIで作成した画像（図や表等も含む）はどのようにすればよいでしょうか？\n画像・図・表等の説明文や脚注に、生成AIで作成したことが分かるように明示してください。",
+        "normalized_start": 8146,
+        "normalized_end": 8226,
+        "section": "生成AIで作成した画像（図や表等も含む）はどのようにすればよいでしょうか？",
+        "source_kind": "html"
+      }
+    ],
+    "sentences": [
+      "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、その修正で間接的に影響した箇所すべてに下線を引くよう案内しています。",
+      "文書校正機能による単純な誤字脱字修正は下線不要です。他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は必須です。",
+      "生成AIで作成した画像・図・表等は、説明文や脚注にその使用を明示します。"
+    ],
+    "temporal_status": "current_faq_as_of_retrieval_publication_date_unknown",
+    "parent_evidence_id": null,
+    "publication_allowed": false,
+    "profile_version": "faq-conditions-2026-11-08-v2-scope-unknown"
+  },
+  "values": {
+    "ai_text_underline_required": true,
+    "simple_spellcheck_underline_required": false,
+    "human_advice_underline_required": false,
+    "human_advice_activity_report_required": true,
+    "ai_visual_disclosure_required": true
+  },
+  "proofs": [
+    {
+      "page": 1,
+      "quote": "文章チェックも含め、生成AIが実際に生成・修正した箇所には、すべて下線を引いてください。",
+      "normalized_start": 7950,
+      "normalized_end": 7994,
+      "section": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
+      "source_kind": "html"
+    },
+    {
+      "page": 1,
+      "quote": "また、その修正によって間接的にでも内容が影響された場合には、影響した箇所すべてに下線を引いてください。",
+      "normalized_start": 7994,
+      "normalized_end": 8045,
+      "section": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
+      "source_kind": "html"
+    },
+    {
+      "page": 1,
+      "quote": "Microsoft WORD等の文書校正機能による単純な誤字脱字修正の場合は、下線を引く必要はありません。",
+      "normalized_start": 8045,
+      "normalized_end": 8097,
+      "section": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
+      "source_kind": "html"
+    },
+    {
+      "page": 1,
+      "quote": "他人の添削・助言による修正等には、下線を引く必要はありませんが、活動経過報告書での記載は必須です。",
+      "normalized_start": 8097,
+      "normalized_end": 8146,
+      "section": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
+      "source_kind": "html"
+    },
+    {
+      "page": 1,
+      "quote": "他人の添削・助言による修正等には、下線を引く必要はありませんが、活動経過報告書での記載は必須です。",
+      "normalized_start": 8097,
+      "normalized_end": 8146,
+      "section": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
+      "source_kind": "html"
+    },
+    {
+      "page": 1,
+      "quote": "画像・図・表等の説明文や脚注に、生成AIで作成したことが分かるように明示してください。",
+      "normalized_start": 8183,
+      "normalized_end": 8226,
+      "section": "生成AIで作成した画像（図や表等も含む）はどのようにすればよいでしょうか？",
+      "source_kind": "html"
+    }
+  ],
+  "field_proofs": {
+    "ai_text_underline_required": {
+      "value": true,
+      "actor": "ai_text",
+      "action": "underline",
+      "proof_indices": [
+        0,
+        1
+      ],
+      "exceptions": [
+        "simple_spellcheck_is_a_different_condition"
+      ],
+      "applies_to": null
+    },
+    "simple_spellcheck_underline_required": {
+      "value": false,
+      "actor": "simple_spellcheck",
+      "action": "underline",
+      "proof_indices": [
+        2
+      ],
+      "exceptions": [
+        "not_an_exemption_for_AI_content_generation_or_revision"
+      ],
+      "applies_to": null
+    },
+    "human_advice_underline_required": {
+      "value": false,
+      "actor": "human_advice",
+      "action": "underline",
+      "proof_indices": [
+        3
+      ],
+      "exceptions": [
+        "activity_report_still_required"
+      ],
+      "applies_to": null
+    },
+    "human_advice_activity_report_required": {
+      "value": true,
+      "actor": "human_advice",
+      "action": "activity_report",
+      "proof_indices": [
+        4
+      ],
+      "exceptions": [],
+      "applies_to": null
+    },
+    "ai_visual_disclosure_required": {
+      "value": true,
+      "actor": "ai_visual",
+      "action": "disclosure",
+      "proof_indices": [
+        5
+      ],
+      "exceptions": [
+        "visual_disclosure_is_not_text_underlining"
+      ],
+      "applies_to": null
+    }
+  },
+  "unknown_conditions": [],
+  "retrieved_at": "2026-11-01T05:31:11.895616Z",
+  "published_date": null,
+  "contract_status": "pending"
+}

@@ -1,0 +1,15 @@
+{
+  "universities": 3,
+  "facts": 50,
+  "articles": 13,
+  "latest_contract_QA": "all 13 positive articles pass",
+  "service_running": false,
+  "publication_allowed": false,
+  "approved_under_registry": "1.5.1",
+  "latest_checked_registry": "1.5.1",
+  "github_pr": 33,
+  "github_ci": "final integration pending",
+  "merged": false,
+  "whole_view_regression": "fail: flip 78/83; thresholds unchanged; Issue #39",
+  "semantic_unverified": 22
+}

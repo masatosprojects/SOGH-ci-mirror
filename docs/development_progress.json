@@ -1,0 +1,2210 @@
+{
+  "schema": "development-progress/1",
+  "updated": "2026-11-13",
+  "rules": [
+    "進捗は、工程ごとの受け入れ条件（criteria）のうち、証拠つきで verified のものだけを数える。テスト件数・PR数は進捗ではない。",
+    "合成DB／リポジトリのサンプルでの成功は、実データでの検証（real_data）に数えない。未確認・未実施は加算しない。",
+    "state の accepted（受け入れ済み）と operational（運用で実証済み）は別。operational は限定運用（P9）以降でしか付けない。"
+  ],
+  "states": [
+    "not_started",
+    "design",
+    "implementing",
+    "blocked",
+    "QA_pending",
+    "accepted",
+    "operational"
+  ],
+  "processes": [
+    {
+      "id": "P0",
+      "name": "事業要件・情報表示・権限・公開ルール",
+      "owner": "User＋両者",
+      "criteria": [
+        {
+          "id": "P0.c1",
+          "text": "利用対象（読者）と記事タイプ、対象外（合否の断定・個人別の資格判定）が決まっている",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P0.c2",
+          "text": "情報表示規約（入学年度と実施年度、取得日と公表日、確定と未確認、失効情報、訂正の見せ方）が文書になっている",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P0.c3",
+          "text": "公開決裁・編集確認・下書き保存許可の権限（いずれもユーザー本人。AI・CIの成功は承認でない）と、下書き→確認→最終承認の順序が文書で決まっている（決定のみ。実装は P7）",
+          "verified": true,
+          "evidence": "docs/PUBLICATION_POLICY.md（ユーザーの決定 2026-11-01）"
+        },
+        {
+          "id": "P0.c4",
+          "text": "リスク・予算（API費用上限、著作権、note規約、人の確認範囲）が決まっている",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P0-WP0.1",
+          "name": "利用対象と記事タイプ",
+          "purpose": "誰のどの疑問に答えるかを固定する",
+          "inputs": [],
+          "work": "読者像、記事タイプ（総合・書類・面接・訂正）、対象外を決める",
+          "deliverables": [
+            "docs/PRODUCT_SCOPE.md（未作成）"
+          ],
+          "owner": "User",
+          "positive_tests": [
+            "各記事タイプに読者の疑問が1つ以上対応する"
+          ],
+          "negative_tests": [
+            "合否の断定や個人別の資格判定を含まない"
+          ],
+          "done_criteria": "ユーザーが決定を記録",
+          "evidence": "",
+          "unverified": "ユーザーの決定が未記録",
+          "next": "ユーザーの判断",
+          "state": "not_started"
+        },
+        {
+          "id": "P0-WP0.2",
+          "name": "情報表示規約",
+          "purpose": "年度・日付・確度の表示を統一する",
+          "inputs": [
+            "P0-WP0.1"
+          ],
+          "work": "入学年度/実施年度、取得日/公表日、確定/未確認、失効、訂正の表示規則",
+          "deliverables": [
+            "docs/DISPLAY_RULES.md（未作成）"
+          ],
+          "owner": "User＋両者",
+          "positive_tests": [
+            "各規則に記事の例がある"
+          ],
+          "negative_tests": [
+            "失効した情報を現在の案内として書かない（QAの作業基準日検査は実装済み）"
+          ],
+          "done_criteria": "規約が文書化され QA が参照する",
+          "evidence": "作業基準日の検査（src/verify/as_of.py）は実装済みだが、表示規約の文書は無い",
+          "unverified": "規約の合意",
+          "next": "WP0.1の後に草案",
+          "state": "design"
+        },
+        {
+          "id": "P0-WP0.3",
+          "name": "公開決裁",
+          "purpose": "公開の権限と停止の責任分界",
+          "inputs": [
+            "P0-WP0.1"
+          ],
+          "work": "決定（ユーザー、2026-11-01）：編集確認・下書き保存許可・最終公開承認はユーザー本人。非公開下書きを最終公開承認より前に保存。AIは生成とQAまで。9つの状態と承認イベントの契約を文書化",
+          "deliverables": [
+            "docs/PUBLICATION_POLICY.md",
+            "src/db_contract/publication.py・approvals.py（提案の仕様）",
+            "tests/test_publication_policy.py・test_approval_contract.py"
+          ],
+          "owner": "User",
+          "positive_tests": [
+            "採用した流れが順に成立する（ローカルのモック）"
+          ],
+          "negative_tests": [
+            "QA不合格・飛ばした遷移・AIによる偽装・別記事/別版の流用・承認後の変更・二重実行・不一致・未知の下書きID・欠落・失効（20の異常系）"
+          ],
+          "done_criteria": "方針と契約の文書化・ローカル検証（完了）。実装（状態表・承認の記録・投稿処理）、鍵の管理、本番動作の検証は P7 で",
+          "evidence": "docs/PUBLICATION_POLICY.md、tests/test_approval_contract.py（モックと合成データ。note には接続しない）",
+          "unverified": "実装（G-08）、ユーザーの証明の鍵の管理（未決）、Work の投稿処理、note の下書き保存・公開（未許可・未接続）",
+          "next": "G-08 の状態表・承認表と、鍵の管理を Work・ユーザーと合意（P7-WP7.1）",
+          "state": "design"
+        },
+        {
+          "id": "P0-WP0.4",
+          "name": "リスクと予算",
+          "purpose": "費用・権利・規約の上限",
+          "inputs": [],
+          "work": "API費用、引用範囲、note規約、人の確認範囲を決める",
+          "deliverables": [
+            "docs/RISK_BUDGET.md（未作成）"
+          ],
+          "owner": "User",
+          "positive_tests": [
+            "各上限が数値または規則で書かれている"
+          ],
+          "negative_tests": [
+            "上限なしの課金・無断の有料API利用は禁止（禁止事項として維持）"
+          ],
+          "done_criteria": "ユーザーが決定を記録",
+          "evidence": "",
+          "unverified": "予算・規約の確認",
+          "next": "ユーザーの判断",
+          "state": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "P1",
+      "name": "既存システム・DB・原典の棚卸し",
+      "owner": "Work＋Claude監査",
+      "criteria": [
+        {
+          "id": "P1.c1",
+          "text": "リポジトリにあるDBの構造（3世代）を、コード・スキーマ・サンプルから確認し、根拠の種類を区別して記録した",
+          "verified": true,
+          "evidence": "docs/DB_CURRENT_STATE_AUDIT.md、reports/db-audit/、tests/test_db_acceptance_compat.py"
+        },
+        {
+          "id": "P1.c2",
+          "text": "Work のローカル実DBのスキーマ・テーブル・行数・有効版を、コピーで確認した",
+          "verified": true,
+          "evidence": "copied_real_db：5世代のコピーのスキーマ・表・行数・有効版（根拠50・記事13）を Claude が独立に再計算（reports/db-audit/real_copy_independent_audit_2026-11-01.json）"
+        },
+        {
+          "id": "P1.c3",
+          "text": "現行の50根拠・13草案が、納品スキーマに入れて整合する（サイクル・原典・記事・改訂への追跡）",
+          "verified": true,
+          "evidence": "tests/test_db_acceptance_compat.py（repository_sample、派生）、reports/db-audit/audit_current_view_loaded.json"
+        },
+        {
+          "id": "P1.c4",
+          "text": "実行コマンド・as_of・入力hash・成果物hash・依存版が固定され、第三者が保存した入力から再現できる",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P1-WP1.1",
+          "name": "システム地図",
+          "purpose": "SOGH本体・collab・旧noteボット・DB・ジョブの関係を整理",
+          "inputs": [],
+          "work": "構成要素と権限の一覧（秘密は共有しない）",
+          "deliverables": [
+            "docs/SYSTEM_MAP.md（未作成）"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "各構成要素に所有者と入出力がある"
+          ],
+          "negative_tests": [
+            "秘密情報を含まない（プライバシー検査）"
+          ],
+          "done_criteria": "Claude が地図とコードの食い違いを見つけない",
+          "evidence": "",
+          "unverified": "SOGH本体・旧noteボット側は未確認",
+          "next": "Work 復帰後",
+          "state": "not_started"
+        },
+        {
+          "id": "P1-WP1.2",
+          "name": "DBインベントリ",
+          "purpose": "実スキーマ・件数・索引・有効版・履歴の構造を機械可読で確定",
+          "inputs": [
+            "P1-WP1.1"
+          ],
+          "work": "リポジトリ内は完了。実DBのコピーで同じ監査を実行",
+          "deliverables": [
+            "docs/DB_CURRENT_STATE_AUDIT.md",
+            "reports/db-audit/",
+            "実DBの監査レポート（copied_real_db）"
+          ],
+          "owner": "Work主・Claude監査",
+          "positive_tests": [
+            "db_audit が fail 0"
+          ],
+          "negative_tests": [
+            "旧コピーとの比較（DB-09）で行の消失を検出"
+          ],
+          "done_criteria": "copied_real_db で db_audit を実行し、結果を報告",
+          "evidence": "リポジトリ内は完了。実DB5世代のコピーを Claude が独立に監査（PR #59 の最新 head 4dd4cf5 まで差分を確認：F-1・F-4 は修正済みで独立に一致、判定 PASS_WITH_WARNINGS）。reports/db-audit/real_copy_independent_audit_2026-11-01.json、…_pr59_delta_2026-11-01.json（copied_real_db）",
+          "unverified": "F-2（v03→v04 の上書きの原因は未確認。受容はユーザーの判断）、原本DBとコピーの一致、本番の指定（未確認）、原典",
+          "next": "Work：F-2 の説明、G-04・G-05（W-04）。PR #59 のマージ判断は Work",
+          "state": "accepted"
+        },
+        {
+          "id": "P1-WP1.3",
+          "name": "3大学5方式の追跡表",
+          "purpose": "50根拠・13草案がどのサイクル・原典・記事・改訂に繋がるかを一覧化",
+          "inputs": [
+            "P1-WP1.2"
+          ],
+          "work": "現行ビューを納品スキーマに投入し、追跡を監査",
+          "deliverables": [
+            "tests/test_db_acceptance_compat.py",
+            "reports/db-audit/audit_current_view_loaded.json"
+          ],
+          "owner": "Claude監査",
+          "positive_tests": [
+            "全体ビューの投入で DB-01〜08・11・12 が pass"
+          ],
+          "negative_tests": [
+            "全納品を一緒に投入すると根拠ID空間の重複（G-05）が失敗として出る"
+          ],
+          "done_criteria": "追跡表と監査が一致",
+          "evidence": "repository_sample で合格。ただし ID空間の重複（G-05）が未解決",
+          "unverified": "実DBの追跡、原本ページ（引用から再構成）",
+          "next": "G-05 を Work が解決",
+          "state": "implementing"
+        },
+        {
+          "id": "P1-WP1.4",
+          "name": "再現性",
+          "purpose": "同じ入力から同じ結果を得る",
+          "inputs": [
+            "P1-WP1.2"
+          ],
+          "work": "依存版・コマンド・as_of・入力/成果物hashの固定",
+          "deliverables": [
+            "docs/REPRODUCIBILITY.md（未作成）"
+          ],
+          "owner": "Work＋Claude",
+          "positive_tests": [
+            "保存した入力から記事13本の構成と根拠が再確認できる"
+          ],
+          "negative_tests": [
+            "入力が1バイト違えば検出する（manifest の SHA-256）"
+          ],
+          "done_criteria": "第三者が read-only で再確認",
+          "evidence": "manifest の SHA-256 検査と作業基準日の固定は実装済み",
+          "unverified": "依存版・コマンドの固定",
+          "next": "文書化",
+          "state": "design"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "汎用DB設計・移行・履歴・安全性",
+      "owner": "Work実装／Claude契約・QA",
+      "criteria": [
+        {
+          "id": "P2.c1",
+          "text": "受け入れ契約（DB-1〜DB-7）が、フィールド・型・一意性・不変条件・失敗時の動作で文書化された",
+          "verified": true,
+          "evidence": "docs/DB_ACCEPTANCE_CONTRACT_V1.md"
+        },
+        {
+          "id": "P2.c2",
+          "text": "読み取り専用の独立監査 CLI がある",
+          "verified": true,
+          "evidence": "src/integration/db_audit.py、tests/test_db_audit.py"
+        },
+        {
+          "id": "P2.c3",
+          "text": "正常系の受け入れ試験が合成DBで合格",
+          "verified": true,
+          "evidence": "tests/test_db_acceptance_normal.py（synthetic）"
+        },
+        {
+          "id": "P2.c4",
+          "text": "異常系（不正データ・履歴の破壊・障害注入・後方互換）の試験が合成DB/リポジトリのサンプルで合格",
+          "verified": true,
+          "evidence": "tests/test_db_acceptance_{invalid,history,faults,compat}.py（synthetic / repository_sample）"
+        },
+        {
+          "id": "P2.c5",
+          "text": "実DBのコピーで db_audit が fail 0",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P2.c6",
+          "text": "実DBのコピーで移行・中断・復旧・冪等性を再現した",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P2.c7",
+          "text": "異なる大学・資料様式・年度を設定追加で足し、同じ受け入れ基準を満たした",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P2.c8",
+          "text": "契約のギャップ（G-01〜G-13）が Work と合意され、解消またはリスク受容された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P2.c9",
+          "text": "契約の提案項目を Work と合意して確定した",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P2.c10",
+          "text": "旧DB v0.2 の保全と、v0.5 系への全面移行の保留の方針が決まり、保全対象と再検討の条件が文書になっている",
+          "verified": true,
+          "evidence": "docs/DB_MIGRATION_POLICY.md（ユーザーの決定 2026-11-01）"
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P2-WP2.1",
+          "name": "識別子",
+          "purpose": "大学・学部・学科・方式・入学年度/実施年度、資料、根拠、記事の識別を混同させない",
+          "inputs": [
+            "P1-WP1.2"
+          ],
+          "work": "NULL 学科の索引（G-04）、ID命名規則、**根拠ID空間の重複の解消（G-05：原因＝IDが内容でなく profile code と抽出順で決まる）**",
+          "deliverables": [
+            "契約 DB-1",
+            "スキーマ変更案（提案）"
+          ],
+          "owner": "Work実装／Claude契約",
+          "positive_tests": [
+            "新大学・新年度・同名方式が独立したサイクルになる（合成）"
+          ],
+          "negative_tests": [
+            "越境・年度混同・NULL 学科の重複を拒否/検出"
+          ],
+          "done_criteria": "実DBのコピーで DB-02/DB-10 が pass、G-04/G-05 解消",
+          "evidence": "合成DBで合格（tests/test_db_acceptance_normal/invalid）。G-05 の調査と内容による同一性の検査（docs/G05_EVIDENCE_ID_ANALYSIS.md、tests/test_evidence_identity.py）",
+          "unverified": "実DB、G-04/G-05",
+          "next": "Work：G-05 の方針（1事実1ID、別名表、UNIQUE の粒度）、G-04 の索引",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P2-WP2.2",
+          "name": "原典トレース",
+          "purpose": "URL・種別・取得日・公表日・sha256・原文位置・引用を追跡可能にする",
+          "inputs": [
+            "P2-WP2.1"
+          ],
+          "work": "published_at・source_kind 列（G-06）、引用が保存ページにあること（DB-12）",
+          "deliverables": [
+            "契約 DB-2"
+          ],
+          "owner": "Work実装／Claude契約",
+          "positive_tests": [
+            "事実の source_sha256 と record が一致"
+          ],
+          "negative_tests": [
+            "ハッシュ不一致・保存ページに無い引用で失敗"
+          ],
+          "done_criteria": "実DBのコピーで DB-03/04/12 が pass。公表日の扱いを合意",
+          "evidence": "合成で合格",
+          "unverified": "実DB、公表日、原典との照合（not_run）",
+          "next": "Work：G-06 の合意",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P2-WP2.3",
+          "name": "事実スキーマ",
+          "purpose": "fact_key・型・条件・例外・適用範囲・field_proofs・不明値",
+          "inputs": [
+            "P2-WP2.2"
+          ],
+          "work": "登録簿（1.7.1）を契約とする。不明は省略（false/0 に置換しない）",
+          "deliverables": [
+            "docs/FACT_KEYS.md",
+            "DB-11"
+          ],
+          "owner": "Claude契約／Work実データ",
+          "positive_tests": [
+            "登録された fact_key と型の根拠が通る"
+          ],
+          "negative_tests": [
+            "未登録 fact_key・型違い・不正な stage を失敗にする"
+          ],
+          "done_criteria": "実DBのコピーで DB-11 が pass",
+          "evidence": "登録簿1.7.1と DB-11（合成・repository_sample）",
+          "unverified": "実DB",
+          "next": "実DBのコピーで実行",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P2-WP2.4",
+          "name": "stage契約A",
+          "purpose": "記事が使ってよい第N次の序数を根拠に持たせる",
+          "inputs": [
+            "P2-WP2.3"
+          ],
+          "work": "Work が interview・fee_refund に stage を付与し、変異で見逃し 2→0 を確認",
+          "deliverables": [
+            "契約（PR #45）",
+            "検証基盤（PR #51）"
+          ],
+          "owner": "Work付与／Claude検証",
+          "positive_tests": [
+            "正しい第1次・第2次の文が通る（合成/模擬）"
+          ],
+          "negative_tests": [
+            "序数の入れ替えを検出（模擬の付与で 10/12→12/12）"
+          ],
+          "done_criteria": "実データで見逃し 2→0（Claude の変異試験）",
+          "evidence": "PR #61 の候補2版を Claude が独立に監査（PASS_WITH_WARNINGS）：序数変異 10/14→14/14 を独立に再現、原典の引用と序数を保存PDFで照合、使い捨てコピーで有効化・再実行・ロールバック・QA拒否・不正入力を検証（8成功・未登録原典の所見1）。reports/db-audit/real_copy_stage_audit_pr61_2026-11-01.json（copied_real_db）。**正式な有効化は未実施**",
+          "unverified": "運用DBでの有効化（Work の判断とユーザーの承認が要る）、fee_refund の原典 SHA が source_documents に未登録、Issue #12 は未完",
+          "next": "Work：候補の有効化の判断、原典 SHA の登録（G-06・g2）。Claude：有効化後に実コピーで再確認",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P2-WP2.5",
+          "name": "不変履歴",
+          "purpose": "原文版・根拠版・記事版・承認版・親版・理由・更新差分を過去行の破壊なしに保つ",
+          "inputs": [
+            "P2-WP2.1"
+          ],
+          "work": "追記専用トリガー（G-09）、改訂理由（G-11）、改訂記事の関係表（G-07）",
+          "deliverables": [
+            "契約 DB-4",
+            "DB-09"
+          ],
+          "owner": "Work実装／Claude契約",
+          "positive_tests": [
+            "正しい改訂で旧行が不変（合成）"
+          ],
+          "negative_tests": [
+            "旧根拠の上書き・旧記事の改ざん・親IDの不整合・改訂ハッシュの改ざん・有効版の削除を検出"
+          ],
+          "done_criteria": "実DBのコピーで DB-05/06/09 が pass。G-07/G-09/G-11 を合意",
+          "evidence": "合成で合格（tests/test_db_acceptance_history）",
+          "unverified": "実DB、トリガー",
+          "next": "Work：G-07/G-09/G-11",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P2-WP2.6",
+          "name": "トランザクション",
+          "purpose": "候補→検証→原子的有効化、途中停止・同時実行・冪等性",
+          "inputs": [
+            "P2-WP2.5"
+          ],
+          "work": "Work の stage/finalize を独立試験",
+          "deliverables": [
+            "契約 DB-5",
+            "tests/test_db_acceptance_faults.py",
+            "tests/test_audit_work_v2.py"
+          ],
+          "owner": "Work実装／Claude独立試験",
+          "positive_tests": [
+            "候補はQA承認後にのみ有効（合成）"
+          ],
+          "negative_tests": [
+            "途中例外でロールバック、同時更新の拒否、二重起動の拒否、不完全なバックアップ、QA不合格でhead保全"
+          ],
+          "done_criteria": "実DBのコピーで中断・復旧・冪等を再現",
+          "evidence": "合成DBで Work のコードを動かして合格",
+          "unverified": "実DBでの再現",
+          "next": "Work：実DBのコピーを提供",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P2-WP2.7",
+          "name": "将来の負荷と移行",
+          "purpose": "新大学追加・性能・後方互換な移行・障害復旧",
+          "inputs": [
+            "P2-WP2.6"
+          ],
+          "work": "索引（G-03）、schema_migrations（G-02）。**v0.2 は保全し、実DBの独立監査の完了まで v0.5 系への全面移行をしない**（docs/DB_MIGRATION_POLICY.md）",
+          "deliverables": [
+            "docs/DB_MIGRATION_REQUIREMENTS.md",
+            "docs/DB_MIGRATION_POLICY.md"
+          ],
+          "owner": "Work実装／Claude契約",
+          "positive_tests": [
+            "v0.3→v0.5 は追加のみで旧行が不変（合成）"
+          ],
+          "negative_tests": [
+            "列・テーブルを落とす移行を DB-09 が失敗にする"
+          ],
+          "done_criteria": "移行を実DBのコピーで実行し DB-09 が pass。性能を測定",
+          "evidence": "追加のみの移行は合成で確認。要件文書あり",
+          "unverified": "実DBの移行、性能、v0.2→v0.5",
+          "next": "実DBのコピーの監査（W-03）。移行の検討は DB_MIGRATION_POLICY の10条件が揃ってから",
+          "state": "design"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "公式資料の収集・抽出・構造化",
+      "owner": "Work",
+      "criteria": [
+        {
+          "id": "P3.c1",
+          "text": "納品済みの根拠の一部（筑波AC・慶應のPDF）が、原本と一致することを独立に確認した",
+          "verified": true,
+          "evidence": "audit_handoff --pdf-dir（source_pdfs・values_in_quotes が pass）。PR #41 の監査記録"
+        },
+        {
+          "id": "P3.c2",
+          "text": "公式FAQの引用文が、現在の公式本文に存在することを独立に確認した（本文の一致。バイト列の一致ではない）",
+          "verified": true,
+          "evidence": "PR #42 の先行監査コメント（6引用文）、PR #42 最終監査（b23a9f9／d638d85、reports/pr-audit/pr42_final_audit_2026-11-01.json）：保存 HTML の SHA 再計算、6 引用の保存位置の再現、公式の現行ページの生バイト列 SHA が保存版と一致"
+        },
+        {
+          "id": "P3.c3",
+          "text": "納品済みのすべての根拠について原本照合を実施した",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P3.c4",
+          "text": "誤ページ・誤年度・曖昧数値・欠落で有効化しない（fail closed）ことを、独立の負例で確認した",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P3.c5",
+          "text": "新しい資料様式の1方式を設定だけで追加し、原本→根拠→DB→記事→QAが通った",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P3-WP3.1",
+          "name": "ソース登録",
+          "purpose": "許可ドメイン・大学・URL・サイクル・資料種別・取得ポリシー",
+          "inputs": [
+            "P2-WP2.1"
+          ],
+          "work": "設定ファイルでの登録",
+          "deliverables": [
+            "Work の設定"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "許可ドメインのURLだけ取得"
+          ],
+          "negative_tests": [
+            "許可外ホストを要求前に拒否（合成で確認済み）"
+          ],
+          "done_criteria": "27資料が設定から再現",
+          "evidence": "許可外ホストの拒否は tests/test_audit_work_v2.py",
+          "unverified": "27資料の設定の独立監査",
+          "next": "Work 復帰後",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P3-WP3.2",
+          "name": "取得",
+          "purpose": "PDF・HTML・訂正告知。失敗・文字化け・移転を判別",
+          "inputs": [
+            "P3-WP3.1"
+          ],
+          "work": "collector・monitor",
+          "deliverables": [
+            "Work のコード"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "初回・同内容・変更を区別"
+          ],
+          "negative_tests": [
+            "404/503/タイムアウト/文字化け/STOP/二重起動（模擬通信）"
+          ],
+          "done_criteria": "実サイトへの過剰アクセスなしで異常系を再現",
+          "evidence": "tests/test_audit_work_v2.py（27件、模擬通信）",
+          "unverified": "gzip・壊れたPDF・URL移転の独立試験",
+          "next": "追加の負例",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P3-WP3.3",
+          "name": "原典保存と差分",
+          "purpose": "ハッシュ固定、保全、機微情報の流出防止",
+          "inputs": [
+            "P3-WP3.2"
+          ],
+          "work": "snapshot と変更理由",
+          "deliverables": [
+            "Work の保存"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "manifest のSHA-256が全一致"
+          ],
+          "negative_tests": [
+            "改ざんでmanifestが失敗、原本PDFをGitHubに載せない"
+          ],
+          "done_criteria": "原本の保存場所と保全の独立確認",
+          "evidence": "manifest・プライバシー検査（audit_handoff）",
+          "unverified": "ローカル原本の保全",
+          "next": "Work",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P3-WP3.4",
+          "name": "抽出器",
+          "purpose": "大学別のPDF表・段組・別紙・HTML節・表の列ずれ。曖昧一致は fail closed",
+          "inputs": [
+            "P3-WP3.3"
+          ],
+          "work": "抽出プロファイル",
+          "deliverables": [
+            "Work の抽出器"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "3大学5方式で原本から根拠を再生成"
+          ],
+          "negative_tests": [
+            "誤ページ・曖昧一致・スキャン未検証で有効化しない"
+          ],
+          "done_criteria": "新様式の1方式の実地試験に合格",
+          "evidence": "",
+          "unverified": "再生成・負例・新様式の独立確認",
+          "next": "Work",
+          "state": "implementing"
+        },
+        {
+          "id": "P3-WP3.5",
+          "name": "出典付き正規化",
+          "purpose": "値と引用位置、条件・例外、別方式への横流しの防止",
+          "inputs": [
+            "P3-WP3.4"
+          ],
+          "work": "正規化と人手レビューの列挙",
+          "deliverables": [
+            "根拠レコード"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "値が引用に存在する（values_in_quotes）"
+          ],
+          "negative_tests": [
+            "別方式の値の混入を拒否（越境）"
+          ],
+          "done_criteria": "人手レビューが必要なセルを列挙",
+          "evidence": "values_in_quotes・越境の拒否は合格",
+          "unverified": "人手レビューの列挙",
+          "next": "Work",
+          "state": "QA_pending"
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "更新監視・版差分・影響分析",
+      "owner": "Work＋Claude",
+      "criteria": [
+        {
+          "id": "P4.c1",
+          "text": "版の差分（ページ・行・値）と、根拠・記事への影響分類が実装され、負例も試験された",
+          "verified": true,
+          "evidence": "src/versioning/、docs/VERSIONING.md、tests/test_versioning*.py"
+        },
+        {
+          "id": "P4.c2",
+          "text": "監視の失敗・再試行・二重起動・停止が、模擬通信で試験された",
+          "verified": true,
+          "evidence": "tests/test_audit_work_v2.py（synthetic）"
+        },
+        {
+          "id": "P4.c3",
+          "text": "実際の更新（本当の差分）から DB 改訂・記事改訂までを一気通貫で再現した",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P4.c4",
+          "text": "承認付きの差分反映が冪等で、旧版を保全する（合成DB）",
+          "verified": true,
+          "evidence": "tests/test_db_acceptance_{normal,faults}.py（synthetic）"
+        },
+        {
+          "id": "P4.c5",
+          "text": "模擬の更新で、影響する記事だけが改訂され、過去版・head が保全された（実データ）",
+          "verified": true,
+          "evidence": "copied_real_db（Work の v05→v06 コピー）：FAQ の根拠 1 件を改訂すると、それを引用していた筑波AC の 2 記事だけが改訂され、他の 11 記事は本文が同一、旧行・旧版は全て保全（旧IDの引用は旧 head に残る）。Claude が DB だけから再計算（reports/pr-audit/pr42_final_audit_2026-11-01.json、PR #42 の監査コメント）。範囲：コピー上の構造化改訂 1 件。原典の差分に起因する更新ではない（P4.c3 は未達）"
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P4-WP4.1",
+          "name": "監視器",
+          "purpose": "URL監視の停止・再開・ロック・リトライ",
+          "inputs": [
+            "P3-WP3.2"
+          ],
+          "work": "Work の monitor",
+          "deliverables": [
+            "Work のコード"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "初回・同内容・変更を区別"
+          ],
+          "negative_tests": [
+            "404/503/文字化け/STOP/二重起動"
+          ],
+          "done_criteria": "27資料の監視を実運用の許可後に実証",
+          "evidence": "模擬通信で合格",
+          "unverified": "実運用（本番監視は禁止事項）",
+          "next": "ユーザーの許可後",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P4-WP4.2",
+          "name": "版差分",
+          "purpose": "内容変更・移動・訂正・掲載終了・期限切れの分類",
+          "inputs": [
+            "P4-WP4.1"
+          ],
+          "work": "src/versioning の差分とスナップショット",
+          "deliverables": [
+            "src/versioning/"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "変更なし＝全て intact"
+          ],
+          "negative_tests": [
+            "引用の1文字変更で value_change/reworded"
+          ],
+          "done_criteria": "保存原典の本当の差分で検証",
+          "evidence": "合成と実export で合格",
+          "unverified": "実際の原典の差分",
+          "next": "Work：実際の旧版・新版",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P4-WP4.3",
+          "name": "影響グラフ",
+          "purpose": "資料→根拠→記事→投稿先まで到達",
+          "inputs": [
+            "P4-WP4.2"
+          ],
+          "work": "impact.py。投稿先は未実装",
+          "deliverables": [
+            "src/versioning/impact.py"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "根拠の変更で影響記事を列挙"
+          ],
+          "negative_tests": [
+            "影響のない記事を変えない"
+          ],
+          "done_criteria": "投稿先（note）まで到達",
+          "evidence": "資料→根拠→記事は実装済み",
+          "unverified": "投稿先との関係（G-08）",
+          "next": "P7 の後",
+          "state": "implementing"
+        },
+        {
+          "id": "P4-WP4.4",
+          "name": "承認付き差分反映",
+          "purpose": "原本根拠照合・旧版保全・未確認は pending・再実行は冪等",
+          "inputs": [
+            "P4-WP4.3",
+            "P2-WP2.6"
+          ],
+          "work": "Work の stage/finalize と Claude QA",
+          "deliverables": [
+            "DB-05/07/09"
+          ],
+          "owner": "Work＋Claude",
+          "positive_tests": [
+            "QA 成功のあとだけ有効化"
+          ],
+          "negative_tests": [
+            "不合格・中断で前回正常版が失われない"
+          ],
+          "done_criteria": "実DBのコピーで再現",
+          "evidence": "合成で合格",
+          "unverified": "実DB、原本根拠照合",
+          "next": "Work",
+          "state": "QA_pending"
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "独立QA・回帰・監査",
+      "owner": "Claude",
+      "criteria": [
+        {
+          "id": "P5.c1",
+          "text": "構造QA（スキーマ・fact_key・年度/方式・原本hash・引用ID・値・日付・数量・stage）が実装され、全納品に適用されている",
+          "verified": true,
+          "evidence": "src/verify/、docs/STRICT_VALIDATION.md"
+        },
+        {
+          "id": "P5.c2",
+          "text": "文章QA（意味の反転・未支持の義務・禁止・免除・言い換え）が、封印した評価セットで汎化を測定されている",
+          "verified": true,
+          "evidence": "docs/STRICT_VALIDATION.md（封印セット F 94.0%、D/E は開発用）"
+        },
+        {
+          "id": "P5.c3",
+          "text": "coverage が、検証済み／矛盾／未検証／対象外を分け、未検証を検出に数えない",
+          "verified": true,
+          "evidence": "src/verify/qualitative.py、docs/REGRESSION.md"
+        },
+        {
+          "id": "P5.c4",
+          "text": "回帰（変異・引用差し替え・反転・表記ゆれ・版管理・全体ビュー）が CI で毎回実行され、閾値が下げられていない",
+          "verified": true,
+          "evidence": ".github/workflows/tests.yml、src/regression/"
+        },
+        {
+          "id": "P5.c5",
+          "text": "監査が Work の報告に依存せず、納品物・manifest・DBコピー・原典を再現する（原典未提供は not_run）",
+          "verified": true,
+          "evidence": "src/integration/audit_handoff.py、PR #41/#42 の監査"
+        },
+        {
+          "id": "P5.c6",
+          "text": "自動検証の限界（未知の言い換え、構造化されていない義務、原典）が明示されている",
+          "verified": true,
+          "evidence": "docs/STRICT_VALIDATION.md、docs/WORK_RESUME_HANDOFF.md"
+        },
+        {
+          "id": "P5.c7",
+          "text": "既知の見逃しの類型（評価者の述語、許可の弱い語、構造化されていない義務）が解消された",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P5-WP5.1",
+          "name": "構造QA",
+          "purpose": "スキーマ・fact_key・年度・方式・原本hash・引用ID・値・日付・数量・stage",
+          "inputs": [
+            "P2-WP2.3"
+          ],
+          "work": "src/verify/ と登録簿",
+          "deliverables": [
+            "src/verify/",
+            "登録簿 1.7.1"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "全納品の正しい記事が通る"
+          ],
+          "negative_tests": [
+            "数値・日付・年度・引用ID・単位の変異を検出"
+          ],
+          "done_criteria": "全納品で変異検出が閾値以上",
+          "evidence": "回帰（docs/REGRESSION.md）",
+          "unverified": "新しい大学・様式での検出率",
+          "next": "新大学の納品ごとに回帰",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P5-WP5.2",
+          "name": "文章QA",
+          "purpose": "意味反転・条件・例外・未支持の義務・別段落の言い換え・出典の取り違え",
+          "inputs": [
+            "P5-WP5.1"
+          ],
+          "work": "assertions・述語規則・coverage",
+          "deliverables": [
+            "src/verify/qualitative.py",
+            "封印セット D/E/F"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "正しい文を誤検出しない（既存草案で0）"
+          ],
+          "negative_tests": [
+            "既知・未知の反転（F 226→250/266）"
+          ],
+          "done_criteria": "封印セットでの汎化が安定し、残る類型を解消",
+          "evidence": "封印セット F 94.0%（見逃し16件は記録済み）",
+          "unverified": "未知の言い換えの完全な検出（限界を明示）",
+          "next": "評価者の述語・許可の弱い語（新しい封印セット G を先に作る）",
+          "state": "implementing"
+        },
+        {
+          "id": "P5-WP5.3",
+          "name": "coverage",
+          "purpose": "検証済み／矛盾／未検証／対象外の分類",
+          "inputs": [
+            "P5-WP5.2"
+          ],
+          "work": "節ごとの分類（登録簿 1.7.0）",
+          "deliverables": [
+            "claim_wording",
+            "semantic_coverage"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "規則が照合した節は未検証に出ない"
+          ],
+          "negative_tests": [
+            "段落に合格が1つあっても別の義務を見逃さない（#47）"
+          ],
+          "done_criteria": "未検証が検出に加算されない",
+          "evidence": "tests/test_unsupported_obligation.py",
+          "unverified": "構造化されていない義務は未検証のまま",
+          "next": "構造化の契約（Work と）",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P5-WP5.4",
+          "name": "回帰",
+          "purpose": "変異テスト・独立ホールドアウト・検出能力と誤検出の回帰",
+          "inputs": [
+            "P5-WP5.1"
+          ],
+          "work": "src/regression/ と CI",
+          "deliverables": [
+            "回帰基盤",
+            "全体ビューCI"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "全納品・全体ビューが合格"
+          ],
+          "negative_tests": [
+            "閾値未満・skip・ベースラインの変化で失敗"
+          ],
+          "done_criteria": "CI で毎回実行",
+          "evidence": ".github/workflows/tests.yml、docs/REGRESSION.md",
+          "unverified": "",
+          "next": "新しい納品ごと",
+          "state": "QA_pending"
+        },
+        {
+          "id": "P5-WP5.5",
+          "name": "監査",
+          "purpose": "Work の報告に依存せず独立に再現",
+          "inputs": [
+            "P5-WP5.1"
+          ],
+          "work": "audit_handoff・db_audit・PR 監査",
+          "deliverables": [
+            "src/integration/",
+            "監査コメント"
+          ],
+          "owner": "Claude",
+          "positive_tests": [
+            "正しい納品が通る"
+          ],
+          "negative_tests": [
+            "manifest改ざん・ID衝突・不正な全体ビュー・DB破壊を検出"
+          ],
+          "done_criteria": "原典・実DBは not_run を明示",
+          "evidence": "tests/test_audit_whole_view.py、tests/test_db_audit.py",
+          "unverified": "原典のバイト列、実DB",
+          "next": "実DBのコピー",
+          "state": "QA_pending"
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "name": "記事企画・生成・文章品質",
+      "owner": "Work＋Claude",
+      "criteria": [
+        {
+          "id": "P6.c1",
+          "text": "記事タイプごとの目的・読者ニーズ・重複範囲が決まっている",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P6.c2",
+          "text": "記事が事実・助言・未確認・出典・作業基準日・変更履歴を分離している",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P6.c3",
+          "text": "同じ入力から同じ記事版が得られることを独立に確認した（決定的なテンプレート）",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P6.c4",
+          "text": "AIライターの採否が、評価基準に基づいて決まった",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P6.c5",
+          "text": "記事ごとの評価（正確性・読みやすさ・有用性・重複・網羅・期限）が実施された",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P6-WP6.1",
+          "name": "記事の目的",
+          "purpose": "概要・書類・面接・変更速報の読者ニーズと重複範囲",
+          "inputs": [
+            "P0-WP0.1"
+          ],
+          "work": "企画の定義",
+          "deliverables": [
+            "docs/ARTICLE_TYPES.md（未作成）"
+          ],
+          "owner": "Work＋User",
+          "positive_tests": [
+            "各タイプに読者の疑問が対応"
+          ],
+          "negative_tests": [
+            "同じ内容の記事が重複しない"
+          ],
+          "done_criteria": "ユーザーが方針を承認",
+          "evidence": "",
+          "unverified": "",
+          "next": "WP0.1 の後",
+          "state": "not_started"
+        },
+        {
+          "id": "P6-WP6.2",
+          "name": "記事構造",
+          "purpose": "事実・助言・未確認・出典・基準日・履歴を分ける",
+          "inputs": [
+            "P6-WP6.1"
+          ],
+          "work": "テンプレート",
+          "deliverables": [
+            "テンプレート"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "出典・基準日・履歴がある（QA が確認）"
+          ],
+          "negative_tests": [
+            "助言を公式の義務として書かない（未支持の義務の報告）"
+          ],
+          "done_criteria": "構造のQAが全草案で合格",
+          "evidence": "13草案は構造QA合格",
+          "unverified": "助言と公式事実の分離の基準",
+          "next": "WP6.1 の後",
+          "state": "implementing"
+        },
+        {
+          "id": "P6-WP6.3",
+          "name": "コンテンツ組立",
+          "purpose": "検証済み事実から文章を決定的に組み立てる",
+          "inputs": [
+            "P6-WP6.2"
+          ],
+          "work": "Work の決定的テンプレート",
+          "deliverables": [
+            "Work のテンプレート"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "同じ入力で同じ版"
+          ],
+          "negative_tests": [
+            "値から生成した文の言い換えを QA が検出"
+          ],
+          "done_criteria": "独立に再現性を確認",
+          "evidence": "",
+          "unverified": "再現性の独立確認",
+          "next": "再実行して hash を比較する試験を追加",
+          "state": "implementing"
+        },
+        {
+          "id": "P6-WP6.4",
+          "name": "AIライターの判断",
+          "purpose": "読みやすさ改善だけを担当させるか評価する",
+          "inputs": [
+            "P6-WP6.3"
+          ],
+          "work": "別プロトタイプで評価（無断課金なし）",
+          "deliverables": [
+            "評価レポート"
+          ],
+          "owner": "User判断＋Work",
+          "positive_tests": [
+            "事実の誤変換が増えない"
+          ],
+          "negative_tests": [
+            "数値・義務・出典・適用範囲の変更を禁止し QA が検出"
+          ],
+          "done_criteria": "基準を満たした場合のみ採用",
+          "evidence": "",
+          "unverified": "未導入",
+          "next": "ユーザーの判断",
+          "state": "not_started"
+        },
+        {
+          "id": "P6-WP6.5",
+          "name": "記事ごとの評価",
+          "purpose": "正確性・読みやすさ・有用性・重複・網羅・期限",
+          "inputs": [
+            "P6-WP6.3"
+          ],
+          "work": "評価指標と人手評価",
+          "deliverables": [
+            "評価表"
+          ],
+          "owner": "User＋両者",
+          "positive_tests": [
+            "評価の基準がある"
+          ],
+          "negative_tests": [
+            "重要情報の欠落を検出"
+          ],
+          "done_criteria": "評価が実施・記録",
+          "evidence": "",
+          "unverified": "",
+          "next": "WP6.1 の後",
+          "state": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "P7",
+      "name": "承認・note下書き・公開ゲート",
+      "owner": "Work＋Claude＋User",
+      "criteria": [
+        {
+          "id": "P7.c1",
+          "text": "自動化（CI・QA・DB）が記事を公開可にできない（publish_allowed=0、publication_approved=false）",
+          "verified": true,
+          "evidence": "docs/REGRESSION.md、DB-06、src/regression/fullview.py"
+        },
+        {
+          "id": "P7.c2",
+          "text": "記事版の状態遷移（generated→QA→review→approved→draft_saved→published→corrected/retired）が実装され、実行者・理由・時刻を残す",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P7.c3",
+          "text": "公開ゲート（原本照合・年度・期限・未検証・人の最終確認）が実装された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P7.c4",
+          "text": "noteアダプタが隔離環境で検証された（モック→許可後に非公開下書き）",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P7.c5",
+          "text": "記事版↔noteの下書き/公開URLの対応、1版1下書き、失敗・再試行・再読込照合が試験された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P7.c6",
+          "text": "非公開下書きの保存→読戻しが、明示許可の範囲で再現された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P7.c7",
+          "text": "9つの状態と、誰がどの状態に進められるかが、実行できる仕様と試験になっている（仕様のみ。DBにも運用にも実装されていない）",
+          "verified": true,
+          "evidence": "src/db_contract/publication.py、tests/test_publication_policy.py"
+        },
+        {
+          "id": "P7.c8",
+          "text": "承認イベント（版・本文ハッシュ・署名・QA有効期限・冪等キー・欠落の拒否）の契約が、20の異常系を含めて、ローカルのモックと合成データで試験された（note には接続していない）",
+          "verified": true,
+          "evidence": "src/db_contract/approvals.py、tests/test_approval_contract.py"
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P7-WP7.1",
+          "name": "版ごとの公開状態",
+          "purpose": "記事版の状態遷移を記録する",
+          "inputs": [
+            "P2-WP2.5"
+          ],
+          "work": "9つの状態（generated / qa_passed / editor_confirmed / draft_save_authorized / note_draft_saved / note_draft_verified / publish_approved / published / corrected_or_retired）と、誰が・いつ・どの版に・何を決めたかの承認イベント（G-08）。v0.2 の review_status・publications を参考",
+          "deliverables": [
+            "契約（提案）",
+            "src/db_contract/publication.py・approvals.py（仕様）"
+          ],
+          "owner": "Work実装／Claude契約",
+          "positive_tests": [
+            "採用した順にだけ進む（モック）"
+          ],
+          "negative_tests": [
+            "20の異常系（tests/test_approval_contract.py）"
+          ],
+          "done_criteria": "合成DBで遷移を試験し、実DBのコピーで確認",
+          "evidence": "仕様の試験は tests/test_publication_policy.py・test_approval_contract.py。DB への実装は無い",
+          "unverified": "実装（Work と合意するまで既存DBに追加しない）、鍵の管理",
+          "next": "G-08 の合意",
+          "state": "not_started"
+        },
+        {
+          "id": "P7-WP7.2",
+          "name": "公開ゲート",
+          "purpose": "CI_green != approved_to_publish",
+          "inputs": [
+            "P7-WP7.1"
+          ],
+          "work": "ゲートの実装：本文ハッシュ・版・署名つきのユーザー決定・QAの有効期限・冪等キー・下書きと本文の一致（仕様は approvals.py）",
+          "deliverables": [
+            "ゲート"
+          ],
+          "owner": "Work＋Claude＋User",
+          "positive_tests": [
+            "承認記録のある記事だけ通る"
+          ],
+          "negative_tests": [
+            "CI成功だけでは通らない"
+          ],
+          "done_criteria": "実装と試験",
+          "evidence": "自動化が公開可にしない点は実装済み（P7.c1）。承認イベントの契約はローカルで試験済み（P7.c8）",
+          "unverified": "Work の投稿処理への実装、人の承認の経路、鍵の管理",
+          "next": "P0 の決裁後",
+          "state": "design"
+        },
+        {
+          "id": "P7-WP7.3",
+          "name": "noteアダプタ",
+          "purpose": "旧Playwright実装を隔離して検証",
+          "inputs": [
+            "P7-WP7.2"
+          ],
+          "work": "モック→許可後に非公開下書き。noteの規約も確認",
+          "deliverables": [
+            "アダプタと試験"
+          ],
+          "owner": "Work／Claude受け入れ試験",
+          "positive_tests": [
+            "モックで保存・読戻し"
+          ],
+          "negative_tests": [
+            "保存失敗・認証切れ・重複"
+          ],
+          "done_criteria": "許可範囲で実証",
+          "evidence": "",
+          "unverified": "入試DBとのnote連携は未実証（旧ボットのコードは別テーマ）",
+          "next": "ユーザーの許可",
+          "state": "not_started"
+        },
+        {
+          "id": "P7-WP7.4",
+          "name": "重複防止と照合",
+          "purpose": "1版1下書き、再試行、読戻し照合",
+          "inputs": [
+            "P7-WP7.3"
+          ],
+          "work": "冪等キー（v0.2 の publications.idempotency_key の設計を再利用できる）",
+          "deliverables": [
+            "試験"
+          ],
+          "owner": "Work／Claude",
+          "positive_tests": [
+            "同じ版は1つの下書き"
+          ],
+          "negative_tests": [
+            "切断・保存失敗・再試行"
+          ],
+          "done_criteria": "再現",
+          "evidence": "冪等キー・開始して報告の無い試行の扱いは仕様と試験のみ（モック）。noteとは未接続",
+          "unverified": "実際の投稿処理での再現",
+          "next": "WP7.3 の後",
+          "state": "not_started"
+        },
+        {
+          "id": "P7-WP7.5",
+          "name": "配信表現",
+          "purpose": "タイトル・導入・出典・免責・画像・掲載時点",
+          "inputs": [
+            "P6-WP6.2"
+          ],
+          "work": "表現規約",
+          "deliverables": [
+            "規約"
+          ],
+          "owner": "User＋Work",
+          "positive_tests": [
+            "出典リンクと掲載時点がある"
+          ],
+          "negative_tests": [
+            "免責の欠落を検出"
+          ],
+          "done_criteria": "ユーザーが承認",
+          "evidence": "",
+          "unverified": "",
+          "next": "P0 の後",
+          "state": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "P8",
+      "name": "一気通貫E2E・障害復旧",
+      "owner": "両者",
+      "criteria": [
+        {
+          "id": "P8.c1",
+          "text": "公式更新→取得→抽出→DB候補→QA→有効化→影響記事の改訂→QA→承認→下書きが、隔離環境で一気通貫に再現された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P8.c2",
+          "text": "障害注入（サイト停止・クラッシュ・DB書込失敗・CI失敗・ブラウザ保存失敗・認証切れ・同時実行・重複トリガー）が隔離環境で再現された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P8.c3",
+          "text": "復旧（前回有効版の保護・再開位置・冪等・手順書・バックアップ復元）が実証された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P8.c4",
+          "text": "失敗・長期未更新・期限切れ・原典消滅・差分の通知と、費用・レート上限が実装された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P8.c5",
+          "text": "運用権限（本番タスク・トークン・secret・承認者不在での停止・監査ログ・手動停止）が決まり実装された",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P8-WP8.1",
+          "name": "ゴールデン経路",
+          "purpose": "更新から下書きまでの一気通貫",
+          "inputs": [
+            "P4-WP4.4",
+            "P7-WP7.4"
+          ],
+          "work": "隔離環境で実演",
+          "deliverables": [
+            "E2E の記録"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "影響記事だけが改訂される"
+          ],
+          "negative_tests": [
+            "各段階の失敗で止まる"
+          ],
+          "done_criteria": "再現と記録",
+          "evidence": "",
+          "unverified": "未着手（DB・下書きが前提）",
+          "next": "P2・P7 の後",
+          "state": "not_started"
+        },
+        {
+          "id": "P8-WP8.2",
+          "name": "障害注入",
+          "purpose": "停止・クラッシュ・書込失敗・同時実行",
+          "inputs": [
+            "P8-WP8.1"
+          ],
+          "work": "DB・監視は合成で実施済み",
+          "deliverables": [
+            "試験"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "復旧後に整合"
+          ],
+          "negative_tests": [
+            "各障害で前回有効版が保たれる"
+          ],
+          "done_criteria": "全経路を隔離環境で再現",
+          "evidence": "DB・監視の障害注入は合成で合格（tests/test_db_acceptance_faults.py）",
+          "unverified": "CI失敗・ブラウザ・認証切れ・E2E",
+          "next": "P7 の後",
+          "state": "design"
+        },
+        {
+          "id": "P8-WP8.3",
+          "name": "復旧",
+          "purpose": "前回有効版の保護・再開・冪等・手順書",
+          "inputs": [
+            "P8-WP8.2"
+          ],
+          "work": "手順書と復元試験",
+          "deliverables": [
+            "手順書"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "バックアップから復元（合成）"
+          ],
+          "negative_tests": [
+            "不完全なバックアップを検出"
+          ],
+          "done_criteria": "実DBのコピーで実証",
+          "evidence": "合成で合格",
+          "unverified": "実DB、手順書",
+          "next": "P2 の後",
+          "state": "design"
+        },
+        {
+          "id": "P8-WP8.4",
+          "name": "監視・通知",
+          "purpose": "失敗・期限・消滅・差分・費用の通知",
+          "inputs": [
+            "P4-WP4.1"
+          ],
+          "work": "通知の設計",
+          "deliverables": [
+            "通知"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "失敗が通知される"
+          ],
+          "negative_tests": [
+            "通知の欠落を検出"
+          ],
+          "done_criteria": "実装と試験",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P8-WP8.5",
+          "name": "運用権限",
+          "purpose": "本番タスク・トークン・承認者不在での停止",
+          "inputs": [
+            "P0-WP0.3"
+          ],
+          "work": "権限の設計。本番ワーカー・スケジューラの操作は許可後のみ",
+          "deliverables": [
+            "運用手順"
+          ],
+          "owner": "User＋Work",
+          "positive_tests": [
+            "許可された操作だけ"
+          ],
+          "negative_tests": [
+            "承認者不在で停止"
+          ],
+          "done_criteria": "ユーザーの許可と実装",
+          "evidence": "",
+          "unverified": "",
+          "next": "ユーザーの判断",
+          "state": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "P9",
+      "name": "限定運用・公開前品質評価",
+      "owner": "User承認＋両者",
+      "criteria": [
+        {
+          "id": "P9.c1",
+          "text": "対象（少数の方式。資料様式が異なるものを含む）が選定された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P9.c2",
+          "text": "公開前レビュー（最新版・注記・数値・期限・未検証・リンク・可読性・誤認）の手順が人で実施された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P9.c3",
+          "text": "安全な下書き運用が観察された（公開はユーザーの承認後のみ）",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P9.c4",
+          "text": "実際の更新による DB・記事の更新と訂正表示が追跡された",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P9.c5",
+          "text": "成果指標（根拠網羅率・原典照合率・重大誤記・遅延・保守負荷・工数）が測られ、無承認公開・重複投稿が0",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P9-WP9.1",
+          "name": "対象選定",
+          "purpose": "限定運用の対象",
+          "inputs": [
+            "P8-WP8.1"
+          ],
+          "work": "ユーザーが選ぶ",
+          "deliverables": [
+            "対象リスト"
+          ],
+          "owner": "User",
+          "positive_tests": [
+            "様式の異なる対象を含む"
+          ],
+          "negative_tests": [
+            "未検証の対象を入れない"
+          ],
+          "done_criteria": "ユーザーの承認",
+          "evidence": "",
+          "unverified": "",
+          "next": "P8 の後",
+          "state": "not_started"
+        },
+        {
+          "id": "P9-WP9.2",
+          "name": "公開前レビュー",
+          "purpose": "人による確認",
+          "inputs": [
+            "P9-WP9.1"
+          ],
+          "work": "チェックリスト",
+          "deliverables": [
+            "レビュー記録"
+          ],
+          "owner": "User",
+          "positive_tests": [
+            "全項目を確認"
+          ],
+          "negative_tests": [
+            "未検証が残れば公開しない"
+          ],
+          "done_criteria": "記録",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P9-WP9.3",
+          "name": "試行",
+          "purpose": "安全な下書き運用の観察",
+          "inputs": [
+            "P9-WP9.2"
+          ],
+          "work": "下書きのみ。公開は別途承認",
+          "deliverables": [
+            "観察記録"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "下書きが保存される"
+          ],
+          "negative_tests": [
+            "無承認公開・重複投稿が0"
+          ],
+          "done_criteria": "観察",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P9-WP9.4",
+          "name": "実更新",
+          "purpose": "訂正情報による更新と読者への訂正表示",
+          "inputs": [
+            "P9-WP9.3"
+          ],
+          "work": "追跡",
+          "deliverables": [
+            "追跡記録"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "訂正が記事に反映"
+          ],
+          "negative_tests": [
+            "旧版を失わない"
+          ],
+          "done_criteria": "追跡",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P9-WP9.5",
+          "name": "成果指標",
+          "purpose": "網羅率・照合率・誤記・遅延・工数",
+          "inputs": [
+            "P9-WP9.3"
+          ],
+          "work": "指標の測定",
+          "deliverables": [
+            "指標"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "指標が測れる"
+          ],
+          "negative_tests": [
+            "重大誤記の報告経路"
+          ],
+          "done_criteria": "測定",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "name": "全国展開・新年度・継続改善",
+      "owner": "両者",
+      "criteria": [
+        {
+          "id": "P10.c1",
+          "text": "新大学導入パック（大学情報・方式・資料URL/版・抽出プロファイル・fact_key契約・初回レビュー・サンプル記事・QA）が定義され、実際に1大学で使われた",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P10.c2",
+          "text": "新年度の更新で、旧年度と新年度が分かれ、昨年度記事が現役扱いにならない",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P10.c3",
+          "text": "新大学を足しても、既存のQAと履歴が壊れない（回帰）",
+          "verified": false,
+          "evidence": ""
+        },
+        {
+          "id": "P10.c4",
+          "text": "品質・費用・人手負荷の定義済みの範囲が、運用の実測で維持されている",
+          "verified": false,
+          "evidence": ""
+        }
+      ],
+      "work_packages": [
+        {
+          "id": "P10-WP10.1",
+          "name": "新大学導入パック",
+          "purpose": "新大学を設定と証拠で足す",
+          "inputs": [
+            "P2-WP2.7",
+            "P3-WP3.4"
+          ],
+          "work": "パックの定義",
+          "deliverables": [
+            "パック"
+          ],
+          "owner": "Work収集／Claude QA",
+          "positive_tests": [
+            "新大学が受け入れ基準を満たす"
+          ],
+          "negative_tests": [
+            "既存の事実・記事が壊れない"
+          ],
+          "done_criteria": "1大学で実証",
+          "evidence": "",
+          "unverified": "",
+          "next": "P2・P3 の後",
+          "state": "not_started"
+        },
+        {
+          "id": "P10-WP10.2",
+          "name": "新年度更新",
+          "purpose": "旧年度と新年度を分ける",
+          "inputs": [
+            "P10-WP10.1"
+          ],
+          "work": "年度ごとのサイクル",
+          "deliverables": [
+            "手順"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "新年度が別サイクル"
+          ],
+          "negative_tests": [
+            "昨年度記事を現役として使わない（QAの年度検査）"
+          ],
+          "done_criteria": "実証",
+          "evidence": "年度の検査は QA で実装済み",
+          "unverified": "新年度の実地",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P10-WP10.3",
+          "name": "カバレッジ拡大",
+          "purpose": "異なるレイアウト・例外規則の吸収",
+          "inputs": [
+            "P10-WP10.1"
+          ],
+          "work": "プロファイル追加",
+          "deliverables": [
+            "プロファイル"
+          ],
+          "owner": "Work",
+          "positive_tests": [
+            "新様式が通る"
+          ],
+          "negative_tests": [
+            "曖昧なら fail closed"
+          ],
+          "done_criteria": "実証",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P10-WP10.4",
+          "name": "運用コスト",
+          "purpose": "API・ブラウザ・原典取得・人手の負荷",
+          "inputs": [
+            "P9-WP9.5"
+          ],
+          "work": "実測",
+          "deliverables": [
+            "実測"
+          ],
+          "owner": "両者",
+          "positive_tests": [
+            "上限内"
+          ],
+          "negative_tests": [
+            "超過で停止"
+          ],
+          "done_criteria": "測定",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        },
+        {
+          "id": "P10-WP10.5",
+          "name": "企画改善",
+          "purpose": "読者の必要に合う記事タイプ・頻度・検索性",
+          "inputs": [
+            "P9-WP9.5"
+          ],
+          "work": "検証",
+          "deliverables": [
+            "改善案"
+          ],
+          "owner": "User＋両者",
+          "positive_tests": [
+            "指標で改善"
+          ],
+          "negative_tests": [
+            "重複記事を抑える"
+          ],
+          "done_criteria": "検証",
+          "evidence": "",
+          "unverified": "",
+          "next": "未着手",
+          "state": "not_started"
+        }
+      ]
+    }
+  ],
+  "db_areas": [
+    {
+      "id": "DB-1",
+      "name": "識別子・スコープ",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "docs/DB_ACCEPTANCE_CONTRACT_V1.md DB-1"
+        },
+        "implemented": {
+          "v": "yes",
+          "e": "納品スキーマ v0.5（admission_cycles、UNIQUE）。NULL 学科の穴（G-04）は未解決"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "tests/test_db_acceptance_normal.py（synthetic）"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "越境・年度混同の拒否（synthetic）、NULL 学科の重複を DB-02 が検出"
+        },
+        "real_data": {
+          "v": "partial",
+          "e": "copied_real_db（v06）：DB-02/04/10 pass。G-04・G-05 が実コピーに存在"
+        },
+        "independent_audit": {
+          "v": "partial",
+          "e": "copied_real_db：Claude が独立実行（原本は未確認）"
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "実DBのコピー。G-04（NULL 学科）、G-05（ID空間）",
+      "next": "Work：コピー提供、G-04/G-05 の方針"
+    },
+    {
+      "id": "DB-2",
+      "name": "原典と事実の対応",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "契約 DB-2"
+        },
+        "implemented": {
+          "v": "partial",
+          "e": "sha・URL・取得日・proofs はあり。公表日・source_kind 列は無い（G-06）"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "synthetic、repository_sample（50/13）"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "ハッシュ不一致・保存ページに無い引用（synthetic）"
+        },
+        "real_data": {
+          "v": "partial",
+          "e": "copied_real_db（v06）：DB-03/04/12 pass。原典との照合は not_run"
+        },
+        "independent_audit": {
+          "v": "partial",
+          "e": "copied_real_db：DB-03/04/12 を独立実行。原本・原典の独立照合なし"
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "公表日・種別の合意（G-06）、実DB、原典",
+      "next": "Work：G-06、実DBのコピー"
+    },
+    {
+      "id": "DB-3",
+      "name": "条件と例外",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "登録簿 1.7.1、契約 DB-3"
+        },
+        "implemented": {
+          "v": "yes",
+          "e": "登録簿と DB-11。構造化されていない義務は未検証"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "registry・assertions の試験"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "未登録 fact_key・型違い・不正 stage（DB-11）"
+        },
+        "real_data": {
+          "v": "partial",
+          "e": "repository_sample（派生）。FAQ の構造化は PR #42 待ち"
+        },
+        "independent_audit": {
+          "v": "yes",
+          "e": "PR #42 の先行監査（登録簿との整合）"
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "PR #42 の統合、stage の実データ付与",
+      "next": "Work：PR #42、stage"
+    },
+    {
+      "id": "DB-4",
+      "name": "版管理と履歴",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "契約 DB-4"
+        },
+        "implemented": {
+          "v": "partial",
+          "e": "版・有効版・不変はコード。トリガー・改訂理由・改訂記事の関係表は無い（G-07/G-09/G-11）"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "synthetic"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "旧行の上書き・削除・改ざん・親の不整合・列/表の削除（DB-09 など、synthetic）"
+        },
+        "real_data": {
+          "v": "partial",
+          "e": "copied_real_db：v05→v06 の DB-05/06/07/09 pass。v03→v04 は追記専用でない"
+        },
+        "independent_audit": {
+          "v": "partial",
+          "e": "copied_real_db：Claude が独立実行し自前の別実装でも旧行保全を確認"
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "実DBのコピー、G-07/G-09/G-11",
+      "next": "Work：コピー、スキーマ案の合意"
+    },
+    {
+      "id": "DB-5",
+      "name": "更新処理の安全性",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "契約 DB-5"
+        },
+        "implemented": {
+          "v": "yes",
+          "e": "Work の stage/finalize・snapshot・recover・ProcessLock（コード確認）"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "synthetic"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "途中例外・同時更新・二重起動・不完全なバックアップ・QA不合格・承認欠落・再試行（synthetic）"
+        },
+        "real_data": {
+          "v": "partial",
+          "e": "copied_real_db（v06 の使い捨てコピー）：中断・復旧・冪等・同時実行・不正データの21ケースで旧行・旧 head が不変。ディスク満杯・電源断は未実施"
+        },
+        "independent_audit": {
+          "v": "partial",
+          "e": "copied_real_db：Claude が Work の駆動を再実行し、独自の検証で再計算（原本・原典は対象外）"
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "実DBのコピー",
+      "next": "Work：コピーで移行・中断・復旧・冪等を再現"
+    },
+    {
+      "id": "DB-6",
+      "name": "記事との連携",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "契約 DB-6"
+        },
+        "implemented": {
+          "v": "partial",
+          "e": "初版は article_evidence、改訂は record_json のみ（G-07）"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "synthetic、repository_sample"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "別サイクルの引用・存在しない引用・公開可・改訂ハッシュ（synthetic）"
+        },
+        "real_data": {
+          "v": "partial",
+          "e": "copied_real_db（v06）：DB-06 pass、現行の記事13（DBから再計算）。更新→記事改訂の一気通貫は未実施"
+        },
+        "independent_audit": {
+          "v": "partial",
+          "e": "copied_real_db：DB-06 を独立実行"
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "G-07、実DB",
+      "next": "Work：G-07、コピー"
+    },
+    {
+      "id": "DB-7",
+      "name": "汎用性と移行",
+      "dimensions": {
+        "designed": {
+          "v": "yes",
+          "e": "契約 DB-7、docs/DB_MIGRATION_REQUIREMENTS.md"
+        },
+        "implemented": {
+          "v": "partial",
+          "e": "v0.3→v0.5 は追加のみ。移行履歴・索引なし（G-02/G-03）。v0.2→v0.3 は断絶（G-01）"
+        },
+        "normal_pass": {
+          "v": "yes",
+          "e": "新大学・新年度（synthetic）、v0.3→v0.5（synthetic）"
+        },
+        "abnormal_pass": {
+          "v": "yes",
+          "e": "列・テーブルを落とす移行を検出（synthetic）"
+        },
+        "real_data": {
+          "v": "no",
+          "e": "新様式の大学の追加は未実施"
+        },
+        "independent_audit": {
+          "v": "no",
+          "e": ""
+        },
+        "operational": {
+          "v": "no",
+          "e": ""
+        }
+      },
+      "blocker": "G-01/G-02/G-03、新様式の実地試験、実DB",
+      "next": "Work：方針の合意、新様式の1方式"
+    }
+  ],
+  "m1_gates": [
+    {
+      "id": "M1.g1",
+      "text": "複数大学・方式・年度の情報を、スコープの混同なく登録・取得できる（実データ）",
+      "verified": true,
+      "evidence": "copied_real_db（v06）で DB-02/04/10 が pass（Claude 独立実行）。G-04（空の学科1件）と G-05（同一事実が2つの case_id／ID 空間）は実コピーに存在。**追加型の契約と移行を Claude が作成**（docs/G04_G05_CONTRACT.md、src/db_contract/additive_schema.py。使い捨てコピーで 8/8、SELF_VALIDATED）が、**運用DBへは未適用・Work の契約合意は未**のため未解消 **2026-11-11 追記：**0011（alias の来歴の保管と per-key 規則、PR #285）を master にマージ（Antigravity の独立QA＝37 件 PASS。コードのマージで、01 の登録・g1 の正式受容ではない）。実 v06 の使い捨てクローン（原本と複製の SHA-256 が一致 a8e48b5b…）で 0002〜0010 が正常に適用され verify が空（SELF_TEST）。 **2026-11-11（夜）追記：**0011 を含む連鎖を実 v06 のクローンに適用しても DB-02/04/10 は pass（同報告）。 **2026-11-12 追記：**0002〜0014 の連鎖を実 v06 クローンに適用（13 件、DB-01〜18 pass、旧データ行ごと不変。SELF_TEST。docs/reviews/M1_REAL_COPY_CHAIN_0002_0014_2026-11-12.md）。**実コピー上の独立再検算と PDF p.6 の独立抽出は未実施**（ゲーミング PC への移送は本人の判断待ち）。 **2026-11-13 追記（A-31）：**Claude と別の抽出器（pypdf）で `R9_kobetu_sec-v2.pdf`（45 ページ）の p.6 を独立に抽出し、root `EV-G27-01-e1137e`・改訂 `EV-U-8d8e1d177883`・別名 `EV-G27C-01-e1137e` の引用と募集人員 16 名が原文と一致（PASS）。実コピーでの 0011 を含む連鎖後の検算も PASS。 **2026-11-13：本人が M1.g1 を正式に受容した**（本人の宣言：『g1 を受容する』。範囲は受容資料 docs/M1_G1_ACCEPTANCE_DOSSIER_20261113.md の文面どおり：実 v06 の複製での DB-02/04/10 の pass と Antigravity の独立再検算（#199 6836635866）、G-04・G-05 を移行 0002・0003 で解消とした決定（STR-138）に基づく）。範囲：copied_real_db（実 v06 の固定コピーの使い捨て複製）。含まないもの：運用 DB への適用、実データの別名の実際の登録（Work 側の仕組み。実複製では別名表が空）、旧 v0.2 の移行、他の関門。 実コピー確認の記録：reports/db-audit/real_copy_chain_0002_0014_2026-11-12.json。",
+      "current_implementation": "納品スキーマ v0.5：admission_cycles(case_id PK、UNIQUE(大学,学部,学科,方式,入学年度))。越境は Work の stage が ValueError で拒否。0011：alias_provenance_bundles・source_representations（追記専用・適用後は空）",
+      "synthetic": "合格：tests/test_db_acceptance_normal.py（新大学・新年度・同名方式）、_invalid.py（越境・年度混同）",
+      "repository_sample": "合格：全体ビュー＋基底状態を v0.5 に投入して DB-02〜08・11・12 が pass（派生。Work のDBではない）。全納品を一緒に入れると G-05 で失敗",
+      "work_real_db": "copied_real_db（v06）の使い捨て複製で DB-02/04/10 pass（Claude と Antigravity A-31 の独立再検算）。G-04 は重複 0 件（学科が空の行は 1 件存在）。実データの別名は未登録（別名表は空）。運用DBへの適用は未（別の承認）",
+      "missing_input": "Work 側の登録経路（実データの別名の登録）。運用DBへの適用の承認（受容の範囲外）",
+      "missing_implementation": "実データの別名の実際の登録（Work の製品側 `register_alias` と独立な照合記録）。運用DBへの適用（Work の合意と本人の承認が先）",
+      "audit_method": "db_audit --target-kind copied_real_db：DB-02・DB-04・DB-10。越境の拒否は実DBのコピーで stage を再実行。fullview の evidence_identity（同じ事実が2つのIDにあれば警告、矛盾は失敗）",
+      "done_condition": "実DBのコピーで DB-02/04/10 が pass、G-04・G-05 が解消または受容",
+      "next_action": "（受容済み）実データの別名の登録は Work 側の登録の仕組みが戻ってから。運用DBへの適用は Work の合意と本人の別の承認が先"
+    },
+    {
+      "id": "M1.g2",
+      "text": "公式の事実から、原典・保存版・引用位置・適用年度・条件へ追跡できる（原典照合を含む）",
+      "verified": true,
+      "evidence": "copied_real_db（v06）で DB-03/04/12 が pass（独立実行）。原典（PDF/HTML）との照合は not_run のため合格にしない **2026-11-11 追記：**未確認 FAQ 証拠の保管枠 0012（faq_unconfirmed_evidence：追記専用・適用範囲の列なし・scope_status は unknown 固定・昇格経路なし）を master にマージ（A-11 PASS）。PR #286（未確認節：各文に出典、STR-101＝特定の年度への束縛には独立した公式根拠が必須）は修正済みで独立QA（A-04）待ち。筑波 AC の公式数値（志願者 343・合格者 36・学類 27／5・面接に進んだ人数 69／7）を公式 PDF で確認（原典照合の一部）。 **2026-11-12 追記：**未確認 FAQ 節（PR #286、独立QA A-04 PASS）と 0012（PR #342、A-11 PASS、敵対的プローブ A-17 PASS）が master。0012 を Work の保管処理へつなぐパッチ（`patches/g2-faq/work-store-0012-wiring.patch`、Draft PR #389、SELF_TEST）を作成。Work 復帰後に適用。 **2026-11-13 追記：**0012 を Work の保管処理へつなぐパッチ（`patches/g2-faq/work-store-0012-wiring.patch`、PR #389、head ac4eb79183a7…）が Antigravity の独立QA（A-29。Work の 93 試験を含み PASS、変異 5/5 検出）に合格し master にマージ（パッチのみ。Work のファイルには未適用）。 **2026-11-13 追記：全根拠の原典照合（SELF_TEST）：**実 v06 の 4 原典（筑波 AC 募集要項・筑波 一般・慶應・新潟大）の元の PDF が手元にあり、SHA-256 が DB の ID と一致。DB の保存ページ 169／169 が元の PDF の抽出（PyMuPDF・pypdf）と一致し、根拠 57 箇所の引用が元の PDF の該当ページに 57／57 存在（見つからないもの 0）。docs/reviews/M1_G2_FULL_SOURCE_CHECK_2026-11-13.md、reports/db-audit/g2_full_source_check_2026-11-13.json。**独立再計算は未（Antigravity に同じ PDF を渡す必要。慶應・新潟大の PDF の移送には本人の追加の許可が要る）。** **2026-11-13 追記（A-33）：**Antigravity が 4 つの公式 PDF を公式サイトから自分で取得し、ファイルの SHA-256 が原典 ID と 4／4 一致、ページ 169／169・根拠の引用 57／57 を別の抽出器を含めて独立に再計算して Claude の結果と不一致 0 件（#199 の A-33。取得ファイルは削除・記録済み）。**完了条件（DB-03/04/12 pass と全根拠の原典照合）の証拠が揃った。**受容資料：docs/M1_G2_ACCEPTANCE_DOSSIER_20261113.md（本人の確認と宣言待ち）。 **2026-11-13：本人が M1.g2 を正式に受容した**（本人の宣言：『宣言します』、Claude の確認に対し『はい、g2を受容する』。範囲は受容資料 docs/M1_G2_ACCEPTANCE_DOSSIER_20261113.md の文面どおり：実 v06 の複製での DB-03/04/12 の pass と、全根拠の原典照合（Claude の自己確認と Antigravity の独立再計算 A-33）に基づく）。範囲：copied_real_db と、登録された 4 原典の元の PDF。含まないもの：運用 DB への適用、未確認 FAQ 節の記事側の実運用（Work の保管処理への配線パッチの適用）、引用の意味の正しさ、他の関門。 実コピー確認の記録：reports/db-audit/real_copy_chain_0002_0014_2026-11-12.json。",
+      "current_implementation": "source_documents(sha256 PK, url, retrieved_at)、facts.source_sha256 の FK、record_json の proofs / field_proofs。公表日の列は無い。0012：faq_unconfirmed_evidence（master）。PR #286：未確認節の描画と scope_evidence の検査（Draft）",
+      "synthetic": "合格：DB-03（ページのハッシュ）・DB-04（record と行のハッシュ一致）・DB-12（引用が保存ページにある）",
+      "repository_sample": "合格：投入した 50 根拠・13 草案で DB-03/04/12 が pass（ページは引用から再構成）。旧納品のPDF（筑波AC・慶應）は audit_handoff --pdf-dir で pass、FAQ の6引用文は現在の公式本文に存在",
+      "work_real_db": "copied_real_db（v06）で DB-03/04/12 pass（Claude と A-31 の独立再検算）。登録された 4 原典の元の PDF に対し、保存ページ 169／169 と根拠の引用 57／57 を確認（Claude の自己確認と Antigravity A-33 の独立再計算が不一致 0 件）。運用DBへの適用は未（別の承認）",
+      "missing_input": "運用DBへの適用の承認、Work 復帰後のパッチ適用（受容の範囲外）",
+      "missing_implementation": "Work の保管処理への 0012 配線の適用（パッチは master にあり未適用）。運用DBへの適用",
+      "audit_method": "db_audit（DB-03/04/12）＋ audit_handoff --pdf-dir（原本）。原本のバイト列の照合は別",
+      "done_condition": "実DBのコピーで DB-03/04/12 が pass し、すべての根拠の原典照合が実施された（not_run でない）",
+      "next_action": "（受容済み）未確認 FAQ 節の記事側の実運用：Work 復帰後に 0012 の配線パッチ（PR #389）を適用。運用DBへの適用は Work の合意と本人の別の承認が先"
+    },
+    {
+      "id": "M1.g3",
+      "text": "根拠と記事の旧版が保全され、どの変更が何に影響したか分かる（実DB）",
+      "verified": true,
+      "evidence": "copied_real_db：v05→v06 で DB-05/06/07/09 が pass（独立実行。旧行の削除・変更 0、追加は根拠改訂1・記事改訂2、head 移動は FAQ の1根拠と2記事のみ、自前の別実装でも一致）。ただし v03→v04 は追記専用でなく（事実5件が上書き、記事6版が置換、記事根拠24行が消失）、DB に保護（G-09）・改訂理由（G-11）・関係表（G-07）が無いため、合格にしない。**G-09 の追記専用トリガーとG-02 の移行履歴の契約を Claude が実装**（docs/G02_G09_CONTRACT.md、SELF_VALIDATED。v06 の使い捨てクローンで 14/14、Work の更新経路は移行後も 22/22）。**運用DBへ未適用**、F-2 は未受容・未復元のため未達 **2026-11-11 追記：**0010（復元履歴の追記専用の 5 表）は master にマージ済み。F-2 の状態 B の復元は未実行（本人の署名と Work の復帰待ち）。 **2026-11-12 追記：**DB-19（復元の検査）を `db_audit.audit()` に組み込み（Draft PR #391、SELF_TEST。実 v06 クローンで pass＝復元表が空）。F-2 の署名つき復元は未実施（本人の署名と Work の復元道具が必要）。 **2026-11-13 追記（A-31）：**実 v06 の複製で、連鎖後も旧データが全行不変、0010 の復元関連 5 表がすべて空であることを Antigravity が独立に確認（PASS）。DB-19 の組み込み（PR #391）は独立QA PASS の報告（head の記載の食い違いを確認中）。F-2 の署名つき復元は未実施。 **2026-11-13 追記：**DB-19（復元の検査）を `db_audit.audit()` に組み込んだ（PR #391、head 13f796f22ddb…）。Antigravity の独立QA（A-30。57 件 PASS、変異 5/5 検出、既存試験の弱体化なしを確認）に合格し master にマージ。実 v06 の複製で DB-19 は pass（復元表が空）。F-2 の署名つき復元は未実施。 **2026-11-13：本人が M1.g3 を正式に受容した**（本人の選択：『A でお願いします』、宣言：『g3（欠損は復元せず受容）』を選択。範囲は受容資料 docs/M1_G3_ACCEPTANCE_DOSSIER_20261113.md の選択 A の文面どおり：実 v06 の複製での DB-05/06/07/09 の pass（v05→v06）と Antigravity の独立再検算（A-31）、前向きの保護（0004・0005・0006・0010、DB-17、DB-19）に基づく）。**v03→v04 の履歴の欠損（F-2）は復元されていない状態を承知のうえで、開発途中 DB の上書きとして受容した。**範囲：copied_real_db。含まないもの：F-2 の旧 36 行の復元、運用 DB への適用。 実コピー確認の記録：reports/db-audit/real_copy_chain_0002_0014_2026-11-12.json。",
+      "current_implementation": "evidence_revisions / evidence_heads / revised_articles / article_heads、不変チェックはコードのみ。トリガー・改訂理由は無い",
+      "synthetic": "合格：DB-05/06/07/09、旧行の上書き・削除・改ざん・親の不整合・改訂ハッシュの改ざん・列/表の削除を検出",
+      "repository_sample": "合格：投入した全体ビューの改訂（6記事・5根拠版）で DB-05/06/07 が pass。DB-09 は旧コピーが無く not_run",
+      "work_real_db": "copied_real_db（v06）の更新前後（v05→v06）で DB-05/06/07/09 pass、連鎖 0002〜0014 の適用後も旧 21 表 690 行は行ごとに不変・復元表は空・DB-19 pass（Claude と A-31 の独立再検算が一致）。v03→v04 の欠損は復元されていない（本人が開発途中 DB の上書きとして受容）。運用DBへの適用は未",
+      "missing_input": "v03→v04 の経緯の説明（Work）、ユーザーまたは Work の判断：開発途中DBの上書きとして受容するか",
+      "missing_implementation": "G-07（改訂記事→根拠）・G-11（改訂理由）・G-09 の運用DBへの適用（Work の合意とユーザーの承認が先）。F-2 の説明と受容の判断",
+      "audit_method": "db_audit --baseline <更新前コピー>（DB-09）、DB-05/06",
+      "done_condition": "実DBの更新前後のコピーで DB-09 が pass、DB-05/06/07 が pass",
+      "next_action": "（受容済み）F-2 の旧 36 行の復元は任意の追加作業（本人の署名と Work の復元道具が必要）。運用DBへの適用は Work の合意と本人の別の承認が先"
+    },
+    {
+      "id": "M1.g4",
+      "text": "不正データ・失敗・クラッシュ・重複・同時実行で旧有効版が壊れない（実DBのコピーで）",
+      "verified": true,
+      "evidence": "copied_real_db（v06 の使い捨てコピー）：Work の6ケース（PR #63、head 54e4f9c）を Claude が自分で実行して 6/6。さらに Claude 独自の検証（全表の全行の比較、v05 の head を基準にした照合、db_audit、integrity_check・外部キー）で 21/21：未コミットの書き込み中・候補保存後・承認の途中の異常終了、復旧とロールバック、同一入力の再試行、別プロセスによる head の更新後の finalize 拒否、ロック、同時刻の2書き込みを3回、不正データ8種（スコープ違い・別事実の親・重複・同じIDで別内容・QA 結果の不一致・公開可の記事・拒否済み batch・他 case の引用）と使えないバックアップ先が、すべて原子的に拒否または復旧され、旧行・旧 head は不変。範囲：コピーの更新経路。DB 単体の保護（G-09）、ディスク満杯・電源断、原本DB・原典は未検証。reports/db-audit/real_copy_g4_audit_pr63_2026-11-01.json。更新経路は G-02/04/05/09 を適用した使い捨てクローンでも 22/22（real_copy_g02_g09_2026-11-01.json）",
+      "current_implementation": "stage/finalize（BEGIN IMMEDIATE、QAと入力のハッシュ結合、同時更新の拒否）、snapshot、recover_candidates、rollback_batch、ProcessLock",
+      "synthetic": "合格：途中例外のロールバック、クラッシュ後の回復、同時更新・二重起動の拒否、不完全なバックアップ、QA不合格・承認欠落でhead保全、再試行の冪等（Work のコードを合成DBで駆動）",
+      "repository_sample": "対象外（サンプルに更新経路が無い）",
+      "work_real_db": "実施：Work のコピーで Claude が独立に再現した（範囲はコピー上の更新経路。原本・ディスク満杯・電源断は対象外）",
+      "missing_input": "なし（ディスク満杯・電源断の試験は未実施）",
+      "missing_implementation": "なし（DB 単体の追記専用の保護 G-09 は g3 の課題。更新経路を迂回する直接書き込みは DB が止めない：既知の限界）",
+      "audit_method": "コピーに対して stage/finalize・中断・復元を再実行し、db_audit --baseline を前後で実行",
+      "done_condition": "実DBのコピーで中断・復旧・冪等・同時実行を再現し、旧有効版が壊れない（DB-09 pass）",
+      "next_action": "スキーマの追加（G-04・G-05・v0.6）の後に、同じ harness（src/integration/real_copy_g4_audit.py）で再実行する。Work：PR #63 のマージ判断"
+    },
+    {
+      "id": "M1.g5",
+      "text": "過去データを失わず新スキーマへ移行できる（実DBのコピーで）",
+      "verified": true,
+      "evidence": "v0.3→v0.5 は合成で追加のみ。v0.2 世代は未移行。実コピーでは v04→v05 が追加のみ。**追加型の migration（G-02 schema_migrations・G-04・G-05）を v06 の使い捨てコピーで実行**し旧行不変・DB-09 pass・再実行で不変・衝突で原子的に停止（SELF_VALIDATED、copied_real_db のクローン）。ただし v0.6 全体（G-03・G-06・G-07・G-09・G-11）ではなく、Work の合意・運用DBへの適用は未。**G-02 の履歴の契約（version・from_version・checksum・user_version）に実装を合わせ、順序・checksum・user_version のドリフトを拒否**（SELF_VALIDATED） **2026-11-11 追記：**移行の連鎖 0002〜0012 が master に入った（0011＝PR #285、0012＝PR #342）。DB-17 の検出の穴（連鎖外に作られた『表』を検出しない）を PR #341 で塞いだ：基底スキーマ（Work の v06 の 21 表）と適用済みの移行が作る表以外の表を DRIFT と報告（Antigravity の独立QA＝10 件 PASS）。実 v06 の使い捨てクローンで連鎖が適用され verify が空、連鎖外の表を足すと名前つきで報告（SELF_TEST）。 **2026-11-11（夜）追記：**実 v06 の固定コピー（SHA-256 a8e48b5b…）の使い捨てクローンに連鎖 0002〜0012 を適用：verify が空、`db_audit` が baseline つきで DB-09・DB-17 を含め pass、旧データは行ごとに不変、0012 は追記専用を確認、連鎖外の表は DRIFT と報告（docs/reviews/M1_REAL_COPY_CHAIN_0002_0012_2026-11-11.md。SELF_TEST）。 **2026-11-12 追記：**移行の連鎖 0002〜0014 が master（0013・0014＝PR #350、独立QA A-05 PASS）。実 v06 クローンへの適用確認の文書・JSON を master に追加（SELF_TEST）。master 全件の独立再実行（A-16）PASS。公開ミラーで CI 3 ジョブ成功。 **2026-11-13 追記（A-31・実コピー上の独立検算）：**Antigravity が自分のスクリプトで、使い捨ての複製に 0002〜0014（13 件）を適用し、`verify_history`・`verify_schema_state` が空、user_version 14、integrity ok、FK 違反 0、`db_audit`（移行前を baseline）15 pass・2 warn（DB-14/15 既知）・0 fail、旧 21 表（690 行）の行ごとの指紋が一致、新 22 表の行数（空 18、バックフィル 4）まで、Claude の結果（real_copy_chain_0002_0014 の JSON）と**不一致 0 件**で一致。元ファイルは不変、複製は削除・記録済み。**条件 4（独立QA）の『実コピー上の独立再検算』が満たされた。** **2026-11-13：本人が M1.g5 を正式に受容した**（本人の宣言：『M1.g5（過去データを失わず新スキーマへ移行できる）を、移行の連鎖 0002〜0014 について、実 v06 の複製での確認と Antigravity の独立再検算（Issue #199 コメント 6836635866）に基づき、正式に受容する。運用 DB への適用と旧 v0.2 の移行は含まない。』）。範囲：copied_real_db（実 v06 の固定コピーの使い捨て複製）での連鎖 0002〜0014。含まないもの：運用 DB への適用、旧 v0.2 の移行、ディスク満杯・電源断の途中失敗（未試験）、他の関門。受容資料：docs/M1_G5_ACCEPTANCE_DOSSIER_20261113.md。 実コピー確認の記録：reports/db-audit/real_copy_chain_0002_0014_2026-11-12.json（Claude・SELF_TEST）、Antigravity の独立再検算は #199 6836635866。",
+      "current_implementation": "v0.3→v0.5 は追加のみ。移行履歴は schema_versions の版名のみ。v0.2→v0.3 は世代の断絶。**v0.2 の全面移行は保留**（docs/DB_MIGRATION_POLICY.md）。連鎖 0002〜0012＋表の許可リスト（BASE_TABLES）",
+      "synthetic": "合格：v0.3→v0.5 の追加のみの移行で旧行が不変（DB-09）。列・テーブルを落とす移行を検出",
+      "repository_sample": "v0.2 サンプルDBは保全（移行しない）。v0.2 の4不変条件は pass",
+      "work_real_db": "copied_real_db（v06）の使い捨て複製で連鎖 0002〜0014 を適用し DB-09 pass、旧データ行ごと不変。Claude の自己確認と Antigravity の独立再検算（A-31）が一致。運用DBへの適用は未（別の承認）",
+      "missing_input": "運用DBへの適用の承認（受容の範囲外）",
+      "missing_implementation": "運用DBへの適用（Work の合意と本人の承認が先）。v0.6 全体（G-03・G-06・G-07・G-09・G-11）の運用適用範囲の判断",
+      "audit_method": "移行前後のコピーに db_audit --baseline（DB-09）。DB_MIGRATION_POLICY の10条件",
+      "done_condition": "（v0.6 への追加の移行を）実DBのコピーで実行し DB-09 が pass。v0.2 は DB_MIGRATION_POLICY の10条件が揃うまで移行しない",
+      "next_action": "（受容済み）運用DBへの適用は Work の合意と本人の別の承認が先。旧 v0.2 は DB_MIGRATION_POLICY の 10 条件が揃うまで移行しない。ディスク満杯・電源断の試験は任意の追加確認"
+    },
+    {
+      "id": "M1.g6",
+      "text": "変更した根拠に依存する記事だけを特定し、安全に改訂候補を作れる（実データ）",
+      "verified": true,
+      "evidence": "版管理・影響分析は実装済み。実際の更新の一気通貫は未実施。**2026-11-11 追記：**Antigravity の PR #306 の g6 部品（版系列の保存行との照合、DB の版番号の連続・不変のガード、反復抑止）は、Claude の独立QA（第 3〜4 弾）で合成データの範囲で PASS。実 14 記事・実更新での確認は未実施。PR #306 は未マージ（g7 が差し戻し中）。 **2026-11-12 追記：**0014（版系列）と #306 の版管理・影響分析が master。**旧版→模擬の新版の一気通貫を実 v06 クローン上で実行**（Draft PR #386、SELF_TEST：影響を受ける記事 1/6 のみを改訂候補、0014 のガード 7/7 拒否、旧表 41 表 930 行不変）。模擬であり、全体記事QA の FAIL（13 記事）は未解決。 **2026-11-13 追記：**旧版→模擬の新版の一気通貫を実 v06 の複製の上で実行（PR #386、head 5f9e773c7b9d…）。Antigravity の独立QA（A-28／A-32。45 件 PASS・独立プローブ 5/5・変異 5/5 検出）に合格し master にマージ。影響を受ける記事 1/6 のみが改訂候補、0014 のガード 7/7 拒否、旧表 41 表 930 行不変。**模擬の新版であり、全体記事QA の FAIL（13 記事）は未解決。** **2026-11-13 追記：本物の旧版→新版（筑波 AC 募集要項 令和 8 年度→令和 9 年度）での一気通貫**（PR #413、head d6b95ec9b6ba…。実際の変更は日付。変わった根拠 5 件を特定し、それを引用する記事 6 本中 2 本だけが改訂候補、オラクルと両方向で一致、0014 のガード 7／7 拒否、旧 41 表 930 行不変）。**Antigravity の独立QA（A-34）PASS**（公式サイトから 2 PDF を自分で取得し SHA 一致、根拠 19 件の状態・変わった根拠 5 件・改訂候補 2 本・日付 6 箇所が一致、変異 5／5 検出）。master にマージ済み。記事の品質検査の不合格（13 記事：反復 299・近い重複 1。原因は Work の生成の型）は別課題（docs/reviews/M1_D11_ARTICLE_QA_ROOT_CAUSES_2026-11-13.md）。受容資料：docs/M1_G6_ACCEPTANCE_DOSSIER_20261113.md（本人の宣言待ち）。 **2026-11-13：本人が M1.g6 を正式に受容した**（本人の選択：『A でお願いします』、宣言：『g6（記事品質の不合格は別課題）』を選択。範囲は受容資料 docs/M1_G6_ACCEPTANCE_DOSSIER_20261113.md の選択 A の文面どおり：実際の旧版（令和 8 年度）→新版（令和 9 年度）の筑波 AC 募集要項での確認と Antigravity の独立再計算 A-34 に基づく）。全体記事QA の不合格（13 記事：反復 299・近い重複 1。Work の生成の型に起因）は別課題として、受容に含めない。範囲：copied_real_db と 1 つの文書の新旧 1 組。含まないもの：運用DBへの適用、記事の改訂・公開、他大学・他方式の更新。 実コピー確認の記録：reports/db-audit/real_copy_chain_0002_0014_2026-11-12.json。",
+      "current_implementation": "src/versioning（スナップショット・差分・影響分類）、article_evidence（初版）。改訂記事の関係表は無い",
+      "synthetic": "合格：DB-06（記事の引用は同サイクルで実在）、版管理の試験",
+      "repository_sample": "合格：全体ビューの記事13本の引用が DB に実在し同サイクル（DB-06）",
+      "work_real_db": "copied_real_db（v06）の使い捨て複製で、本物の旧版→新版の一気通貫を実行（影響する記事 2 本だけが改訂候補、独立の照合と一致、0014 のガード 7／7、旧 41 表 930 行不変）。Antigravity の独立再計算 A-34 が一致。全体記事QA の不合格は別課題。運用DBへの適用は未",
+      "missing_input": "本当に1件変わった（または模擬の）旧版・新版、実DBのコピー",
+      "missing_implementation": "revised_article_evidence（G-07）。投稿先との関係（G-08）",
+      "audit_method": "根拠を1つ変更し、影響する記事が期待どおり（それだけ）であることを再計算",
+      "done_condition": "実際の更新で影響する記事だけが改訂候補になり、旧版・head が保全される",
+      "next_action": "（受容済み）全体記事QA の不合格の是正は別課題（Work の生成の型の修正＝Work 復帰後。新しい固定部分の比較・本文だけの類似度は Claude の候補）。運用DBへの適用は別の承認"
+    },
+    {
+      "id": "M1.g7",
+      "text": "異なる資料様式の大学・方式を追加し、同じ受け入れ基準を満たした",
+      "verified": true,
+      "evidence": "未実施。**2026-11-11 追記：**Antigravity の PR #306 の g7 部品（隔離ステージング）を Claude が独立QA：旧 head の 34 件の欠陥は大半が解消したが、最新 head（76ef70ad）で『製品コードが呼び出し元のテスト関数名を見て検査を免除』『承認者のレジストリの既定が開』を発見し FAIL（差し戻し）。新様式の実データでの受容は未実施。 **2026-11-12 追記：**隔離ステージング製品コード（#306）と 0013（#350、A-05 PASS）が master（合成環境のみ）。新様式の原本での抽出、`fact_key` の命名（本人の決定 3）、Work の表セル束（#103）への試験は未。 **2026-11-13 追記：Claude と Antigravity による代替作業**（PR #415：契約の行 4〜10 の試験 63 件＋新様式の原本〔京都大・理学部〕での抽出と隔離ステージングへの投入、PR #416：採用した事実キー admission_unit_quota の認識）。**Antigravity の独立QA（A-35）PASS**（63／63、契約行の拒否の層・製品の限界を独立に確認、変異 5／5 検出、#416 は 13／13）。master にマージ済み。受容資料：docs/M1_G7_ACCEPTANCE_DOSSIER_20261113.md（本人の宣言待ち。承認者の本人認証・運用DB・事実キーの登録簿への登録は含まない）。 **2026-11-13：本人が M1.g7 を正式に受容した**（本人の宣言：『g7（承認者認証・登録簿は含まない）』を選択。範囲は受容資料 docs/M1_G7_ACCEPTANCE_DOSSIER_20261113.md の文面どおり：新様式の原本〔京都大・理学部〕を copied_real_db（実 v06 の使い捨て複製）の隔離ステージングへ入れた確認と Antigravity の独立QA A-35 に基づく）。含まないもの：承認者の本人認証（現状は未）、運用DBへの適用、事実キーの登録簿への正式登録。 実コピー確認の記録：reports/db-audit/real_copy_chain_0002_0014_2026-11-12.json。",
+      "current_implementation": "設定型の抽出プロファイル（Work 報告）。3大学5方式",
+      "synthetic": "合格：新大学・新年度をスキーマ変更なしで追加",
+      "repository_sample": "3大学5方式（筑波・慶應・新潟）が同じスキーマに入る",
+      "work_real_db": "copied_real_db（v06）の使い捨て複製の隔離ステージングに、新様式の候補 5 行を投入（スキーマ・QA を変更せず、承認の道・正本は未使用、不正な操作 10／10 を防止）。Antigravity の独立QA A-35 が一致。承認者の本人認証・運用DBは未",
+      "missing_input": "（完了条件に対する不足なし）承認者の認証・登録簿への登録は受容の範囲外",
+      "missing_implementation": "新様式の抽出プロファイル（Issue #20・#21）",
+      "audit_method": "同じ全不変条件＋記事QA＋変異で、新しい方式を検査",
+      "done_condition": "新方式をスキーマ・QAを作り直さず追加し、同じ受け入れ基準を満たす",
+      "next_action": "（受容済み）承認者の本人認証の設計、事実キーの登録簿への正式登録、運用DBへの適用は別の作業・承認"
+    },
+    {
+      "id": "M1.g8",
+      "text": "ClaudeがWorkの報告に依存せず、同じ結果を再計算・検証できる（実DBを含む）",
+      "verified": true,
+      "evidence": "copied_real_db：5世代のコピーの SHA を再計算して提出値と一致、db_audit（Work と同一コード a6c4474）を Claude が自身で実行し、Work の報告と全判定が一致（差：Work の privacy_report の漏れ F-1。原因は説明済み）。自前の別実装で旧行保全・有効ビュー（根拠50・記事13）を再計算。範囲：コピーまで（独立性 B）。原本DB・公式PDF/HTMLとの照合は not_run。reports/db-audit/real_copy_independent_audit_2026-11-01.json（copied_real_db：Work の5コピーを Claude が同一PCで独立に実行。原本・原典は未確認）",
+      "current_implementation": "db_audit・audit_handoff・fullview・回帰基盤。Work の報告に依存しない",
+      "synthetic": "合格（自己検証）",
+      "repository_sample": "合格：Work の納品を独立に再計算（PR #42 の先行監査を含む）",
+      "work_real_db": "実施：Work のコピーを Claude が独立に読み、Work の結果を再計算した（原本・原典は対象外）",
+      "missing_input": "なし（原本・原典は g2 の範囲）",
+      "missing_implementation": "なし",
+      "audit_method": "同じコピーで Work の報告の数値を Claude が再計算し、差を原因つきで報告",
+      "done_condition": "実DBのコピーで Work と Claude の結果が一致（または差の原因が説明される）",
+      "next_action": "更新ごとに同じ手順で再計算。PR #42 の再統合後に別監査"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M1",
+      "name": "汎用データベース基盤の完成",
+      "start_condition": "P1 の実DB棚卸し（実DBのコピー）",
+      "done_condition": "上の M1 ゲートがすべて実データで verified"
+    },
+    {
+      "id": "M2",
+      "name": "記事生成・編集制作の完成",
+      "start_condition": "M1 の DB-1〜7 が実データで合格、P0 の方針",
+      "done_condition": "DB→企画→生成→独立QA→修正→承認候補が再現され、AIは根拠を創作・改変できない"
+    },
+    {
+      "id": "M3",
+      "name": "note非公開下書き統合",
+      "start_condition": "M2、ユーザーの明示許可（隔離環境）",
+      "done_condition": "非公開下書きの保存・再読込・本文/リンク整合・二重保存防止・失敗再開"
+    },
+    {
+      "id": "M4",
+      "name": "限定運用の合格",
+      "start_condition": "M3、ユーザーの承認",
+      "done_condition": "少数の大学・記事で実更新・訂正・監視・障害・人手確認を含む運用手順を実証（公開は別途承認）"
+    },
+    {
+      "id": "M5",
+      "name": "全国展開・継続運用",
+      "start_condition": "M4",
+      "done_condition": "新大学・方式・年度を設定と証拠で増やせ、運用負荷・費用・品質の指標を維持"
+    }
+  ]
+}

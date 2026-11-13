@@ -1,0 +1,137 @@
+{
+  "success": true,
+  "qa_commit": "475a1f55ae09bae188f3c5266fa261030f84e9a3",
+  "synthetic": true,
+  "network_requests": 0,
+  "source_id": "fixture-guide",
+  "evidence_id": "EV-FIX-1",
+  "article_id": "fixture-article",
+  "initial": {
+    "success": true,
+    "requires_review": false,
+    "safe_without_review": true,
+    "exit_code": 0,
+    "report_path": "outputs\\updates-v2\\monitor-chain-final-151\\state\\reports\\versions-792b45f1b2094623b22c66e726c090d7-impact.json",
+    "summary": {
+      "evidence": 1,
+      "evidence_intact": 1,
+      "evidence_moved": 0,
+      "evidence_page_changed": 0,
+      "evidence_reworded": 0,
+      "evidence_value_change": 0,
+      "evidence_missing": 0,
+      "evidence_unassessed": 0,
+      "articles": 1,
+      "articles_republish_required": 0,
+      "articles_unassessed": 0,
+      "articles_review": 0,
+      "articles_ok": 1
+    },
+    "republish_required": [],
+    "articles_to_review": [],
+    "unassessed_evidence": [],
+    "source_differences": []
+  },
+  "byte_only": {
+    "success": true,
+    "requires_review": false,
+    "safe_without_review": true,
+    "exit_code": 0,
+    "report_path": "outputs\\updates-v2\\monitor-chain-final-151\\state\\reports\\versions-6e2c60e532334aff94f20dfa2a5ecd31-impact.json",
+    "summary": {
+      "evidence": 1,
+      "evidence_intact": 1,
+      "evidence_moved": 0,
+      "evidence_page_changed": 0,
+      "evidence_reworded": 0,
+      "evidence_value_change": 0,
+      "evidence_missing": 0,
+      "evidence_unassessed": 0,
+      "articles": 1,
+      "articles_republish_required": 0,
+      "articles_unassessed": 0,
+      "articles_review": 0,
+      "articles_ok": 1
+    },
+    "republish_required": [],
+    "articles_to_review": [],
+    "unassessed_evidence": [],
+    "source_differences": [
+      {
+        "url": "https://fixture.ac.jp/guide",
+        "old_sha256": "f4927431a3611faaa503c09d266349dafc6963be23f6afa5d0f7007456b5967b",
+        "new_sha256": "b5d223db3d4c3894fd112975f6f9eef8afc7c78853c8b4d81ab41d541a6ea608",
+        "change_class": "byte_only",
+        "diff_report_path": "outputs\\updates-v2\\monitor-chain-final-151\\state\\reports\\versions-6e2c60e532334aff94f20dfa2a5ecd31-diff-2.json",
+        "changed_blocks": 0,
+        "value_changed_blocks": 0
+      }
+    ]
+  },
+  "value_changed": {
+    "success": true,
+    "requires_review": true,
+    "safe_without_review": false,
+    "exit_code": 1,
+    "report_path": "outputs\\updates-v2\\monitor-chain-final-151\\state\\reports\\versions-2411ee06ab864ae28efeb65edf5a36f7-impact.json",
+    "summary": {
+      "evidence": 1,
+      "evidence_intact": 0,
+      "evidence_moved": 0,
+      "evidence_page_changed": 0,
+      "evidence_reworded": 0,
+      "evidence_value_change": 1,
+      "evidence_missing": 0,
+      "evidence_unassessed": 0,
+      "articles": 1,
+      "articles_republish_required": 1,
+      "articles_unassessed": 0,
+      "articles_review": 0,
+      "articles_ok": 0
+    },
+    "republish_required": [
+      "fixture-article"
+    ],
+    "articles_to_review": [],
+    "unassessed_evidence": [],
+    "source_differences": [
+      {
+        "url": "https://fixture.ac.jp/guide",
+        "old_sha256": "b5d223db3d4c3894fd112975f6f9eef8afc7c78853c8b4d81ab41d541a6ea608",
+        "new_sha256": "54df902a759e5b35caa8615bd4c41553a94742b7555babb683eafc41a777a83a",
+        "change_class": "content_changed",
+        "diff_report_path": "outputs\\updates-v2\\monitor-chain-final-151\\state\\reports\\versions-2411ee06ab864ae28efeb65edf5a36f7-diff-3.json",
+        "changed_blocks": 0,
+        "value_changed_blocks": 0
+      }
+    ]
+  },
+  "moved_url": {
+    "success": true,
+    "requires_review": true,
+    "safe_without_review": false,
+    "exit_code": 1,
+    "report_path": "outputs\\updates-v2\\monitor-chain-final-151\\state\\reports\\versions-ea8c9babce5a42b6bfecd93286da985a-impact.json",
+    "summary": {
+      "evidence": 1,
+      "evidence_intact": 0,
+      "evidence_moved": 0,
+      "evidence_page_changed": 0,
+      "evidence_reworded": 0,
+      "evidence_value_change": 1,
+      "evidence_missing": 0,
+      "evidence_unassessed": 0,
+      "articles": 1,
+      "articles_republish_required": 1,
+      "articles_unassessed": 0,
+      "articles_review": 0,
+      "articles_ok": 0
+    },
+    "republish_required": [
+      "fixture-article"
+    ],
+    "articles_to_review": [],
+    "unassessed_evidence": [],
+    "source_differences": []
+  }
+}

@@ -1,0 +1,570 @@
+{
+  "current_editions": [
+    {
+      "source_id": "49cb4d7d",
+      "sha256": "c1e791ff00f3ae3a852bb750d33dd7160aaaf012d71361df71f90701e6a8e91c",
+      "retrieved_at": "2026-11-02"
+    },
+    {
+      "source_id": "91dad17f",
+      "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "retrieved_at": "2026-11-02"
+    }
+  ],
+  "evidence": {
+    "EV-T27-01-49cb4d": {
+      "status": "value_change",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "quota",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "value_change",
+          "changes": [
+            {
+              "from": "5",
+              "to": "6"
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "status": "page_changed",
+          "values_changed_on_page": [
+            "number:5",
+            "number:6"
+          ]
+        }
+      ]
+    },
+    "EV-T27-02-49cb4d": {
+      "status": "page_changed",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "policy",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "page_changed",
+          "values_changed_on_page": [
+            "number:5",
+            "number:6"
+          ]
+        }
+      ]
+    },
+    "EV-T27-03-49cb4d": {
+      "status": "page_changed",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "first_stage",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "page_changed",
+          "values_changed_on_page": [
+            "number:5",
+            "number:6"
+          ]
+        }
+      ]
+    },
+    "EV-T27-04-49cb4d": {
+      "status": "page_changed",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "interview",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "page_changed",
+          "values_changed_on_page": [
+            "number:5",
+            "number:6"
+          ]
+        },
+        {
+          "page": 5,
+          "status": "page_changed",
+          "values_changed_on_page": [
+            "number:5",
+            "number:6"
+          ]
+        }
+      ]
+    },
+    "EV-T27-05-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "online_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-06-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "postal_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-07-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "eligibility",
+      "proofs": [
+        {
+          "page": 6,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-08-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "common_test",
+      "proofs": [
+        {
+          "page": 6,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-09-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "second_stage_date",
+      "proofs": [
+        {
+          "page": 11,
+          "status": "intact"
+        },
+        {
+          "page": 4,
+          "status": "intact"
+        },
+        {
+          "page": 12,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-10-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "final_result",
+      "proofs": [
+        {
+          "page": 12,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-11-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "first_stage_result",
+      "proofs": [
+        {
+          "page": 4,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-12-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "statement_length",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-13-49cb4d": {
+      "status": "intact",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "recommendation_format",
+      "proofs": [
+        {
+          "page": 7,
+          "status": "intact"
+        },
+        {
+          "page": 7,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-T27-14-49cb4d": {
+      "status": "page_changed",
+      "snapshot": "49cb4d7d",
+      "same_edition": false,
+      "fact_key": "interview_scope",
+      "proofs": [
+        {
+          "page": 5,
+          "status": "page_changed",
+          "values_changed_on_page": [
+            "number:5",
+            "number:6"
+          ]
+        }
+      ]
+    },
+    "EV-K27-01-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "quota",
+      "proofs": [
+        {
+          "page": 8,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-02-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "entry",
+      "proofs": [
+        {
+          "page": 8,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-03-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "online_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-04-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "maintenance",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-05-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "postal_period",
+      "proofs": [
+        {
+          "page": 9,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-06-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "eligibility",
+      "proofs": [
+        {
+          "page": 10,
+          "status": "intact"
+        },
+        {
+          "page": 10,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-07-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "second_stage_date",
+      "proofs": [
+        {
+          "page": 16,
+          "status": "intact"
+        },
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-08-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "interview",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        },
+        {
+          "page": 31,
+          "status": "intact"
+        },
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-09-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "final_result",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-10-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "first_stage",
+      "proofs": [
+        {
+          "page": 8,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-11-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "first_stage_result",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-12-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "personal_statement",
+      "proofs": [
+        {
+          "page": 19,
+          "status": "intact"
+        },
+        {
+          "page": 19,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-13-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "optional_materials",
+      "proofs": [
+        {
+          "page": 19,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-14-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "referees",
+      "proofs": [
+        {
+          "page": 13,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-15-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "generative_ai_policy",
+      "proofs": [
+        {
+          "page": 3,
+          "status": "intact"
+        }
+      ]
+    },
+    "EV-K27-16-91dad1": {
+      "status": "intact",
+      "snapshot": "91dad17f",
+      "same_edition": true,
+      "fact_key": "interview_language",
+      "proofs": [
+        {
+          "page": 31,
+          "status": "intact"
+        }
+      ]
+    }
+  },
+  "articles": {
+    "tsukuba-klis-ac-2027:overview:39b5d2172672c192": {
+      "status": "republish_required",
+      "cited": [
+        "EV-T27-01-49cb4d",
+        "EV-T27-02-49cb4d",
+        "EV-T27-03-49cb4d",
+        "EV-T27-04-49cb4d",
+        "EV-T27-05-49cb4d",
+        "EV-T27-06-49cb4d",
+        "EV-T27-07-49cb4d",
+        "EV-T27-08-49cb4d",
+        "EV-T27-09-49cb4d",
+        "EV-T27-10-49cb4d",
+        "EV-T27-11-49cb4d",
+        "EV-T27-12-49cb4d",
+        "EV-T27-13-49cb4d"
+      ],
+      "reasons": [
+        {
+          "evidence_id": "EV-T27-01-49cb4d",
+          "status": "value_change"
+        },
+        {
+          "evidence_id": "EV-T27-02-49cb4d",
+          "status": "page_changed"
+        },
+        {
+          "evidence_id": "EV-T27-03-49cb4d",
+          "status": "page_changed"
+        },
+        {
+          "evidence_id": "EV-T27-04-49cb4d",
+          "status": "page_changed"
+        }
+      ]
+    },
+    "tsukuba-klis-ac-2027:interview:f57bf5213da13d66": {
+      "status": "review",
+      "cited": [
+        "EV-T27-02-49cb4d",
+        "EV-T27-03-49cb4d",
+        "EV-T27-04-49cb4d",
+        "EV-T27-07-49cb4d",
+        "EV-T27-09-49cb4d",
+        "EV-T27-10-49cb4d",
+        "EV-T27-14-49cb4d"
+      ],
+      "reasons": [
+        {
+          "evidence_id": "EV-T27-02-49cb4d",
+          "status": "page_changed"
+        },
+        {
+          "evidence_id": "EV-T27-03-49cb4d",
+          "status": "page_changed"
+        },
+        {
+          "evidence_id": "EV-T27-04-49cb4d",
+          "status": "page_changed"
+        },
+        {
+          "evidence_id": "EV-T27-14-49cb4d",
+          "status": "page_changed"
+        }
+      ]
+    },
+    "keio-environment-ao-2026s-2027:overview:c763723defb99d32": {
+      "status": "ok",
+      "cited": [
+        "EV-K27-01-91dad1",
+        "EV-K27-02-91dad1",
+        "EV-K27-03-91dad1",
+        "EV-K27-04-91dad1",
+        "EV-K27-05-91dad1",
+        "EV-K27-06-91dad1",
+        "EV-K27-07-91dad1",
+        "EV-K27-08-91dad1",
+        "EV-K27-09-91dad1",
+        "EV-K27-10-91dad1",
+        "EV-K27-11-91dad1",
+        "EV-K27-12-91dad1",
+        "EV-K27-13-91dad1",
+        "EV-K27-14-91dad1",
+        "EV-K27-15-91dad1"
+      ],
+      "reasons": []
+    },
+    "keio-environment-ao-2026s-2027:interview:b9609d0168420d09": {
+      "status": "ok",
+      "cited": [
+        "EV-K27-06-91dad1",
+        "EV-K27-07-91dad1",
+        "EV-K27-08-91dad1",
+        "EV-K27-09-91dad1",
+        "EV-K27-10-91dad1",
+        "EV-K27-16-91dad1"
+      ],
+      "reasons": []
+    }
+  },
+  "republish_required": [
+    "tsukuba-klis-ac-2027:overview:39b5d2172672c192"
+  ],
+  "articles_to_review": [
+    "tsukuba-klis-ac-2027:interview:f57bf5213da13d66"
+  ],
+  "articles_unassessed": [],
+  "unassessed_evidence": [],
+  "summary": {
+    "evidence": 30,
+    "evidence_intact": 25,
+    "evidence_moved": 0,
+    "evidence_page_changed": 4,
+    "evidence_reworded": 0,
+    "evidence_value_change": 1,
+    "evidence_missing": 0,
+    "evidence_unassessed": 0,
+    "articles": 4,
+    "articles_republish_required": 1,
+    "articles_unassessed": 0,
+    "articles_review": 1,
+    "articles_ok": 2
+  }
+}

@@ -1,0 +1,185 @@
+diff --git a/admissions_pipeline/faq_policy.py b/admissions_pipeline/faq_policy.py
+--- a/admissions_pipeline/faq_policy.py
++++ b/admissions_pipeline/faq_policy.py
+@@ -31,13 +31,15 @@
+ POLARITY={'下線を引いてください':True,'下線を引く必要はありません':False,'記載は必須です':True,'明示してください':True}
+ 
+ 
+-def extract_conditions(record,spec,cycle):
++def extract_conditions(record,spec,cycle,scope_lookup=None):
++    from .scope_evidence import check_scope_evidence  # STR-101: binding needs an independent official evidence
+     unknown=spec.get('scope_status')=='unknown'
+     if unknown:  # STR-076: the FAQ gives no year/faculty; nothing may bind it to a cycle
+         if cycle is not None or spec.get('case_id') is not None or spec.get('fiscal_year') is not None or not spec.get('section_headings'):
+             raise ValueError('FAQ scope is UNKNOWN (STR-076): no cycle, case or year may be bound and the question headings must be declared')
+     elif (cycle['case_id']!='tsukuba-klis-ac-2027' or cycle['fiscal_year']!=2027 or cycle['exam_year']!=2026
+         or spec['case_id']!=cycle['case_id']):raise ValueError('FAQ AC cycle not reviewed; no year/method extrapolation')
++    if not unknown:check_scope_evidence(spec,record,cycle,scope_lookup)
+     original=extract_notice(spec,record,cycle)
+     raw=source_pages(record)[0];text,positions=normalized_with_positions(raw)
+     a=text.find(normalize(spec['section_start']));b=text.find(normalize(spec['section_end']),a)
+diff --git a/admissions_pipeline/notice_articles.py b/admissions_pipeline/notice_articles.py
+--- a/admissions_pipeline/notice_articles.py
++++ b/admissions_pipeline/notice_articles.py
+@@ -11,7 +11,9 @@
+ def revise_article(base, records, as_of, previous_id=None, revision_event_id=None):
+     applicable = sorted([r for r in records if r["case_id"] == base["case_id"] and
+                          (not r.get("replaces_evidence_ids") or any("["+eid+"]" in base["text"] for eid in r["replaces_evidence_ids"]))], key=lambda x: x["logical_id"])
+-    if not applicable: raise ValueError("no applicable notices")
++    from .unconfirmed_faq import is_unconfirmed_faq, render_unconfirmed_section
++    unconfirmed = sorted([r for r in records if is_unconfirmed_faq(r)], key=lambda x: x["logical_id"])  # STR-076: no case, never attached as a fact of this cycle; shown in its own section
++    if not applicable and not unconfirmed: raise ValueError("no applicable notices")
+     paragraphs, refs, corrections, faq_paragraphs = [], [], [], []
+     for r in applicable:
+         if r["temporal_status"] == "deadline_elapsed" and date.fromisoformat(r["value"]["deadline"]) >= as_of:
+@@ -37,6 +39,8 @@
+     change_note = "根拠の訂正を反映し、旧版は履歴に保持しています。" if corrections else "追加告知とFAQを別の根拠として追記しました。募集要項本体の根拠は保持しています。"
+     history = "\n\n## 改訂履歴\n\n作業基準日：" + as_of.isoformat() + "。" + change_note + "未公開草案です。\n"
+     if "## 根拠資料" not in base["text"]: raise ValueError("base article missing source section")
++    for r in unconfirmed:
++        refs.append(f"- [{r['evidence_id']}] {LABELS.get(r['fact_key'], r['fact_key'])}（適用年度・学類は未確認）：公式FAQ・お知らせ HTML（本文の該当節）：{r['source_url']}")
+     base_text=re.sub(r"作業基準日[：:]\s*\d{4}-\d{2}-\d{2}。?","",base["text"],count=1)
+     body, bibliography = base_text.split("## 根拠資料", 1)
+     removed=set()
+@@ -52,20 +56,20 @@
+         if not replaced: raise ValueError("correction target absent from base article")
+         body="\n\n".join(new_blocks)
+         bibliography="\n".join(line for line in bibliography.splitlines() if not any("["+eid+"]" in line for eid in ancestors))
+-    if faq_paragraphs:
++    if faq_paragraphs or unconfirmed:
+         marker=re.search(r'^###[^\n]*（編集上の助言）[^\n]*$',body,re.M)
+         if marker is None:raise ValueError('FAQ editorial position needs review')
+-        faq_section='## 提出書類と生成AIの条件・例外（公式FAQ）\n\n'+'\n\n'.join(faq_paragraphs)+'\n\n'
++        faq_section=('## 提出書類と生成AIの条件・例外（公式FAQ）\n\n'+'\n\n'.join(faq_paragraphs)+'\n\n' if faq_paragraphs else '')+''.join(render_unconfirmed_section(r) for r in unconfirmed)
+         body=body[:marker.start()]+faq_section+body[marker.start():]
+     text = body.rstrip() + section + history + "\n## 根拠資料" + bibliography.rstrip() + "\n" + "\n".join(refs) + "\n"
+-    template='notice-faq-conditions-v1' if faq_paragraphs else 'notice-article-v5'
+-    identity=[base, applicable, as_of.isoformat(), previous_id, template]
++    template='notice-faq-conditions-v1' if faq_paragraphs else ('notice-faq-unconfirmed-v1' if unconfirmed else 'notice-article-v5')
++    identity=[base, applicable, as_of.isoformat(), previous_id, template] + ([unconfirmed] if unconfirmed else [])
+     if revision_event_id:identity.append(revision_event_id)
+     digest = hashlib.sha256(canonical(identity).encode()).hexdigest()
+     return dict(base, article_id=base["article_id"] + ":revision:" + digest[:16],
+                 base_article_id=base["article_id"], parent_article_id=previous_id or base["article_id"], text=text,
+-                evidence_ids=sorted((set(base["evidence_ids"])-removed) | {r["evidence_id"] for r in applicable}),
++                evidence_ids=sorted((set(base["evidence_ids"])-removed) | {r["evidence_id"] for r in applicable} | {r["evidence_id"] for r in unconfirmed}),
+                 claims=[c for c in base.get("claims",[]) if c.get("evidence_id") not in removed] +
+-                       [{"key":r["fact_key"],"evidence_id":r["evidence_id"],"text":" ".join(r["sentences"])} for r in applicable],
++                       [{"key":r["fact_key"],"evidence_id":r["evidence_id"],"text":" ".join(r["sentences"])} for r in applicable + unconfirmed],
+                 as_of=as_of.isoformat(), revision_hash=digest, publish_allowed=False,
+                 **({'revision_event_id':revision_event_id} if revision_event_id else {}))
+diff --git a/admissions_pipeline/scope_evidence.py b/admissions_pipeline/scope_evidence.py
+new file mode 100644
+--- /dev/null
++++ b/admissions_pipeline/scope_evidence.py
+@@ -0,0 +1,44 @@
++"""STR-101 (H3=B): what must exist before a FAQ page is bound to ONE year / faculty / method.
++
++The FAQ page itself does not say which cycle it applies to (STR-076). A configuration that merely names a cycle is not evidence. Binding needs an INDEPENDENT official source: an evidence id and the SHA-256 of
++a source document that is NOT the FAQ page, with the quote that states the year and the faculty, consistent with the cycle it is bound to. When a ``lookup`` (the evidence store) is given, the evidence id must exist
++there with the same source SHA and a text that holds the quote. Without a lookup only the structure, the independence and the consistency are checked (the result says so: ``store_checked`` False).
++No path here makes a record "verified"; a missing, self-referencing, inconsistent or unsupported evidence is an error and the record stays UNKNOWN (use scope_status 'unknown').
++"""
++import re
++import unicodedata
++
++KEYS = ("evidence_id", "source_sha256", "case_id", "fiscal_year", "faculty", "quote")
++
++
++def _flat(text):
++    return re.sub(r"\s+", "", unicodedata.normalize("NFKC", str(text)))
++
++
++def check_scope_evidence(spec, record, cycle, lookup=None):
++    ev = spec.get("scope_evidence")
++    if not isinstance(ev, dict) or any(k not in ev for k in KEYS):
++        raise ValueError("FAQ scope is not proven (STR-101): binding to a year / faculty needs an independent official evidence (scope_evidence: " + ", ".join(KEYS) + ")")
++    if not isinstance(ev["evidence_id"], str) or not ev["evidence_id"].strip():
++        raise ValueError("scope_evidence needs an evidence id")
++    sha = ev["source_sha256"]
++    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{64}", sha):
++        raise ValueError("scope_evidence needs the SHA-256 of its source document")
++    if sha == record.get("sha256") or sha == spec.get("expected_sha256"):
++        raise ValueError("scope_evidence must come from a source other than the FAQ page itself (not independent)")
++    if type(ev["fiscal_year"]) is not int or ev["fiscal_year"] != cycle["fiscal_year"] or ev["fiscal_year"] != spec.get("fiscal_year") or ev["case_id"] != cycle["case_id"]:
++        raise ValueError("scope_evidence is not consistent with the cycle the FAQ is bound to")
++    faculty = _flat(ev["faculty"])
++    if not faculty or faculty not in {_flat(cycle.get("department", "")), _flat(cycle.get("faculty", ""))}:
++        raise ValueError("scope_evidence names another faculty than the cycle")
++    quote = _flat(ev["quote"])
++    year = ev["fiscal_year"]
++    if faculty not in quote or not (str(year) in quote or f"令和{year - 2018}" in quote):
++        raise ValueError("the quote of scope_evidence does not state the year and the faculty")
++    store_checked = False
++    if lookup is not None:
++        found = lookup(ev["evidence_id"])
++        if not isinstance(found, dict) or found.get("source_sha256") != sha or quote not in _flat(found.get("text", "")):
++            raise ValueError("scope_evidence is not registered in the evidence store with this source and quote")
++        store_checked = True
++    return {"evidence_id": ev["evidence_id"], "source_sha256": sha, "store_checked": store_checked}
+diff --git a/admissions_pipeline/unconfirmed_faq.py b/admissions_pipeline/unconfirmed_faq.py
+new file mode 100644
+--- /dev/null
++++ b/admissions_pipeline/unconfirmed_faq.py
+@@ -0,0 +1,50 @@
++"""The article section for an official FAQ whose applicability (year, faculty, method) the page does not state (STR-076). Proposal g2, second patch.
++
++Such a record has no ``case_id``: it is NEVER attached like a case-bound notice (``revise_article`` filters on the case), and it is never stated as a fact of one admission cycle. It is shown in its OWN section,
++under its OWN heading, that says first that the applicability is unconfirmed and where to check, then the confirmed conditions exactly as ``render_conditions`` derives them, each sentence cited to the record.
++The wording of ``NOTICE`` is the owner's (decision 2026-11-08: adopt the draft of patches/g2-faq/regenerated/README.md). Nothing here writes a database.
++"""
++import re
++
++from .extract import normalize
++from .faq_policy import render_conditions, validate_condition_bindings
++
++HEADING = "## 公式FAQの案内（適用年度・学類は未確認）"
++NOTICE = ("大学公式サイトのFAQ（AC入試の節）には、生成AIを使った場合の下線の引き方や、画像・図・表の扱いが書かれています。"
++          "ただし、このFAQの文面からは、どの年度・どの学類の出願に当てはまるかを確認できていません。"
++          "出願の際は、必ず最新の募集要項と、公式サイトのFAQ（{url}）、大学の窓口の案内で確認してください。")
++
++
++def is_unconfirmed_faq(record):
++    return record.get("condition_profile") == "tsukuba-ac-faq-v1" and record.get("scope_status") == "unknown"
++
++
++def render_unconfirmed_section(record):
++    """The section text (heading, the notice, then the derived sentences each cited to the record)."""
++    if not is_unconfirmed_faq(record):
++        raise ValueError("not an unconfirmed-scope FAQ record")
++    validate_condition_bindings(record)
++    cite = "[" + record["evidence_id"] + "]"
++    notice = NOTICE.format(url=record["source_url"])
++    # every derived SENTENCE is cited (an element of render_conditions may hold more than one sentence)
++    sentences = " ".join(p + cite + "。" for element in render_conditions(record["value"]) for p in element.split("。") if p.strip())
++    return HEADING + "\n\n" + notice + cite + "\n\n" + sentences + "\n\n"
++
++
++def check_unconfirmed_section(article_text, record):
++    """Controlled-template boundary (not independent QA): exactly one such section, equal to the rendering, the record cited only there, and the section states no year, faculty or cycle."""
++    validate_condition_bindings(record)
++    if article_text.count(HEADING) != 1:
++        raise ValueError("the unconfirmed FAQ section is absent or duplicated")
++    prefix, body = article_text.split(HEADING, 1)
++    following = re.search(r"\n#{1,3} ", body)
++    tail = body[following.start():] if following else ""
++    if following:
++        body = body[:following.start()]
++    outside = (prefix + tail).split("## 根拠資料", 1)[0]
++    if "[" + record["evidence_id"] + "]" in outside:
++        raise ValueError("an unconfirmed FAQ is cited outside its own section")
++    expected = render_unconfirmed_section(record)[len(HEADING):]
++    if normalize(body) != normalize(expected):
++        raise ValueError("the unconfirmed FAQ section differs from the controlled template")
++    return True
+diff --git a/tests/test_faq_policy.py b/tests/test_faq_policy.py
+--- a/tests/test_faq_policy.py
++++ b/tests/test_faq_policy.py
+@@ -29,6 +29,7 @@
+     cycle={'case_id':'tsukuba-klis-ac-2027','university':'筑波大学','faculty':'情報学群','department':'知識情報・図書館学類',
+            'admission_method':'アドミッションセンター入試','fiscal_year':2027,'exam_year':2026}
+     spec={'case_id':cycle['case_id'],'logical_id':'tsukuba-ac-ai-faq','fiscal_year':2027,'profile_version':'fixture','fact_key':'generative_ai_policy',
++          'scope_evidence':{'evidence_id':'EV-FIXTURE-REQUIREMENTS','source_sha256':'e'*64,'case_id':cycle['case_id'],'fiscal_year':2027,'faculty':'知識情報・図書館学類','quote':'令和9年度（2027年度）アドミッションセンター入試 知識情報・図書館学類 学生募集要項'},
+           'url':record['url'],'expected_sha256':sha,'section_start':'AC開始','section_end':'他方式開始','anchors':[{'page':1,'pattern':'文章チェックも含め.*?下線を引いてください。'}],
+           'value':{'allowed':'生成AI利用の表示案内','not_accepted':''},'sentences':['生成AIの利用を明示します。'],'applicability':'controlled AC fixture','temporal_status':'fixture'}
+     return record,spec,cycle

@@ -1,0 +1,59 @@
+{
+  "dataset_type": "SYNTHETIC_TEST_MODEL_DATA_NOT_REAL_ADMISSION_DATA",
+  "disclaimer": "This is completely fictional model data for testing grounding verification logic offline. It does not represent real university admission guidelines.",
+  "version": "1.1.0",
+  "verified_at": "2026-11-06T00:00:00+09:00",
+  "universities": [
+    {
+      "name": "筑波大学",
+      "authorized_domain": "admission.example.com",
+      "academic_years": [2026, 2027],
+      "admission_types": [
+        {
+          "type_name": "AC入試",
+          "clusters": [
+            {
+              "cluster_name": "理工学群",
+              "colleges": [
+                {
+                  "college_name": "工学システム学類",
+                  "official_quota": 10,
+                  "schedule": {
+                    "application_start": "2026-09-01",
+                    "application_end": "2026-09-05",
+                    "postmark_valid": true
+                  },
+                  "stages": {
+                    "stage_1": {
+                      "method": "書類選考",
+                      "required_documents": [
+                        "志願票",
+                        "自己推薦書",
+                        "自己評価書",
+                        "活動報告書",
+                        "調査書または原本証明書"
+                      ],
+                      "prohibited_substitutions": [
+                        "大学入学共通テスト成績",
+                        "学校長推薦書"
+                      ]
+                    },
+                    "stage_2": {
+                      "method": "口述試験",
+                      "elements": ["プレゼンテーション", "質疑応答"]
+                    }
+                  },
+                  "provenance": {
+                    "source_edition": "2027_v1.0",
+                    "citation_section": "2. 出願書類の提出方法",
+                    "verification_status": "VERIFIED_OFFICIAL"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

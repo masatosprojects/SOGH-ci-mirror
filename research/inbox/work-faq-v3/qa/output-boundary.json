@@ -1,0 +1,79 @@
+{
+  "positive_articles_pass": 2,
+  "rejected": 14,
+  "total": 14,
+  "independent_semantic_QA": false,
+  "purpose": "controlled-template boundary only",
+  "rows": [
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "ai_underline_unnecessary",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "spellcheck_requires_underline",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "human_report_optional",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "AI_human_actor_swap",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "mixed_paragraph_wrong_condition",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "invented_permission_email",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "case": "spellcheck_exception_deleted",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "ai_underline_unnecessary",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "spellcheck_requires_underline",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "human_report_optional",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "AI_human_actor_swap",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "mixed_paragraph_wrong_condition",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "invented_permission_email",
+      "rejected": true
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "case": "spellcheck_exception_deleted",
+      "rejected": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-11-07T23:11:09+0900",
+  "success": true,
+  "returncode": 0,
+  "elapsed_seconds": 10.3,
+  "ram_before_mb": 3297.22265625,
+  "thermal_reading": {
+    "temp_c": 51.05,
+    "sensor_name": "Motherboard ACPI Thermal Zone (\\_tz.thrm)",
+    "sensor_type": "ACPI_THERMAL_ZONE",
+    "is_direct_die": false,
+    "mode": "USER_AUTHORIZED_ACPI_FALLBACK",
+    "status": "THERMAL_ZONE_OBSERVED_COMPONENT_TEMP_UNVERIFIED"
+  },
+  "config": {
+    "executable": "C:\\Users\\USER\\llm_bench\\cpu\\llama-cli.exe",
+    "model": "C:\\Users\\USER\\llm_bench\\models\\Qwen3-1.7B-Q4_K_M.gguf",
+    "threads": 2,
+    "ctx_size": 512,
+    "predict_tokens": 128,
+    "gpu_layers": 0
+  },
+  "output_verification": {
+    "has_valid_answer": true,
+    "validation_reason": "VALID_GENERATED_ANSWER",
+    "answer_length": 250
+  },
+  "abort_reason": null,
+  "stdout_snippet": "[Start thinking]\n\nOkay, the user is asking about the submission method for application materials in the Waseda University's comprehensive selection. Let me start by recalling what I know about Waseda's selection process.\n\nFirst, I remember that Wased",
+  "stderr_snippet": ""
+}

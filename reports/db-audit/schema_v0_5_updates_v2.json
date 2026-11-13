@@ -1,0 +1,1121 @@
+{
+ "evidence": "a schema dump delivered by Work (no rows)",
+ "foreign_key_count": 24,
+ "id": "v0_5_updates_v2",
+ "index_count": 0,
+ "kind": "schema_file",
+ "status": "read",
+ "table_count": 21,
+ "tables": {
+  "admission_cycles": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "case_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "university",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "faculty",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "department",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "admission_method",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "fiscal_year",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "exam_year",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "case_id"
+   ],
+   "unique": [
+    [
+     "case_id"
+    ],
+    [
+     "university",
+     "faculty",
+     "department",
+     "admission_method",
+     "fiscal_year"
+    ]
+   ]
+  },
+  "admission_offerings": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "offering_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "case_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "round_name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "entry_month",
+     "not_null": false,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "scope_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "source_sha256",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "source_sha256",
+     "on_delete": "NO ACTION",
+     "table": "source_documents",
+     "to": "sha256"
+    },
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "offering_id"
+   ],
+   "unique": [
+    [
+     "offering_id"
+    ]
+   ]
+  },
+  "article_evidence": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "article_id",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "evidence_id",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "evidence_id",
+     "on_delete": "NO ACTION",
+     "table": "facts",
+     "to": "evidence_id"
+    },
+    {
+     "from": "article_id",
+     "on_delete": "NO ACTION",
+     "table": "article_versions",
+     "to": "article_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "article_id",
+    "evidence_id"
+   ],
+   "unique": [
+    [
+     "article_id",
+     "evidence_id"
+    ]
+   ]
+  },
+  "article_heads": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "base_article_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "article_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "article_id",
+     "on_delete": "NO ACTION",
+     "table": "revised_articles",
+     "to": "article_id"
+    },
+    {
+     "from": "base_article_id",
+     "on_delete": "NO ACTION",
+     "table": "article_versions",
+     "to": "article_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "base_article_id"
+   ],
+   "unique": [
+    [
+     "base_article_id"
+    ]
+   ]
+  },
+  "article_versions": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "article_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "case_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "input_hash",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "series",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "title",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "body",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "artifact_path",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "publish_allowed",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "article_id"
+   ],
+   "unique": [
+    [
+     "article_id"
+    ]
+   ]
+  },
+  "batch_evidence": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "batch_id",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "evidence_id",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "evidence_id",
+     "on_delete": "NO ACTION",
+     "table": "evidence_revisions",
+     "to": "evidence_id"
+    },
+    {
+     "from": "batch_id",
+     "on_delete": "NO ACTION",
+     "table": "update_batches",
+     "to": "batch_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "batch_id",
+    "evidence_id"
+   ],
+   "unique": [
+    [
+     "batch_id",
+     "evidence_id"
+    ]
+   ]
+  },
+  "cycle_dimensions": {
+   "checks": 3,
+   "columns": [
+    {
+     "name": "case_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "selection_category",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "entry_year",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "exam_year",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "entry_months_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "round_name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "scope_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "case_id"
+   ],
+   "unique": [
+    [
+     "case_id"
+    ]
+   ]
+  },
+  "cycle_editions": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "case_id",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "source_sha256",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile_sha256",
+     "not_null": true,
+     "pk": 3,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile_version",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "observed_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile_json",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "source_sha256",
+     "on_delete": "NO ACTION",
+     "table": "source_documents",
+     "to": "sha256"
+    },
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "case_id",
+    "source_sha256",
+    "profile_sha256"
+   ],
+   "unique": [
+    [
+     "case_id",
+     "source_sha256",
+     "profile_sha256"
+    ]
+   ]
+  },
+  "evidence_heads": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "logical_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "evidence_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "evidence_id",
+     "on_delete": "NO ACTION",
+     "table": "evidence_revisions",
+     "to": "evidence_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "logical_id"
+   ],
+   "unique": [
+    [
+     "logical_id"
+    ]
+   ]
+  },
+  "evidence_revisions": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "evidence_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "logical_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "case_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "fact_key",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "source_sha256",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "parent_evidence_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "record_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "evidence_id"
+   ],
+   "unique": [
+    [
+     "evidence_id"
+    ]
+   ]
+  },
+  "facts": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "evidence_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "case_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "source_sha256",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "fact_key",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "value_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "record_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "verification",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "source_sha256",
+     "on_delete": "NO ACTION",
+     "table": "source_documents",
+     "to": "sha256"
+    },
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "evidence_id"
+   ],
+   "unique": [
+    [
+     "case_id",
+     "source_sha256",
+     "fact_key"
+    ],
+    [
+     "evidence_id"
+    ]
+   ]
+  },
+  "legacy_fact_links": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "legacy_sha256",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "legacy_fact_id",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    },
+    {
+     "name": "case_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "evidence_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "report_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "evidence_id",
+     "on_delete": "NO ACTION",
+     "table": "facts",
+     "to": "evidence_id"
+    },
+    {
+     "from": "case_id",
+     "on_delete": "NO ACTION",
+     "table": "admission_cycles",
+     "to": "case_id"
+    },
+    {
+     "from": "legacy_sha256",
+     "on_delete": "NO ACTION",
+     "table": "legacy_imports",
+     "to": "file_sha256"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "legacy_sha256",
+    "legacy_fact_id"
+   ],
+   "unique": [
+    [
+     "legacy_sha256",
+     "legacy_fact_id"
+    ]
+   ]
+  },
+  "legacy_imports": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "file_sha256",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "original_path",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "copy_path",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "audit_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "facts_promoted",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "file_sha256"
+   ],
+   "unique": [
+    [
+     "file_sha256"
+    ]
+   ]
+  },
+  "legacy_records": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "legacy_sha256",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "table_name",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    },
+    {
+     "name": "record_key",
+     "not_null": true,
+     "pk": 3,
+     "type": "TEXT"
+    },
+    {
+     "name": "record_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "legacy_sha256",
+     "on_delete": "NO ACTION",
+     "table": "legacy_imports",
+     "to": "file_sha256"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "legacy_sha256",
+    "table_name",
+    "record_key"
+   ],
+   "unique": [
+    [
+     "legacy_sha256",
+     "table_name",
+     "record_key"
+    ]
+   ]
+  },
+  "qa_runs": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "run_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "claude_commit",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "report_path",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "success",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "run_id"
+   ],
+   "unique": [
+    [
+     "run_id"
+    ]
+   ]
+  },
+  "revised_articles": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "article_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "base_article_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "batch_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "record_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "batch_id",
+     "on_delete": "NO ACTION",
+     "table": "update_batches",
+     "to": "batch_id"
+    },
+    {
+     "from": "base_article_id",
+     "on_delete": "NO ACTION",
+     "table": "article_versions",
+     "to": "article_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "article_id"
+   ],
+   "unique": [
+    [
+     "article_id"
+    ]
+   ]
+  },
+  "schema_versions": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "version",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "version"
+   ],
+   "unique": [
+    [
+     "version"
+    ]
+   ]
+  },
+  "source_documents": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "sha256",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "local_path",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "retrieved_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "revision_clearance",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "sha256"
+   ],
+   "unique": [
+    [
+     "sha256"
+    ]
+   ]
+  },
+  "source_pages": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "source_sha256",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "page",
+     "not_null": true,
+     "pk": 2,
+     "type": "INTEGER"
+    },
+    {
+     "name": "text",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "text_sha256",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "source_sha256",
+     "on_delete": "NO ACTION",
+     "table": "source_documents",
+     "to": "sha256"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "source_sha256",
+    "page"
+   ],
+   "unique": [
+    [
+     "source_sha256",
+     "page"
+    ]
+   ]
+  },
+  "update_batches": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "batch_id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "input_sha",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "state",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "before_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "after_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "registry_sha",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "qa_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "batch_id"
+   ],
+   "unique": [
+    [
+     "batch_id"
+    ]
+   ]
+  },
+  "update_events": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "INTEGER"
+    },
+    {
+     "name": "batch_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "event",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "detail_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "batch_id",
+     "on_delete": "NO ACTION",
+     "table": "update_batches",
+     "to": "batch_id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "unique": []
+  }
+ }
+}

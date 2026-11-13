@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-11-07T22:59:29+0900",
+  "hardware": "AMD Ryzen 5 3550H / ASUS TUF Gaming FX505DY",
+  "model": "Qwen3-1.7B-Q4_K_M.gguf",
+  "total_cases_evaluated": 2,
+  "ram_avail_mb": 3362.22265625,
+  "cases": [
+    {
+      "case_id": "TSUKUBA_FAQ_101_SUBMISSION_METHOD",
+      "topic": "出願書類の提出方法",
+      "heading": "出願書類の提出方法について",
+      "success": true,
+      "returncode": 0,
+      "inference_time_sec": 12.73,
+      "generated_answer": "【公式情報】\n出願書類は、出願期間内に書留・速達郵便にて送付してください。持参による提出は受け付けません。\n\n【質問】\n出願書類の提出方法について\n\n\n\n[Start thinking]\n\nOkay, the user is asking about the submission method for the application documents. Let me check the offi",
+      "expected_verdict": "MATCH",
+      "grounding_verdict": "CONTRADICTION",
+      "quarantined": true,
+      "grounding_reason": "Quotation diverges from verified official text"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_102_YEAR_SCHEDULE",
+      "topic": "選抜日程・締切日",
+      "heading": "2026年度選抜における出願締切日",
+      "success": true,
+      "returncode": 0,
+      "inference_time_sec": 12.9,
+      "generated_answer": "【公式情報】\n2026年度選抜の出願締切は11月5日消印有効です。\n\n【質問】\n2026年度選抜における出願締切日\n\n\n\n[Start thinking]\n\nOkay, the user is asking about the application deadline for the 2026 entrance exam at Waseda University. From the provide",
+      "expected_verdict": "CONTRADICTION",
+      "grounding_verdict": "CONTRADICTION",
+      "quarantined": true,
+      "grounding_reason": "Quotation diverges from verified official text"
+    }
+  ]
+}

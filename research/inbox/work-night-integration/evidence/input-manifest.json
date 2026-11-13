@@ -1,0 +1,58 @@
+{
+  "initial_master": "38962d8af4b718266fdcf5f1ce28482c09577a1a",
+  "final_master": "5db1de01830283d93064ed10ab2a9715339d8997",
+  "documents": {
+    "AGENTS.md": "1b2d0f4ae08732eb41f904ed68d7f19a74c5ede85e2004dd91da9d68057f473a",
+    "docs/NIGHT_REPORT_2026-11-02.md": "c2345483aadd1b4c7acd2fbb5ded1eb1833514880de8f9e75e90c289b97f5cef",
+    "docs/NIGHT_RUN_2026-11-02.md": "c8c92705a48c26d6923a725bb5b27afda01e64af018619cefe854a9f2e37ab66",
+    "docs/DB_COMPLETION_DASHBOARD.md": "9800ef4116d8916ae310f3235a025c6548133b80620869e0f6b307271895e429",
+    "docs/DB_ACCEPTANCE_CONTRACT_V1.md": "566c67d8794575134150afd834fa7abfc492ab84d5ab24f784fbaae4eb7c7b27",
+    "docs/architecture/M1_UNIFIED_DATA_ARCHITECTURE_RFC.md": "22aa2b823e0b2f341d792e4f4ca2b23e8a0a6449e4bc7196457589a6bcb82d24",
+    "docs/architecture/M1_SAFE_MIGRATION_PLAN.md": "623a6afb905db66a7b33d3ff196e6fc8a93dbc8f5868e004c7cb6caa12e72eff",
+    "docs/M1_STAGE1_WORK_PATCH.md": "2884b55146d47fdf8dd9a4b263684f3951650ba91a91cee9f25542c5dd041315",
+    "docs/M1_FROZEN_MIGRATIONS_A.md": "64801af6aaf4bcd8f21db6c358948900b84b7e06a68ce3d219684b45534aa8f8",
+    "docs/M1_FROZEN_MIGRATIONS_B.md": "da2364b90fd8b5dc49f187d28683ab5b8238e3590451f80bb0e5c8f9a9c52f73",
+    "docs/M1_FROZEN_MIGRATIONS_C.md": "d59897bfea0989178a1485fef611cfa2034469772e5202497c9c4afcdd273a06",
+    "docs/M1_FROZEN_MIGRATIONS_D.md": "16cd00c29401d3aa771cc94b94eabc9e4262e4f235dbc63855766b03bc3d5937",
+    "docs/TEMPORARY_WORK_LEDGER.md": "5fb2c7f2c2ef14b3b425effa17d5239ce2001d5d37feb36f7aea76289d8deb06",
+    "docs/PUBLICATION_POLICY.md": "fbdce8b634a906428749fd6f4f2bba059b46410979b34d2b3eb41fcb15114edb",
+    "docs/COORDINATION.md": "ff5f39e02838234c5dbb5c5584b1f1285eedea8b6bff9f82c41178f8d26f5db1",
+    "sandbox/README.md": "ab8b6bd7e8fc7197ccbebbfa07355b094f4b5528c36dc171207a11e63041d8ec",
+    "docs/research/EXPERIENCE_REPORT_DESIGN_2026-11-02.md": "5b7d6ebcc93e7bcb028dfa51722963878489d53349e14fe3fb7d4c48af00d192",
+    "docs/research/COMPETITOR_AND_PRICING_SURVEY_2026-11-02.md": "b35de2914c45ab79089dbb1b80edf67f5a31ca4c113941f8f7651647df6f0ffa"
+  },
+  "strategy": {
+    "pr": 77,
+    "head": "cf3d760c884c570b4cd0e4b511754ea3c04b102f",
+    "read_via": "GitHub connector, not master"
+  },
+  "frozen_sql": {
+    "0002_g04_cycle_and_offering_identity.sql": "f8d240e405a24706b3421b9214f0679c2f34b30e324f9fe4bbd2e8d9323ceab4",
+    "0003_g05_evidence_root_alias.sql": "295ec32828c3ab2529f4b1d712589dc89acff317e65de8183da33378649c8792",
+    "0004_g09_append_only_and_head_integrity.sql": "aa299d8a4362e842e8c5fb29dd0fd82a1d03e65c7cad9ccf22cc68c351730908",
+    "0005_g07_revised_article_evidence.sql": "7c54f818b2f122803a820cf987a1c74eb2ff3e615d491748544ae660cd984396",
+    "0006_g11_revision_reasons.sql": "a0a657224e2079c9cf5872d0cc5a29e84be675de361b38b4ed4bc665b403fad1",
+    "0007_g06_source_metadata_and_verification.sql": "836fdc4f51a4ca4f3aeddb5f9e99dc5bc92cfb5b1e9cdae0a4a98433d7054ed9",
+    "0008_g03_lookup_indexes.sql": "a7de803dba98a3b909938c24bbd418a2c1ecc84df5cac82bfc7b3ccdc8264889",
+    "0009_m14_head_history.sql": "81cb26c973575b7f4933d556d388fc3f67730c03ffc6d52f49d627a153533314"
+  },
+  "unchanged_work_source": {
+    "admissions_pipeline/store.py": {
+      "normalized_sha256": "6c3931f4a2021c7bbe4000bdfddb7eba065be539d29b32c5d8c96e300785effe",
+      "raw_sha256": "6c3931f4a2021c7bbe4000bdfddb7eba065be539d29b32c5d8c96e300785effe"
+    },
+    "admissions_pipeline/generic.py": {
+      "normalized_sha256": "0bfb9cef5c6a653081fca35ca990000275eccc7a539a7f762172ce178bc9ae32",
+      "raw_sha256": "0bfb9cef5c6a653081fca35ca990000275eccc7a539a7f762172ce178bc9ae32"
+    },
+    "admissions_pipeline/revisions.py": {
+      "normalized_sha256": "c297ea096fd9f9803eae99948c638f7f60891c20e0ff6b76585407923e1031cf",
+      "raw_sha256": "c297ea096fd9f9803eae99948c638f7f60891c20e0ff6b76585407923e1031cf"
+    },
+    "scripts/revise_notices.py": {
+      "normalized_sha256": "cda789a11feb853f09392b102b90457ebfb59966ff8926a5ccf95a44f5085f9a",
+      "raw_sha256": "cda789a11feb853f09392b102b90457ebfb59966ff8926a5ccf95a44f5085f9a"
+    }
+  },
+  "local_source_metadata_note": "Source filenames and hashes only. No original PDF/HTML body, DB, keys or cookies included."
+}

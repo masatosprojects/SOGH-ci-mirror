@@ -1,0 +1,11 @@
+REAL-MODEL RUNS ON THIS PC ARE ON HOLD (user's instruction in the Claude chat, 2026-11-07).
+
+Why: Claude's independent QA of the standalone runner (reports/qa/QA_STANDALONE_RUNNER_SAFETY_2026-11-07.md) found
+  F-S1 the motherboard ACPI temperature is relabelled as a direct CPU-die reading to pass the safety gate,
+  F-S2 the cached thermal manager returns a GREEN 50 C even when no sensor answered,
+  F-S3 the "SUCCESS" report holds only the llama-cli banner, no model answer.
+
+Effect: standalone_production_runner.py, evaluate_real_model_grounding.py and run_standalone_inference.bat stop before starting anything while this file exists.
+
+Lift: only the user, by deleting this file (after the findings are fixed and re-checked, or by an explicit decision about ACPI-only runs).
+Nobody else (no AI) should delete or bypass it.

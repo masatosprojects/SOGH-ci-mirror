@@ -1,0 +1,389 @@
+{
+  "target_kind": "copied_real_db",
+  "actor": "Work executing unchanged Claude audit and separate row comparison",
+  "row_comparison_scope": "all common user tables; DB09 itself covers its documented append-only subset",
+  "DB09_status": "fail",
+  "copy_files_unchanged": true,
+  "differences": [
+    {
+      "table": "article_evidence",
+      "old_rows_missing_or_changed": 24,
+      "rows": [
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+            "evidence_id": "EV-N27-01-2d1ee8"
+          },
+          "old_row_sha256": "7a19a464783a44e43a3659645513fac31f02e6a26053755fb4ffd86b71e5146a",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+            "evidence_id": "EV-N27-02-2d1ee8"
+          },
+          "old_row_sha256": "797c9f7697d1100a896d4c642727a16adf10097522375a0712c175362796ce00",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+            "evidence_id": "EV-N27-03-2d1ee8"
+          },
+          "old_row_sha256": "6bb498a07c87635e471f49fef86ecb9d622efd3f9843aca1b9bd15291fdf17c5",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+            "evidence_id": "EV-N27-04-2d1ee8"
+          },
+          "old_row_sha256": "a78df5b7951344e49bae20bcbead0b005fa210d82f16424fb9e583f520eba51c",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+            "evidence_id": "EV-N27-05-2d1ee8"
+          },
+          "old_row_sha256": "e4a5aa5b25c062bedf5afad11457c39af1def83874fc8e0f0bd2904d55b977b1",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6",
+            "evidence_id": "EV-N27-01-2d1ee8"
+          },
+          "old_row_sha256": "4d05feb43a24778652bb1c1ed8999b8c31beb4e28d6436d599162eab498712ef",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6",
+            "evidence_id": "EV-N27-02-2d1ee8"
+          },
+          "old_row_sha256": "3a144041288c193987fee9456ba61751dbff8895d2781b3e097818c786e50e00",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6",
+            "evidence_id": "EV-N27-03-2d1ee8"
+          },
+          "old_row_sha256": "d794254a18fbb4caec6b352b51c2ccc675e140c0982f30df1988c214f92834a5",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6",
+            "evidence_id": "EV-N27-04-2d1ee8"
+          },
+          "old_row_sha256": "211578cab7251abb8969d68641435a1a34ec4df541200e546d087844fc2dc3ae",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6",
+            "evidence_id": "EV-N27-05-2d1ee8"
+          },
+          "old_row_sha256": "8e3fb38d6dd954ca0f761aa5938673dd02389d258357e0e00b5db67edf363c21",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a",
+            "evidence_id": "EV-N27-01-2d1ee8"
+          },
+          "old_row_sha256": "fc39f6a83e91c94ab849ebadaa99327a902e4b43222902ad675fd386160deac5",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a",
+            "evidence_id": "EV-N27-02-2d1ee8"
+          },
+          "old_row_sha256": "4201c331004d9eae614ef07e70b20c75b19b6ea17d7b1ed81acaf5feafca8ca4",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a",
+            "evidence_id": "EV-N27-03-2d1ee8"
+          },
+          "old_row_sha256": "606e50953d0714082f16bbdba438fd53d0d453eaaa9026ed7e96d5e6d51096b2",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a",
+            "evidence_id": "EV-N27-04-2d1ee8"
+          },
+          "old_row_sha256": "5cf32443348684bf3247f52b2f279d6aea0f2fd206013b9ba565817bd6fc8634",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a",
+            "evidence_id": "EV-N27-05-2d1ee8"
+          },
+          "old_row_sha256": "17eeef3516cd6d8490bfc1fa4e59f04d56dca536ac0f3b398253f40e2d1c54ee",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d2ca5e50fc6d4f63",
+            "evidence_id": "EV-N27-01-2d1ee8"
+          },
+          "old_row_sha256": "4582da25b27f147563182a080e7d1507431c267eae60fd15ecad7b049ac11a56",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d2ca5e50fc6d4f63",
+            "evidence_id": "EV-N27-02-2d1ee8"
+          },
+          "old_row_sha256": "7301ee2a4910c0522c3624ae6cdb835d7c85012108a74dacdc38ae3af261c3c4",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d2ca5e50fc6d4f63",
+            "evidence_id": "EV-N27-04-2d1ee8"
+          },
+          "old_row_sha256": "54ddb3513c0bd613e2bd7af5b5bad31cd2c989f02ccec3a62b85f3c56f628957",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d2ca5e50fc6d4f63",
+            "evidence_id": "EV-N27-05-2d1ee8"
+          },
+          "old_row_sha256": "6756868d4a6b04119ba72914405571dc84eea90da15e184ffff512c058ebbc3f",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:0c4e30005aa5f1d7",
+            "evidence_id": "EV-N27-01-2d1ee8"
+          },
+          "old_row_sha256": "3e2ed00cf7bba2a634720b14fd715a3fbdcc89cc7514072b8ee5aa5e80e593c8",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:0c4e30005aa5f1d7",
+            "evidence_id": "EV-N27-05-2d1ee8"
+          },
+          "old_row_sha256": "97f714dfc612827e5fd9c0b8f77dac62696cfecfa9de76205d14280010b1a427",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:c5d69d4d0e215ff7",
+            "evidence_id": "EV-N27-02-2d1ee8"
+          },
+          "old_row_sha256": "f57bc3a35b97d7cf84f81f4474fe3aadc726b888a3678da4b475891140e6fc95",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:c5d69d4d0e215ff7",
+            "evidence_id": "EV-N27-03-2d1ee8"
+          },
+          "old_row_sha256": "135f25223f10492e267cad458e5cefeee7e0dd651956a569de9ac56b58cbaad2",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:c5d69d4d0e215ff7",
+            "evidence_id": "EV-N27-04-2d1ee8"
+          },
+          "old_row_sha256": "c193cf4c6727cb97ecba7df3c6ca55adad9f7fff5215aa8be8f4537ccacae411",
+          "kind": "missing"
+        }
+      ]
+    },
+    {
+      "table": "article_versions",
+      "old_rows_missing_or_changed": 6,
+      "rows": [
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c"
+          },
+          "old_row_sha256": "fa362dae55bab010567ed1afdaa2810139ac8d1cf81231776ef2f375ae895ae4",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6"
+          },
+          "old_row_sha256": "d796888f717c492e96df5d15ca54d4ba0869029137d874a6e982c8f34db99c4f",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a"
+          },
+          "old_row_sha256": "6a8e3ef84e27cec5eb16fb0170413410a153e8cee7f7dbbbd0ef12807ef13324",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:overview:d2ca5e50fc6d4f63"
+          },
+          "old_row_sha256": "e3030e1a94d3f52c9c274ce2ffcfb07f4cf256c5bb55075da8ed19ba455a24e4",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:documents:0c4e30005aa5f1d7"
+          },
+          "old_row_sha256": "7dfaea56e114868a769c01185fa3080072284a123d07701a91882b0d6b2e9caa",
+          "kind": "missing"
+        },
+        {
+          "key": {
+            "article_id": "niigata-law-recommendation-I-2027:interview:c5d69d4d0e215ff7"
+          },
+          "old_row_sha256": "610f29b9e88a48a0bc8223c8652fd17439b83b2df05246f1e254ff32f89a1664",
+          "kind": "missing"
+        }
+      ]
+    },
+    {
+      "table": "cycle_editions",
+      "old_rows_missing_or_changed": 1,
+      "rows": [
+        {
+          "key": {
+            "case_id": "niigata-law-recommendation-I-2027",
+            "source_sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "profile_sha256": "98b3e6c4b0c8ad6d0c5812535b989be5a7f11d93b430af1b0004d44eabfe54a2"
+          },
+          "old_row_sha256": "e1e10cdd886ad724755b05b56619726554c7ca62407676535bec6df31e6ce798",
+          "kind": "missing"
+        }
+      ]
+    },
+    {
+      "table": "facts",
+      "old_rows_missing_or_changed": 5,
+      "rows": [
+        {
+          "key": {
+            "evidence_id": "EV-N27-01-2d1ee8"
+          },
+          "old_row_sha256": "4612d21230ea27542431a542de099473c5d9f2d2e23fd52930b5c61913fe67ba",
+          "kind": "changed",
+          "new_row_sha256": "09425e6c32a5af39770bbc5f87e54796346c86fa2518d17e909f5a135ddc998f",
+          "changed_columns": [
+            "record_json"
+          ],
+          "json_key_diff": {
+            "record_json": {
+              "removed_keys": [],
+              "added_keys": [],
+              "changed_keys": [
+                "profile_version"
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "evidence_id": "EV-N27-02-2d1ee8"
+          },
+          "old_row_sha256": "66506f3cecd0f679d5e6a2f5da3c26110e9001c115415f1e6e0868e0a0f68738",
+          "kind": "changed",
+          "new_row_sha256": "268b77b8a7c5056828df82eada46ff8cf1424b1e32fc8b26303e7167a39360f3",
+          "changed_columns": [
+            "record_json"
+          ],
+          "json_key_diff": {
+            "record_json": {
+              "removed_keys": [],
+              "added_keys": [],
+              "changed_keys": [
+                "profile_version"
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "evidence_id": "EV-N27-03-2d1ee8"
+          },
+          "old_row_sha256": "60c3b368cd10d65d47e671829758fb19741b39fb2255156614be24321d076065",
+          "kind": "changed",
+          "new_row_sha256": "7b48869aa1b53f1f902d353992f5d60c94f51da331084249b5503e75fd1a4cbe",
+          "changed_columns": [
+            "record_json"
+          ],
+          "json_key_diff": {
+            "record_json": {
+              "removed_keys": [],
+              "added_keys": [],
+              "changed_keys": [
+                "profile_version"
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "evidence_id": "EV-N27-04-2d1ee8"
+          },
+          "old_row_sha256": "caa1259fc4a8e7f392e07b80bea646c46ffd0ff4777247b7ae1290b5e898ec8a",
+          "kind": "changed",
+          "new_row_sha256": "5bdf793324c8394075703a906a1e9a2a94c493f55faf0c0c9319c3c6196bbbcb",
+          "changed_columns": [
+            "value_json",
+            "record_json"
+          ],
+          "json_key_diff": {
+            "record_json": {
+              "removed_keys": [],
+              "added_keys": [],
+              "changed_keys": [
+                "profile_version",
+                "value"
+              ]
+            },
+            "value_json": {
+              "removed_keys": [
+                "exam_year"
+              ],
+              "added_keys": [],
+              "changed_keys": []
+            }
+          }
+        },
+        {
+          "key": {
+            "evidence_id": "EV-N27-05-2d1ee8"
+          },
+          "old_row_sha256": "a96f766b67df7ca93a94f2bc2940ca833517dffda582a5ff1915c0e329de6306",
+          "kind": "changed",
+          "new_row_sha256": "47fb2c9ed58755b8d94df47c38073b7e991738edd75cb6608b0950c97b56715c",
+          "changed_columns": [
+            "record_json"
+          ],
+          "json_key_diff": {
+            "record_json": {
+              "removed_keys": [],
+              "added_keys": [],
+              "changed_keys": [
+                "profile_version"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "execution_cause": "not_confirmed_from_current_code_or_saved_history",
+  "historical_missing_rows_were_not_repaired_or_relabelled": true,
+  "old_v03_is_still_preserved_separately": true,
+  "append_only_migration_claim": false
+}

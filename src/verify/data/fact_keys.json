@@ -1,0 +1,1808 @@
+{
+  "schema_version": 1,
+  "registry_version": "1.7.1",
+  "updated": "2026-11-01",
+  "description": "根拠レコード（evidence）の fact_key 登録簿。fact_key の意味・値の型・単位・適用範囲・話題・検証ルールを、コードから独立したデータとして管理する。追加手順は docs/FACT_KEYS.md。",
+  "kinds": {
+    "persons": {
+      "label": "人数",
+      "units": [
+        "名",
+        "人"
+      ]
+    },
+    "minutes": {
+      "label": "時間（分）",
+      "units": [
+        "分",
+        "時間"
+      ]
+    },
+    "chars": {
+      "label": "文字数",
+      "units": [
+        "字",
+        "文字"
+      ]
+    },
+    "words": {
+      "label": "語数",
+      "units": [
+        "語",
+        "words",
+        "ワード"
+      ]
+    },
+    "pages": {
+      "label": "枚数",
+      "units": [
+        "枚",
+        "ページ"
+      ]
+    },
+    "mb": {
+      "label": "容量（MB）",
+      "units": [
+        "メガバイト",
+        "MB"
+      ]
+    },
+    "items": {
+      "label": "点数",
+      "units": [
+        "点"
+      ]
+    },
+    "yen": {
+      "label": "金額",
+      "units": [
+        "円",
+        "万円"
+      ]
+    },
+    "ratio": {
+      "label": "倍率・割合",
+      "units": [
+        "倍",
+        "%"
+      ]
+    },
+    "page_ref": {
+      "label": "要項の参照ページ",
+      "units": [
+        "p."
+      ]
+    }
+  },
+  "scopes": {
+    "target_admission_cycle": {
+      "semantics": "cycle",
+      "description": "対象の入試サイクル全体に適用される情報"
+    },
+    "department_and_method": {
+      "semantics": "unit",
+      "description": "学部・学科と入試方式の組に限って適用される情報（他の学科へ流用しない）"
+    },
+    "faculty_annual_AO_aggregate": {
+      "semantics": "aggregate",
+      "description": "年度内に実施する複数回の入試の合計。単独の回・方式の枠ではない"
+    }
+  },
+  "scope_patterns": [
+    {
+      "pattern": "^all_[A-Za-z0-9_]+$",
+      "semantics": "all_units",
+      "description": "all_<大学・方式> 形式。その方式のすべての学部・学類に共通する情報"
+    }
+  ],
+  "negation_cues": [
+    "ではありません",
+    "ではない",
+    "ではなく",
+    "読み替え",
+    "断定できません",
+    "とは限りません",
+    "区別",
+    "別のもの"
+  ],
+  "rules": {
+    "aggregate_total": {
+      "category": "scope_reinterpretation",
+      "description": "年度内合計の人数は『合計』と書き、『単独』の枠として書かない",
+      "required_any": [
+        "合計",
+        "総数",
+        "全体"
+      ],
+      "required_message": "is an aggregate but the text does not say it is a 合計 / total",
+      "forbidden_unless_negated": [
+        "単独"
+      ],
+      "forbidden_message": "is an aggregate; the text presents it as a 単独 figure"
+    },
+    "time_window_not_net": {
+      "category": "scope_reinterpretation",
+      "description": "面接の『実施時間の枠』を、実質の質疑時間として書かない",
+      "required_any": [
+        "枠",
+        "実施時間"
+      ],
+      "required_message": "is a time window; the text does not say 枠 / 実施時間",
+      "forbidden_unless_negated": [
+        "質疑"
+      ],
+      "forbidden_message": "is an allocated time window, not net question time; the text equates them"
+    },
+    "one_of_dates": {
+      "category": "scope_reinterpretation",
+      "description": "『いずれか』の候補日を、両日として書かない",
+      "required_any": [
+        "いずれか",
+        "どちらか"
+      ],
+      "required_message": "lists dates of which only one applies; the text does not say いずれか",
+      "forbidden_unless_negated": [
+        "両日",
+        "全日程",
+        "すべての日"
+      ],
+      "forbidden_message": "dates are alternatives, but the text implies all of them"
+    },
+    "logic_any_of": {
+      "category": "logic_mismatch",
+      "description": "OR条件（いずれか）を、全て満たす条件として書かない",
+      "required_any": [
+        "いずれか"
+      ],
+      "required_message": "is an OR condition; the text does not say いずれか",
+      "forbidden_patterns": [
+        "(全て|すべて)(を)?満たす"
+      ],
+      "forbidden_message": "is an OR condition but the text says all must be met"
+    },
+    "logic_all_of": {
+      "category": "logic_mismatch",
+      "description": "AND条件（全て）を、いずれか1つでよいとして書かない",
+      "required_any_pattern": [
+        "全て|すべて|いずれも"
+      ],
+      "required_message": "is an AND condition; the text does not say 全て",
+      "forbidden_patterns": [
+        "いずれかに該当"
+      ],
+      "forbidden_message": "is an AND condition but the text says any one suffices"
+    },
+    "all_dates_listed": {
+      "engine": "dates_listed",
+      "category": "date_omitted",
+      "description": "候補日が複数あるとき、一部だけを書かない"
+    }
+  },
+  "semantic_triggers": [
+    {
+      "field": "scope",
+      "contains": "aggregate",
+      "rule": "aggregate_total"
+    },
+    {
+      "field": "value.type",
+      "regex": "window.*not_net",
+      "rule": "time_window_not_net"
+    },
+    {
+      "field": "value.selection",
+      "equals": "one_of_not_both",
+      "rule": "one_of_dates"
+    },
+    {
+      "field": "value.logic",
+      "startswith": "any_of",
+      "rule": "logic_any_of"
+    },
+    {
+      "field": "value.logic",
+      "startswith": "all_of",
+      "rule": "logic_all_of"
+    },
+    {
+      "field": "value.dates",
+      "min_items": 2,
+      "rule": "all_dates_listed"
+    }
+  ],
+  "fact_keys": {
+    "quota": {
+      "description": "募集人員",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "department_and_method",
+        "faculty_annual_AO_aggregate",
+        "target_admission_cycle"
+      ],
+      "topic_keywords": [
+        "募集人員",
+        "募集人数",
+        "定員",
+        "募集枠",
+        "人数"
+      ],
+      "value": {
+        "count": {
+          "type": "integer",
+          "kind": "persons",
+          "unit": "名",
+          "required": true,
+          "description": "募集人員"
+        },
+        "unit": {
+          "type": "string",
+          "description": "単位の表記"
+        },
+        "period": {
+          "type": "string",
+          "role": "period_label",
+          "description": "対象の期間・範囲の識別子（例 all_AO_held_in_2026）"
+        },
+        "qualifier": {
+          "type": "string",
+          "description": "注記（人員どおりに決めない場合がある 等）"
+        },
+        "entry_months": {
+          "type": "integer_list",
+          "role": "entry_months",
+          "description": "対象の入学月"
+        },
+        "summer_autumn_only_count": {
+          "type": "integer",
+          "nullable": true,
+          "kind": "persons",
+          "description": "単独の回の人数。不明なら null"
+        }
+      },
+      "cues": [
+        "募集人員",
+        "募集人数",
+        "定員",
+        "募集枠",
+        "欠員",
+        "re:人数"
+      ]
+    },
+    "entry": {
+      "description": "入学時期",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "入学時期",
+        "入学"
+      ],
+      "value": {
+        "months": {
+          "type": "iso_month_list",
+          "required": true,
+          "description": "入学年月（YYYY-MM）の一覧"
+        }
+      },
+      "cues": [
+        "入学時期",
+        "入学月",
+        "re:入学"
+      ]
+    },
+    "online_period": {
+      "description": "オンライン出願（登録・申請）の期間",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "オンライン",
+        "出願登録",
+        "申請",
+        "登録",
+        "出願期間"
+      ],
+      "value": {
+        "start": {
+          "type": "iso_datetime",
+          "required": true,
+          "description": "開始（日時）"
+        },
+        "end": {
+          "type": "iso_datetime",
+          "required": true,
+          "description": "終了（日時）"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "qualifier": {
+          "type": "string"
+        }
+      },
+      "temporal_keywords": [
+        "出願期間",
+        "出願登録",
+        "オンライン出願",
+        "オンライン申請",
+        "申請期間",
+        "登録期間"
+      ],
+      "cues": [
+        "オンライン",
+        "出願登録",
+        "申請",
+        "登録",
+        "出願期間"
+      ]
+    },
+    "maintenance": {
+      "description": "出願システムの休止期間",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "休止",
+        "メンテナンス"
+      ],
+      "value": {
+        "start": {
+          "type": "iso_datetime",
+          "required": true
+        },
+        "end": {
+          "type": "iso_datetime",
+          "required": true
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "qualifier": {
+          "type": "string"
+        }
+      },
+      "cues": [
+        "休止",
+        "メンテナンス"
+      ]
+    },
+    "postal_period": {
+      "description": "出願書類の郵送（提出）期間",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "郵送",
+        "書類の提出",
+        "提出期間"
+      ],
+      "value": {
+        "start": {
+          "type": "iso_datetime",
+          "required": true
+        },
+        "end": {
+          "type": "iso_datetime",
+          "required": true
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "qualifier": {
+          "type": "string",
+          "description": "必着／消印有効 など"
+        },
+        "late_arrival_domestic_registered_express_postmark_by": {
+          "type": "iso_date",
+          "description": "国内の消印が当日以前の書留速達に限り、期限後に到着しても受理する日付"
+        }
+      },
+      "temporal_keywords": [
+        "出願期間",
+        "郵送",
+        "書類の提出",
+        "提出期間"
+      ],
+      "cues": [
+        "郵送",
+        "書類の提出",
+        "提出期間",
+        "消印",
+        "必着",
+        "持参"
+      ]
+    },
+    "eligibility": {
+      "description": "出願資格",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "出願資格",
+        "資格",
+        "条件"
+      ],
+      "value": {
+        "logic": {
+          "type": "string",
+          "required": true,
+          "role": "logic",
+          "description": "any_of_1_to_N（いずれか）／all_of_1_to_N（全て）"
+        },
+        "details_page": {
+          "type": "integer",
+          "kind": "page_ref",
+          "description": "各区分の条件が書かれた要項のページ"
+        },
+        "qualifier": {
+          "type": "string"
+        }
+      },
+      "cues": [
+        "出願資格",
+        "資格",
+        "条件",
+        "該当"
+      ],
+      "assertions": [
+        {
+          "id": "eligibility_not_waived",
+          "forbid_any": [
+            "re:(満たす|該当する)(こと)?(は|が)?{lex:necessity_negation}",
+            "re:条件.{0,8}{lex:necessity_negation}",
+            "re:資格.{0,8}{lex:necessity_negation}"
+          ],
+          "category": "polarity_mismatch",
+          "message": "出願資格の条件が『不要』の意味に反転している"
+        },
+        {
+          "id": "eligibility_stays_a_duty",
+          "sentence_if": [
+            "re:出願資格[^。]{0,40}満たす"
+          ],
+          "sentence_must": [
+            "re:満たす(こと)?(が|は|を)?[^。]{0,6}(必要|求められ|条件|要件|必須)",
+            "re:(必要|求められ|必須)[^。]{0,12}満たす"
+          ],
+          "category": "polarity_mismatch",
+          "message": "出願資格の条件を『満たすことが必要』という述語が、別の言い回しに置き換わっている"
+        }
+      ]
+    },
+    "common_test": {
+      "description": "大学入学共通テストの要否",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "共通テスト"
+      ],
+      "value": {
+        "required": {
+          "type": "boolean",
+          "required": true,
+          "description": "受験が必要か"
+        }
+      },
+      "cues": [
+        "共通テスト",
+        "教科・科目"
+      ],
+      "assertions": [
+        {
+          "id": "common_test_required_true",
+          "when": {
+            "field": "required",
+            "equals": true
+          },
+          "must_any": [
+            "受験が必要",
+            "必須",
+            "成績",
+            "受験する",
+            "課",
+            "lex:necessity_affirmation"
+          ],
+          "forbid_any": [
+            "lex:necessity_negation",
+            "受験しなくて"
+          ],
+          "category": "polarity_mismatch",
+          "message": "共通テストは『必要』（required=true）"
+        },
+        {
+          "id": "common_test_required_false",
+          "when": {
+            "field": "required",
+            "equals": false
+          },
+          "must_any": [
+            "lex:necessity_negation"
+          ],
+          "forbid_any": [
+            "lex:necessity_affirmation",
+            "受験してください"
+          ],
+          "category": "polarity_mismatch",
+          "message": "共通テストは『不要』（required=false）"
+        }
+      ]
+    },
+    "first_stage": {
+      "description": "第1次選考の方式",
+      "status": "active",
+      "since": "1.0.0",
+      "stage": 1,
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "第1次",
+        "1次",
+        "書類",
+        "選考"
+      ],
+      "value": {
+        "text": {
+          "type": "string",
+          "required": true
+        }
+      },
+      "cues": [
+        "re:第?[1１一]次選考は",
+        "書類で選考",
+        "により選考",
+        "選考する方式"
+      ]
+    },
+    "first_stage_result": {
+      "description": "第1次選考の結果発表",
+      "status": "active",
+      "since": "1.0.0",
+      "stage": 1,
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "第1次",
+        "1次",
+        "結果発表",
+        "合格発表"
+      ],
+      "value": {
+        "date": {
+          "type": "iso_date",
+          "required": true
+        },
+        "time": {
+          "type": "clock_time"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "temporal_keywords": [
+        "第1次選考の結果",
+        "1次選考結果"
+      ],
+      "cues": [
+        "re:(第?[1１一]次).{0,10}(結果|合格|発表)"
+      ]
+    },
+    "second_stage_date": {
+      "description": "第2次選考（面接等）の実施日",
+      "status": "active",
+      "since": "1.0.0",
+      "stage": 2,
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "第2次",
+        "2次",
+        "選考日",
+        "試験日",
+        "面接日"
+      ],
+      "value": {
+        "dates": {
+          "type": "iso_date_list",
+          "required": true,
+          "description": "実施日の候補"
+        },
+        "selection": {
+          "type": "string",
+          "known_values": [
+            "one_of_not_both",
+            "specified_day"
+          ],
+          "description": "候補のうちいずれか1日（one_of_not_both）／指定日（specified_day）"
+        },
+        "qualifier": {
+          "type": "string"
+        }
+      },
+      "temporal_keywords": [
+        "面接日",
+        "試験日",
+        "選考日",
+        "第2次選考",
+        "実施日"
+      ],
+      "cues": [
+        "re:第?[2２二]次選考日",
+        "選考日",
+        "試験日",
+        "面接日",
+        "実施日"
+      ]
+    },
+    "final_result": {
+      "description": "最終合格発表",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "合格発表",
+        "最終",
+        "結果"
+      ],
+      "value": {
+        "date": {
+          "type": "iso_date",
+          "required": true
+        },
+        "time": {
+          "type": "clock_time"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "temporal_keywords": [
+        "合格発表",
+        "最終合格"
+      ],
+      "cues": [
+        "最終合格",
+        "最終段階",
+        "re:最終.{0,6}発表"
+      ]
+    },
+    "policy": {
+      "description": "アドミッション・ポリシー（求める人物・評価の観点）",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "評価",
+        "方針",
+        "アドミッション",
+        "求める"
+      ],
+      "value": {
+        "text": {
+          "type": "string",
+          "required": true
+        }
+      },
+      "cues": [
+        "方針",
+        "求める",
+        "アドミッション",
+        "re:評価する"
+      ]
+    },
+    "interview": {
+      "description": "面接（口述試験）の時間・日時・種類",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "面接",
+        "口述"
+      ],
+      "value": {
+        "minutes": {
+          "type": "integer",
+          "kind": "minutes",
+          "description": "所要時間（分）。日時だけを示す事実では無い"
+        },
+        "type": {
+          "type": "string",
+          "known_values": [
+            "individual_interview_and_oral_exam",
+            "allocated_time_window_not_net_question_time",
+            "starting_time_not_duration",
+            "interview_date_not_duration"
+          ],
+          "description": "実質の面接時間か、実施時間の『枠』か（後者は質疑時間と同一視しない）。starting_time_not_duration／interview_date_not_duration は、時間ではなく開始時刻・実施日を示す"
+        },
+        "qualifier": {
+          "type": "string"
+        },
+        "date": {
+          "type": "iso_date",
+          "description": "実施日（単一）"
+        },
+        "time": {
+          "type": "clock_time",
+          "description": "開始時刻"
+        },
+        "dates": {
+          "type": "iso_date_list",
+          "description": "実施日の候補"
+        },
+        "selection": {
+          "type": "string",
+          "known_values": [
+            "one_of_not_both",
+            "specified_day"
+          ],
+          "description": "候補のうちいずれか1日（one_of_not_both）／指定日（specified_day）"
+        }
+      },
+      "temporal_keywords": [
+        "面接日",
+        "実施日"
+      ],
+      "cues": [
+        "面接日",
+        "re:面接は",
+        "開始時刻",
+        "所要時間",
+        "実施時間",
+        "分程度",
+        "時間は"
+      ]
+    },
+    "interview_scope": {
+      "description": "面接で扱う内容",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "面接",
+        "口述"
+      ],
+      "value": {
+        "topic_types": {
+          "type": "string_list"
+        },
+        "text": {
+          "type": "string",
+          "description": "面接で評価する内容（文章）"
+        }
+      },
+      "cues": [
+        "面接の配点",
+        "re:面接には",
+        "re:(面接|口述試験)(・口述試験)?(で|では)、?[^。]{0,40}(扱|評価|問)",
+        "評価を含"
+      ]
+    },
+    "interview_language": {
+      "description": "面接の使用言語",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "面接",
+        "言語"
+      ],
+      "value": {
+        "choice_required": {
+          "type": "boolean"
+        },
+        "languages": {
+          "type": "string_list",
+          "required": true
+        },
+        "preference_options": {
+          "type": "string_list"
+        }
+      },
+      "cues": [
+        "言語",
+        "日本語または英語",
+        "どちらでも可"
+      ],
+      "assertions": [
+        {
+          "id": "interview_language_choice",
+          "when": {
+            "field": "choice_required",
+            "equals": true
+          },
+          "must_any": [
+            "選ぶ",
+            "選択",
+            "re:選(び|べ|ん|ば)",
+            "希望"
+          ],
+          "forbid_any": [
+            "選択不要",
+            "選択する必要はありません"
+          ],
+          "category": "polarity_mismatch",
+          "message": "出願時に面接の言語を選ぶ（choice_required=true）"
+        },
+        {
+          "id": "interview_languages_listed",
+          "echo_all_field": "languages",
+          "category": "listed_item_omitted",
+          "message": "根拠に挙がる面接の言語が本文に全て出ていない"
+        }
+      ]
+    },
+    "statement_length": {
+      "description": "志願理由書・小作文などの提出する文章の文字数の上限",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "字",
+        "志願理由",
+        "志望理由",
+        "小作文"
+      ],
+      "value": {
+        "max_characters": {
+          "type": "integer",
+          "kind": "chars",
+          "required": true,
+          "description": "字数の上限"
+        },
+        "language": {
+          "type": "string"
+        },
+        "specified_form": {
+          "type": "boolean"
+        }
+      },
+      "cues": [
+        "理由書",
+        "小作文",
+        "志望理由",
+        "志願理由"
+      ],
+      "assertions": [
+        {
+          "id": "statement_form_specified",
+          "when": {
+            "field": "specified_form",
+            "equals": true
+          },
+          "must_any": [
+            "様式",
+            "所定"
+          ],
+          "forbid_any": [
+            "自由様式",
+            "様式は自由",
+            "様式は問いません"
+          ],
+          "category": "polarity_mismatch",
+          "message": "所定の様式がある（specified_form=true）"
+        }
+      ]
+    },
+    "recommendation_format": {
+      "description": "自己推薦書の様式",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "自己推薦書",
+        "様式",
+        "表紙"
+      ],
+      "value": {
+        "body_format": {
+          "type": "string"
+        },
+        "body_pages": {
+          "type": "string"
+        },
+        "cover_and_activity_report": {
+          "type": "string"
+        },
+        "supporting_materials": {
+          "type": "boolean"
+        }
+      },
+      "cues": [
+        "自己推薦書",
+        "様式",
+        "表紙",
+        "活動経過報告書"
+      ],
+      "assertions": [
+        {
+          "id": "supporting_materials_required",
+          "when": {
+            "field": "supporting_materials",
+            "equals": true
+          },
+          "must_any": [
+            "添付",
+            "資料"
+          ],
+          "forbid_any": [
+            "添付は不要",
+            "添付不要",
+            "資料は不要",
+            "資料不要"
+          ],
+          "category": "polarity_mismatch",
+          "message": "根拠となる資料の添付がある（supporting_materials=true）"
+        }
+      ]
+    },
+    "personal_statement": {
+      "description": "志望理由・学習計画・自己アピールの分量（文章・自由記述）",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "志望理由",
+        "文章",
+        "自由記述",
+        "字"
+      ],
+      "value": {
+        "essay_max_ja_chars": {
+          "type": "integer",
+          "kind": "chars",
+          "required": true
+        },
+        "essay_max_en_chars": {
+          "type": "integer",
+          "kind": "chars",
+          "description": "英語は字数（語数ではない）"
+        },
+        "free_format_a4_pages_max": {
+          "type": "integer",
+          "kind": "pages",
+          "paper_size": 4
+        },
+        "free_format_max_mb": {
+          "type": "integer",
+          "kind": "mb"
+        }
+      },
+      "cues": [
+        "自由記述",
+        "メガバイト",
+        "A4",
+        "re:(日本語|英語).{0,6}字"
+      ]
+    },
+    "optional_materials": {
+      "description": "任意提出資料",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "任意提出",
+        "資料"
+      ],
+      "value": {
+        "max_items": {
+          "type": "integer",
+          "kind": "items",
+          "required": true
+        }
+      },
+      "cues": [
+        "任意提出"
+      ]
+    },
+    "referees": {
+      "description": "評価者（推薦者）",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "評価者"
+      ],
+      "value": {
+        "evaluators_required": {
+          "type": "integer",
+          "kind": "persons",
+          "required": true
+        },
+        "must_complete_before_submission": {
+          "type": "boolean"
+        }
+      },
+      "cues": [
+        "評価者"
+      ],
+      "assertions": [
+        {
+          "id": "referees_must_complete",
+          "when": {
+            "field": "must_complete_before_submission",
+            "equals": true
+          },
+          "must_any": [
+            "完了するまで",
+            "完了できない",
+            "完了しない",
+            "入力が必要"
+          ],
+          "forbid_any": [
+            "完了しなくても",
+            "後から",
+            "re:評価者.{0,6}{lex:necessity_negation}",
+            "re:評価.{0,4}入力(は|が)?{lex:necessity_negation}"
+          ],
+          "category": "polarity_mismatch",
+          "message": "評価者の入力が完了するまで申請を完了できない（must_complete_before_submission=true）"
+        }
+      ]
+    },
+    "generative_ai_policy": {
+      "description": "生成AIの利用に関する方針",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "生成AI",
+        "AI"
+      ],
+      "value": {
+        "allowed": {
+          "type": "string"
+        },
+        "not_accepted": {
+          "type": "string"
+        },
+        "ai_text_underline_required": {
+          "type": "boolean",
+          "description": "AI（文章チェックを含む）が生成・修正した箇所と、その修正で間接的に影響した箇所に、下線が必要か。任意項目・null不可（不明なら項目を省略）"
+        },
+        "simple_spellcheck_underline_required": {
+          "type": "boolean",
+          "description": "文書校正機能による『単純な誤字脱字の修正だけ』に下線が必要か（AIが内容を生成・修正する場合全般の免除ではない）。任意項目・null不可"
+        },
+        "human_advice_underline_required": {
+          "type": "boolean",
+          "description": "他人の添削・助言による修正に下線が必要か（AIの修正とは別の対象）。任意項目・null不可"
+        },
+        "human_advice_activity_report_required": {
+          "type": "boolean",
+          "description": "他人の添削・助言による修正を活動経過報告書に記載することが必須か（『下線不要』は『報告不要』を意味しない）。任意項目・null不可"
+        },
+        "ai_visual_disclosure_required": {
+          "type": "boolean",
+          "description": "AIで作成した画像・図・表等の使用を、説明文や脚注に明示することが必須か（文章の下線とは別の義務）。任意項目・null不可"
+        }
+      },
+      "cues": [
+        "生成AI"
+      ],
+      "assertions": [
+        {
+          "id": "ai_use_allowed",
+          "when": {
+            "field": "allowed",
+            "nonempty": true
+          },
+          "must_any": [
+            "認め",
+            "利用",
+            "使",
+            "補助"
+          ],
+          "forbid_any": [
+            "lex:permission_negation"
+          ],
+          "category": "polarity_mismatch",
+          "message": "生成AIの利用は条件つきで認められている（禁止・不可にしていない）"
+        },
+        {
+          "id": "ai_output_not_accepted",
+          "when": {
+            "field": "not_accepted",
+            "nonempty": true
+          },
+          "must_any": [
+            "みなさ",
+            "認め",
+            "受け付け",
+            "とされ"
+          ],
+          "category": "qualifier_dropped",
+          "message": "AIが生成したものを独自の成果物とはみなさない、という限定が本文で落ちている"
+        },
+        {
+          "id": "ai_text_underline_true",
+          "when": {
+            "field": "ai_text_underline_required",
+            "equals": true
+          },
+          "must_any": [
+            "re:(生成|AI)[^。]{0,60}下線を引"
+          ],
+          "forbid_any": [
+            "re:(生成|AI|文章チェック)[^。]{0,60}下線[^。]{0,8}{lex:necessity_negation}",
+            "re:(生成|AI)[^。]{0,60}下線(は|を)?(引か(ない|なくて)|付けなくて)"
+          ],
+          "category": "polarity_mismatch",
+          "message": "AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない"
+        },
+        {
+          "id": "simple_spellcheck_underline_false",
+          "when": {
+            "field": "simple_spellcheck_underline_required",
+            "equals": false
+          },
+          "must_any": [
+            "re:(誤字脱字|校正)[^。]{0,40}下線[^。]{0,8}{lex:necessity_negation}"
+          ],
+          "category": "polarity_mismatch",
+          "message": "単純な誤字脱字の文書校正だけが下線不要（simple_spellcheck_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている"
+        },
+        {
+          "id": "human_advice_underline_false",
+          "when": {
+            "field": "human_advice_underline_required",
+            "equals": false
+          },
+          "must_any": [
+            "re:(他人|第三者|人)の(添削|助言)[^。]{0,40}下線[^。]{0,8}{lex:necessity_negation}"
+          ],
+          "category": "polarity_mismatch",
+          "message": "他人の添削・助言による修正は下線不要（human_advice_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている"
+        },
+        {
+          "id": "human_advice_report_true",
+          "when": {
+            "field": "human_advice_activity_report_required",
+            "equals": true
+          },
+          "must_any": [
+            "re:活動経過報告書[^。]{0,30}(記載|記入)[^。]{0,20}(必須|必要です|必要があります|求められ)"
+          ],
+          "forbid_any": [
+            "re:活動経過報告書[^。]{0,40}(任意|記載しなくて|{lex:necessity_negation})"
+          ],
+          "category": "polarity_mismatch",
+          "message": "他人の添削・助言による修正は活動経過報告書への記載が必須（human_advice_activity_report_required=true）。『任意』『不要』にしていない"
+        },
+        {
+          "id": "ai_visual_disclosure_true",
+          "when": {
+            "field": "ai_visual_disclosure_required",
+            "equals": true
+          },
+          "must_any": [
+            "re:(画像|図|表)[^。]{0,40}明示"
+          ],
+          "forbid_any": [
+            "re:(画像|図|表)[^。]{0,60}明示[^。]{0,6}{lex:necessity_negation}"
+          ],
+          "category": "polarity_mismatch",
+          "message": "AIで作成した画像・図・表は使用の明示が必須（ai_visual_disclosure_required=true）。『明示不要』にしていない"
+        },
+        {
+          "id": "ai_use_keeps_its_permission",
+          "when": {
+            "field": "allowed",
+            "regex": "(利用|補助|認め)"
+          },
+          "sentence_if": [
+            "re:(生成AI|AI)[^。]{0,30}(使う|使用|利用)"
+          ],
+          "sentence_must": [
+            "re:(認め|可能|できます|差し支え|許可|構いません|補助)"
+          ],
+          "category": "polarity_mismatch",
+          "message": "生成AIを使うことが認められている、という述語が、別の言い回しに置き換わっている"
+        }
+      ]
+    },
+    "fee": {
+      "description": "検定料（出願料）",
+      "status": "active",
+      "since": "1.0.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "検定料",
+        "受験料",
+        "出願料",
+        "費用",
+        "円"
+      ],
+      "value": {
+        "amount": {
+          "type": "integer",
+          "kind": "yen",
+          "unit": "円",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "known_values": [
+            "JPY"
+          ]
+        }
+      },
+      "cues": [
+        "検定料",
+        "受験料",
+        "出願料",
+        "円"
+      ]
+    },
+    "maintenance_notice": {
+      "description": "公式サイトの告知：出願システムの一時的なメンテナンス・停止の案内",
+      "status": "active",
+      "since": "1.3.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "システム",
+        "メンテナンス",
+        "アクセス",
+        "復旧"
+      ],
+      "temporal_keywords": [
+        "メンテナンス",
+        "システム休止",
+        "復旧"
+      ],
+      "event_end_field": "outage_end",
+      "value": {
+        "text": {
+          "type": "string",
+          "required": true,
+          "description": "告知の内容（要約）"
+        },
+        "published_date": {
+          "type": "iso_date",
+          "required": true,
+          "description": "告知の公開日"
+        },
+        "outage_end": {
+          "type": "iso_datetime",
+          "nullable": true,
+          "description": "停止・メンテナンスの終了（日時）。告知に無ければ null"
+        }
+      },
+      "cues": [
+        "メンテナンス",
+        "システム",
+        "アクセス",
+        "復旧"
+      ]
+    },
+    "multilingual_evaluation": {
+      "description": "多言語（ドイツ語・フランス語など）の能力評価の案内",
+      "status": "active",
+      "since": "1.3.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "多言語",
+        "ドイツ語",
+        "フランス語",
+        "評価"
+      ],
+      "value": {
+        "languages": {
+          "type": "string_list",
+          "required": true,
+          "description": "評価の対象となる言語"
+        },
+        "application_required": {
+          "type": "boolean",
+          "required": true,
+          "description": "希望者の申請が必要か"
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "description": "評価の方法（要約）"
+        }
+      },
+      "cues": [
+        "多言語",
+        "ドイツ語",
+        "フランス語"
+      ],
+      "assertions": [
+        {
+          "id": "multilingual_application_true",
+          "when": {
+            "field": "application_required",
+            "equals": true
+          },
+          "must_any": [
+            "申請"
+          ],
+          "forbid_any": [
+            "全員が",
+            "全員に",
+            "全員必須",
+            "全員受験",
+            "全受験生",
+            "re:申請.{0,6}{lex:necessity_negation}",
+            "re:申請(する)?必要(は|が)?(あり)?(ません|ない)"
+          ],
+          "category": "polarity_mismatch",
+          "message": "希望者の申請が必要で、全員が対象ではない（application_required=true）。『申請不要』『全員』にしていない"
+        },
+        {
+          "id": "multilingual_application_false",
+          "when": {
+            "field": "application_required",
+            "equals": false
+          },
+          "must_any": [
+            "申請不要",
+            "申請は不要",
+            "申請の必要はありません"
+          ],
+          "forbid_any": [
+            "申請が必要",
+            "申請してください"
+          ],
+          "category": "polarity_mismatch",
+          "message": "申請は不要（application_required=false）"
+        },
+        {
+          "id": "multilingual_languages_listed",
+          "echo_all_field": "languages",
+          "category": "listed_item_omitted",
+          "message": "根拠に挙がる言語が本文に全て出ていない"
+        }
+      ]
+    },
+    "fee_refund": {
+      "description": "検定料の返還（例：第1次選考の不合格者が第2次選考分の返還を請求する手続）",
+      "status": "active",
+      "since": "1.3.0",
+      "scopes": [
+        "*"
+      ],
+      "topic_keywords": [
+        "検定料",
+        "返還",
+        "請求",
+        "期限"
+      ],
+      "temporal_keywords": [
+        "返還請求",
+        "請求書",
+        "請求期限"
+      ],
+      "event_end_field": "deadline",
+      "value": {
+        "amount": {
+          "type": "integer",
+          "kind": "yen",
+          "unit": "円",
+          "required": true,
+          "description": "返還される金額"
+        },
+        "currency": {
+          "type": "string",
+          "known_values": [
+            "JPY"
+          ]
+        },
+        "deadline": {
+          "type": "iso_date",
+          "required": true,
+          "description": "請求書の到着期限"
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "description": "手続の内容（要約）"
+        },
+        "fee_paid": {
+          "type": "integer",
+          "kind": "yen",
+          "unit": "円",
+          "description": "（任意・Claude の提案）納付済みの検定料。告知が『納付した○円のうち△円を返還』と両方を書くとき、記事の○円も照合できる"
+        }
+      },
+      "cues": [
+        "返還",
+        "検定料",
+        "請求"
+      ]
+    }
+  },
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-11-01",
+      "changes": [
+        "初版：21の実キー＋fee（筑波大・慶應の30事実から）"
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-11-01",
+      "changes": [
+        "Work の新潟大学データ（PR #24）に合わせた後方互換の変更。Work のデータは変更していない",
+        "interview: minutes を必須から外し、date/time/dates/selection と type の新しい値を追加（所要時間ではなく実施日時を示す使い方）",
+        "interview_scope: text を追加、topic_types を必須から外す",
+        "postal_period: late_arrival_domestic_registered_express_postmark_by を追加",
+        "quota 以外のキーは、適用範囲を制限しない（department_and_method が全キーで使われるため）"
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-11-01",
+      "changes": [
+        "作業基準日の検証（#11）のため temporal_cues（時間の言い回し）と、fact_key ごとの temporal_keywords（出来事の言い回し）を追加。後方互換",
+        "temporal_keywords を付けたキー：online_period, postal_period, second_stage_date, interview, first_stage_result, final_result"
+      ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-11-01",
+      "changes": [
+        "Work の依頼（Issue #28）：maintenance_notice / multilingual_evaluation / fee_refund を、提案どおりの値の項目・必須・話題キーワードで登録（active）",
+        "fee_refund.fee_paid（任意）を Claude が提案として追加（記事が納付額も書くときの照合用。使わなくてよい）",
+        "event_end_field：出来事の終了日を示す値の項目を指定（fee_refund.deadline、maintenance_notice.outage_end）。作業基準日の検証（#11）が使う",
+        "source_kinds：出典の種類 pdf / html の契約。html は source_pdf_sha256=null・source_sha256 必須・論理ページ 1。後方互換（source_kind が無い旧形式は従来どおり）"
+      ]
+    },
+    {
+      "version": "1.4.0",
+      "date": "2026-11-01",
+      "changes": [
+        "引用の意味的な取り違え（#10）：fact_key ごとに識別力のある手がかり cues を追加（文字列、または re:<正規表現>）。cues があるキーは、引用する段落に手がかりが1つも無いと citation_topic_mismatch",
+        "cues が無いキーは従来どおり topic_keywords（段落に1つ）。後方互換"
+      ]
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-11-01",
+      "changes": [
+        "定性的な誤り（#9）：qualitative_rules（注記の保持・否定・断定化。全てのレコードに適用）と、fact_key ごとの assertions（真偽値・列挙の意味、列挙された項目の脱落）を追加。後方互換",
+        "assertions を付けたキー：common_test, referees, interview_language, statement_length, recommendation_format, multilingual_evaluation, generative_ai_policy",
+        "article_rules：根拠に紐づかない注意書き（最新情報の確認、個別判定は別途必要）の反転を検出",
+        "eligibility.assertions：出願資格の条件が『不要』に反転することを検出。referees の禁止表現を追加",
+        "hedge_kept / limit_kept の必須表現を厳しくした（『変更』『延期』『ただし』だけでは通さない）",
+        "lexicons：『必要の肯定・否定』『許可の否定』の同義語集をデータ化し、規則が lex:NAME（や {lex:NAME}）で参照する。言い換えへの一般化（保留データで測定）"
+      ]
+    },
+    {
+      "version": "1.5.1",
+      "date": "2026-11-01",
+      "changes": [
+        "#34：statement_length の cues に『小作文』『志望理由』『志願理由』を追加（一般選抜の『小作文（600字以内）』が、理由書という語が無いだけで引用不一致になっていた）。説明も小作文を含むよう明記",
+        "interview_scope の cue：『面接では、…を評価』のように読点と評価対象が間にある自然な文を許す（面接(で|では)の後に、句点までの40字以内で 扱・評価・問 が来る）",
+        "interview_scope の cue から単独の『配点』を外した：共通テストの配点を述べる段落でも通ってしまい、引用IDの差し替え（common_test→interview_scope）を見逃していた（面接の配点は『面接の配点』『面接には』で拾う）"
+      ]
+    },
+    {
+      "version": "1.6.0",
+      "date": "2026-11-01",
+      "changes": [
+        "#39：generative_ai_policy に任意の真偽値5項目を追加（ai_text_underline_required / simple_spellcheck_underline_required / human_advice_underline_required / human_advice_activity_report_required / ai_visual_disclosure_required）。いずれも任意・null不可（不明は項目を省略＝未検証。falseへの置換は禁止）。後方互換",
+        "各項目の assertions：対象（AI生成・修正／単純な誤字脱字／他人の添削・助言／画像・図・表）と要求（下線／活動経過報告書／使用の明示）の組合せを同じ文の中で照合する。同じ段落に別の対象の『不要』『必須』があっても通さない",
+        "記録に field_proofs（項目ごとの原文位置）があり、真偽値の項目に原文位置が無いものは semantic_coverage に未検証として出す"
+      ]
+    },
+    {
+      "version": "1.6.1",
+      "date": "2026-11-01",
+      "changes": [
+        "article_sentence_rules（新）：定型の注意書き（最新情報・個別判定など）の文は、『確認が必要』『確認してください』『別途必要です』のような行為の述語を保たねばならない（『確認』という語が残っているだけでは通さない）。書き換えの言い回しを列挙せず、文の構造で守る（未知の言い換えへの一般化）。後方互換",
+        "同義語集に、開発用データ（調整済み・A・B・C）で見逃した語だけを追加（任意／要求される・要件／見送ら）。封印した評価セットDは見ていない"
+      ]
+    },
+    {
+      "version": "1.7.0",
+      "date": "2026-11-01",
+      "changes": [
+        "#47：義務・禁止・免除を述べる文（`claim_wording.obligation`）は、**文ごとに**、(1)その文を対象とする規則（assertion）が照合した、または(2)未検証として報告される。従来は同じ段落に必要性の規則が1つ適用されると段落全体の走査を省いていたため、検証済みの正しい条件と同じ段落に置かれた、根拠にない新しい義務を見逃していた",
+        "未検証のうち、文の内容語が引用した根拠（原文の引用・値・文）のどこにも現れないものは、種類を `unsupported_obligation`（未支持の義務）として区別して出す。矛盾とは断定しない（根拠の言い換えで内容語が変わる正しい文もあるため）。検出ではなく未検証として数える"
+      ]
+    },
+    {
+      "version": "1.7.1",
+      "date": "2026-11-01",
+      "changes": [
+        "assertions に sentence_if / sentence_must（新）：主題の文は、閉じた述語の集合（『満たすことが必要』『認められ』『持参はできません』）を保たねばならない。反転の言い回しを列挙しない（未知の言い換えの一般化）",
+        "eligibility_stays_a_duty / ai_use_keeps_its_permission を追加。no_visit_kept の必須語を『持参』という語から『持参…できません・不可…』という禁止の述語に変更",
+        "開発用データは D・E（結果を読んだので調整に使う）、封印セットは F"
+      ]
+    }
+  ],
+  "temporal_cues": {
+    "description": "作業基準日の検証(#11)：本文の時間の言い回し。『過去』と書いた出来事が実際は先、『これから』と書いた出来事が実際は過去、を検出する",
+    "elapsed": [
+      "締切済み",
+      "締め切り済み",
+      "締切を過ぎ",
+      "締め切りを過ぎ",
+      "既に経過",
+      "すでに経過",
+      "経過しています",
+      "経過済み",
+      "既に終了",
+      "すでに終了",
+      "終了しました",
+      "終了しています",
+      "終了済み",
+      "受付は終了",
+      "受付を終了",
+      "実施済み",
+      "行われました",
+      "実施されました",
+      "発表されました",
+      "発表済み"
+    ],
+    "upcoming": [
+      "これから実施",
+      "これから行われ",
+      "これから出願",
+      "これから迎え",
+      "これから始ま",
+      "受付中",
+      "出願受付中",
+      "まだ間に合",
+      "間に合います",
+      "締切までに",
+      "締め切りまでに",
+      "締切前",
+      "実施予定",
+      "開催予定",
+      "間近",
+      "近づいて"
+    ]
+  },
+  "source_kinds": {
+    "pdf": {
+      "description": "公式PDF。source_pdf_sha256（原本ファイルのsha256）が必須。proofs[].page はPDFのページ"
+    },
+    "html": {
+      "description": "公式サイトのHTML（告知・FAQ）。source_pdf_sha256 は null（PDFと偽らない）、source_sha256（本文バイトのsha256）が必須。proofs[].page は論理ページ 1"
+    }
+  },
+  "qualitative_rules": [
+    {
+      "id": "hedge_kept",
+      "when": {
+        "field": "qualifier",
+        "regex": "(場合(が|も)あ|ことがある|可能性|延期等)"
+      },
+      "must_any": [
+        "re:(場合|ことがあ|可能性|とは限|おそれ|かもしれ)"
+      ],
+      "category": "qualifier_dropped",
+      "message": "根拠の注記にある『場合がある』（例外・ヘッジ）が本文で落ちている"
+    },
+    {
+      "id": "limit_kept",
+      "when": {
+        "field": "qualifier",
+        "regex": "(に限り|のみ|に限る|限ります)"
+      },
+      "must_any": [
+        "re:(に限り|のみ|限ります|限る)"
+      ],
+      "category": "qualifier_dropped",
+      "message": "根拠の注記にある限定（『〜に限り』『のみ』）が本文で落ちている"
+    },
+    {
+      "id": "extension_not_denied",
+      "when": {
+        "field": "qualifier",
+        "regex": "延長"
+      },
+      "forbid_any": [
+        "re:延長(しません|されません|されない|はありません|はない|しない|なし|不可|できません)"
+      ],
+      "category": "qualifier_contradicted",
+      "message": "根拠は『延長する場合がある』のに、本文は延長を否定している"
+    },
+    {
+      "id": "no_visit_kept",
+      "when": {
+        "field": "qualifier",
+        "contains": "持参不可"
+      },
+      "must_any": [
+        "re:持参[^。]{0,12}(できません|不可|受け付けません|認められません|お断り|ご遠慮|禁止|不可能|不可です)"
+      ],
+      "category": "qualifier_dropped",
+      "message": "根拠の『持参不可』が、『持参はできません』のような禁止の述語として本文に残っていない"
+    },
+    {
+      "id": "no_visit_not_denied",
+      "when": {
+        "field": "qualifier",
+        "contains": "持参不可"
+      },
+      "forbid_any": [
+        "re:持参(は|も|が)?(でき(ます|る)|可(能|です)?|受け付けます|お受けします|構いません|OK)"
+      ],
+      "category": "qualifier_contradicted",
+      "message": "根拠は『持参不可』なのに、本文は持参を認めている"
+    },
+    {
+      "id": "no_unconditional_claim",
+      "when": {
+        "field": "qualifier",
+        "regex": "(場合(が|も)あ|ことがある|可能性|延期等|に限り|のみ|に限る|限ります)"
+      },
+      "forbid_any": [
+        "必ず",
+        "例外なく",
+        "常に",
+        "無条件",
+        "いかなる場合も",
+        "re:一律"
+      ],
+      "category": "unconditional_assertion",
+      "message": "根拠は限定・例外つきなのに、本文は無条件の断定になっている"
+    }
+  ],
+  "article_rules": [
+    {
+      "id": "caveat_not_reversed",
+      "forbid_any": [
+        "re:(最新版|最新の訂正|最新情報|追加案内|訂正|個別判定|確認).{0,16}{lex:necessity_negation}",
+        "公式サイトで確認する必要はありません"
+      ],
+      "category": "polarity_mismatch",
+      "message": "『最新情報は公式サイトで確認』『個別判定は別途必要』という注意書きが、不要の意味に反転している"
+    }
+  ],
+  "lexicons": {
+    "necessity_affirmation": [
+      "必須",
+      "必要です",
+      "必要となります",
+      "受験が必要",
+      "求められます",
+      "求められる",
+      "課されます",
+      "課される",
+      "義務",
+      "欠かせません",
+      "必要とする",
+      "要求される",
+      "要件"
+    ],
+    "necessity_negation": [
+      "不要",
+      "必要ありません",
+      "必要はありません",
+      "必要ない",
+      "必要なし",
+      "求められません",
+      "求められない",
+      "課されません",
+      "いりません",
+      "要しません",
+      "必要とされていません",
+      "必要としない",
+      "免除",
+      "必須ではありません",
+      "必須ではない",
+      "必須でない",
+      "任意"
+    ],
+    "permission_negation": [
+      "許されていません",
+      "認められていません",
+      "認められません",
+      "禁止",
+      "不可",
+      "できません",
+      "使用できません",
+      "使えません",
+      "してはいけません",
+      "してはなりません",
+      "見送ら"
+    ]
+  },
+  "article_sentence_rules": [
+    {
+      "id": "caveat_sentence_keeps_its_action",
+      "applies_to": [
+        "re:(最新版|最新の訂正|最新情報|追加案内|個別判定|個別の判定)"
+      ],
+      "must_any": [
+        "re:(別途|引き続き)?(確認|照会|相談|問い合わせ)(が|は)?(必要|求められ|欠かせ)",
+        "re:(確認|ご覧|参照|照会|相談|問い合わせ)(し)?(て)?(ください|する必要)",
+        "re:(別途|さらに|改めて)必要(です|となります|があります|とされます)",
+        "re:必要(です|となります|があります)"
+      ],
+      "category": "polarity_mismatch",
+      "message": "『最新情報は公式サイトで確認』『個別判定は別途必要』という注意書きの文から、確認・必要という行為が消えている（別の意味に書き換わっている）"
+    }
+  ],
+  "claim_wording": {
+    "description": "文が『義務・禁止・免除』を述べているかを見分ける語句。該当する文は、規則が照合した（検証済み／矛盾）か、未検証として必ず報告される",
+    "obligation": [
+      "必須",
+      "義務",
+      "しなければ",
+      "なければなりません",
+      "必要があります",
+      "re:(が|は)必要です",
+      "re:を必要と",
+      "禁止",
+      "してはいけません",
+      "してはなりません",
+      "できません",
+      "認められません",
+      "不可",
+      "求められ",
+      "不要",
+      "免除",
+      "re:許可(を|が)?(必要|得|受け|申請)",
+      "re:申請(が|は)?必要",
+      "re:提出(が|は)?必要"
+    ],
+    "stop_terms": [
+      "場合",
+      "必要",
+      "必須",
+      "義務",
+      "禁止",
+      "不可",
+      "大学",
+      "出願",
+      "提出",
+      "対象",
+      "方法",
+      "条件",
+      "以上",
+      "以下",
+      "以外"
+    ]
+  }
+}

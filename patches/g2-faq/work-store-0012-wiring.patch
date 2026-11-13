@@ -1,0 +1,71 @@
+diff --git a/admissions_pipeline/store.py b/admissions_pipeline/store.py
+--- a/admissions_pipeline/store.py
++++ b/admissions_pipeline/store.py
+@@ -136,3 +136,67 @@
+         with self.connect() as db:
+             return {name: db.execute("SELECT count(*) FROM " + name).fetchone()[0]
+                     for name in ("admission_cycles", "source_documents", "source_pages", "facts", "article_versions", "article_evidence")}
++
++    UNCONFIRMED_TABLE = "faq_unconfirmed_evidence"
++    UNCONFIRMED_GUARDS = ("no_update", "no_delete", "no_replace", "no_negative_rowid", "not_a_fact")
++
++    def record_unconfirmed_faq_evidence(self, record, storage_case_id, recorded_by, recorded_at=None):
++        """M1.g2 (STR-100 H2=A): file the evidence of an official FAQ whose applicability is UNKNOWN into the append-only table of migration 0012.
++        STORAGE, not applicability: `storage_case_id` is the admission cycle that STORES the rows (an administrative reference, STR-100); it never says that the FAQ applies to that cycle.
++        `record` is the structured UNCONFIRMED record (condition_profile tsukuba-ac-faq-v1, scope_status 'unknown', no case / year / faculty / department: STR-076 / 099 / 101); a record that carries or claims any
++        binding is refused by the g2 module before anything is written. One row per proof of the record (evidence_id = <record id>:p<index>). Inserts ONLY into faq_unconfirmed_evidence; never writes `facts`; never updates or deletes.
++        All rows go in ONE transaction: a refusal (duplicate, unknown cycle or source, absent table or guard, unregistered capability) leaves the database exactly as it was. Returns the evidence ids written."""
++        from .extract import normalize
++        from .scope_evidence import check_scope_evidence  # noqa: F401  (the g2 patches must be present: fail closed otherwise)
++        from .unconfirmed_faq import is_unconfirmed_faq
++        from .faq_policy import validate_condition_bindings
++        if not isinstance(record, dict) or not is_unconfirmed_faq(record):
++            raise ValueError("record_unconfirmed_faq_evidence: not an unconfirmed-scope FAQ record (scope_status must be 'unknown'); a verified or case-bound record is never filed here")
++        validate_condition_bindings(record)  # STR-076: refuses a record that carries a case / year / faculty / department, or any applies_to binding
++        if any(record.get(k) is not None for k in ("case_id", "fiscal_year", "faculty", "department", "exam_year")):
++            raise ValueError("record_unconfirmed_faq_evidence: the record claims an applicability (case / year / faculty / department / exam year); it stays UNKNOWN (STR-099/100/101)")
++        for name, value in (("storage_case_id", storage_case_id), ("recorded_by", recorded_by)):
++            if not isinstance(value, str) or not value.strip():
++                raise ValueError("record_unconfirmed_faq_evidence: " + name + " is required")
++        if recorded_at is None:
++            from datetime import datetime, timezone
++            recorded_at = datetime.now(timezone.utc).isoformat()
++        if not isinstance(recorded_at, str) or not recorded_at.strip():
++            raise ValueError("record_unconfirmed_faq_evidence: recorded_at must be a non-empty string")
++        sha, base_id, proofs = record.get("source_sha256"), record.get("evidence_id"), record.get("proofs")
++        if not isinstance(sha, str) or len(sha) != 64 or not isinstance(base_id, str) or not base_id.strip() or not isinstance(proofs, list) or not proofs:
++            raise ValueError("record_unconfirmed_faq_evidence: the record needs source_sha256, evidence_id and at least one proof")
++        rows = []
++        for n, proof in enumerate(proofs):
++            heading = proof.get("section")
++            start, end, quote, page = proof.get("normalized_start"), proof.get("normalized_end"), proof.get("quote"), proof.get("page")
++            if (not isinstance(heading, str) or not heading.strip() or not isinstance(quote, str) or not quote.strip() or type(start) is not int or type(end) is not int
++                    or start < 0 or end <= start or type(page) is not int or page < 1):
++                raise ValueError("record_unconfirmed_faq_evidence: proof " + str(n) + " has no usable question heading, quote, offsets or page")
++            rows.append((base_id + ":p" + str(n), storage_case_id, sha, hashlib.sha256(normalize(heading).encode("utf-8")).hexdigest(), quote, start, end, page, "unknown", recorded_by, recorded_at))
++        with self.connect() as db:
++            try:
++                registered = db.execute("SELECT sogh_write_ok()").fetchone()[0]
++            except sqlite3.Error:
++                registered = None
++            if registered != 1:
++                raise RuntimeError("record_unconfirmed_faq_evidence: the connection does not register the write capability (configure_connection of the stage-1 patch); refusing to write")
++            table = self.UNCONFIRMED_TABLE
++            if not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone():
++                raise RuntimeError("record_unconfirmed_faq_evidence: table " + table + " is absent; migration 0012-g02-faq-unconfirmed-evidence has not been applied to this database (nothing was written)")
++            guards = {r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='trigger' AND tbl_name=?", (table,))}
++            missing = [g for g in self.UNCONFIRMED_GUARDS if "trg_" + table + "_" + g not in guards]
++            if missing:
++                raise RuntimeError("record_unconfirmed_faq_evidence: the append-only guards of " + table + " are missing (" + ", ".join(missing) + "); refusing to write")
++            if not db.execute("SELECT 1 FROM admission_cycles WHERE case_id=?", (storage_case_id,)).fetchone():
++                raise ValueError("record_unconfirmed_faq_evidence: storage_case_id names no admission cycle")
++            if not db.execute("SELECT 1 FROM source_documents WHERE sha256=?", (sha,)).fetchone():
++                raise ValueError("record_unconfirmed_faq_evidence: the source document is not in source_documents (ingest it first)")
++            db.execute("BEGIN IMMEDIATE")
++            for row in rows:
++                if db.execute("SELECT 1 FROM " + table + " WHERE evidence_id=?", (row[0],)).fetchone():
++                    raise ValueError("record_unconfirmed_faq_evidence: duplicate: " + row[0] + " is already filed (append-only; nothing was written)")
++                if db.execute("SELECT 1 FROM facts WHERE evidence_id=?", (row[0],)).fetchone():
++                    raise ValueError("record_unconfirmed_faq_evidence: " + row[0] + " is already a fact")
++            db.executemany("INSERT INTO " + table + "(evidence_id,storage_case_id,source_sha256,question_sha256,quote,normalized_start,normalized_end,page,scope_status,recorded_by,recorded_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)", rows)
++        return [r[0] for r in rows]

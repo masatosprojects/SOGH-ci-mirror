@@ -1,0 +1,387 @@
+{
+  "prepared_with": "src.integration.g4_prepare:prepare",
+  "source_copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+  "source_copy_unchanged": true,
+  "source_integrity_unchanged": true,
+  "cases": [
+    {
+      "case": "S1_crash_in_uncommitted_transaction",
+      "result": "PASS",
+      "exit": 73,
+      "hot_journal_present_before_recovery": true,
+      "row_diff_vs_original": {}
+    },
+    {
+      "case": "S2_candidate_then_crash_then_recover",
+      "result": "PASS",
+      "exit": 74,
+      "recovered": 1,
+      "batch_state": [
+        "interrupted"
+      ],
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ],
+        "update_events": [
+          0,
+          0,
+          1
+        ]
+      },
+      "db_audit_ok_db09": [
+        true,
+        "pass"
+      ]
+    },
+    {
+      "case": "S3_QA_failure_is_rejected",
+      "result": "PASS",
+      "batch_state": "rejected",
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "case": "S4_head_changed_elsewhere_finalize_refused",
+      "result": "PASS",
+      "child_exit": 0,
+      "refusal": "concurrent head change; rebase update",
+      "heads_equal_older_v05_copy": true,
+      "row_diff_vs_original": {
+        "article_heads": [
+          0,
+          2,
+          0
+        ],
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "evidence_heads": [
+          0,
+          1,
+          0
+        ],
+        "update_batches": [
+          0,
+          1,
+          1
+        ],
+        "update_events": [
+          0,
+          0,
+          1
+        ]
+      },
+      "child_stderr": ""
+    },
+    {
+      "case": "S5_repeat_same_input_is_no_change",
+      "result": "PASS",
+      "states": [
+        "no_change",
+        "no_change"
+      ],
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          2
+        ],
+        "update_batches": [
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "case": "S6_second_process_refused_then_reacquire",
+      "result": "PASS",
+      "while_held_exit": 42,
+      "after_release_exit": 0
+    },
+    {
+      "case": "X1_wrong_scope_record_rejected_atomically",
+      "result": "PASS",
+      "error": "cross-cycle update rejected",
+      "row_diff_vs_original": {}
+    },
+    {
+      "case": "X2_parent_of_another_fact_rejected_atomically",
+      "result": "PASS",
+      "error": "correction parent has different case or fact key",
+      "row_diff_vs_original": {}
+    },
+    {
+      "case": "X3_duplicate_logical_identity_rejected",
+      "result": "PASS",
+      "error": "duplicate logical identity in update batch",
+      "row_diff_vs_original": {}
+    },
+    {
+      "case": "X4_same_id_different_content_rejected",
+      "result": "PASS",
+      "error": "immutable revision differs",
+      "row_diff_vs_original": {}
+    },
+    {
+      "case": "X5_unbound_QA_result_rejected_batch_stays_candidate",
+      "result": "PASS",
+      "error": "QA result is not bound to this exact update",
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "case": "X6_article_marked_publishable_rejected",
+      "result": "PASS",
+      "error": "unapproved article state",
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "case": "X7_finalize_of_a_rejected_batch_refused",
+      "result": "PASS",
+      "error": "batch is not eligible for approval",
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "case": "X8_article_citing_another_case_rejected",
+      "result": "PASS",
+      "error": "article cites a different cycle",
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "case": "X9A_valid_approval_moves_only_the_article_head_and_keeps_all_old_rows",
+      "result": "PASS",
+      "row_diff_vs_original": {
+        "article_heads": [
+          0,
+          1,
+          0
+        ],
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "revised_article_evidence": [
+          0,
+          0,
+          15
+        ],
+        "revised_articles": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ],
+        "update_events": [
+          0,
+          0,
+          1
+        ]
+      },
+      "db_audit_ok_db09": [
+        true,
+        "pass"
+      ]
+    },
+    {
+      "case": "X9B_crash_in_the_middle_of_the_approval_leaves_heads_untouched",
+      "result": "PASS",
+      "exit": 75,
+      "hot_journal_present_before_recovery": true,
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ]
+      },
+      "recovered": 1,
+      "child_stderr": ""
+    },
+    {
+      "case": "X9C_rollback_restores_heads_keeps_history_second_rollback_refused",
+      "result": "PASS",
+      "second_rollback": "rollback would overwrite newer progress",
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          1
+        ],
+        "revised_article_evidence": [
+          0,
+          0,
+          15
+        ],
+        "revised_articles": [
+          0,
+          0,
+          1
+        ],
+        "update_batches": [
+          0,
+          0,
+          1
+        ],
+        "update_events": [
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "case": "X11_0_two_simultaneous_writers_serialize_without_damage",
+      "result": "PASS",
+      "exit_codes": [
+        0,
+        0
+      ],
+      "successful_writers": 2,
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          2
+        ],
+        "update_batches": [
+          0,
+          0,
+          2
+        ]
+      },
+      "stderr": []
+    },
+    {
+      "case": "X11_1_two_simultaneous_writers_serialize_without_damage",
+      "result": "PASS",
+      "exit_codes": [
+        0,
+        0
+      ],
+      "successful_writers": 2,
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          2
+        ],
+        "update_batches": [
+          0,
+          0,
+          2
+        ]
+      },
+      "stderr": []
+    },
+    {
+      "case": "X11_2_two_simultaneous_writers_serialize_without_damage",
+      "result": "PASS",
+      "exit_codes": [
+        0,
+        0
+      ],
+      "successful_writers": 2,
+      "row_diff_vs_original": {
+        "batch_evidence": [
+          0,
+          0,
+          2
+        ],
+        "update_batches": [
+          0,
+          0,
+          2
+        ]
+      },
+      "stderr": []
+    },
+    {
+      "case": "X12_existing_or_partial_backup_target_stops_the_update_before_any_change",
+      "result": "PASS",
+      "error": "refuse to overwrite a database snapshot",
+      "row_diff_vs_original": {}
+    },
+    {
+      "case": "X10_direct_head_write_to_a_foreign_revision_is_refused",
+      "result": "PASS",
+      "database_answer": "refused:OperationalError"
+    }
+  ],
+  "pass": 22,
+  "fail": 0,
+  "known_limit": 0
+}

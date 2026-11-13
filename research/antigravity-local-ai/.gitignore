@@ -1,0 +1,42 @@
+# Large Model Weights (GGUF, Binaries)
+*.gguf
+*.bin
+*.safetensors
+*.onnx
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Logs and Metrics
+*.log
+logs/
+*.csv
+raw/
+
+# Secrets and Local Configurations
+.env
+.env.*
+*.key
+*.pem
+*token*
+*secret*
+*.pfx
+
+# OS & Editor temporary files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+*.swp
+*~
+.vscode/
+.idea/

@@ -1,0 +1,128 @@
+{
+  "case_id": "niigata-humanities-recommendation-II-2027",
+  "code": "H27",
+  "profile_version": "2026-11-01-v1",
+  "university": "新潟大学",
+  "faculty": "人文学部",
+  "department": "人文学科",
+  "admission_method": "学校推薦型選抜Ⅱ型",
+  "fiscal_year": 2027,
+  "exam_year": 2026,
+  "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+  "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+  "official_index": "https://www.niigata-u.ac.jp/admissions/faculty/recommendation/",
+  "cover_anchor": "令和９年度学校推薦型選抜学生募集要項",
+  "dimensions": {
+    "selection_category": "school_recommendation",
+    "entry_months": [],
+    "round_name": "Ⅱ型",
+    "scope": {
+      "faculty": "人文学部",
+      "department": "人文学科"
+    },
+    "entry_month_status": "unconfirmed"
+  },
+  "visual_review": [
+    {
+      "page": 17,
+      "status": "reviewed",
+      "checked": "人文学科30人、共通テストを課す。別学部の表から数値を流用しない"
+    },
+    {
+      "page": 18,
+      "status": "reviewed",
+      "checked": "面接13:00開始は所要時間ではない。小論文の時間とは別列"
+    },
+    {
+      "page": 38,
+      "status": "reviewed",
+      "checked": "郵送の期限後到着例外は法学部と同じ。工学部の固有例外を適用しない"
+    }
+  ],
+  "unresolved": [
+    "出願資格の個別判定",
+    "学部公式メッセージと最新版の追加監査",
+    "所定提出書類の全件構造化",
+    "入学月は保存資料に明示を確認できず未確定（4月と推定しない）"
+  ],
+  "rules": [
+    {
+      "key": "quota",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 17,
+          "pattern": "人文学科(?P<count>\\d+)人学校推薦型選抜II型\\(大学入学共通テストを課す\\)\\(1\\)募集人員欠員が生じた場合は、その欠員分を一般選抜における前期日程の募集人員に加えます。"
+        }
+      ],
+      "value": {
+        "count": "$int:count",
+        "unit": "人",
+        "qualifier": "欠員分は一般選抜前期日程の募集人員に加える"
+      },
+      "sentence": "人文学科の学校推薦型選抜Ⅱ型の募集人員は{count}人です。欠員分は一般選抜の前期日程に加えます。"
+    },
+    {
+      "key": "common_test",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 17,
+          "pattern": "令和9年度大学入学共通テストの成績、小論文、面接の結果及び出願書類の審査を総合して行います。"
+        }
+      ],
+      "value": {
+        "required": true
+      },
+      "sentence": "大学入学共通テストの成績、小論文、面接の結果及び出願書類の審査を総合して選抜します。受験が必要な教科・科目は募集要項の表と留意事項で確認してください。"
+    },
+    {
+      "key": "interview_scope",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 18,
+          "pattern": "\\(注1\\)面接の配点には、書類審査を含みます。"
+        }
+      ],
+      "value": {
+        "text": "面接の配点には書類審査を含む"
+      },
+      "sentence": "面接の配点には、書類審査を含みます。"
+    },
+    {
+      "key": "interview",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 18,
+          "pattern": "令和(?P<ry>8)年(?P<month>11)月(?P<day>28)日\\(土\\)小論文10:00~12:00\\(120分\\)新潟大学人文社会科学系棟面接(?P<hour>13):(?P<minute>00)~"
+        }
+      ],
+      "value": {
+        "date": "$date:ry,month,day",
+        "time": "{hour}:{minute}",
+        "type": "starting_time_not_duration"
+      },
+      "sentence": "要項に記載された面接は2026年{month}月{day}日 {hour}:{minute}からです。これは開始時刻であり、個人の面接所要時間を示すものではありません。"
+    },
+    {
+      "key": "postal_period",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 38,
+          "pattern": "令和(?P<ry>8)年(?P<month>11)月(?P<sd>2)日\\(月\\)から(?P=month)月(?P<ed>5)日\\(木\\)まで\\(郵送必着\\).*?\\(注1\\)出願期間後に到着したものは受理しません。ただし、(?P=month)月(?P<exception_day>3)日\\(火\\).*?以前の発信局.*?消印のある書留速達郵便に限り、期間後に到着した場合でも受理します。.*?\\(注3\\)郵送受付のみ。出願書類の直接持参は受け付けておりません。"
+        }
+      ],
+      "value": {
+        "start": "$date:ry,month,sd",
+        "end": "$date:ry,month,ed",
+        "timezone": "Asia/Tokyo",
+        "late_arrival_domestic_registered_express_postmark_by": "$date:ry,month,exception_day",
+        "qualifier": "郵送必着。日本国内発信局の11月3日以前消印の書留速達に限り期限後到着も受理。持参不可"
+      },
+      "sentence": "出願書類の郵送期間は2026年11月2日〜2026年11月5日（必着）です。ただし、日本国内の2026年11月3日以前の消印の書留速達郵便に限り、期間後の到着でも受理します。持参は受け付けません。"
+    }
+  ]
+}

@@ -1,0 +1,2223 @@
+{
+  "qa_commit": "12c76eb457ff5e46077fc027bfc48def9008a784",
+  "registry_version": "1.6.1",
+  "reference_date": "2026-11-01",
+  "same_checker_for_before_after": true,
+  "unverified_is_not_detection": true,
+  "results": {
+    "before": {
+      "counts": {
+        "detected": 0,
+        "unverified_only": 10,
+        "silent_miss": 4,
+        "not_evaluable": 0,
+        "false_positive_articles": 0
+      },
+      "targeted_mutations": [
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "ai_underline_unnecessary",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': 'AC入試のFAQでは、文章チェックを含め生成AIが生成・修正'",
+                "snippet": "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 5
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "spellcheck_requires_underline",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '必要です': '文書校正機能による単純な誤字脱字修正は下線必要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線必要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "human_report_optional",
+          "status": "silent_miss",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "AI_human_actor_swap",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '生成AIが生成・修正した箇所も下線不要ですが、活動経過報告書'",
+                "snippet": "生成AIが生成・修正した箇所も下線不要ですが、活動経過報告書",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "mixed_paragraph_wrong_condition",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '必要です': '他人の添削・助言の修正も下線必要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線必要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "invented_permission_email",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '必須': '生成AIを使用した場合は、大学へ電子メールで事前許可申請する'",
+                "snippet": "生成AIを使用した場合は、大学へ電子メールで事前許可申請する",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 5
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "case": "spellcheck_exception_deleted",
+          "status": "silent_miss",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 3
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "ai_underline_unnecessary",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': 'AC入試のFAQでは、文章チェックを含め生成AIが生成・修正'",
+                "snippet": "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "spellcheck_requires_underline",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '必要です': '文書校正機能による単純な誤字脱字修正は下線必要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線必要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 3
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "human_report_optional",
+          "status": "silent_miss",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 3
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "AI_human_actor_swap",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '生成AIが生成・修正した箇所も下線不要ですが、活動経過報告書'",
+                "snippet": "生成AIが生成・修正した箇所も下線不要ですが、活動経過報告書",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 3
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "mixed_paragraph_wrong_condition",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '必要です': '他人の添削・助言の修正も下線必要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線必要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 3
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "invented_permission_email",
+          "status": "unverified_only",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '必須': '生成AIを使用した場合は、大学へ電子メールで事前許可申請する'",
+                "snippet": "生成AIを使用した場合は、大学へ電子メールで事前許可申請する",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "case": "spellcheck_exception_deleted",
+          "status": "silent_miss",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 2
+            }
+          }
+        }
+      ],
+      "positive_articles": [
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+          "ok": true,
+          "findings": [],
+          "notices": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 4
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+          "ok": true,
+          "findings": [],
+          "notices": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-467264a91b3e": [
+                "ai_use_allowed"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+                "snippet": "文書校正機能による単純な誤字脱字修正は下線不要です。",
+                "why": "the cited evidence records no structured value this could be compared with"
+              },
+              {
+                "evidence_id": "EV-U-467264a91b3e",
+                "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+                "snippet": "他人の添削・助言の修正も下線不要ですが、活動経過報告書への記",
+                "why": "the cited evidence records no structured value this could be compared with"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 3
+            }
+          }
+        }
+      ],
+      "whole_view_flip": {
+        "instances": 83,
+        "detected": 78,
+        "survived": 5,
+        "declared_unverified": 4,
+        "silent_misses": 1,
+        "accounted_rate": 0.988,
+        "detection_rate": 0.9398,
+        "all_baselines_ok": true,
+        "by_family": {
+          "polarity": {
+            "instances": 27,
+            "detected": 23
+          },
+          "logic": {
+            "instances": 16,
+            "detected": 16
+          },
+          "exception": {
+            "instances": 7,
+            "detected": 7
+          },
+          "limit": {
+            "instances": 8,
+            "detected": 8
+          },
+          "caveat": {
+            "instances": 13,
+            "detected": 13
+          },
+          "hedge": {
+            "instances": 9,
+            "detected": 9
+          },
+          "omission": {
+            "instances": 3,
+            "detected": 2
+          }
+        },
+        "by_flip": {
+          "exempt_to_required": {
+            "instances": 2,
+            "detected": 2
+          },
+          "needed_to_unneeded": {
+            "instances": 16,
+            "detected": 16
+          },
+          "any_to_all": {
+            "instances": 6,
+            "detected": 6
+          },
+          "any_to_both": {
+            "instances": 6,
+            "detected": 6
+          },
+          "visit_not_accepted_to_accepted": {
+            "instances": 4,
+            "detected": 4
+          },
+          "limit_dropped_a": {
+            "instances": 4,
+            "detected": 4
+          },
+          "exception_sentence_dropped": {
+            "instances": 4,
+            "detected": 4
+          },
+          "caveat_confirm_to_unneeded": {
+            "instances": 9,
+            "detected": 9
+          },
+          "test_required_to_unneeded": {
+            "instances": 2,
+            "detected": 2
+          },
+          "need_none_to_need": {
+            "instances": 1,
+            "detected": 1
+          },
+          "unneeded_to_required": {
+            "instances": 4,
+            "detected": 0
+          },
+          "applicable_to_all_met": {
+            "instances": 2,
+            "detected": 2
+          },
+          "visit_no_to_yes": {
+            "instances": 1,
+            "detected": 1
+          },
+          "extension_may_to_never": {
+            "instances": 2,
+            "detected": 2
+          },
+          "hedge_dropped_b": {
+            "instances": 4,
+            "detected": 4
+          },
+          "hedge_dropped_c": {
+            "instances": 4,
+            "detected": 4
+          },
+          "hedge_dropped_d": {
+            "instances": 1,
+            "detected": 1
+          },
+          "caveat_needed_to_unneeded": {
+            "instances": 4,
+            "detected": 4
+          },
+          "allowed_to_not_allowed": {
+            "instances": 1,
+            "detected": 1
+          },
+          "allowed_to_prohibited": {
+            "instances": 1,
+            "detected": 1
+          },
+          "all_met_to_any": {
+            "instances": 2,
+            "detected": 2
+          },
+          "language_dropped_fr": {
+            "instances": 2,
+            "detected": 2
+          },
+          "language_dropped_en": {
+            "instances": 1,
+            "detected": 0
+          }
+        },
+        "survivors": [
+          {
+            "article": "evision:2e34d3940d9d74c8",
+            "flip": "unneeded_to_required",
+            "context": "能による単純な誤字脱字修正は下線不要です。他人の添削・助言の",
+            "declared_unverified": true
+          },
+          {
+            "article": "evision:2e34d3940d9d74c8",
+            "flip": "unneeded_to_required",
+            "context": "す。他人の添削・助言の修正も下線不要ですが、活動経過報告書へ",
+            "declared_unverified": true
+          },
+          {
+            "article": "evision:a287eb1f3f872fc9",
+            "flip": "unneeded_to_required",
+            "context": "能による単純な誤字脱字修正は下線不要です。他人の添削・助言の",
+            "declared_unverified": true
+          },
+          {
+            "article": "evision:a287eb1f3f872fc9",
+            "flip": "unneeded_to_required",
+            "context": "す。他人の添削・助言の修正も下線不要ですが、活動経過報告書へ",
+            "declared_unverified": true
+          },
+          {
+            "article": "evision:f3f9d802d6221bcc",
+            "flip": "language_dropped_en",
+            "context": "-10-91dad1]  面接は日本語または英語で行われます。出願時に希",
+            "declared_unverified": false
+          }
+        ]
+      }
+    },
+    "after": {
+      "counts": {
+        "detected": 12,
+        "unverified_only": 0,
+        "silent_miss": 2,
+        "not_evaluable": 0,
+        "false_positive_articles": 0
+      },
+      "targeted_mutations": [
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "ai_underline_unnecessary",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（必要な言い回しが無い: ['(生成|AI)[^。]{0,60}下線を引']）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（禁止の言い回し「(生成|AI|文章チェック)[^。]{0,60}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)」: 'AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、'）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "spellcheck_requires_underline",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 単純な誤字脱字の文書校正だけが下線不要（simple_spellcheck_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(誤字脱字|校正)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "human_report_optional",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は活動経過報告書への記載が必須（human_advice_activity_report_required=true）。『任意』『不要』にしていない（必要な言い回しが無い: ['活動経過報告書[^。]{0,30}(記載|記入)[^。]{0,20}(必須|必要です|必要があります|求められ)']）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は活動経過報告書への記載が必須（human_advice_activity_report_required=true）。『任意』『不要』にしていない（禁止の言い回し「活動経過報告書[^。]{0,40}(任意|記載しなくて|(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意))」: '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は任意です'）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "AI_human_actor_swap",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（必要な言い回しが無い: ['(生成|AI)[^。]{0,60}下線を引']）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（禁止の言い回し「(生成|AI|文章チェック)[^。]{0,60}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)」: '生成AIが生成・修正した箇所も下線不要ですが、活動経過報告書への記載は必'）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は下線不要（human_advice_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(他人|第三者|人)の(添削|助言)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "mixed_paragraph_wrong_condition",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は下線不要（human_advice_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(他人|第三者|人)の(添削|助言)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "invented_permission_email",
+          "status": "silent_miss",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "case": "spellcheck_exception_deleted",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 単純な誤字脱字の文書校正だけが下線不要（simple_spellcheck_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(誤字脱字|校正)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "ai_underline_unnecessary",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（必要な言い回しが無い: ['(生成|AI)[^。]{0,60}下線を引']）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（禁止の言い回し「(生成|AI|文章チェック)[^。]{0,60}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)」: 'AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、'）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "spellcheck_requires_underline",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 単純な誤字脱字の文書校正だけが下線不要（simple_spellcheck_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(誤字脱字|校正)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "human_report_optional",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は活動経過報告書への記載が必須（human_advice_activity_report_required=true）。『任意』『不要』にしていない（必要な言い回しが無い: ['活動経過報告書[^。]{0,30}(記載|記入)[^。]{0,20}(必須|必要です|必要があります|求められ)']）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は活動経過報告書への記載が必須（human_advice_activity_report_required=true）。『任意』『不要』にしていない（禁止の言い回し「活動経過報告書[^。]{0,40}(任意|記載しなくて|(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意))」: '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は任意です'）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "AI_human_actor_swap",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（必要な言い回しが無い: ['(生成|AI)[^。]{0,60}下線を引']）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: AI（文章チェックを含む）が生成・修正した箇所には下線が必要（ai_text_underline_required=true）。『下線不要』にしていない（禁止の言い回し「(生成|AI|文章チェック)[^。]{0,60}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)」: '生成AIが生成・修正した箇所も下線不要ですが、活動経過報告書への記載は必'）"
+            },
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は下線不要（human_advice_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(他人|第三者|人)の(添削|助言)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "mixed_paragraph_wrong_condition",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 他人の添削・助言による修正は下線不要（human_advice_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(他人|第三者|人)の(添削|助言)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "invented_permission_email",
+          "status": "silent_miss",
+          "findings": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "case": "spellcheck_exception_deleted",
+          "status": "detected",
+          "findings": [
+            {
+              "category": "polarity_mismatch",
+              "detail": "EV-U-61c185ec5771: 単純な誤字脱字の文書校正だけが下線不要（simple_spellcheck_underline_required=false）。同じ文で『不要』と言っていない、または例外が落ちている（必要な言い回しが無い: ['(誤字脱字|校正)[^。]{0,40}下線[^。]{0,8}(?:不要|必要ありません|必要はありません|必要ない|必要なし|求められません|求められない|課されません|いりません|要しません|必要とされていません|必要としない|免除|必須ではありません|必須ではない|必須でない|任意)']）"
+            }
+          ],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        }
+      ],
+      "positive_articles": [
+        {
+          "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+          "ok": true,
+          "findings": [],
+          "notices": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-01-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-06-49cb4d": [
+                "no_visit_kept",
+                "no_visit_not_denied"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-08-49cb4d": [
+                "common_test_required_false"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-12-49cb4d": [
+                "statement_form_specified"
+              ],
+              "EV-T27-13-49cb4d": [
+                "supporting_materials_required"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-05-49cb4d",
+                "what": "qualifier '出願登録と検定料の払い込み'",
+                "why": "no qualitative rule matches it"
+              },
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 9,
+              "unverified": 2
+            }
+          }
+        },
+        {
+          "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+          "ok": true,
+          "findings": [],
+          "notices": [],
+          "coverage": {
+            "checked": {
+              "EV-T27-04-49cb4d": [
+                "hedge_kept",
+                "extension_not_denied",
+                "no_unconditional_claim"
+              ],
+              "EV-T27-07-49cb4d": [
+                "eligibility_not_waived"
+              ],
+              "EV-T27-09-49cb4d": [
+                "hedge_kept",
+                "no_unconditional_claim"
+              ],
+              "EV-U-61c185ec5771": [
+                "ai_use_allowed",
+                "ai_text_underline_true",
+                "simple_spellcheck_underline_false",
+                "human_advice_underline_false",
+                "human_advice_report_true",
+                "ai_visual_disclosure_true"
+              ]
+            },
+            "unverified": [
+              {
+                "evidence_id": "EV-T27-07-49cb4d",
+                "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                "why": "no qualitative rule matches it"
+              }
+            ],
+            "counts": {
+              "evidence_with_checks": 4,
+              "unverified": 1
+            }
+          }
+        }
+      ],
+      "whole_view_flip": {
+        "instances": 83,
+        "detected": 82,
+        "survived": 1,
+        "declared_unverified": 0,
+        "silent_misses": 1,
+        "accounted_rate": 0.988,
+        "detection_rate": 0.988,
+        "all_baselines_ok": true,
+        "by_family": {
+          "polarity": {
+            "instances": 27,
+            "detected": 27
+          },
+          "logic": {
+            "instances": 16,
+            "detected": 16
+          },
+          "exception": {
+            "instances": 7,
+            "detected": 7
+          },
+          "limit": {
+            "instances": 8,
+            "detected": 8
+          },
+          "caveat": {
+            "instances": 13,
+            "detected": 13
+          },
+          "hedge": {
+            "instances": 9,
+            "detected": 9
+          },
+          "omission": {
+            "instances": 3,
+            "detected": 2
+          }
+        },
+        "by_flip": {
+          "exempt_to_required": {
+            "instances": 2,
+            "detected": 2
+          },
+          "needed_to_unneeded": {
+            "instances": 16,
+            "detected": 16
+          },
+          "any_to_all": {
+            "instances": 6,
+            "detected": 6
+          },
+          "any_to_both": {
+            "instances": 6,
+            "detected": 6
+          },
+          "visit_not_accepted_to_accepted": {
+            "instances": 4,
+            "detected": 4
+          },
+          "limit_dropped_a": {
+            "instances": 4,
+            "detected": 4
+          },
+          "exception_sentence_dropped": {
+            "instances": 4,
+            "detected": 4
+          },
+          "caveat_confirm_to_unneeded": {
+            "instances": 9,
+            "detected": 9
+          },
+          "test_required_to_unneeded": {
+            "instances": 2,
+            "detected": 2
+          },
+          "need_none_to_need": {
+            "instances": 1,
+            "detected": 1
+          },
+          "unneeded_to_required": {
+            "instances": 4,
+            "detected": 4
+          },
+          "applicable_to_all_met": {
+            "instances": 2,
+            "detected": 2
+          },
+          "visit_no_to_yes": {
+            "instances": 1,
+            "detected": 1
+          },
+          "extension_may_to_never": {
+            "instances": 2,
+            "detected": 2
+          },
+          "hedge_dropped_b": {
+            "instances": 4,
+            "detected": 4
+          },
+          "hedge_dropped_c": {
+            "instances": 4,
+            "detected": 4
+          },
+          "hedge_dropped_d": {
+            "instances": 1,
+            "detected": 1
+          },
+          "caveat_needed_to_unneeded": {
+            "instances": 4,
+            "detected": 4
+          },
+          "allowed_to_not_allowed": {
+            "instances": 1,
+            "detected": 1
+          },
+          "allowed_to_prohibited": {
+            "instances": 1,
+            "detected": 1
+          },
+          "all_met_to_any": {
+            "instances": 2,
+            "detected": 2
+          },
+          "language_dropped_fr": {
+            "instances": 2,
+            "detected": 2
+          },
+          "language_dropped_en": {
+            "instances": 1,
+            "detected": 0
+          }
+        },
+        "survivors": [
+          {
+            "article": "evision:f3f9d802d6221bcc",
+            "flip": "language_dropped_en",
+            "context": "-10-91dad1]  面接は日本語または英語で行われます。出願時に希",
+            "declared_unverified": false
+          }
+        ]
+      }
+    }
+  }
+}

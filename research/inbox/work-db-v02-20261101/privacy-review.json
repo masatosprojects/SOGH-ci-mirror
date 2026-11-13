@@ -1,0 +1,10 @@
+{
+  "database_sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+  "automated_secret_findings": [],
+  "experience_reports": 0,
+  "experience_observations": 0,
+  "publications": 0,
+  "manual_review": "Reviewed the 27 public admissions claims, schema, metadata and archive text; no personal applicant records or account credentials were included.",
+  "official_pdf_originals_in_zip": false,
+  "full_extracted_pdf_pages_uploaded": false
+}

@@ -1,0 +1,16 @@
+{
+  "admission_cycles": 3,
+  "admission_offerings": 1,
+  "article_evidence": 123,
+  "article_versions": 18,
+  "cycle_dimensions": 1,
+  "cycle_editions": 1,
+  "facts": 35,
+  "legacy_fact_links": 27,
+  "legacy_imports": 1,
+  "legacy_records": 121,
+  "qa_runs": 3,
+  "schema_versions": 2,
+  "source_documents": 3,
+  "source_pages": 124
+}

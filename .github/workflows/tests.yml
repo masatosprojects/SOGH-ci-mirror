@@ -1,0 +1,92 @@
+name: tests
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  schedule:
+    - cron: "17 3 * * 1"   # weekly (Mon 03:17 UTC): catches dependency drift with no commit involved
+  # Manual run (Actions tab -> tests -> Run workflow): the way to run the FULL matrix on a Draft PR branch.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # The required check ("pytest") — keep this job id/name stable.
+  pytest:
+    # Billing note (2026-11-11): Actions minutes ran out. PR runs skip Draft PRs; the fast ubuntu job is the only PR check.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Test suite (every test result is recorded)
+        run: python -m pytest tests/ -q --deselect tests/test_approval_trust.py::test_the_allowed_signers_file_has_exactly_one_key_for_the_pinned_principal_limited_to_git_signatures --deselect tests/test_approval_trust.py::test_the_key_in_the_allowed_signers_file_has_the_pinned_fingerprint --deselect tests/test_sign_restore_approval.py::test_happy_path_signs_and_verifies --deselect tests/test_sign_restore_approval.py::test_a_pinned_fingerprint_that_is_not_the_signing_key_is_reported_after_signing -rs --junitxml=junit.xml
+      # Test / skip / failure counts, every delivered export, isolation and the golden
+      # baseline. A skipped test fails this step: a skip is not a pass (docs/REGRESSION.md).
+      - name: Regression report
+        if: always() && hashFiles('junit.xml') != ''
+        run: python -m src.regression.report --junit junit.xml --fail-on-skip --out-dir regression-report --github-summary
+      # The whole view (Issue #36): the current state of every university / method together
+      # (e.g. samples/current/active-state.json). Its evidence ids repeat earlier deliveries on purpose, so it is
+      # not one more export: a legitimate reuse is told from a collision. scope=export: the original PDFs / HTML are
+      # not in the repository, so the check against them is `not_run` — never a pass. Green is not publication approval.
+      # No view in the inbox: the step passes and says so; the file name is the only trigger (nothing to edit).
+      - name: Whole view (scope=export)
+        if: always() && hashFiles('junit.xml') != ''
+        run: python -m src.regression.fullview --inbox research/inbox --scope export --execution-origin github-ci --out-dir regression-report --github-summary
+      # Work's own whole-view CLI (PR #33, Issue #36), run only when it is in the checkout. Its report is Work's
+      # statement, not proof: the step above is the independent one. A failure fails the job.
+      - name: Work whole-view CLI (when present)
+        if: hashFiles('research/inbox/work-updates-v2/pipeline/scripts/verify_full_view.py') != ''
+        run: >
+          python research/inbox/work-updates-v2/pipeline/scripts/verify_full_view.py
+          --view research/inbox/work-updates-v2/samples/current/active-state.json
+          --qa-root . --reference-date 2026-11-01 --scope export --execution-origin github-ci
+          --prior-inbox research/inbox --output work-full-view-ci
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-report
+          path: |
+            regression-report/
+            junit.xml
+            work-full-view-ci/
+          if-no-files-found: ignore
+
+  # The project supports Python >= 3.11.
+  pytest-py311:
+    # Not on pull requests (saves minutes): runs on push to master, weekly, and manually.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest tests/ -q --deselect tests/test_approval_trust.py::test_the_allowed_signers_file_has_exactly_one_key_for_the_pinned_principal_limited_to_git_signatures --deselect tests/test_approval_trust.py::test_the_key_in_the_allowed_signers_file_has_the_pinned_fingerprint --deselect tests/test_sign_restore_approval.py::test_happy_path_signs_and_verifies --deselect tests/test_sign_restore_approval.py::test_a_pinned_fingerprint_that_is_not_the_signing_key_is_reported_after_signing -rs
+
+  # Windows is where the data is produced (Japanese locale, CRLF checkouts): environment
+  # dependence shows up here first.
+  pytest-windows:
+    # Windows minutes count double: not on pull requests; runs on push to master, weekly, and manually.
+    if: github.event_name != 'pull_request'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest tests/ -q --deselect tests/test_approval_trust.py::test_the_allowed_signers_file_has_exactly_one_key_for_the_pinned_principal_limited_to_git_signatures --deselect tests/test_approval_trust.py::test_the_key_in_the_allowed_signers_file_has_the_pinned_fingerprint --deselect tests/test_sign_restore_approval.py::test_happy_path_signs_and_verifies --deselect tests/test_sign_restore_approval.py::test_a_pinned_fingerprint_that_is_not_the_signing_key_is_reported_after_signing -rs

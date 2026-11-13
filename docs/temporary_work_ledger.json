@@ -1,0 +1,486 @@
+{
+ "schema": 1,
+ "mode": "claude_temporary_implementation_takeover",
+ "basis": "user instruction 2026-11-01: Work is out of tokens; Claude may take over safe implementation work until Work returns. Temporary, not a permanent change of roles (AGENTS.md and docs/COORDINATION.md stay as they are).",
+ "announced_in": "Issue #55 (CLAUDE_TEMPORARY_IMPLEMENTATION_TAKEOVER)",
+ "work_checkpoint_to_preserve": "SOGH-REBOOT-20261101-C-01 (kept by Work in its own SOGH directory; Claude does not touch it)",
+ "labels": {
+  "INDEPENDENTLY_VERIFIED": "Work implemented it; Claude re-verified it without changing it",
+  "SELF_VALIDATED": "Claude implemented it and Claude validated it (not an independent audit)",
+  "WORK_REVIEW_PENDING": "needs Work's independent review when Work returns",
+  "WORK_CONTRACT_REVIEW_PENDING": "a contract question that needs Work's decision"
+ },
+ "rules": [
+  "never rewrite a Work branch or a Work PR; new work goes to claude/temporary-work-* or claude/audit-* branches",
+  "no change to an original database, no DDL on an original, no worker or scheduler start (stop.request stays), no publication, no paid API, no user data",
+  "when Work returns, read this ledger first and do not edit the same files at the same time; hand over unfinished work"
+ ],
+ "entries": [
+  {
+   "id": "T-01",
+   "task": "Independent audit of PR #63 (W-07 real-copy fault tests) and the M1.g4 decision",
+   "kind": "audit",
+   "starting_master": "36bf15a72f30d3705920ea785f97033ca6291ee3",
+   "original_owner": "Work (implementation) / Claude (audit)",
+   "work_branch": "work/real-copy-faults-m1 (head 54e4f9ce, not touched)",
+   "claude_branch": "claude/g4-independent-audit",
+   "files_changed_by_claude": [
+    "src/integration/real_copy_g4_audit.py",
+    "reports/db-audit/real_copy_g4_audit_pr63_2026-11-01.json",
+    "docs/DB_REAL_COPY_AUDIT.md",
+    "docs/development_progress.json",
+    "tests/test_real_copy_audit_record.py",
+    "tests/test_progress_board.py"
+   ],
+   "input_sha256": {
+    "v06_copy": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+    "v05_copy": "b4bb9d1a3f2590fe3321cb235933c796be87a2bb4ec9642b4f21f5c67acfa228"
+   },
+   "real_database_operation": "none on any original; every case ran on a fresh disposable clone of the audited copy; the copy's SHA-256 was unchanged",
+   "synthetic_tests": "see tests/test_real_copy_audit_record.py",
+   "real_copy_tests": "Work's 6 cases re-run by Claude: 6/6; Claude's harness: 21 pass, 0 fail, 1 known limit (G-09)",
+   "verification": {
+    "work_code": "INDEPENDENTLY_VERIFIED (Work's RevisionStore, ProcessLock and driver unchanged)",
+    "claude_harness": "SELF_VALIDATED (Claude's own checks of Work's code)"
+   },
+   "remaining_warnings": [
+    "disk full during an update: not run",
+    "power loss: not run",
+    "no database-level protection against a direct head write (G-09)",
+    "originals and official sources not examined"
+   ],
+   "after_work_returns": "read the report; decide whether to merge PR #63; re-run src/integration/real_copy_g4_audit.py after every schema change",
+   "mergeable": "PR #63 is Work's Draft; Claude does not merge or un-draft it",
+   "next_dependency": "re-run after G-04/G-05/v0.6 additions"
+  },
+  {
+   "id": "T-02",
+   "task": "Independent audit of PR #61 (stage contract A candidates)",
+   "kind": "audit",
+   "starting_master": "36bf15a72f30d3705920ea785f97033ca6291ee3",
+   "original_owner": "Work (candidates) / Claude (audit)",
+   "work_branch": "work/stage-contract-a-candidates (head c0c8e75b, not touched)",
+   "claude_branch": "claude/audit-pr61-stage",
+   "status": "audit done; candidates not activated",
+   "files_changed_by_claude": [
+    "src/verify/strict_claims.py (kanji ordinals, Claude-owned QA)",
+    "tests/test_stage_contract.py",
+    "src/integration/real_copy_stage_audit.py",
+    "reports/db-audit/real_copy_stage_audit_pr61_2026-11-01.json",
+    "docs/DB_REAL_COPY_AUDIT.md",
+    "docs/development_progress.json"
+   ],
+   "input_sha256": {
+    "v06_copy": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578"
+   },
+   "real_database_operation": "none on any original; activation exercised only in disposable clones of the audited copy",
+   "verification": {
+    "work_candidates": "INDEPENDENTLY_VERIFIED (candidate view, ids, articles, sources, mutation counts recomputed; Work's RevisionStore run unchanged)",
+    "claude_changes": "SELF_VALIDATED (kanji ordinal reader and its tests are Claude's own; WORK_REVIEW_PENDING is not needed because it is Claude-owned QA)"
+   },
+   "remaining_warnings": [
+    "fee-refund source SHA not in source_documents",
+    "activation in an operational database needs Work and the user",
+    "Issue #12 stays open"
+   ],
+   "after_work_returns": "decide on activating the two candidates; register the missing source; re-run src/integration/real_copy_stage_audit.py after the activation",
+   "mergeable": "PR #61 is Work's Draft; Claude does not merge it",
+   "next_dependency": "G-06 source registration"
+  },
+  {
+   "id": "T-03",
+   "task": "G-04 / G-05 contract and additive implementation (G-02 migration runner included)",
+   "kind": "implementation",
+   "starting_master": "1a23edf",
+   "original_owner": "Work (schema) / Claude (contract)",
+   "work_branch": "none (Work has not implemented these; its proposal is in Issue #55)",
+   "claude_branch": "claude/temporary-work-m1-g04-g05",
+   "files_changed_by_claude": [
+    "src/db_contract/additive_schema.py",
+    "src/integration/real_copy_additive_audit.py",
+    "tests/test_additive_schema.py",
+    "docs/G04_G05_CONTRACT.md",
+    "reports/db-audit/real_copy_additive_g04_g05_2026-11-01.json",
+    "docs/development_progress.json"
+   ],
+   "input_sha256": {
+    "v06_copy": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578"
+   },
+   "real_database_operation": "none on any original or on the audited copy; the DDL ran only in disposable clones",
+   "synthetic_tests": "28 (tests/test_additive_schema.py)",
+   "real_copy_tests": "8/8 on clones; the update-path harness 21/21 on the migrated clone",
+   "verification": {
+    "all": "SELF_VALIDATED (Claude implemented and validated)"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "WORK_CONTRACT_REVIEW_PENDING"
+   ],
+   "remaining_warnings": [
+    "not applied anywhere operational",
+    "identity unit and offering index need Work's agreement",
+    "names are compared as exact strings (no normalisation)"
+   ],
+   "after_work_returns": "review the contract and the code; decide on application; apply with backup, dry-run on a disposable copy, db_audit and the g4 harness",
+   "mergeable": "merged to master as proposal code only; application to a database is a separate approval",
+   "next_dependency": "G-03 indexes, G-06, G-07, G-09, G-11"
+  },
+  {
+   "id": "T-04",
+   "task": "G-02 migration history contract aligned with docs/DB_MIGRATION_REQUIREMENTS.md; G-09 append-only triggers and head integrity (migration 0004)",
+   "kind": "implementation",
+   "starting_master": "1e02190",
+   "original_owner": "Work (schema) / Claude (contract)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-g02-g09",
+   "migration_ids": [
+    "0004-g09-append-only-and-head-integrity (0002 and 0003 from T-03, now recorded with the contract layout)"
+   ],
+   "files_changed_by_claude": [
+    "src/db_contract/additive_schema.py",
+    "src/integration/real_copy_additive_audit.py",
+    "src/integration/real_copy_g4_audit.py",
+    "tests/test_g09_and_runner.py",
+    "tests/test_additive_schema.py",
+    "docs/G02_G09_CONTRACT.md",
+    "reports/db-audit/real_copy_g02_g09_2026-11-01.json",
+    "docs/development_progress.json"
+   ],
+   "input_sha256": {
+    "v06_copy": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578"
+   },
+   "real_database_operation": "none on any original or on the audited copy; DDL only in disposable clones",
+   "synthetic_tests": "58 (two files)",
+   "real_copy_tests": "14/14 on clones; the update-path harness 22/22 on the migrated clone",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "WORK_CONTRACT_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "remaining_warnings": [
+    "classes C and D of the table classification need Work's decision",
+    "INSERT OR REPLACE and DDL are not stopped by triggers",
+    "F-2 is neither repaired nor accepted",
+    "not applied to any operational database"
+   ],
+   "after_work_returns": "review the classification and the triggers against the importer and the worker; decide the application order (backup, disposable dry-run, atomic apply, db_audit, g4 harness)",
+   "mergeable": "proposal code and documents only; application to a database needs Work and the user",
+   "next_dependency": "G-07, G-11, G-06, G-03"
+  },
+  {
+   "id": "T-05",
+   "task": "G-07 revised_article_evidence and G-11 revision_reasons (migrations 0005, 0006) with the backfill and the impact lookup",
+   "kind": "implementation",
+   "starting_master": "1dc93a5",
+   "original_owner": "Work (schema) / Claude (contract)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-g07-g11",
+   "migration_ids": [
+    "0005-g07-revised-article-evidence",
+    "0006-g11-revision-reasons"
+   ],
+   "files_changed_by_claude": [
+    "src/db_contract/additive_schema.py",
+    "src/integration/real_copy_additive_audit.py",
+    "src/integration/real_copy_g4_audit.py",
+    "tests/test_g07_g11.py",
+    "tests/test_additive_schema.py",
+    "tests/test_g09_and_runner.py",
+    "docs/G07_G11_CONTRACT.md",
+    "reports/db-audit/real_copy_g07_g11_2026-11-01.json",
+    "docs/development_progress.json"
+   ],
+   "input_sha256": {
+    "v06_copy": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578"
+   },
+   "real_database_operation": "none on any original or on the audited copy; DDL and backfill only in disposable clones",
+   "synthetic_tests": "23 new",
+   "real_copy_tests": "17/17 on clones (A, B and C series); update-path harness 22/22 on the full-chain clone",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "WORK_CONTRACT_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "remaining_warnings": [
+    "Work's finalize does not write a reason yet",
+    "approval events (G-08) are not implemented",
+    "not applied to any operational database"
+   ],
+   "after_work_returns": "review the relation and the reason table; decide whether finalize calls record_reason; apply with backup, disposable dry-run, atomic apply, db_audit and the g4 harness",
+   "mergeable": "proposal code and documents only",
+   "next_dependency": "G-06, G-03, then the integrated E2E",
+   "status": "HELD: PR #72 is not merged and is not part of the approved design; its content is to be re-issued with the unified migrations (M1_SAFE_MIGRATION_PLAN.md step 2)"
+  },
+  {
+   "id": "T-06",
+   "task": "Unified M1 data architecture review (G-02 to G-11 together): falsification tests, unified RFC, decision matrix, safe migration plan, final approval items",
+   "kind": "design_review",
+   "starting_master": "1dc93a5 (+ PR #72 unmerged)",
+   "original_owner": "Claude (design) / Work (independent review)",
+   "work_branch": "none",
+   "claude_branch": "claude/m1-design-approved-docs (documents and falsification tests only, no database implementation; the earlier stacked draft PR #73 is superseded)",
+   "files_changed_by_claude": [
+    "docs/architecture/M1_UNIFIED_DATA_ARCHITECTURE_RFC.md",
+    "docs/architecture/M1_DESIGN_DECISION_MATRIX.md",
+    "docs/architecture/M1_SAFE_MIGRATION_PLAN.md",
+    "docs/architecture/M1_FINAL_APPROVAL_ITEMS.md",
+    "tests/test_unified_design_falsification.py",
+    "docs/temporary_work_ledger.json",
+    "docs/TEMPORARY_WORK_LEDGER.md"
+   ],
+   "real_database_operation": "none; synthetic databases only for the falsification tests; a read-only EXPLAIN and head replay on the audited real copy's clone",
+   "synthetic_tests": "17 (11 characterise defects of the merged or proposed code, 6 prove the recommended fixes are feasible)",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_DECISION_REQUIRED"
+   ],
+   "findings": [
+    "D1 unapproved head by direct SQL",
+    "D2 forged QA approval by direct SQL",
+    "D3 head to rolled-back evidence",
+    "D4 INSERT OR REPLACE overwrites",
+    "D5 trigger drop and generated-SQL checksum undetected",
+    "D6 resolve/pinned depth/cycle",
+    "D7 offering identity includes the source"
+   ],
+   "verdict": "DESIGN_FREEZE_READY (not approved by the user; the merged G-09 is not final and needs the amendments)",
+   "mergeable": "design documents and tests only; the user decides; nothing is applied to any database",
+   "after_work_returns": "independently review the design decisions and all Claude self-implemented migrations; make the small Work-code changes (finalize order, connection capability, reason writing) after the user's approval",
+   "next_dependency": "user's approval of M1_FINAL_APPROVAL_ITEMS.md",
+   "approval": "the user approved the ten recommended items on 2026-11-01 (design adoption only; not operational application, not an immediate acceptance of F-2, not signing keys, not the merge of PR #61 or #64)",
+   "status": "approved design; Work's independent review still pending"
+  },
+  {
+   "id": "T-07",
+   "task": "M1 stage 1: patch proposal that adapts Work's update path (finalize order, connection capability and recursive_triggers, promote connection, optional reason writing) to the approved guard design",
+   "kind": "implementation_patch",
+   "starting_master": "ed7702f",
+   "original_owner": "Work (update path code)",
+   "work_branch": "none (research/inbox/work-faq-v3 is unchanged)",
+   "claude_branch": "claude/temporary-work-m1-stage1-work-patch",
+   "files_changed_by_claude": [
+    "patches/m1-stage1/work-pipeline-stage1.patch",
+    "src/integration/guard_rules_prototype.py",
+    "src/integration/real_copy_g4_audit.py (optional SOGH_G4_PREPARE hook)",
+    "tests/db_support.py (SOGH_PIPELINE_ROOT)",
+    "tests/test_work_stage1_patch.py",
+    "tests/behaviour_work_stage1.py",
+    "tests/test_work_stage1_record.py",
+    "reports/db-audit/real_copy_g4_stage1_patch_2026-11-01.json",
+    "docs/M1_STAGE1_WORK_PATCH.md"
+   ],
+   "real_database_operation": "disposable clones of the audited copy v06 only (g4 harness, 22 cases); the audited copy's SHA was unchanged",
+   "synthetic_tests": "wrapper 7 + behaviour 12 (10 run against the patched copy, 4 against the delivered copy)",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "verdict": "the patch works under the proposed guard rules (g4 22/22 on a clone with the rules, 21 + 1 known limit without) and the delivered code does not: stage 1 must precede the database side",
+   "mergeable": "the patch file and tests only; it is applied to nothing under research/inbox and to no operational database",
+   "after_work_returns": "review the patch, adopt it (or an equivalent) in the Work code, decide where the reason text comes from in revise_notices.py",
+   "next_dependency": "PR-2: frozen SQL files for migrations 0002-0008, which replace the test-local guard rules",
+   "status": "SELF_VALIDATED; Work's independent review pending"
+  },
+  {
+   "id": "T-08",
+   "task": "M1 frozen SQL files for migrations 0002 (G-04, offering identity without the source, offering_sources) and 0003 (G-05, root/orphans views, view-based pinned check), schema-state verification, DB-16 and DB-17",
+   "kind": "implementation",
+   "starting_master": "ed7702f (+ PR #76 stage-1 patch)",
+   "original_owner": "Claude (schema) / Work (independent review)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-frozen-migrations-a",
+   "files_changed_by_claude": [
+    "src/db_contract/migrations/0002_g04_cycle_and_offering_identity.sql",
+    "src/db_contract/migrations/0003_g05_evidence_root_alias.sql",
+    "src/db_contract/additive_schema.py",
+    "src/integration/db_audit.py",
+    "src/integration/real_copy_additive_audit.py",
+    "tests/ (additive, g09, falsification, db_audit, record)",
+    "reports/db-audit/real_copy_additive_frozen_a_2026-11-02.json",
+    "docs/M1_FROZEN_MIGRATIONS_A.md",
+    "docs/architecture/M1_UNIFIED_DATA_ARCHITECTURE_RFC.md (test names of D5-D7)"
+   ],
+   "real_database_operation": "disposable clones of the audited copy v06 only (additive audit, 14 cases pass); the audited copy's SHA was unchanged",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "verdict": "D5, D6 and D7 fixed and tested; D1-D4 stay open until the 0004 re-issue",
+   "mergeable": "schema files and tests; applied to no operational database",
+   "next_dependency": "PR: 0004 frozen with the capability gate, approved-only heads and recursive_triggers (uses PR #76)",
+   "status": "SELF_VALIDATED; Work's independent review pending"
+  },
+  {
+   "id": "T-09",
+   "task": "M1 frozen SQL (2/3): migration 0004 (G-09) as a frozen file: capability gate, append-only history tables, heads only for approved batches, update_batches transitions; tests default to the stage-1 patched pipeline",
+   "kind": "implementation",
+   "starting_master": "6033252",
+   "original_owner": "Claude (schema) / Work (independent review)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-frozen-migrations-b",
+   "files_changed_by_claude": [
+    "src/db_contract/migrations/0004_g09_append_only_and_head_integrity.sql",
+    "src/db_contract/guard_sql.py",
+    "src/db_contract/additive_schema.py",
+    "src/integration/g4_prepare.py",
+    "src/integration/real_copy_additive_audit.py (B7)",
+    "tests/ (guard migration, g09, additive, falsification D1-D4 flipped, behaviour, db_support default pipeline)",
+    "reports/db-audit/real_copy_frozen_b_2026-11-02.json",
+    "docs/M1_FROZEN_MIGRATIONS_B.md"
+   ],
+   "real_database_operation": "disposable clones of the audited copy v06 only (g4 22/22 with the final chain and the stage-1 patched pipeline; additive audit 15/15); the audited copy's SHA was unchanged",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "verdict": "D1, D3, D4 fixed; D2 stays as the stated residual limit (G-08 signatures); detection of dropped guards by DB-17",
+   "mergeable": "schema file, renderer and tests; applied to no operational database; the stage-1 patch must be adopted in Work's code before any real application",
+   "next_dependency": "PR-4: G-07 and G-11 frozen; PR-5: G-06 and indexes",
+   "status": "SELF_VALIDATED; Work's independent review pending"
+  },
+  {
+   "id": "T-10",
+   "task": "M1 frozen SQL (3/3 part 1): migrations 0005 (G-07 revised-article evidence relation, cited_version, impacted_articles) and 0006 (G-11 reasons, numbered corrections, contract row position) replacing the held PR #72",
+   "kind": "implementation",
+   "starting_master": "15b6757",
+   "original_owner": "Claude (schema) / Work (independent review)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-frozen-migrations-c",
+   "files_changed_by_claude": [
+    "src/db_contract/migrations/0005_g07_revised_article_evidence.sql",
+    "src/db_contract/migrations/0006_g11_revision_reasons.sql",
+    "src/db_contract/additive_schema.py (plan as a dry run on a copy; cited_version, impacted_articles, record_reason, correct_reason)",
+    "src/integration/real_copy_additive_audit.py (C1, C2)",
+    "src/integration/real_copy_g4_audit.py (the relation rows are expected)",
+    "tests/test_g07_g11_frozen.py",
+    "reports/db-audit/real_copy_frozen_c_2026-11-02.json",
+    "docs/M1_FROZEN_MIGRATIONS_C.md"
+   ],
+   "real_database_operation": "disposable clones of the audited copy v06 only (additive audit 17/17, g4 22/22 with the full chain); the audited copy's SHA was unchanged",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "verdict": "G-07 and G-11 re-issued on the approved design; real clone: 22 revised articles, 220 relation rows equal to the records, no mismatch, no invented reason for the past",
+   "mergeable": "schema files, helpers and tests; applied to no operational database; PR #72 is superseded and can be closed after this merges",
+   "next_dependency": "PR-5: G-06 (source metadata, verification events) and the six indexes",
+   "status": "SELF_VALIDATED; Work's independent review pending"
+  },
+  {
+   "id": "T-11",
+   "task": "M1 frozen SQL (3/3 part 2): migrations 0007 (G-06 source metadata and per-level verification events) and 0008 (G-03 lookup indexes), completing the chain 0002-0008",
+   "kind": "implementation",
+   "starting_master": "f17c67b",
+   "original_owner": "Claude (schema) / Work (independent review)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-frozen-migrations-d",
+   "files_changed_by_claude": [
+    "src/db_contract/migrations/0007_g06_source_metadata_and_verification.sql",
+    "src/db_contract/migrations/0008_g03_lookup_indexes.sql",
+    "src/db_contract/additive_schema.py (record_source_metadata, record_verification, preflights)",
+    "src/integration/real_copy_additive_audit.py (D1, D2)",
+    "tests/test_g06_g03_frozen.py",
+    "reports/db-audit/real_copy_frozen_d_2026-11-02.json",
+    "docs/M1_FROZEN_MIGRATIONS_D.md"
+   ],
+   "real_database_operation": "disposable clones of the audited copy v06 only (additive audit 19/19, g4 22/22 with the complete chain); the audited copy's SHA was unchanged",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "verdict": "the migration chain 0002-0008 of the approved unified design is complete as frozen files; no source of the real copy was verified, dated or registered",
+   "mergeable": "schema files, helpers and tests; applied to no operational database",
+   "next_dependency": "Work's independent review; adoption of the stage-1 patch; the user's separate approval of an application procedure; head_history / read_as_of; F-2 acceptance procedure (after its conditions)",
+   "status": "SELF_VALIDATED; Work's independent review pending"
+  },
+  {
+   "id": "T-12",
+   "task": "M1 head history (M-14): migration 0009 (v_head_events), heads_as_of / read_as_of, db_audit DB-18 (the current heads equal the replay of the recorded approval and rollback events)",
+   "kind": "implementation",
+   "starting_master": "4d9bca8",
+   "original_owner": "Claude (schema) / Work (independent review)",
+   "work_branch": "none",
+   "claude_branch": "claude/temporary-work-m1-head-history",
+   "files_changed_by_claude": [
+    "src/db_contract/migrations/0009_m14_head_history.sql",
+    "src/db_contract/additive_schema.py",
+    "src/integration/db_audit.py (DB-18)",
+    "src/db_contract/load_export.py (the reference load states its heads)",
+    "src/integration/real_copy_additive_audit.py (E1)",
+    "tests/test_head_history.py",
+    "tests/test_db_audit.py (fixtures state their heads)",
+    "reports/db-audit/real_copy_head_history_2026-11-02.json",
+    "docs/M1_HEAD_HISTORY.md"
+   ],
+   "real_database_operation": "disposable clones of the audited copy v06 only (additive audit 20/20, g4 22/22 on the nine-migration chain); the audited copy's SHA was unchanged",
+   "verification": {
+    "all": "SELF_VALIDATED"
+   },
+   "labels": [
+    "WORK_REVIEW_PENDING",
+    "USER_APPROVAL_REQUIRED"
+   ],
+   "verdict": "the heads of any past time can be replayed from the recorded events and the replay equals the current heads of the real clone; D2's residual limit is detected by DB-18",
+   "mergeable": "schema view, read-side functions, audit invariant and tests; applied to no operational database",
+   "next_dependency": "Work's independent review; effective_at in the public update API (Work)",
+   "status": "SELF_VALIDATED; Work's independent review pending"
+  }
+ ],
+ "status": "ended",
+ "ended": {
+  "on": "2026-11-02",
+  "reason": "ChatGPT Work resumed work on 2026-11-02 and declared its scope (Issue #55, comments 6564332880 and 6564340404); the user told Claude to end the temporary takeover",
+  "acknowledged_in": "Issue #55 comment 6564370262",
+  "claude_implements_nothing_further": true,
+  "handed_over_to_work": [
+   "adopt the PR #76 patch in the existing Work code (update path; reason passing in scripts/revise_notices.py): the delivered update code is refused by the 0004 guards",
+   "effective_at in the public update API (heads_as_of / read_as_of are read-side only)",
+   "register and verify the three unregistered original sources (F-2 related)",
+   "independent review of frozen migrations 0002-0009, the PR #76 patch and db_audit DB-16..18 (all of Claude's results are SELF_VALIDATED, WORK_REVIEW_PENDING)",
+   "real-data verification of M1 gates g1, g2, g3, g5, g6, g7 (NOT_RUN)"
+  ],
+  "waiting_for_user_approval": [
+   "application to an operational database",
+   "formal acceptance of F-2",
+   "signing-key owner (G-08)",
+   "merge of PR #64 and PR #77",
+   "reward / minors / legal / LLM-voice-video budget",
+   "activation of the PR #61 stage candidates"
+  ],
+  "claude_keeps": "independent QA, contract verification, negative tests, independent review of Work's results, db_audit / CI, design review",
+  "not_touched_by_claude": [
+   "work/m1-night-integration",
+   "Work's update code",
+   "adoption of PR #76 into the existing Work code",
+   "work/* branches and PRs #61 #63 #65",
+   "research/inbox/"
+  ],
+  "sandbox": "Claude freezes sandbox/** (no edits without an announcement in Issue #55); Work's UI, if any, goes to a Work-only area announced before it starts",
+  "reading_work_code_is_not_approval": "Work's resume declaration does not mean Work's code is verified or approved: independent review stays",
+  "m1": "2/8 NOT ACCEPTED"
+ }
+}

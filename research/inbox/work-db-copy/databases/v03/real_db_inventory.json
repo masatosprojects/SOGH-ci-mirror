@@ -1,0 +1,1123 @@
+{
+  "label": "v03",
+  "status": "confirmed",
+  "target_kind": "copied_real_db",
+  "source_location_kind": "local_runtime_development_storage",
+  "production_designation": "not_confirmed",
+  "source_file_sha256_before": "6ef6e363e66e802d0e874c54c008bbdc5acf7e3e9d4f7bbd4e3af701a392c660",
+  "source_file_sha256_after": "6ef6e363e66e802d0e874c54c008bbdc5acf7e3e9d4f7bbd4e3af701a392c660",
+  "source_main_file_unchanged": true,
+  "sidecars_before": {
+    "-wal": {
+      "exists": false,
+      "sha256": null
+    },
+    "-shm": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "sidecars_after": {
+    "-wal": {
+      "exists": false,
+      "sha256": null
+    },
+    "-shm": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "copy": {
+    "file_name": "v03.sqlite",
+    "bytes": 815104,
+    "sha256": "ca3cb262ca2d90a2f6d29816d9b6df2d1435269976a00f0c78b6169e3d7d2b01",
+    "started_at": "2026-11-01T10:21:46.793379+00:00",
+    "finished_at": "2026-11-01T10:21:46.966802+00:00",
+    "method": "SQLite online backup from mode=ro read transaction",
+    "sanitized": false,
+    "read_snapshot_logically_identical": true,
+    "copy_valid": true,
+    "atomic_final_filename_after_validation": true
+  },
+  "user_version": 0,
+  "schema_versions": [
+    [
+      "admissions-v0.3-source-facts"
+    ],
+    [
+      "admissions-v0.4-additive-dimensions"
+    ]
+  ],
+  "tables": {
+    "admission_cycles": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "university",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "faculty",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "department",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "admission_method",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "fiscal_year",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "exam_year",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_admission_cycles_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "university",
+            "faculty",
+            "department",
+            "admission_method",
+            "fiscal_year"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_admission_cycles_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "case_id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "admission_offerings": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "offering_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "round_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "entry_month",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "scope_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "source_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "source_documents",
+          "source_sha256",
+          "sha256",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "admission_cycles",
+          "case_id",
+          "case_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_admission_offerings_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "offering_id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "article_evidence": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "article_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "evidence_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "facts",
+          "evidence_id",
+          "evidence_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "article_versions",
+          "article_id",
+          "article_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_article_evidence_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "article_id",
+            "evidence_id"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "article_versions": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "article_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "input_hash",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "series",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "title",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "body",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "artifact_path",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "publish_allowed",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "admission_cycles",
+          "case_id",
+          "case_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_article_versions_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "article_id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "cycle_dimensions": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "selection_category",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "entry_year",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "exam_year",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "entry_months_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "round_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "scope_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "admission_cycles",
+          "case_id",
+          "case_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_cycle_dimensions_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "case_id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "cycle_editions": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "source_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        },
+        {
+          "cid": 2,
+          "name": "profile_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 3
+        },
+        {
+          "cid": 3,
+          "name": "profile_version",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "observed_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "source_documents",
+          "source_sha256",
+          "sha256",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "admission_cycles",
+          "case_id",
+          "case_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_cycle_editions_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "case_id",
+            "source_sha256",
+            "profile_sha256"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "facts": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "evidence_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "source_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "fact_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "value_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "record_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "verification",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "source_documents",
+          "source_sha256",
+          "sha256",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "admission_cycles",
+          "case_id",
+          "case_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_facts_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "case_id",
+            "source_sha256",
+            "fact_key"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_facts_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "evidence_id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "legacy_fact_links": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "legacy_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "legacy_fact_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        },
+        {
+          "cid": 2,
+          "name": "case_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "evidence_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "report_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "facts",
+          "evidence_id",
+          "evidence_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "admission_cycles",
+          "case_id",
+          "case_id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          2,
+          0,
+          "legacy_imports",
+          "legacy_sha256",
+          "file_sha256",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_legacy_fact_links_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "legacy_sha256",
+            "legacy_fact_id"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "legacy_imports": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "file_sha256",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "original_path",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "copy_path",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "audit_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "facts_promoted",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_legacy_imports_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "file_sha256"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "legacy_records": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "legacy_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "table_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        },
+        {
+          "cid": 2,
+          "name": "record_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 3
+        },
+        {
+          "cid": 3,
+          "name": "record_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "legacy_imports",
+          "legacy_sha256",
+          "file_sha256",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_legacy_records_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "legacy_sha256",
+            "table_name",
+            "record_key"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "qa_runs": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "claude_commit",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "report_path",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "success",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_qa_runs_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "run_id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "schema_versions": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "version",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_schema_versions_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "version"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "source_documents": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "sha256",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "url",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "local_path",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "retrieved_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "revision_clearance",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_source_documents_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "sha256"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "source_pages": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "source_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "page",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        },
+        {
+          "cid": 2,
+          "name": "text",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "text_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "source_documents",
+          "source_sha256",
+          "sha256",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_source_pages_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "source_sha256",
+            "page"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    }
+  },
+  "objects": [
+    {
+      "type": "table",
+      "name": "admission_cycles",
+      "table": "admission_cycles"
+    },
+    {
+      "type": "table",
+      "name": "admission_offerings",
+      "table": "admission_offerings"
+    },
+    {
+      "type": "table",
+      "name": "article_evidence",
+      "table": "article_evidence"
+    },
+    {
+      "type": "table",
+      "name": "article_versions",
+      "table": "article_versions"
+    },
+    {
+      "type": "table",
+      "name": "cycle_dimensions",
+      "table": "cycle_dimensions"
+    },
+    {
+      "type": "table",
+      "name": "cycle_editions",
+      "table": "cycle_editions"
+    },
+    {
+      "type": "table",
+      "name": "facts",
+      "table": "facts"
+    },
+    {
+      "type": "table",
+      "name": "legacy_fact_links",
+      "table": "legacy_fact_links"
+    },
+    {
+      "type": "table",
+      "name": "legacy_imports",
+      "table": "legacy_imports"
+    },
+    {
+      "type": "table",
+      "name": "legacy_records",
+      "table": "legacy_records"
+    },
+    {
+      "type": "table",
+      "name": "qa_runs",
+      "table": "qa_runs"
+    },
+    {
+      "type": "table",
+      "name": "schema_versions",
+      "table": "schema_versions"
+    },
+    {
+      "type": "table",
+      "name": "source_documents",
+      "table": "source_documents"
+    },
+    {
+      "type": "table",
+      "name": "source_pages",
+      "table": "source_pages"
+    }
+  ],
+  "source_writes_performed_by_this_tool": false,
+  "copy_binary_not_for_github": true
+}

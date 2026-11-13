@@ -1,0 +1,186 @@
+[
+  {
+    "logical_id": "keio-ao-system-notice",
+    "case_id": "keio-environment-ao-2026s-2027",
+    "fiscal_year": 2027,
+    "fact_key": "maintenance_notice",
+    "profile_version": "notice-2026-11-01-v1.3",
+    "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+    "expected_sha256": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+    "published_date": "2026-10-21",
+    "anchors": [
+      {
+        "page": 1,
+        "pattern": "公開日:2026.10.21"
+      },
+      {
+        "page": 1,
+        "pattern": "2026夏秋AO入試の出願システムは一時的なメンテナンスを行っているため、現在アクセスすることができません。"
+      }
+    ],
+    "value": {
+      "text": "夏秋AO出願システムの一時的メンテナンス告知",
+      "published_date": "2026-10-21",
+      "outage_end": null
+    },
+    "sentences": [
+      "2026年10月21日付で、夏秋AOの出願システムについて一時的なメンテナンスが告知されました。",
+      "これは掲載日の案内であり、現在も停止中であることや復旧日時を示すものではありません。利用時は最新の公式案内を確認してください。"
+    ],
+    "temporal_status": "historical_notice_current_status_unknown",
+    "applicability": "2026夏秋AO（2027年入学対象）の出願システム。通常の夏季休止期間とは別告知",
+    "previous_reviewed_sha256": "d38b9db4c1da977109b2ac1b44f028afb8c5ec58d2116f71c11a375b202c764c",
+    "review_note": "Raw HTML changed; normalized visible text identical to the previously inspected edition",
+    "source_role": "additional_notice"
+  },
+  {
+    "logical_id": "keio-ao-multilingual",
+    "case_id": "keio-environment-ao-2026s-2027",
+    "fiscal_year": 2027,
+    "fact_key": "multilingual_evaluation",
+    "profile_version": "notice-2026-11-01-v1.1",
+    "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+    "expected_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+    "published_date": "2026-05-15",
+    "anchors": [
+      {
+        "page": 12,
+        "pattern": "多言語能力評価についてドイツ語またはフランス語の運用能力の評価を希望する場合は、オンライン出願システムより申請の上、出願時に所定の書類を提出することにより、その能力も評価対象となります。"
+      },
+      {
+        "page": 12,
+        "pattern": "2次選考\\(面接\\)に進んだ場合、志願者がドイツ語またはフランス語を用いて入学後の構想を口頭で表現する時間を設けます。.*?口頭表現能力も評価します。"
+      },
+      {
+        "page": 1,
+        "pattern": "2026年5月15日公開"
+      }
+    ],
+    "value": {
+      "languages": [
+        "ドイツ語",
+        "フランス語"
+      ],
+      "application_required": true,
+      "text": "希望者が申請と所定書類提出を行い、書類・面接で追加の言語能力を評価"
+    },
+    "sentences": [
+      "通常の面接言語の指定とは別に、希望者はドイツ語またはフランス語の多言語能力評価を申請できます。",
+      "所定の書類を提出し、面接に進んだ場合は選択した言語で入学後の構想を口頭表現する能力も評価されます。"
+    ],
+    "temporal_status": "saved_edition_policy",
+    "applicability": "現行夏秋AO要項に既に記載。新設/後日訂正とは扱わない",
+    "source_role": "guide_policy",
+    "related_sources": [
+      {
+        "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/20240303-01/",
+        "published_date": "2025-03-03",
+        "relation": "advance_announcement_already_reflected_in_guide"
+      }
+    ]
+  },
+  {
+    "logical_id": "tsukuba-ac-refund",
+    "case_id": "tsukuba-klis-ac-2027",
+    "fiscal_year": 2027,
+    "fact_key": "fee_refund",
+    "profile_version": "notice-2026-11-01-v1",
+    "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+    "expected_sha256": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+    "published_date": "2026-10-01",
+    "anchors": [
+      {
+        "page": 1,
+        "pattern": "令和8年10月1日.*?令和9年度\\(2027年度\\)アドミッションセンター入試、研究型人材入試第1次選考不合格者の検定料の返還について"
+      },
+      {
+        "page": 1,
+        "pattern": "納付された検定料17,000円のうち(?P<amount>13,000)円を「検定料返還請求書」を提出することで、"
+      },
+      {
+        "page": 1,
+        "pattern": "検定料返還請求書は、令和(?P<ry>8)年(?P<month>10)月(?P<day>27)日\\(火\\)までに到着するように郵送願います。"
+      }
+    ],
+    "value": {
+      "amount": "$int:amount",
+      "currency": "JPY",
+      "deadline": "$date:ry,month,day",
+      "text": "第1次選考不合格者が請求書を提出する手続"
+    },
+    "sentences": [
+      "第1次選考不合格者を対象に、検定料のうち{amount}円を返還する案内がありました。",
+      "請求書の到着期限は2026年10月27日で、作業基準日には既に経過しています。現在申請できる手続として案内しているものではありません。"
+    ],
+    "temporal_status": "deadline_elapsed",
+    "applicability": "筑波ACの第1次不合格者。対象以外の受験者へ適用しない"
+  },
+  {
+    "logical_id": "tsukuba-ac-ai-faq",
+    "case_id": "tsukuba-klis-ac-2027",
+    "fiscal_year": 2027,
+    "fact_key": "generative_ai_policy",
+    "profile_version": "notice-2026-11-01-v1.1",
+    "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+    "expected_sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+    "published_date": null,
+    "anchors": [
+      {
+        "page": 1,
+        "pattern": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか[?？]文章チェックも含め、生成AIが実際に生成・修正した箇所には、すべて下線を引いてください。.*?活動経過報告書での記載は必須です。"
+      },
+      {
+        "page": 1,
+        "pattern": "生成AIで作成した画像.*?画像・図・表等の説明文や脚注に、生成AIで作成したことが分かるように明示してください。"
+      }
+    ],
+    "value": {
+      "allowed": "生成AI使用時の表示方法がFAQで案内されている",
+      "not_accepted": ""
+    },
+    "sentences": [
+      "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、その修正で間接的に影響した箇所すべてに下線を引くよう案内しています。",
+      "文書校正機能による単純な誤字脱字修正は下線不要です。他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は必須です。",
+      "生成AIで作成した画像・図・表等は、説明文や脚注にその使用を明示します。"
+    ],
+    "temporal_status": "current_faq_as_of_retrieval_publication_date_unknown",
+    "applicability": "公式FAQのAC入試節に限定。今年度実施分に基づく説明で、個別出願可否の判定ではない",
+    "section_start": "ＡＣ入試の選考で重視されるのはどのようなことですか？",
+    "section_end": "国際科学オリンピック特別入試に出願できるのはどのような者ですか？",
+    "source_role": "faq"
+  },
+  {
+    "logical_id": "tsukuba-general-quota-proof",
+    "case_id": "tsukuba-klis-general-front-2027",
+    "fiscal_year": 2027,
+    "fact_key": "quota",
+    "profile_version": "table-cell-proof-2026-11-01-v1",
+    "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+    "expected_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+    "published_date": "2026-10-30",
+    "anchors": [
+      {
+        "page": 6,
+        "pattern": "知識情報・図書館学類10040(?P<count>16)―小計",
+        "include_capture_proofs": [
+          "count"
+        ]
+      },
+      {
+        "page": 6,
+        "pattern": "欠員補充について.*?その欠員分を個別学力検査等の募集人員に加えます。補充人員については,決定次第.*?大学入試情報サイトで発表します。"
+      }
+    ],
+    "value": {
+      "count": "$int:count",
+      "unit": "名",
+      "qualifier": "他方式の欠員補充で募集人数が増える場合がある"
+    },
+    "sentences": [
+      "学類・専門学群選抜の前期日程の募集人員は{count}名です。他方式の欠員補充で増える場合があるため、最新の募集人数の告知も確認してください。"
+    ],
+    "temporal_status": "source_representation_correction",
+    "applicability": "一般選抜前期の学類・専門学群選抜だけ。数値16は変更せず、表のセルと文脈を分けて引用可能にする",
+    "parent_evidence_id": "EV-G27-01-e1137e"
+  }
+]

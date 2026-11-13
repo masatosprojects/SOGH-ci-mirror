@@ -1,0 +1,6 @@
+{
+  "admissions_pipeline/store.py": "6c3931f4a2021c7bbe4000bdfddb7eba065be539d29b32c5d8c96e300785effe",
+  "admissions_pipeline/generic.py": "0bfb9cef5c6a653081fca35ca990000275eccc7a539a7f762172ce178bc9ae32",
+  "admissions_pipeline/revisions.py": "c297ea096fd9f9803eae99948c638f7f60891c20e0ff6b76585407923e1031cf",
+  "scripts/revise_notices.py": "cda789a11feb853f09392b102b90457ebfb59966ff8926a5ccf95a44f5085f9a"
+}

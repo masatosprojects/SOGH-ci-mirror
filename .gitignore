@@ -1,0 +1,30 @@
+# secrets
+*.env
+.env.*
+**/secrets/**
+*.key
+*.pem
+*_credentials.json
+
+# db copies (independent test copies may be large / contain real data)
+*.sqlite
+*.sqlite3
+*.db
+!tests/fixtures/*.sqlite3
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# os
+.DS_Store
+Thumbs.db
+
+# versioning: edition snapshots hold full page text of official documents (rights, size)
+snapshots/
+*.snapshot.json

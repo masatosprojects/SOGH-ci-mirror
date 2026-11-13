@@ -1,0 +1,40 @@
+[
+  {
+    "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+    "result": {
+      "same_edition": true,
+      "identical_text": true,
+      "pages_added": [],
+      "pages_removed": [],
+      "pages_moved": [],
+      "changes": [],
+      "summary": {
+        "pages_added": 0,
+        "pages_removed": 0,
+        "pages_moved": 0,
+        "pages_changed": 0,
+        "changed_lines": 0,
+        "value_changes": 0
+      }
+    }
+  },
+  {
+    "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+    "result": {
+      "same_edition": true,
+      "identical_text": true,
+      "pages_added": [],
+      "pages_removed": [],
+      "pages_moved": [],
+      "changes": [],
+      "summary": {
+        "pages_added": 0,
+        "pages_removed": 0,
+        "pages_moved": 0,
+        "pages_changed": 0,
+        "changed_lines": 0,
+        "value_changes": 0
+      }
+    }
+  }
+]

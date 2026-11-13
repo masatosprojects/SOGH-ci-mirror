@@ -1,0 +1,43 @@
+{
+  "db_qa": {
+    "db_path": "[local]\\outputs\\national\\niigata-humanities\\qa-input.sqlite",
+    "tables": [
+      "schema_versions",
+      "admission_cycles",
+      "source_documents",
+      "source_pages",
+      "facts",
+      "article_versions",
+      "article_evidence",
+      "qa_runs",
+      "legacy_imports",
+      "legacy_records",
+      "legacy_fact_links",
+      "cycle_dimensions",
+      "cycle_editions",
+      "admission_offerings"
+    ],
+    "issue_count": 0,
+    "issues": []
+  },
+  "article_qa": {
+    "per_article": [
+      {
+        "article_id": "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859",
+        "ok": true,
+        "findings": []
+      }
+    ],
+    "batch_findings": []
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "evidence_heads": [
+    {
+      "logical_id": "tsukuba-ac-ai-faq",
+      "evidence_id": "EV-U-467264a91b3e"
+    },
+    {
+      "logical_id": "tsukuba-general-quota-proof",
+      "evidence_id": "EV-U-8d8e1d177883"
+    },
+    {
+      "logical_id": "keio-ao-multilingual",
+      "evidence_id": "EV-U-9d70974174f6"
+    },
+    {
+      "logical_id": "keio-ao-system-notice",
+      "evidence_id": "EV-U-b9e7fb33158b"
+    },
+    {
+      "logical_id": "tsukuba-ac-refund",
+      "evidence_id": "EV-U-2895dfe26d3b"
+    }
+  ],
+  "article_heads": [
+    {
+      "base_article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8"
+    },
+    {
+      "base_article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9"
+    },
+    {
+      "base_article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8",
+      "article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66"
+    },
+    {
+      "base_article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df",
+      "article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f"
+    },
+    {
+      "base_article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38"
+    },
+    {
+      "base_article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc"
+    }
+  ],
+  "evidence_revisions": [
+    {
+      "evidence_id": "EV-U-aceabf3e6101",
+      "logical_id": "keio-ao-system-notice",
+      "parent_evidence_id": null,
+      "case_id": "keio-environment-ao-2026s-2027"
+    },
+    {
+      "evidence_id": "EV-U-1de004909c7d",
+      "logical_id": "keio-ao-multilingual",
+      "parent_evidence_id": null,
+      "case_id": "keio-environment-ao-2026s-2027"
+    },
+    {
+      "evidence_id": "EV-U-2895dfe26d3b",
+      "logical_id": "tsukuba-ac-refund",
+      "parent_evidence_id": null,
+      "case_id": "tsukuba-klis-ac-2027"
+    },
+    {
+      "evidence_id": "EV-U-2be572a750d1",
+      "logical_id": "tsukuba-ac-ai-faq",
+      "parent_evidence_id": null,
+      "case_id": "tsukuba-klis-ac-2027"
+    },
+    {
+      "evidence_id": "EV-U-8d8e1d177883",
+      "logical_id": "tsukuba-general-quota-proof",
+      "parent_evidence_id": "EV-G27-01-e1137e",
+      "case_id": "tsukuba-klis-general-front-2027"
+    },
+    {
+      "evidence_id": "EV-U-b9e7fb33158b",
+      "logical_id": "keio-ao-system-notice",
+      "parent_evidence_id": null,
+      "case_id": "keio-environment-ao-2026s-2027"
+    },
+    {
+      "evidence_id": "EV-U-9d70974174f6",
+      "logical_id": "keio-ao-multilingual",
+      "parent_evidence_id": null,
+      "case_id": "keio-environment-ao-2026s-2027"
+    },
+    {
+      "evidence_id": "EV-U-467264a91b3e",
+      "logical_id": "tsukuba-ac-ai-faq",
+      "parent_evidence_id": "EV-U-2be572a750d1",
+      "case_id": "tsukuba-klis-ac-2027"
+    }
+  ],
+  "revised_articles": [
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:23680c269e06928b",
+      "base_article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "batch_id": "e019703c8b964a5584d90de85f723b05"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:505a028de68acf5a",
+      "base_article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "batch_id": "e019703c8b964a5584d90de85f723b05"
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:b93c5963570d6c9a",
+      "base_article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8",
+      "batch_id": "31722c1b7d7f49be971ab29a5e23b11e"
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:17385b2d6129b2dc",
+      "base_article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df",
+      "batch_id": "31722c1b7d7f49be971ab29a5e23b11e"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:92be4097b834ff0c",
+      "base_article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "batch_id": "a6681900e8354e94b1596ac46f7bca20"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:8e60bb656f1c61b3",
+      "base_article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "batch_id": "a6681900e8354e94b1596ac46f7bca20"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:d78c2dd11cac26e4",
+      "base_article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "batch_id": "a6681900e8354e94b1596ac46f7bca20"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:e238ab44d8ef598d",
+      "base_article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "batch_id": "a6681900e8354e94b1596ac46f7bca20"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:c53632a84b6a4001",
+      "base_article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "batch_id": "916df5f681604dc58d96b638105ebd83"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:1c20d9af2b73b9ee",
+      "base_article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "batch_id": "916df5f681604dc58d96b638105ebd83"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:ff6bced4a804d126",
+      "base_article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "batch_id": "8156b94356ae4992bd9b0a7afcb89e63"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:6e8e81aec42ce8a4",
+      "base_article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "batch_id": "8156b94356ae4992bd9b0a7afcb89e63"
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:ee348805364ea237",
+      "base_article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8",
+      "batch_id": "302dd23dccf14f898ac34ce985a84461"
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:596092e869350652",
+      "base_article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df",
+      "batch_id": "302dd23dccf14f898ac34ce985a84461"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38",
+      "base_article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "batch_id": "be11a6fd7dbe4470ba8c23c2f72a9255"
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc",
+      "base_article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "batch_id": "be11a6fd7dbe4470ba8c23c2f72a9255"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+      "base_article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "batch_id": "2441ccf52b974cdea1ed1edb9187d99b"
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+      "base_article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "batch_id": "2441ccf52b974cdea1ed1edb9187d99b"
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66",
+      "base_article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8",
+      "batch_id": "8c72beb38bfc42a0b0d4bb4310d2bfb5"
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f",
+      "base_article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df",
+      "batch_id": "8c72beb38bfc42a0b0d4bb4310d2bfb5"
+    }
+  ],
+  "update_batches": [
+    {
+      "batch_id": "37213396c0494cb8ab3d30111a552335",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T03:44:45.989107+00:00",
+      "input_sha": "b9d1f284679b46568ef6b2866e99f57659e490a9036874ea26c9b9d8c18533e0"
+    },
+    {
+      "batch_id": "7b8185d3633c48b69363055964fddb15",
+      "state": "interrupted",
+      "created_at": "2026-11-01T03:44:46.001108+00:00",
+      "input_sha": "b1e0324925c63f855b63a7caf7b84aef01098a5fb37d8bf96cca1f251fe717db"
+    },
+    {
+      "batch_id": "85dcd11816a843189cacd12fe6e2318f",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T03:45:38.647381+00:00",
+      "input_sha": "b9d1f284679b46568ef6b2866e99f57659e490a9036874ea26c9b9d8c18533e0"
+    },
+    {
+      "batch_id": "e024ddb80d76475fb7e5f74e4624a41e",
+      "state": "interrupted",
+      "created_at": "2026-11-01T03:45:38.672766+00:00",
+      "input_sha": "b1e0324925c63f855b63a7caf7b84aef01098a5fb37d8bf96cca1f251fe717db"
+    },
+    {
+      "batch_id": "4d29cc5ece0c413dac0eae1c65ebc154",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T03:45:52.078505+00:00",
+      "input_sha": "b9d1f284679b46568ef6b2866e99f57659e490a9036874ea26c9b9d8c18533e0"
+    },
+    {
+      "batch_id": "b25a089e027a4c91984adfc6ed091e3f",
+      "state": "rejected",
+      "created_at": "2026-11-01T03:45:52.088918+00:00",
+      "input_sha": "b1e0324925c63f855b63a7caf7b84aef01098a5fb37d8bf96cca1f251fe717db"
+    },
+    {
+      "batch_id": "e7d1f7e3c672498f914f22a2768ba721",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T03:46:16.704903+00:00",
+      "input_sha": "b9d1f284679b46568ef6b2866e99f57659e490a9036874ea26c9b9d8c18533e0"
+    },
+    {
+      "batch_id": "bf2088b2d86e4d6aba2ff034ad26483c",
+      "state": "rejected",
+      "created_at": "2026-11-01T03:46:16.714777+00:00",
+      "input_sha": "b1e0324925c63f855b63a7caf7b84aef01098a5fb37d8bf96cca1f251fe717db"
+    },
+    {
+      "batch_id": "d1371afedb694f529ce094a6f2625d1c",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T03:46:46.640450+00:00",
+      "input_sha": "b9d1f284679b46568ef6b2866e99f57659e490a9036874ea26c9b9d8c18533e0"
+    },
+    {
+      "batch_id": "e019703c8b964a5584d90de85f723b05",
+      "state": "approved",
+      "created_at": "2026-11-01T03:46:46.648438+00:00",
+      "input_sha": "b1e0324925c63f855b63a7caf7b84aef01098a5fb37d8bf96cca1f251fe717db"
+    },
+    {
+      "batch_id": "755699ff5ee143ec8adeb3d6457a789d",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T04:00:05.451559+00:00",
+      "input_sha": "578a83eae4a4a5c1f744b6e3c0bbe77b76fd1bb467224256026689970b3845ef"
+    },
+    {
+      "batch_id": "573d918b6c684159859a5847b56a06a5",
+      "state": "rejected",
+      "created_at": "2026-11-01T04:00:05.459544+00:00",
+      "input_sha": "814599fd57018444005107b603c0fd406ff2999582b27c66f280145f56c53c6c"
+    },
+    {
+      "batch_id": "540e254146864072857ee40d9c159925",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T04:00:30.825449+00:00",
+      "input_sha": "578a83eae4a4a5c1f744b6e3c0bbe77b76fd1bb467224256026689970b3845ef"
+    },
+    {
+      "batch_id": "31722c1b7d7f49be971ab29a5e23b11e",
+      "state": "approved",
+      "created_at": "2026-11-01T04:00:30.847838+00:00",
+      "input_sha": "814599fd57018444005107b603c0fd406ff2999582b27c66f280145f56c53c6c"
+    },
+    {
+      "batch_id": "19e9f23f26454de39185a2764972e134",
+      "state": "pending_contract",
+      "created_at": "2026-11-01T04:03:37.371121+00:00",
+      "input_sha": "7e85d4c1625fc5a1155d537a82af7647e41fe8456aa3aaed1157b75be992842c"
+    },
+    {
+      "batch_id": "a6681900e8354e94b1596ac46f7bca20",
+      "state": "approved",
+      "created_at": "2026-11-01T04:06:24.598408+00:00",
+      "input_sha": "44c74fcc2f953acb3a5b6260067c2e50a58ede7cccbd4ce8178604833353e41a"
+    },
+    {
+      "batch_id": "a5d40dc37eca4d2e9e28b157189c0e6e",
+      "state": "rejected",
+      "created_at": "2026-11-01T04:12:29.822049+00:00",
+      "input_sha": "fb33b81d3372ea552e77524bf4e49c057620c2cfe06485ad55f9378864750473"
+    },
+    {
+      "batch_id": "916df5f681604dc58d96b638105ebd83",
+      "state": "approved",
+      "created_at": "2026-11-01T04:13:49.534375+00:00",
+      "input_sha": "64e5e7c95287c85beae0b2b6c31000ed145cc6b0beb0f80db4601edba37bdd6e"
+    },
+    {
+      "batch_id": "8156b94356ae4992bd9b0a7afcb89e63",
+      "state": "approved",
+      "created_at": "2026-11-01T04:13:52.184632+00:00",
+      "input_sha": "fca73d46d753d6490014f7054794663aca383d4f4d6388e87ba9431c48c02046"
+    },
+    {
+      "batch_id": "302dd23dccf14f898ac34ce985a84461",
+      "state": "approved",
+      "created_at": "2026-11-01T04:13:54.071449+00:00",
+      "input_sha": "f2fab0619c662d91d53f7d800bce667b7f99e5f669e8b8deae32340e033ae58b"
+    },
+    {
+      "batch_id": "0948bd4da9c74f84b697c88c9a8b7205",
+      "state": "interrupted",
+      "created_at": "2026-11-01T05:08:13.528557+00:00",
+      "input_sha": "2fc693bdc7947517868b96671f3676915a0b054c6c41aeb38d13a8e3e26a359c"
+    },
+    {
+      "batch_id": "7bfadec6b35b461fa3eea2f9ec0f8e35",
+      "state": "interrupted",
+      "created_at": "2026-11-01T05:08:16.655807+00:00",
+      "input_sha": "fddee438b098d533989cf7ddbc1ff3256c2e1193581787412d9dc28e0a8fe4d7"
+    },
+    {
+      "batch_id": "879ba3aae14e401b98838514844b6b99",
+      "state": "interrupted",
+      "created_at": "2026-11-01T05:08:24.489564+00:00",
+      "input_sha": "3dfe1169402e15200afbe304a59320eb3c966c59e7ebaa78a95349693b851f41"
+    },
+    {
+      "batch_id": "be11a6fd7dbe4470ba8c23c2f72a9255",
+      "state": "approved",
+      "created_at": "2026-11-01T05:09:06.964886+00:00",
+      "input_sha": "2fc693bdc7947517868b96671f3676915a0b054c6c41aeb38d13a8e3e26a359c"
+    },
+    {
+      "batch_id": "2441ccf52b974cdea1ed1edb9187d99b",
+      "state": "approved",
+      "created_at": "2026-11-01T05:09:12.349517+00:00",
+      "input_sha": "480d26e69ef380717b9f5ac9f4e861dc78e8c749449eb647982eaed13da4228f"
+    },
+    {
+      "batch_id": "8c72beb38bfc42a0b0d4bb4310d2bfb5",
+      "state": "approved",
+      "created_at": "2026-11-01T05:09:17.155603+00:00",
+      "input_sha": "2d8679e5f461a223de2429f2f35d8a046e311395dff7ceb2519baca99fc0474d"
+    }
+  ],
+  "event_counts": {
+    "approved": 9,
+    "interrupted": 5
+  }
+}

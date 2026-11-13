@@ -1,0 +1,56 @@
+{
+  "source_directory": "C:\\Users\\USER\\llm_bench\\models",
+  "scanned_at": "2026-11-07T23:30:00+09:00",
+  "executable": "C:\\Users\\USER\\llm_bench\\cpu\\llama-cli.exe",
+  "verified_baseline_model": "Qwen3-1.7B-Q4_K_M.gguf",
+  "models": [
+    {
+      "filename": "Qwen3-1.7B-Q4_K_M.gguf",
+      "size_bytes": 1107409472,
+      "size_gib": 1.031,
+      "quantization": "Q4_K_M",
+      "status": "PHYSICALLY_VERIFIED_ON_HOST",
+      "measured_speed_prompt_tok_s": 25.1,
+      "measured_speed_gen_tok_s": 9.4,
+      "measured_latency_sec": 10.3,
+      "measured_ram_footprint_mb": 1150.0,
+      "role": "Primary verified lightweight model for zero-hallucination admission grounding filtering"
+    },
+    {
+      "filename": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "size_bytes": 2497281120,
+      "size_gib": 2.326,
+      "quantization": "Q4_K_M",
+      "status": "STANDBY_UNVERIFIED",
+      "historical_speed_tok_s": 14.9,
+      "role": "Candidate standard model for complex schema synthesis (requires 4GB+ free RAM)"
+    },
+    {
+      "filename": "Qwen3.5-4B-Q4_K_M.gguf",
+      "size_bytes": 2740937888,
+      "size_gib": 2.553,
+      "quantization": "Q4_K_M",
+      "status": "STANDBY_UNVERIFIED",
+      "historical_speed_tok_s": 12.5,
+      "role": "Comparison candidate against Qwen3-4B"
+    },
+    {
+      "filename": "gemma-3-4b-it-Q4_K_M.gguf",
+      "size_bytes": 2489894016,
+      "size_gib": 2.319,
+      "quantization": "Q4_K_M",
+      "status": "STANDBY_UNVERIFIED",
+      "historical_speed_tok_s": 13.5,
+      "role": "Japanese language instruction comparison model"
+    },
+    {
+      "filename": "Qwen3-8B-Q4_K_M.gguf",
+      "size_bytes": 5027783488,
+      "size_gib": 4.682,
+      "quantization": "Q4_K_M",
+      "status": "EXCLUDED",
+      "historical_speed_tok_s": 3.8,
+      "role": "Heavy model - strictly excluded from laptop inference due to 8GB single-channel RAM limit"
+    }
+  ]
+}

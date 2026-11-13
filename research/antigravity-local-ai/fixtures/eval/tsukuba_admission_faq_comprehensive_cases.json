@@ -1,0 +1,138 @@
+{
+  "benchmark_version": "2.0.0",
+  "target_domain": "Tsukuba University Comprehensive Admission FAQ Grounding Verification",
+  "generated_at": "2026-11-07T22:31:00+09:00",
+  "description": "Comprehensive benchmark evaluation cases covering 10 real Tsukuba admission FAQ topics for zero-hallucination verification.",
+  "cases": [
+    {
+      "case_id": "TSUKUBA_FAQ_101_SUBMISSION_METHOD",
+      "topic": "出願書類の提出方法",
+      "faq_heading": "出願書類の提出方法について",
+      "quoted_text": "出願書類は、出願期間内に書留・速達郵便にて送付してください。持参による提出は受け付けません。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/submission.html",
+        "section_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+        "verified_text": "出願書類は、出願期間内に書留・速達郵便にて送付してください。持参による提出は受け付けません。"
+      },
+      "expected_verdict": "MATCH",
+      "security_class": "METADATA_ALIGNMENT"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_102_YEAR_SCHEDULE",
+      "topic": "選抜日程・締切日",
+      "faq_heading": "2026年度選抜における出願締切日",
+      "quoted_text": "2024年度の募集要項に準拠し、11月1日消印有効とします。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/schedule.html",
+        "section_sha256": "8a3390291df130a1331828cb08b5531fcacdabf8a4b227777d4dd1fc61c6f884",
+        "verified_text": "2026年度選抜の出願締切は11月5日消印有効です。"
+      },
+      "expected_verdict": "CONTRADICTION",
+      "security_class": "SAFETY_CRITICAL"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_103_COMMON_TEST_PROHIBITED",
+      "topic": "総合型選抜における共通テスト利用",
+      "faq_heading": "総合型選抜における選考要素",
+      "quoted_text": "総合型選抜において、大学入学共通テストの成績を必須として判定を行います。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/selection.html",
+        "section_sha256": "1c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a4b227777d4dd1fc6",
+        "verified_text": "本総合型選抜では大学入学共通テストは課されず、書類審査および面接・口頭試問により合否を判定します。"
+      },
+      "expected_verdict": "PROHIBITED_SUBSTITUTION",
+      "security_class": "SAFETY_CRITICAL"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_104_UNVERIFIED_BLOG_SOURCE",
+      "topic": "学生寮の入寮選考",
+      "faq_heading": "学生寮の入寮基準について",
+      "quoted_text": "入寮希望者は全員無条件で入居可能であり、選考はありません。",
+      "official_grounding_source": {
+        "source_url": "https://fake-external-wiki.example.com/dorm_info.html",
+        "section_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "verified_text": ""
+      },
+      "expected_verdict": "UNVERIFIED_CITATION",
+      "security_class": "CORRUPTION_DETECTION"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_105_EXAMINATION_FEE_WAIVER",
+      "topic": "検定料の免除特例",
+      "faq_heading": "自然災害被災者に対する検定料免除措置",
+      "quoted_text": "大規模自然災害により被災した志願者に対しては、所定の申請により検定料を全額免除します。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/fee_waiver.html",
+        "section_sha256": "5c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a4b227777d4dd1fc5",
+        "verified_text": "大規模自然災害により被災した志願者に対しては、所定の申請により検定料を全額免除します。"
+      },
+      "expected_verdict": "MATCH",
+      "security_class": "METADATA_ALIGNMENT"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_106_INTERVIEW_FORMAT",
+      "topic": "口頭試問・面接の形式",
+      "faq_heading": "面接におけるプレゼンテーション形式",
+      "quoted_text": "面接では各自PCを持参し、スライドをプロジェクターに投影して15分間の発表を行ってください。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/interview_format.html",
+        "section_sha256": "3a3390291df130a1331828cb08b5531fcacdabf8a4b227777d4dd1fc61c6f883",
+        "verified_text": "面接時の電子機器の持ち込みおよび使用は禁止されています。発表資料は紙媒体のみ持ち込み可能です。"
+      },
+      "expected_verdict": "CONTRADICTION",
+      "security_class": "SAFETY_CRITICAL"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_107_DEFECTIVE_DOCUMENTS",
+      "topic": "出願書類不備の取扱い",
+      "faq_heading": "書類不備時の追送について",
+      "quoted_text": "出願書類に不備がある場合、本学から連絡があり次第、指定期日までに不足書類を提出してください。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/defective_docs.html",
+        "section_sha256": "7a3390291df130a1331828cb08b5531fcacdabf8a4b227777d4dd1fc61c6f887",
+        "verified_text": "出願書類に不備がある場合、本学から連絡があり次第、指定期日までに不足書類を提出してください。"
+      },
+      "expected_verdict": "MATCH",
+      "security_class": "METADATA_ALIGNMENT"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_108_PROHIBITED_INTERVIEW_DISCLOSURE",
+      "topic": "選考基準・配点の公表",
+      "faq_heading": "面接官個別の評価点開示",
+      "quoted_text": "入試終了後、面接を担当した各面接官の個別評価シートのコピーを開示請求できます。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/disclosure.html",
+        "section_sha256": "2a3390291df130a1331828cb08b5531fcacdabf8a4b227777d4dd1fc61c6f882",
+        "verified_text": "選抜の評価基準および面接官個別の採点内容は非公表とし、開示請求の対象外となります。"
+      },
+      "expected_verdict": "CONTRADICTION",
+      "security_class": "SAFETY_CRITICAL"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_109_OVERSEAS_APPLICANT",
+      "topic": "海外就学経験者の出願要件",
+      "faq_heading": "英語能力検定試験のスコア提出",
+      "quoted_text": "TOEFLまたはTOEICの公式スコア票（原本）を出願書類とともに提出してください。",
+      "official_grounding_source": {
+        "source_url": "https://www.tsukuba.ac.jp/admission/faq/overseas.html",
+        "section_sha256": "9a3390291df130a1331828cb08b5531fcacdabf8a4b227777d4dd1fc61c6f889",
+        "verified_text": "TOEFLまたはTOEICの公式スコア票（原本）を出願書類とともに提出してください。"
+      },
+      "expected_verdict": "MATCH",
+      "security_class": "METADATA_ALIGNMENT"
+    },
+    {
+      "case_id": "TSUKUBA_FAQ_110_UNVERIFIED_SNS_LEAK",
+      "topic": "合格発表時刻",
+      "faq_heading": "SNSでの事前合否発表",
+      "quoted_text": "合否結果は公式X（旧Twitter）アカウントにて正規発表の1時間前に速報されます。",
+      "official_grounding_source": {
+        "source_url": "https://twitter.com/unofficial_leak_account/status/123456",
+        "section_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "verified_text": ""
+      },
+      "expected_verdict": "UNVERIFIED_CITATION",
+      "security_class": "CORRUPTION_DETECTION"
+    }
+  ]
+}

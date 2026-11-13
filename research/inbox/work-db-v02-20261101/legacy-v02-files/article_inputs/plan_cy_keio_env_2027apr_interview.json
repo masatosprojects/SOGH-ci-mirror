@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.2.0",
+  "cycle_id": "cy_keio_env_2027apr",
+  "plan_id": "plan_cy_keio_env_2027apr_interview",
+  "series_key": "interview",
+  "official_source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+  "title": "慶應SFC・環境情報学部 2026夏秋AO（2027年4月入学）｜面接の形式と対策",
+  "facts": [
+    {
+      "id": "fact_k06",
+      "field_key": "selection_second",
+      "statement": "2次選考は面接試験で、1人30分程度の時間枠が設けられる。",
+      "value": {
+        "time_slot_minutes_approx": 30
+      },
+      "evidence": "PDF閲覧ページ8／B 入学試験の内容"
+    },
+    {
+      "id": "fact_k07",
+      "field_key": "interview_day",
+      "statement": "環境情報学部の2次面接は2026年10月24日または25日のいずれか。",
+      "value": {
+        "dates": [
+          "2026-10-24",
+          "2026-10-25"
+        ]
+      },
+      "evidence": "PDF閲覧ページ9／D 日程フローチャート"
+    },
+    {
+      "id": "fact_k13",
+      "field_key": "generative_ai_policy",
+      "statement": "募集要項は生成AIの補助的利用を認める一方、生成AIが作った提出物を受験生本人の独自の成果物とはみなさないとしている。",
+      "value": {
+        "allowed": "学びを深める補助として利用",
+        "not_accepted": "AI生成の出願書類を本人独自成果物とすること"
+      },
+      "evidence": "PDF閲覧ページ3／生成AIに関する取り扱いについて"
+    },
+    {
+      "id": "fact_k14",
+      "field_key": "interview_language",
+      "statement": "面接は日本語または英語で実施され、出願時に使用言語を選択する。",
+      "value": {
+        "choice_required": true,
+        "languages": [
+          "日本語",
+          "英語"
+        ]
+      },
+      "evidence": "PDF閲覧ページ8／B 入学試験の内容"
+    }
+  ],
+  "unsupported_claims": [
+    "面接官人数",
+    "過去の質問例",
+    "個人の合否可能性"
+  ],
+  "publication_allowed": false
+}

@@ -1,0 +1,420 @@
+{
+ "audited_at": "2026-11-01",
+ "subject": "Work PR #63 (W-07: faults on real copies), head 54e4f9ce, delivered under research/inbox/work-copy-faults; manifest verified",
+ "qa_commit": "36bf15a (master; src/integration/db_audit.py identical to Work's pinned a6c4474)",
+ "work_pipeline": "research/inbox/work-faq-v3/pipeline (merged PR #42)",
+ "independence_level": "B+ (Claude ran Work's driver itself AND a separate harness whose checks are computed by Claude; the copies are Work's; originals and official sources are not_run)",
+ "database": {
+  "source_copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+  "source_copy_unchanged": true,
+  "source_integrity_ok": true,
+  "older_copy_used_as_oracle_for_heads": "v05 (same audited set)",
+  "every_case_ran_on_a_fresh_disposable_clone": true,
+  "production_database_touched": false
+ },
+ "work_driver_rerun_by_claude": {
+  "passed": 6,
+  "failed": 0,
+  "cases": [
+   "process_exit_during_uncommitted_transaction",
+   "candidate_committed_then_process_exit_and_recovery",
+   "QA_failure_does_not_activate",
+   "head_changed_by_separate_process_after_staging_rejected_without_overwriting_rollback",
+   "repeat_unchanged_input",
+   "duplicate_process_lock_and_reacquire_after_release"
+  ],
+  "source_copy_unchanged": true,
+  "note": "same code, new run on this machine; the result is Work's driver's own verdict, not Claude's calculation"
+ },
+ "claude_harness": {
+  "file": "src/integration/real_copy_g4_audit.py",
+  "pass": 21,
+  "fail": 0,
+  "known_limit": 1,
+  "cases": [
+   {
+    "case": "S1_crash_in_uncommitted_transaction",
+    "result": "PASS",
+    "exit": 73,
+    "hot_journal_present_before_recovery": true,
+    "row_diff_vs_original": {}
+   },
+   {
+    "case": "S2_candidate_then_crash_then_recover",
+    "result": "PASS",
+    "exit": 74,
+    "recovered": 1,
+    "batch_state": [
+     "interrupted"
+    ],
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ],
+     "update_events": [
+      0,
+      0,
+      1
+     ]
+    },
+    "db_audit_ok_db09": [
+     true,
+     "pass"
+    ]
+   },
+   {
+    "case": "S3_QA_failure_is_rejected",
+    "result": "PASS",
+    "batch_state": "rejected",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "S4_head_changed_elsewhere_finalize_refused",
+    "result": "PASS",
+    "child_exit": 0,
+    "refusal": "concurrent head change; rebase update",
+    "heads_equal_older_v05_copy": true,
+    "row_diff_vs_original": {
+     "article_heads": [
+      0,
+      2,
+      0
+     ],
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "evidence_heads": [
+      0,
+      1,
+      0
+     ],
+     "update_batches": [
+      0,
+      1,
+      1
+     ],
+     "update_events": [
+      0,
+      0,
+      1
+     ]
+    },
+    "child_stderr": ""
+   },
+   {
+    "case": "S5_repeat_same_input_is_no_change",
+    "result": "PASS",
+    "states": [
+     "no_change",
+     "no_change"
+    ],
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "case": "S6_second_process_refused_then_reacquire",
+    "result": "PASS",
+    "while_held_exit": 42,
+    "after_release_exit": 0
+   },
+   {
+    "case": "X1_wrong_scope_record_rejected_atomically",
+    "result": "PASS",
+    "error": "cross-cycle update rejected",
+    "row_diff_vs_original": {}
+   },
+   {
+    "case": "X2_parent_of_another_fact_rejected_atomically",
+    "result": "PASS",
+    "error": "correction parent has different case or fact key",
+    "row_diff_vs_original": {}
+   },
+   {
+    "case": "X3_duplicate_logical_identity_rejected",
+    "result": "PASS",
+    "error": "duplicate logical identity in update batch",
+    "row_diff_vs_original": {}
+   },
+   {
+    "case": "X4_same_id_different_content_rejected",
+    "result": "PASS",
+    "error": "immutable revision differs",
+    "row_diff_vs_original": {}
+   },
+   {
+    "case": "X5_unbound_QA_result_rejected_batch_stays_candidate",
+    "result": "PASS",
+    "error": "QA result is not bound to this exact update",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "X6_article_marked_publishable_rejected",
+    "result": "PASS",
+    "error": "unapproved article state",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "X7_finalize_of_a_rejected_batch_refused",
+    "result": "PASS",
+    "error": "batch is not eligible for approval",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "X8_article_citing_another_case_rejected",
+    "result": "PASS",
+    "error": "article cites a different cycle",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "X9A_valid_approval_moves_only_the_article_head_and_keeps_all_old_rows",
+    "result": "PASS",
+    "row_diff_vs_original": {
+     "article_heads": [
+      0,
+      1,
+      0
+     ],
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "revised_articles": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ],
+     "update_events": [
+      0,
+      0,
+      1
+     ]
+    },
+    "db_audit_ok_db09": [
+     true,
+     "pass"
+    ]
+   },
+   {
+    "case": "X9B_crash_in_the_middle_of_the_approval_leaves_heads_untouched",
+    "result": "PASS",
+    "exit": 75,
+    "hot_journal_present_before_recovery": true,
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    },
+    "recovered": 1,
+    "child_stderr": ""
+   },
+   {
+    "case": "X9C_rollback_restores_heads_keeps_history_second_rollback_refused",
+    "result": "PASS",
+    "second_rollback": "rollback would overwrite newer progress",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      1
+     ],
+     "revised_articles": [
+      0,
+      0,
+      1
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ],
+     "update_events": [
+      0,
+      0,
+      2
+     ]
+    }
+   },
+   {
+    "case": "X11_0_two_simultaneous_writers_serialize_without_damage",
+    "result": "PASS",
+    "exit_codes": [
+     0,
+     0
+    ],
+    "successful_writers": 2,
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      2
+     ]
+    },
+    "stderr": []
+   },
+   {
+    "case": "X11_1_two_simultaneous_writers_serialize_without_damage",
+    "result": "PASS",
+    "exit_codes": [
+     0,
+     0
+    ],
+    "successful_writers": 2,
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      2
+     ]
+    },
+    "stderr": []
+   },
+   {
+    "case": "X11_2_two_simultaneous_writers_serialize_without_damage",
+    "result": "PASS",
+    "exit_codes": [
+     0,
+     0
+    ],
+    "successful_writers": 2,
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      2
+     ]
+    },
+    "stderr": []
+   },
+   {
+    "case": "X12_existing_or_partial_backup_target_stops_the_update_before_any_change",
+    "result": "PASS",
+    "error": "refuse to overwrite a database snapshot",
+    "row_diff_vs_original": {}
+   },
+   {
+    "case": "X10_direct_head_write_bypasses_the_update_path",
+    "result": "KNOWN_LIMIT_G09",
+    "database_answer": "accepted_by_the_database",
+    "meaning": "no database-level protection; the update path protects, a direct writer is not stopped (DB-14 warn). Not counted as a pass"
+   }
+  ]
+ },
+ "first_attempt_note": "the first run had one FAIL (X9A): db_audit DB-06 correctly flagged my synthetic article id because it did not carry its revision hash; a test-design error of Claude's, fixed in the harness; not a defect of Work's code",
+ "g4_conditions": {
+  "interruption": "S1, S2, X9B (crash inside an uncommitted write, after a committed candidate, and in the middle of the approval statement sequence)",
+  "recovery": "S2, X9B (recover_candidates under the lock), X9C (rollback; a second rollback is refused)",
+  "idempotency": "S5 (two identical inputs: no_change twice, no business record added), X3",
+  "concurrency": "S4 (head moved by another process: finalize refused, the other writer's heads kept), S6 (lock between processes), X11 (two writers at the same moment, three rounds: serialized, no damage)",
+  "invalid_data": "X1 wrong scope, X2 parent of another fact, X3 duplicate identity, X4 same id with other content, X5 unbound QA result, X6 article marked publishable, X7 finalize of a rejected batch, X8 article citing another case, X12 unusable backup target: each rejected, atomically, old rows and heads untouched",
+  "old_valid_version": "every case compares every row of every table with the original copy; only the expected appends or head moves occur; db_audit DB-09 pass where run; integrity_check ok and foreign_key_check empty"
+ },
+ "not_run": [
+  "disk full during an update",
+  "power loss / OS crash (only process crashes were injected)",
+  "backup interrupted by a kill (only an unusable target)",
+  "the original database and the official sources"
+ ],
+ "known_limit": "X10: the database itself does not stop a direct write to a head (no trigger; db_audit DB-14 is a warning, G-09). The update path protects; a writer that bypasses it is not stopped. Not counted as a pass and not part of g4's formal condition"
+}

@@ -1,0 +1,223 @@
+{
+  "remote_prefix": "research/inbox/work-db-v02-20261101",
+  "received_database_sha256": "38756fceed2048d8056dc94c61b1e710c0bf1a1147b10ecd6aef80a82ae82c6f",
+  "backup_database_sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+  "gzip_uncompressed_database_sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+  "files": [
+    {
+      "path": "current-drafts/keio-environment-ao-2026s-2027-interview.md",
+      "bytes": 3891,
+      "sha256": "85f8388db85261211bed8a8a66dc4ed32adb2a10cb11db4fc710eb899cb4f9d0"
+    },
+    {
+      "path": "current-drafts/keio-environment-ao-2026s-2027-overview.md",
+      "bytes": 7340,
+      "sha256": "6ca5107d526969de213b205e39e7cc91b14929c6adfd8e9f7211f47ab25a12b5"
+    },
+    {
+      "path": "current-drafts/tsukuba-klis-ac-2027-interview.md",
+      "bytes": 4113,
+      "sha256": "94201aa4d81fd4e4ded9fc16e2bbc274d38a3ea56063f35af0a22b2c8a42e928"
+    },
+    {
+      "path": "current-drafts/tsukuba-klis-ac-2027-overview.md",
+      "bytes": 5804,
+      "sha256": "1c037316dd68756aa3e99bc1d130427d91bf2c9a4f03d761d65177578e682a88"
+    },
+    {
+      "path": "data/admission_media_v0_2.sqlite.gz",
+      "bytes": 13049,
+      "sha256": "31fc714e5fd5e89b4f2b6e47ccb046594c0be33737f55fe4275c1b86f22732a3"
+    },
+    {
+      "path": "legacy-v02-files/article_drafts/plan_cy_keio_env_2027apr_application.md",
+      "bytes": 2220,
+      "sha256": "e6aae132c9045c55b50a20582d079f70a76d50b7e2735e9572a781186e9e5803"
+    },
+    {
+      "path": "legacy-v02-files/article_drafts/plan_cy_keio_env_2027apr_interview.md",
+      "bytes": 2032,
+      "sha256": "1619c9a2017ed27b8ebdc927c01b7847fbdf22d2c870130578b83ff831e42e91"
+    },
+    {
+      "path": "legacy-v02-files/article_drafts/plan_cy_keio_env_2027apr_overview.md",
+      "bytes": 2069,
+      "sha256": "2c8f6472fa17a93bd1d28f6bb846ea026a5300523188d673ff93c9720d679adb"
+    },
+    {
+      "path": "legacy-v02-files/article_drafts/plan_cy_tsu_klis_2027_application.md",
+      "bytes": 2140,
+      "sha256": "7e3a2fa33c4dcbb4d385f35ca43efc11a8303356014301aba55e37701571b620"
+    },
+    {
+      "path": "legacy-v02-files/article_drafts/plan_cy_tsu_klis_2027_interview.md",
+      "bytes": 1794,
+      "sha256": "b171a90b3a5dc6c4ea745fc21d1cef432cf4de21f9bd1e366c36d86de24da240"
+    },
+    {
+      "path": "legacy-v02-files/article_drafts/plan_cy_tsu_klis_2027_overview.md",
+      "bytes": 2043,
+      "sha256": "6119e2a6af929456508b8f189891df8aa608f58d8d12253a890e0fa40bf470d2"
+    },
+    {
+      "path": "legacy-v02-files/article_inputs/plan_cy_keio_env_2027apr_application.json",
+      "bytes": 2505,
+      "sha256": "f3bf7c1806c43c9549d2801b06c724935c90700323cc1179be74440145f4fac8"
+    },
+    {
+      "path": "legacy-v02-files/article_inputs/plan_cy_keio_env_2027apr_interview.json",
+      "bytes": 2131,
+      "sha256": "b8433c34d7d0dedfa4fcb143d2b9f911ce4b09275b96dc6af45c820bddf5c08c"
+    },
+    {
+      "path": "legacy-v02-files/article_inputs/plan_cy_keio_env_2027apr_overview.json",
+      "bytes": 2199,
+      "sha256": "8b6bae6d478bef6d9d669cbd599c85a3ad5ba98ce5af5341d10dae83bab93ada"
+    },
+    {
+      "path": "legacy-v02-files/article_inputs/plan_cy_tsu_klis_2027_application.json",
+      "bytes": 2415,
+      "sha256": "2310f31c48e74fc45d559ea666be474e1a64cf58b8ebdbbb2fd9b94db0c3708a"
+    },
+    {
+      "path": "legacy-v02-files/article_inputs/plan_cy_tsu_klis_2027_interview.json",
+      "bytes": 1587,
+      "sha256": "1e6718e0303da5f90cf8695cea26970c75019715ced16d0e3ff9d09ede09fe37"
+    },
+    {
+      "path": "legacy-v02-files/article_inputs/plan_cy_tsu_klis_2027_overview.json",
+      "bytes": 2131,
+      "sha256": "35443300e6cf62382a92b8738c076640fc377b606fb4a0e5e3f2a2f8d1947080"
+    },
+    {
+      "path": "legacy-v02-files/README_登録結果.md",
+      "bytes": 3928,
+      "sha256": "a6479abd108bc96058a2b451c35ed6350fbc8140bf02d75170e4379eaf6ff313"
+    },
+    {
+      "path": "legacy-v02-files/schema_v0_1.sql",
+      "bytes": 10518,
+      "sha256": "185e08eba42a62f8174c52a00d76b23bf580d7ff13ce81d218e2f5a78393e2a9"
+    },
+    {
+      "path": "legacy-v02-files/source_extracts/src_keio_sfc_2026_fall_2027.txt",
+      "bytes": 1137,
+      "sha256": "6adde5830ca16db22885993b2d8bb195d06556e4abf9318d45dc34b3a58c98d5"
+    },
+    {
+      "path": "legacy-v02-files/source_extracts/src_tsukuba_ac_2027.txt",
+      "bytes": 923,
+      "sha256": "1814b57be45b0c1166c93b760ff59cca59f6341d2d2476b5d587161e64b52865"
+    },
+    {
+      "path": "legacy-v02-files/VALIDATION_REPORT.json",
+      "bytes": 354,
+      "sha256": "eb117a5936e9b6921762be4bee062909ac612c71dddcd9572aee67067089f0b7"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/__init__.py",
+      "bytes": 80,
+      "sha256": "7bd65b9c93ff8722b7dc8fc970ee62e23de09cb82b5dc948437c9ff51a26792f"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/__main__.py",
+      "bytes": 7648,
+      "sha256": "77bea4a3fb4378666a156e24e9db8ea3f4a36f4c27fb91e8c3120a7927f6edf2"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/articles.py",
+      "bytes": 17612,
+      "sha256": "28009de2b545c49d8ce205b0136ccc014cdd9a053d3dc411b8b4a53dbb91d91e"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/claude_adapter.py",
+      "bytes": 2086,
+      "sha256": "5e7d9e603139fe19c39492231ac0aac579a94bf683bcc093d5dc3a8394700a9f"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/extract.py",
+      "bytes": 18497,
+      "sha256": "e8147fd2111b16e01870b4ff99c363086902078cdb8b28416f17a9599af87f20"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/legacy.py",
+      "bytes": 10661,
+      "sha256": "6a4e6a0b3c1a2cdd1e47f1dfe502e8c52d6dc485390fbaae648bb195dc788989"
+    },
+    {
+      "path": "pipeline/admissions_pipeline/store.py",
+      "bytes": 7002,
+      "sha256": "0326714d02326598889a5674acd5ec0c108fef5750713d53a4d56cfe2a2bfcfb"
+    },
+    {
+      "path": "pipeline/database_manager.py",
+      "bytes": 4765,
+      "sha256": "099b591e062ac204c4fe350887afb86f2a75fb1568c926a408a4856d1bb4bb6d"
+    },
+    {
+      "path": "pipeline/requirements.txt",
+      "bytes": 54,
+      "sha256": "2bc0964cebbb2fafe434b8c4476f4647df779b35cf07edcfe68064e6bfc23630"
+    },
+    {
+      "path": "pipeline/tests/test_admissions_e2e.py",
+      "bytes": 9438,
+      "sha256": "2388704fd82e1d9f07b23647397119996f845414f60851467f577e442d468244"
+    },
+    {
+      "path": "privacy-review.json",
+      "bytes": 470,
+      "sha256": "e4e7d1dc31f53a664221f61ab26704679c3f8f698aacb77fa9b3bbebdf54e6e8"
+    },
+    {
+      "path": "qa/claude-baseline-tests.json",
+      "bytes": 70,
+      "sha256": "d619762c138372b84ebaf311f6a76c887a93d67ac907121bc5e2432e6ae5facd"
+    },
+    {
+      "path": "qa/claude-export-validation.json",
+      "bytes": 2302,
+      "sha256": "772d39bf532789c45b5a2acd81819f935ad09ba5d21ee461d65a063458b8f6d8"
+    },
+    {
+      "path": "qa/claude-quality-report.json",
+      "bytes": 1111,
+      "sha256": "ee7770fd0fa8924fa3ce65860517d797e8ff30f00bd85bbd58928c315e3773af"
+    },
+    {
+      "path": "qa/legacy-v02-claude-qa.json",
+      "bytes": 728,
+      "sha256": "98552d599339c60b58856ced50c50eb99306eab8e24c6510304a5bae69a3da6e"
+    },
+    {
+      "path": "qa/pipeline-report.json",
+      "bytes": 19137,
+      "sha256": "15baccf93baca09893545a6612ad9a1a398d134b35823870d70c82f939b9ecca"
+    },
+    {
+      "path": "qa/reconciliation-27.json",
+      "bytes": 16050,
+      "sha256": "11e1f837cf14c51b65d223ecbbfe5d6929ea01c13ed28548f0723a04487917d9"
+    },
+    {
+      "path": "qa/work-e2e-tests.json",
+      "bytes": 70,
+      "sha256": "573dd7fe0b93f98bd55b3ca49552efb1d3cdb6f3b5a58e265e3c39974aa1fa22"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6609,
+      "sha256": "dcb6bfd315d11b21f8534fe14e5172cdc7555f8d533f4b86a756268f277afdc7"
+    },
+    {
+      "path": "samples/claude-compatible-export.json",
+      "bytes": 74081,
+      "sha256": "5dacbdbceddbcb308422b8b9c64b0f1418cdaead61928b1f84c2fc898ad02cdf"
+    },
+    {
+      "path": "schema-inventory.json",
+      "bytes": 20533,
+      "sha256": "49be8b40859c6885adca3d6ca24919a7336317987cfe996098c484b7c8a47e0f"
+    }
+  ]
+}

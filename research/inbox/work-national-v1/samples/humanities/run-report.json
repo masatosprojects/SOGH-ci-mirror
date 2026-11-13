@@ -1,0 +1,139 @@
+{
+  "success": true,
+  "case_id": "niigata-humanities-recommendation-II-2027",
+  "facts": 5,
+  "drafts": 3,
+  "before": {
+    "admission_cycles": 3,
+    "source_documents": 3,
+    "source_pages": 124,
+    "facts": 35,
+    "article_versions": 15,
+    "article_evidence": 108
+  },
+  "after": {
+    "admission_cycles": 4,
+    "source_documents": 3,
+    "source_pages": 124,
+    "facts": 40,
+    "article_versions": 18,
+    "article_evidence": 117
+  },
+  "backup": {
+    "backup": "outputs\\national\\niigata-humanities\\before-migration.sqlite",
+    "sha256": "ad2fbbae6ee5c3fada8051f1691b0129ec4bdea67e270712a0d0663a81e52fb8",
+    "rollback": "Stop writers; restore backup to a separate database and verify before switching configuration"
+  },
+  "qa": {
+    "success": true,
+    "claude_repo": "[local]-collab",
+    "claude_commit": "7e045841583d434924e41dab35bc20d07152810b",
+    "calls": [
+      {
+        "module": "src.integration.validate_export",
+        "exit_code": 0,
+        "report_path": "[local]\\outputs\\national\\niigata-humanities\\claude-export-validation.json",
+        "report": {
+          "total": 5,
+          "ok_count": 5,
+          "invalid_count": 0,
+          "records": {
+            "EV-H27-01-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-H27-02-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-H27-03-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-H27-04-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-H27-05-2d1ee8": {
+              "ok": true,
+              "errors": []
+            }
+          }
+        }
+      },
+      {
+        "module": "src.run_qa_suite",
+        "exit_code": 0,
+        "report_path": "[local]\\outputs\\national\\niigata-humanities\\claude-quality-report.json",
+        "report": {
+          "db_qa": {
+            "db_path": "[local]\\outputs\\national\\niigata-humanities\\qa-input.sqlite",
+            "tables": [
+              "schema_versions",
+              "admission_cycles",
+              "source_documents",
+              "source_pages",
+              "facts",
+              "article_versions",
+              "article_evidence",
+              "qa_runs",
+              "legacy_imports",
+              "legacy_records",
+              "legacy_fact_links",
+              "cycle_dimensions",
+              "cycle_editions",
+              "admission_offerings"
+            ],
+            "issue_count": 0,
+            "issues": []
+          },
+          "article_qa": {
+            "per_article": [
+              {
+                "article_id": "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a",
+                "ok": true,
+                "findings": []
+              },
+              {
+                "article_id": "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6",
+                "ok": true,
+                "findings": []
+              },
+              {
+                "article_id": "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859",
+                "ok": true,
+                "findings": []
+              }
+            ],
+            "batch_findings": []
+          }
+        }
+      }
+    ],
+    "note": "QA pass is not publication approval or full semantic verification."
+  },
+  "visual_review": [
+    {
+      "page": 17,
+      "status": "reviewed",
+      "checked": "人文学科30人、共通テストを課す。別学部の表から数値を流用しない"
+    },
+    {
+      "page": 18,
+      "status": "reviewed",
+      "checked": "面接13:00開始は所要時間ではない。小論文の時間とは別列"
+    },
+    {
+      "page": 38,
+      "status": "reviewed",
+      "checked": "郵送の期限後到着例外は法学部と同じ。工学部の固有例外を適用しない"
+    }
+  ],
+  "unresolved": [
+    "出願資格の個別判定",
+    "学部公式メッセージと最新版の追加監査",
+    "所定提出書類の全件構造化",
+    "入学月は保存資料に明示を確認できず未確定（4月と推定しない）"
+  ],
+  "publication_allowed": false
+}

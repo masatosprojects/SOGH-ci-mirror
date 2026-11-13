@@ -1,0 +1,177 @@
+{
+  "db_qa": {
+    "db_path": "[local]\\outputs\\faq-v3\\registered-v1\\qa-input.sqlite",
+    "tables": [
+      "schema_versions",
+      "admission_cycles",
+      "source_documents",
+      "source_pages",
+      "facts",
+      "article_versions",
+      "article_evidence",
+      "qa_runs",
+      "legacy_imports",
+      "legacy_records",
+      "legacy_fact_links",
+      "cycle_dimensions",
+      "cycle_editions",
+      "admission_offerings",
+      "evidence_revisions",
+      "evidence_heads",
+      "update_batches",
+      "batch_evidence",
+      "revised_articles",
+      "article_heads",
+      "update_events"
+    ],
+    "issue_count": 0,
+    "issues": []
+  },
+  "article_qa": {
+    "per_article": [
+      {
+        "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+        "ok": true,
+        "findings": [],
+        "notices": [],
+        "semantic_coverage": {
+          "checked": {
+            "EV-T27-01-49cb4d": [
+              "hedge_kept",
+              "no_unconditional_claim"
+            ],
+            "EV-T27-04-49cb4d": [
+              "hedge_kept",
+              "extension_not_denied",
+              "no_unconditional_claim"
+            ],
+            "EV-T27-06-49cb4d": [
+              "no_visit_kept",
+              "no_visit_not_denied"
+            ],
+            "EV-T27-07-49cb4d": [
+              "eligibility_not_waived"
+            ],
+            "EV-T27-08-49cb4d": [
+              "common_test_required_false"
+            ],
+            "EV-T27-09-49cb4d": [
+              "hedge_kept",
+              "no_unconditional_claim"
+            ],
+            "EV-T27-12-49cb4d": [
+              "statement_form_specified"
+            ],
+            "EV-T27-13-49cb4d": [
+              "supporting_materials_required"
+            ],
+            "EV-U-61c185ec5771": [
+              "ai_use_allowed",
+              "ai_text_underline_true",
+              "simple_spellcheck_underline_false",
+              "human_advice_underline_false",
+              "human_advice_report_true",
+              "ai_visual_disclosure_true"
+            ]
+          },
+          "unverified": [
+            {
+              "evidence_id": "EV-T27-05-49cb4d",
+              "what": "qualifier '出願登録と検定料の払い込み'",
+              "why": "no qualitative rule matches it"
+            },
+            {
+              "evidence_id": "EV-T27-07-49cb4d",
+              "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+              "why": "no qualitative rule matches it"
+            }
+          ],
+          "counts": {
+            "evidence_with_checks": 9,
+            "unverified": 2
+          }
+        }
+      },
+      {
+        "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+        "ok": true,
+        "findings": [],
+        "notices": [],
+        "semantic_coverage": {
+          "checked": {
+            "EV-T27-04-49cb4d": [
+              "hedge_kept",
+              "extension_not_denied",
+              "no_unconditional_claim"
+            ],
+            "EV-T27-07-49cb4d": [
+              "eligibility_not_waived"
+            ],
+            "EV-T27-09-49cb4d": [
+              "hedge_kept",
+              "no_unconditional_claim"
+            ],
+            "EV-U-61c185ec5771": [
+              "ai_use_allowed",
+              "ai_text_underline_true",
+              "simple_spellcheck_underline_false",
+              "human_advice_underline_false",
+              "human_advice_report_true",
+              "ai_visual_disclosure_true"
+            ]
+          },
+          "unverified": [
+            {
+              "evidence_id": "EV-T27-07-49cb4d",
+              "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+              "why": "no qualitative rule matches it"
+            }
+          ],
+          "counts": {
+            "evidence_with_checks": 4,
+            "unverified": 1
+          }
+        }
+      }
+    ],
+    "batch_findings": [],
+    "registry": {
+      "registry_version": "1.6.0",
+      "ok": true,
+      "by_severity": {
+        "error": 0,
+        "warning": 0,
+        "notice": 0
+      },
+      "fact_keys_used": [
+        "common_test",
+        "eligibility",
+        "entry",
+        "fee_refund",
+        "final_result",
+        "first_stage",
+        "first_stage_result",
+        "generative_ai_policy",
+        "interview",
+        "interview_language",
+        "interview_scope",
+        "maintenance",
+        "maintenance_notice",
+        "multilingual_evaluation",
+        "online_period",
+        "optional_materials",
+        "personal_statement",
+        "policy",
+        "postal_period",
+        "quota",
+        "recommendation_format",
+        "referees",
+        "second_stage_date",
+        "statement_length"
+      ],
+      "unregistered_fact_keys": [],
+      "proposed_fact_keys": [],
+      "records_without_fact_key": []
+    }
+  }
+}

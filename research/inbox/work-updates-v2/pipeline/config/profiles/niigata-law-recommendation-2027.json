@@ -1,0 +1,126 @@
+{
+  "case_id": "niigata-law-recommendation-I-2027",
+  "code": "N27",
+  "profile_version": "2026-11-01-v1.1",
+  "university": "新潟大学",
+  "faculty": "法学部",
+  "department": "法学科",
+  "admission_method": "学校推薦型選抜Ⅰ型",
+  "fiscal_year": 2027,
+  "exam_year": 2026,
+  "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+  "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+  "official_index": "https://www.niigata-u.ac.jp/admissions/faculty/recommendation/",
+  "cover_anchor": "令和９年度学校推薦型選抜学生募集要項",
+  "dimensions": {
+    "selection_category": "school_recommendation",
+    "entry_months": [],
+    "round_name": "Ⅰ型",
+    "scope": {
+      "faculty": "法学部",
+      "department": "法学科"
+    },
+    "entry_month_status": "unconfirmed"
+  },
+  "visual_review": [
+    {
+      "page": 7,
+      "status": "reviewed",
+      "checked": "法学科50人、面接はいずれか1日。隣接学部の行を含まない"
+    },
+    {
+      "page": 38,
+      "status": "reviewed",
+      "checked": "郵送必着原則と国内書留速達の期限後受理例外、工学部固有例外を区別"
+    }
+  ],
+  "unresolved": [
+    "出願資格の個別判定",
+    "学部公式メッセージと最新版の追加監査",
+    "所定提出書類の全件構造化",
+    "入学月は保存資料に明示を確認できず未確定（4月と推定しない）"
+  ],
+  "rules": [
+    {
+      "key": "quota",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 7,
+          "pattern": "法学科(?P<count>\\d+)人欠員が生じた場合は、その欠員分を一般選抜における前期日程の募集人員に加えます。"
+        }
+      ],
+      "value": {
+        "count": "$int:count",
+        "unit": "人",
+        "qualifier": "欠員分は一般選抜前期日程の募集人員に加える"
+      },
+      "sentence": "法学科の学校推薦型選抜Ⅰ型の募集人員は{count}人です。欠員分は一般選抜の前期日程に加えます。"
+    },
+    {
+      "key": "common_test",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 7,
+          "pattern": "大学入学共通テストを免除し、面接の結果及び出願書類の審査を総合して行います。"
+        }
+      ],
+      "value": {
+        "required": false
+      },
+      "sentence": "大学入学共通テストを免除し、面接と出願書類の審査を総合して選抜します。"
+    },
+    {
+      "key": "interview_scope",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 7,
+          "pattern": "面接には、自己申告書を中心とした出願書類等の内容を踏まえた基礎知識や思考力などの評価を含みます。"
+        }
+      ],
+      "value": {
+        "text": "自己申告書を中心とした出願書類等を踏まえた基礎知識・思考力等の評価"
+      },
+      "sentence": "面接には、自己申告書を中心とした出願書類等を踏まえた基礎知識や思考力などの評価を含みます。"
+    },
+    {
+      "key": "interview",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 7,
+          "pattern": "令和(?P<ry>8)年(?P<month>11)月(?P<d1>14)日\\(土\\)(?P=month)月(?P<d2>15)日\\(日\\)\\(いずれかの1日\\)面接受験案内.*?で通知します。"
+        }
+      ],
+      "value": {
+        "dates": [
+          "2026-{month}-{d1}",
+          "2026-{month}-{d2}"
+        ],
+        "selection": "one_of_not_both",
+        "type": "interview_date_not_duration"
+      },
+      "sentence": "面接日は2026年{month}月{d1}日・2026年{month}月{d2}日のいずれかです。時間は受験案内で通知されます。"
+    },
+    {
+      "key": "postal_period",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 38,
+          "pattern": "令和(?P<ry>8)年(?P<month>11)月(?P<sd>2)日\\(月\\)から(?P=month)月(?P<ed>5)日\\(木\\)まで\\(郵送必着\\).*?\\(注1\\)出願期間後に到着したものは受理しません。ただし、(?P=month)月(?P<exception_day>3)日\\(火\\).*?以前の発信局.*?消印のある書留速達郵便に限り、期間後に到着した場合でも受理します。.*?\\(注3\\)郵送受付のみ。出願書類の直接持参は受け付けておりません。"
+        }
+      ],
+      "value": {
+        "start": "$date:ry,month,sd",
+        "end": "$date:ry,month,ed",
+        "timezone": "Asia/Tokyo",
+        "late_arrival_domestic_registered_express_postmark_by": "$date:ry,month,exception_day",
+        "qualifier": "郵送必着。日本国内発信局の11月3日以前消印の書留速達に限り期限後到着も受理。持参不可"
+      },
+      "sentence": "出願書類の郵送期間は2026年11月2日〜2026年11月5日（必着）です。ただし、日本国内の2026年11月3日以前の消印の書留速達郵便に限り、期間後の到着でも受理します。持参は受け付けません。"
+    }
+  ]
+}

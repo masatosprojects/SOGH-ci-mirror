@@ -1,0 +1,132 @@
+[
+  {
+    "label": "v02",
+    "ok": true,
+    "lineage": "normalized_v0_2",
+    "summary": {
+      "fail": [],
+      "warn": [],
+      "not_run": [
+        "DB-09",
+        "V02-05"
+      ],
+      "pass": [
+        "DB-01",
+        "V02-02",
+        "V02-03",
+        "V02-04"
+      ]
+    }
+  },
+  {
+    "label": "v03",
+    "ok": true,
+    "lineage": "flat",
+    "summary": {
+      "fail": [],
+      "warn": [
+        "DB-14",
+        "DB-15"
+      ],
+      "not_run": [
+        "DB-05",
+        "DB-07",
+        "DB-08",
+        "DB-09"
+      ],
+      "pass": [
+        "DB-01",
+        "DB-02",
+        "DB-03",
+        "DB-04",
+        "DB-06",
+        "DB-10",
+        "DB-11",
+        "DB-12"
+      ]
+    }
+  },
+  {
+    "label": "v04",
+    "ok": true,
+    "lineage": "flat",
+    "summary": {
+      "fail": [],
+      "warn": [
+        "DB-14",
+        "DB-15"
+      ],
+      "not_run": [
+        "DB-05",
+        "DB-07",
+        "DB-08",
+        "DB-09"
+      ],
+      "pass": [
+        "DB-01",
+        "DB-02",
+        "DB-03",
+        "DB-04",
+        "DB-06",
+        "DB-10",
+        "DB-11",
+        "DB-12"
+      ]
+    }
+  },
+  {
+    "label": "v05",
+    "ok": true,
+    "lineage": "flat",
+    "summary": {
+      "fail": [],
+      "warn": [
+        "DB-14",
+        "DB-15"
+      ],
+      "not_run": [
+        "DB-09"
+      ],
+      "pass": [
+        "DB-01",
+        "DB-02",
+        "DB-03",
+        "DB-04",
+        "DB-05",
+        "DB-06",
+        "DB-07",
+        "DB-08",
+        "DB-10",
+        "DB-11",
+        "DB-12"
+      ]
+    }
+  },
+  {
+    "label": "v06",
+    "ok": true,
+    "lineage": "flat",
+    "summary": {
+      "fail": [],
+      "warn": [
+        "DB-14",
+        "DB-15"
+      ],
+      "not_run": [],
+      "pass": [
+        "DB-01",
+        "DB-02",
+        "DB-03",
+        "DB-04",
+        "DB-05",
+        "DB-06",
+        "DB-07",
+        "DB-08",
+        "DB-09",
+        "DB-10",
+        "DB-11",
+        "DB-12"
+      ]
+    }
+  }
+]

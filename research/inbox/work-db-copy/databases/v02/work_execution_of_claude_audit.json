@@ -1,0 +1,120 @@
+{
+  "target_kind": "copied_real_db",
+  "copy_identity": {
+    "file_name": "v02.sqlite",
+    "sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+    "bytes": 225280
+  },
+  "schema": {
+    "tables": [
+      "academic_units",
+      "admission_cycles",
+      "admission_routes",
+      "article_plans",
+      "article_series",
+      "article_version_facts",
+      "article_versions",
+      "audit_events",
+      "experience_observations",
+      "experience_reports",
+      "fact_claims",
+      "fact_evidence",
+      "publications",
+      "selection_stages",
+      "source_documents",
+      "source_snapshots",
+      "universities"
+    ],
+    "indexes": [
+      "ix_academic_units_university",
+      "ix_cycles_year",
+      "ix_fact_cycle_field",
+      "ix_fact_review",
+      "ix_routes_unit",
+      "ix_snapshots_doc_time"
+    ],
+    "triggers": [
+      "trg_fact_stage_cycle_insert",
+      "trg_fact_stage_cycle_update"
+    ],
+    "schema_versions": null,
+    "user_version": 0,
+    "has_schema_migrations": false
+  },
+  "lineage": "normalized_v0_2",
+  "original_source_comparison": "not_run",
+  "table_row_counts": {
+    "academic_units": 3,
+    "admission_cycles": 2,
+    "admission_routes": 2,
+    "article_plans": 6,
+    "article_series": 3,
+    "article_version_facts": 29,
+    "article_versions": 6,
+    "audit_events": 6,
+    "experience_observations": 0,
+    "experience_reports": 0,
+    "fact_claims": 27,
+    "fact_evidence": 27,
+    "publications": 0,
+    "selection_stages": 4,
+    "source_documents": 2,
+    "source_snapshots": 2,
+    "universities": 2
+  },
+  "invariants": {
+    "DB-01": {
+      "title": "integrity and foreign keys",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "V02-02": {
+      "title": "snapshot hashes",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "V02-03": {
+      "title": "verified / official facts have supporting official evidence",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "V02-04": {
+      "title": "article versions cite facts of their own cycle; approved versions cite only verified facts",
+      "status": "pass",
+      "problems": [],
+      "problem_count": 0
+    },
+    "V02-05": {
+      "title": "posts: draft/published only for approved article versions; published has a url",
+      "status": "not_run",
+      "reason": "table publications has no rows: nothing was examined",
+      "problems": []
+    },
+    "DB-09": {
+      "title": "history preserved against an older copy",
+      "status": "not_run",
+      "reason": "no --baseline given",
+      "problems": []
+    }
+  },
+  "summary": {
+    "fail": [],
+    "warn": [],
+    "not_run": [
+      "DB-09",
+      "V02-05"
+    ],
+    "pass": [
+      "DB-01",
+      "V02-02",
+      "V02-03",
+      "V02-04"
+    ]
+  },
+  "ok": true,
+  "execution_actor": "Work executing pinned Claude code; not Claude independent execution",
+  "qa_commit": "b84d3a41015570edb4ff1e8646b495222eaea7fb"
+}

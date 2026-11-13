@@ -1,0 +1,31 @@
+{
+  "same_edition": false,
+  "identical_text": false,
+  "pages_added": [],
+  "pages_removed": [],
+  "pages_moved": [],
+  "changes": [
+    {
+      "old_page": 5,
+      "new_page": 5,
+      "kind": "modified",
+      "old": "5体育専門学群※この入試の合格者にふさわしい志願者がいないと判断した場合は，募集人員どおりに合格者を決定することはせずに，個別学力検査等の募集人員によって，その人員を充足します。",
+      "new": "6体育専門学群※この入試の合格者にふさわしい志願者がいないと判断した場合は，募集人員どおりに合格者を決定することはせずに，個別学力検査等の募集人員によって，その人員を充足します。",
+      "value_change": true,
+      "old_values": [
+        "number:5"
+      ],
+      "new_values": [
+        "number:6"
+      ]
+    }
+  ],
+  "summary": {
+    "pages_added": 0,
+    "pages_removed": 0,
+    "pages_moved": 0,
+    "pages_changed": 1,
+    "changed_lines": 1,
+    "value_changes": 1
+  }
+}

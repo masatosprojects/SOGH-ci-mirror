@@ -1,0 +1,134 @@
+{
+  "success": true,
+  "case_id": "niigata-law-recommendation-I-2027",
+  "facts": 5,
+  "drafts": 3,
+  "before": {
+    "admission_cycles": 3,
+    "source_documents": 3,
+    "source_pages": 124,
+    "facts": 35,
+    "article_versions": 15,
+    "article_evidence": 108
+  },
+  "after": {
+    "admission_cycles": 3,
+    "source_documents": 3,
+    "source_pages": 124,
+    "facts": 35,
+    "article_versions": 15,
+    "article_evidence": 108
+  },
+  "backup": {
+    "backup": "outputs\\national\\niigata-verified\\before-migration.sqlite",
+    "sha256": "db0402f3a23e00a1009608752334e7e0fc7ecde4e18f4b33b39cce2f42be4d30",
+    "rollback": "Stop writers; restore backup to a separate database and verify before switching configuration"
+  },
+  "qa": {
+    "success": true,
+    "claude_repo": "[local]-collab",
+    "claude_commit": "7e045841583d434924e41dab35bc20d07152810b",
+    "calls": [
+      {
+        "module": "src.integration.validate_export",
+        "exit_code": 0,
+        "report_path": "[local]\\outputs\\national\\niigata-verified\\claude-export-validation.json",
+        "report": {
+          "total": 5,
+          "ok_count": 5,
+          "invalid_count": 0,
+          "records": {
+            "EV-N27-01-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-N27-02-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-N27-03-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-N27-04-2d1ee8": {
+              "ok": true,
+              "errors": []
+            },
+            "EV-N27-05-2d1ee8": {
+              "ok": true,
+              "errors": []
+            }
+          }
+        }
+      },
+      {
+        "module": "src.run_qa_suite",
+        "exit_code": 0,
+        "report_path": "[local]\\outputs\\national\\niigata-verified\\claude-quality-report.json",
+        "report": {
+          "db_qa": {
+            "db_path": "[local]\\outputs\\national\\niigata-verified\\qa-input.sqlite",
+            "tables": [
+              "schema_versions",
+              "admission_cycles",
+              "source_documents",
+              "source_pages",
+              "facts",
+              "article_versions",
+              "article_evidence",
+              "qa_runs",
+              "legacy_imports",
+              "legacy_records",
+              "legacy_fact_links",
+              "cycle_dimensions",
+              "cycle_editions",
+              "admission_offerings"
+            ],
+            "issue_count": 0,
+            "issues": []
+          },
+          "article_qa": {
+            "per_article": [
+              {
+                "article_id": "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f",
+                "ok": true,
+                "findings": []
+              },
+              {
+                "article_id": "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+                "ok": true,
+                "findings": []
+              },
+              {
+                "article_id": "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+                "ok": true,
+                "findings": []
+              }
+            ],
+            "batch_findings": []
+          }
+        }
+      }
+    ],
+    "note": "QA pass is not publication approval or full semantic verification."
+  },
+  "visual_review": [
+    {
+      "page": 7,
+      "status": "reviewed",
+      "checked": "法学科50人、面接はいずれか1日。隣接学部の行を含まない"
+    },
+    {
+      "page": 38,
+      "status": "reviewed",
+      "checked": "郵送必着原則と国内書留速達の期限後受理例外、工学部固有例外を区別"
+    }
+  ],
+  "unresolved": [
+    "出願資格の個別判定",
+    "学部公式メッセージと最新版の追加監査",
+    "所定提出書類の全件構造化",
+    "入学月は保存資料に明示を確認できず未確定（4月と推定しない）"
+  ],
+  "publication_allowed": false
+}

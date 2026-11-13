@@ -1,0 +1,40 @@
+{
+  "total": 6,
+  "ok_count": 6,
+  "invalid_count": 0,
+  "registry_version": "1.5.1",
+  "unregistered_fact_keys": [],
+  "proposed_fact_keys": [],
+  "records": {
+    "EV-G27C-01-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27C-02-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27C-03-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27C-04-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27C-05-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27C-06-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    }
+  }
+}

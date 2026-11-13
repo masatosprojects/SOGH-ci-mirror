@@ -1,0 +1,638 @@
+{
+  "targets": [
+    {
+      "url": "https://ac.tsukuba.ac.jp/",
+      "source_id": "tsukuba-news",
+      "last_attempt": 1793504961.8197174,
+      "last_success": 1793504964.145917,
+      "next_due": 1793508564.145917,
+      "failures": 0,
+      "last_sha": "d82a2164135ca9809f934696bd1e27027bf855cbc12b6464bacc94c4820b4b72",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/apply/application-guidelines/",
+      "source_id": "tsukuba-guidelines_index",
+      "last_attempt": 1793504964.15138,
+      "last_success": 1793504966.1830475,
+      "next_due": 1793508566.1830475,
+      "failures": 0,
+      "last_sha": "ea1d45010aef7f5d53c922d6284b99dbbb72295180e0bfe35b4d105e0d8c6fdd",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+      "source_id": "tsukuba-faq",
+      "last_attempt": 1793505374.6753025,
+      "last_success": 1793505376.9608145,
+      "next_due": 1793508976.9608145,
+      "failures": 0,
+      "last_sha": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/examination/announcement/",
+      "source_id": "tsukuba-changes",
+      "last_attempt": 1793504966.1870468,
+      "last_success": 1793504968.320576,
+      "next_due": 1793508568.320576,
+      "failures": 0,
+      "last_sha": "aa6c2e5fad3404bbb780ddb15b2665bdd8d1f298f7dc2835268874ca0caf0907",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/news/13380/",
+      "source_id": "tsukuba-AC_fee_refund_notice",
+      "last_attempt": 1793504968.325732,
+      "last_success": 1793504970.4093664,
+      "next_due": 1793508570.4093664,
+      "failures": 0,
+      "last_sha": "3318e0986e22a7144bd6fd41e955d7e03b1ac15338d5dd0a0c77b90eab88ab7a",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/news/13516/",
+      "source_id": "tsukuba-general_exam_correction_not_AC",
+      "last_attempt": 1793504970.4138432,
+      "last_success": 1793504972.5554996,
+      "next_due": 1793508572.5554996,
+      "failures": 0,
+      "last_sha": "a47c6a6b2f92855540d2579edcc35b92e1db0d8847f2eb87e347bee49f69052d",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "source_id": "tsukuba-original_pdf",
+      "last_attempt": 1793504972.5645058,
+      "last_success": 1793504975.369267,
+      "next_due": 1793508575.369267,
+      "failures": 0,
+      "last_sha": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/20260825140500.pdf",
+      "source_id": "tsukuba-disaster_fee_waiver",
+      "last_attempt": 1793504975.3730998,
+      "last_success": 1793504976.9012735,
+      "next_due": 1793508576.9012735,
+      "failures": 0,
+      "last_sha": "2b97f244d3de5eb9e1b7709691cbe924a995899baca4aa80f845296c5c07df91",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/R9_nyusi_henkouten_202608ide.pdf",
+      "source_id": "tsukuba-2027_changes_pdf",
+      "last_attempt": 1793504976.910534,
+      "last_success": 1793504979.1955113,
+      "next_due": 1793508579.1955113,
+      "failures": 0,
+      "last_sha": "1b566bdf8780b4d58b86731e13c6f453274cf0c43248764744828f419a7d0407",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+      "source_id": "tsukuba-refund_details",
+      "last_attempt": 1793505376.9673984,
+      "last_success": 1793505379.1192734,
+      "next_due": 1793508979.1192734,
+      "failures": 0,
+      "last_sha": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+      "last_error": null
+    },
+    {
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_id": "tsukuba-klis-general-2027",
+      "last_attempt": 1793505013.2842278,
+      "last_success": 1793505016.0862908,
+      "next_due": 1793508616.0862908,
+      "failures": 0,
+      "last_sha": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/files/90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+      "source_id": "keio-2027_AO_change_detail",
+      "last_attempt": 1793504979.2064898,
+      "last_success": 1793504981.738198,
+      "next_due": 1793508581.738198,
+      "failures": 0,
+      "last_sha": "90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "source_id": "keio-original_pdf",
+      "last_attempt": 1793505379.1248503,
+      "last_success": 1793505381.5395007,
+      "next_due": 1793508981.5395007,
+      "failures": 0,
+      "last_sha": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/files/b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+      "source_id": "keio-2027_AO_advance_notice",
+      "last_attempt": 1793504981.746773,
+      "last_success": 1793504983.927186,
+      "next_due": 1793508583.927186,
+      "failures": 0,
+      "last_sha": "b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/examinations/ao-sfc-pem/",
+      "source_id": "keio-guidelines_index",
+      "last_attempt": 1793504983.945029,
+      "last_success": 1793504986.1752763,
+      "next_due": 1793508586.1752763,
+      "failures": 0,
+      "last_sha": "80d2c0e260676b2f417c8a8543c50a413021078a9d8518a7527e3e2050c8b168",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/faq/",
+      "source_id": "keio-faq_index",
+      "last_attempt": 1793504986.2456508,
+      "last_success": 1793504988.303534,
+      "next_due": 1793508588.303534,
+      "failures": 0,
+      "last_sha": "5dc7d3a2ffa97cfd6b5853f2103e7e763fed36ea68e30267e010778e74c7a616",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/",
+      "source_id": "keio-all_admissions_news",
+      "last_attempt": 1793504988.312293,
+      "last_success": 1793504990.4010313,
+      "next_due": 1793508590.4010313,
+      "failures": 0,
+      "last_sha": "1dc9c6f47d5e29c7b6bf09897174fe982e376ba565df760367eb3a10fccad56f",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/20240303-01/",
+      "source_id": "keio-2027_AO_change",
+      "last_attempt": 1793504990.4110997,
+      "last_success": 1793504992.4983268,
+      "next_due": 1793508592.4983268,
+      "failures": 0,
+      "last_sha": "af6fb3ca90028356d39a1d2e8646a60cff02b5677221eabee821d8832f24eff1",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/",
+      "source_id": "keio-news",
+      "last_attempt": 1793504992.510322,
+      "last_success": 1793504994.6136525,
+      "next_due": 1793508594.6136525,
+      "failures": 0,
+      "last_sha": "356a003c0e6229250d6c40d40066090734f8fe34381db0694e92e0f046a749f6",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/20260518/",
+      "source_id": "keio-release_notice",
+      "last_attempt": 1793504994.6256046,
+      "last_success": 1793504996.841904,
+      "next_due": 1793508596.841904,
+      "failures": 0,
+      "last_sha": "42edaa631e29a102df5af7eb23c1e1bb5cc5e1c058919ea7799d0f267b60d42f",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=2",
+      "source_id": "keio-news_page_2",
+      "last_attempt": 1793504996.9070737,
+      "last_success": 1793504998.8718772,
+      "next_due": 1793508598.8718772,
+      "failures": 0,
+      "last_sha": "d815638d6b1ca66bb9d2a31c650b58bd6cf182a04da0144d005a49eb5627d790",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=3",
+      "source_id": "keio-news_page_3",
+      "last_attempt": 1793504998.8772843,
+      "last_success": 1793505000.9684184,
+      "next_due": 1793508600.9684184,
+      "failures": 0,
+      "last_sha": "a9a2d7a6b22cb8226216444e93fe99634e65034ce0c2f2237042202fa5189662",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=4",
+      "source_id": "keio-news_page_4",
+      "last_attempt": 1793505000.980926,
+      "last_success": 1793505003.1306598,
+      "next_due": 1793508603.1306598,
+      "failures": 0,
+      "last_sha": "5849f632edc06bf914cea5adfc49b5bfb70287bc13e0a72b69c1275ad8af9d81",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=5",
+      "source_id": "keio-news_page_5",
+      "last_attempt": 1793505003.1435275,
+      "last_success": 1793505005.2723958,
+      "next_due": 1793508605.2723958,
+      "failures": 0,
+      "last_sha": "5064058ae59a163c53c42b84c562f1db708fedab93fc7cfedb54e3f57783c9a6",
+      "last_error": null
+    },
+    {
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+      "source_id": "keio-emergency_maintenance",
+      "last_attempt": 1793505381.5458605,
+      "last_success": 1793505383.6436598,
+      "next_due": 1793508983.6436598,
+      "failures": 0,
+      "last_sha": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+      "last_error": null
+    },
+    {
+      "url": "https://www.niigata-u.ac.jp/admissions/faculty/recommendation/",
+      "source_id": "niigata-guidelines_index",
+      "last_attempt": 1793505005.2848444,
+      "last_success": 1793505008.0743206,
+      "next_due": 1793508608.0743206,
+      "failures": 0,
+      "last_sha": "68c30d2f23105c400816ea329a6f741ba0eb1b886e938070d5002b6bb0c09c61",
+      "last_error": null
+    },
+    {
+      "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "source_id": "niigata-original_pdf",
+      "last_attempt": 1793505008.084318,
+      "last_success": 1793505012.4531167,
+      "next_due": 1793508612.4531167,
+      "failures": 0,
+      "last_sha": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "last_error": null
+    }
+  ],
+  "runs": [
+    {
+      "id": "088d34519a3f4d6887b9448d65d738c4",
+      "started": 1793504442.3220088,
+      "ended": 1793504451.742966,
+      "status": "completed"
+    },
+    {
+      "id": "1dcfbb480bd148f0bcd2493649d9901b",
+      "started": 1793504844.9132557,
+      "ended": 1793504844.920767,
+      "status": "completed"
+    },
+    {
+      "id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "started": 1793504961.8146908,
+      "ended": 1793505012.4659622,
+      "status": "completed"
+    },
+    {
+      "id": "489d603ced814b1a9f2ab688fd20668c",
+      "started": 1793505013.275128,
+      "ended": 1793505016.093916,
+      "status": "completed"
+    },
+    {
+      "id": "047aa39659f5481b9b9c13e2878fa223",
+      "started": 1793505231.9299648,
+      "ended": 1793505232.9680393,
+      "status": "completed"
+    },
+    {
+      "id": "5ee8025d79804537b26846718c010077",
+      "started": 1793505374.6663995,
+      "ended": 1793505383.6544294,
+      "status": "completed"
+    },
+    {
+      "id": "398a252949b54cdabf12967343813e4f",
+      "started": 1793506228.9795616,
+      "ended": 1793506229.4933167,
+      "status": "completed"
+    },
+    {
+      "id": "117ab1f37b3f4478a6b8a894b2421874",
+      "started": 1793507947.478863,
+      "ended": 1793507948.1607745,
+      "status": "completed"
+    }
+  ],
+  "checks": [
+    {
+      "run_id": "088d34519a3f4d6887b9448d65d738c4",
+      "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "088d34519a3f4d6887b9448d65d738c4",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "088d34519a3f4d6887b9448d65d738c4",
+      "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "088d34519a3f4d6887b9448d65d738c4",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "2312426eb77548dde53076468397a727ffaa003c6ebefc0b319f89e708b299aa",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "d82a2164135ca9809f934696bd1e27027bf855cbc12b6464bacc94c4820b4b72",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/apply/application-guidelines/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "ea1d45010aef7f5d53c922d6284b99dbbb72295180e0bfe35b4d105e0d8c6fdd",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/examination/announcement/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "aa6c2e5fad3404bbb780ddb15b2665bdd8d1f298f7dc2835268874ca0caf0907",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/news/13380/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "3318e0986e22a7144bd6fd41e955d7e03b1ac15338d5dd0a0c77b90eab88ab7a",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/news/13516/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "a47c6a6b2f92855540d2579edcc35b92e1db0d8847f2eb87e347bee49f69052d",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/20260825140500.pdf",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "2b97f244d3de5eb9e1b7709691cbe924a995899baca4aa80f845296c5c07df91",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/R9_nyusi_henkouten_202608ide.pdf",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "1b566bdf8780b4d58b86731e13c6f453274cf0c43248764744828f419a7d0407",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/files/90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/files/b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/examinations/ao-sfc-pem/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "80d2c0e260676b2f417c8a8543c50a413021078a9d8518a7527e3e2050c8b168",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/faq/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "5dc7d3a2ffa97cfd6b5853f2103e7e763fed36ea68e30267e010778e74c7a616",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "1dc9c6f47d5e29c7b6bf09897174fe982e376ba565df760367eb3a10fccad56f",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/20240303-01/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "af6fb3ca90028356d39a1d2e8646a60cff02b5677221eabee821d8832f24eff1",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "356a003c0e6229250d6c40d40066090734f8fe34381db0694e92e0f046a749f6",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/20260518/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "42edaa631e29a102df5af7eb23c1e1bb5cc5e1c058919ea7799d0f267b60d42f",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=2",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "d815638d6b1ca66bb9d2a31c650b58bd6cf182a04da0144d005a49eb5627d790",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=3",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "a9a2d7a6b22cb8226216444e93fe99634e65034ce0c2f2237042202fa5189662",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=4",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "5849f632edc06bf914cea5adfc49b5bfb70287bc13e0a72b69c1275ad8af9d81",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=5",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "5064058ae59a163c53c42b84c562f1db708fedab93fc7cfedb54e3f57783c9a6",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.niigata-u.ac.jp/admissions/faculty/recommendation/",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "68c30d2f23105c400816ea329a6f741ba0eb1b886e938070d5002b6bb0c09c61",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "6f59b51a9e454d6a9b29d1e92d1c1dc3",
+      "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "489d603ced814b1a9f2ab688fd20668c",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "status": "first_fetch",
+      "attempts": 1,
+      "previous_sha": null,
+      "current_sha": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "5ee8025d79804537b26846718c010077",
+      "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+      "status": "unchanged",
+      "attempts": 1,
+      "previous_sha": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+      "current_sha": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "5ee8025d79804537b26846718c010077",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+      "status": "unchanged",
+      "attempts": 1,
+      "previous_sha": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+      "current_sha": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "5ee8025d79804537b26846718c010077",
+      "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "status": "unchanged",
+      "attempts": 1,
+      "previous_sha": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "current_sha": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "error": null,
+      "analysis_status": "assessed"
+    },
+    {
+      "run_id": "5ee8025d79804537b26846718c010077",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+      "status": "changed",
+      "attempts": 1,
+      "previous_sha": "2312426eb77548dde53076468397a727ffaa003c6ebefc0b319f89e708b299aa",
+      "current_sha": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+      "error": null,
+      "analysis_status": "assessed"
+    }
+  ],
+  "production_schedule_modified": false,
+  "service_running": false
+}

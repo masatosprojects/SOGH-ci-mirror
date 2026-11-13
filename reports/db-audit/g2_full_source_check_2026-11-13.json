@@ -1,0 +1,56 @@
+{
+ "db_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+ "sources": {
+  "2d1ee89f": {
+   "file_exists": true,
+   "file_sha256_matches_id": true,
+   "pages_in_pdf": 69,
+   "pages_in_db": 69,
+   "db_pages_text_sha_ok": true,
+   "db_page_equals_pymupdf": 69,
+   "db_page_equals_pypdf": 24,
+   "db_page_equals_either": 69
+  },
+  "49cb4d7d": {
+   "file_exists": true,
+   "file_sha256_matches_id": true,
+   "pages_in_pdf": 15,
+   "pages_in_db": 15,
+   "db_pages_text_sha_ok": true,
+   "db_page_equals_pymupdf": 15,
+   "db_page_equals_pypdf": 2,
+   "db_page_equals_either": 15
+  },
+  "91dad17f": {
+   "file_exists": true,
+   "file_sha256_matches_id": true,
+   "pages_in_pdf": 40,
+   "pages_in_db": 40,
+   "db_pages_text_sha_ok": true,
+   "db_page_equals_pymupdf": 40,
+   "db_page_equals_pypdf": 40,
+   "db_page_equals_either": 40
+  },
+  "e1137e2a": {
+   "file_exists": true,
+   "file_sha256_matches_id": true,
+   "pages_in_pdf": 45,
+   "pages_in_db": 45,
+   "db_pages_text_sha_ok": true,
+   "db_page_equals_pymupdf": 45,
+   "db_page_equals_pypdf": 44,
+   "db_page_equals_either": 45
+  }
+ },
+ "facts": {
+  "facts": 46,
+  "proofs": 57,
+  "proof_in_pymupdf_page": 57,
+  "proof_in_pypdf_page": 57,
+  "proof_in_either": 57,
+  "proof_in_stored_page": 57
+ },
+ "proofs_not_found_in_the_original_pdf": [],
+ "db_sha256_after": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+ "db_unchanged": true
+}

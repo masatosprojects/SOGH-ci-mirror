@@ -1,0 +1,260 @@
+{
+  "total": 50,
+  "ok_count": 50,
+  "invalid_count": 0,
+  "registry_version": "1.6.0",
+  "unregistered_fact_keys": [],
+  "proposed_fact_keys": [],
+  "records": {
+    "EV-T27-01-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-02-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-03-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-04-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-05-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-06-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-07-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-08-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-09-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-10-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-11-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-12-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-13-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-T27-14-49cb4d": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-01-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-02-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-03-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-04-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-05-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-06-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-07-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-08-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-09-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-10-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-11-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-12-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-13-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-14-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-15-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-K27-16-91dad1": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-N27-01-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-N27-02-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-N27-03-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-N27-04-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-N27-05-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-H27-01-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-H27-02-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-H27-03-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-H27-04-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-H27-05-2d1ee8": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27-02-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27-03-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27-04-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27-05-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-G27-06-e1137e": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-U-9d70974174f6": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-U-b9e7fb33158b": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-U-61c185ec5771": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-U-2895dfe26d3b": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    },
+    "EV-U-8d8e1d177883": {
+      "ok": true,
+      "errors": [],
+      "registry_notes": []
+    }
+  }
+}

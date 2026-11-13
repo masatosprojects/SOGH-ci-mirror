@@ -1,0 +1,1893 @@
+{
+  "conditions": {
+    "reference_date": "2026-11-01",
+    "scope": "full",
+    "qa_commit": "475a1f55ae09bae188f3c5266fa261030f84e9a3",
+    "registry_sha256": "18ba54340204c52d86c6b3114d04fd8da1b6670f0d9921c0cf00df8fafbc18c8",
+    "python": "3.12.0",
+    "dependencies": {
+      "pymupdf": "1.27.2.3",
+      "pypdf": "6.12.2",
+      "jsonschema": "4.26.0"
+    },
+    "view_sha256": "d935d5462036dea38a3c8f1d1763313626b0bfb1559048173b3cbaa096aefa5e",
+    "prior_exports": [
+      "3a52fbbfb1532709f3756cdc83759848887b245a01ea09300c35fd7276747daa",
+      "3db20ab63ca0a6b0a4cb4051fcb736606a6de3bffe7e674b27c1423209952fae",
+      "50a52043eb669a4058c26e2375fb102b949dab37ccf442ff184ce2117cef9b8d"
+    ],
+    "expected_evidence": 50,
+    "expected_articles": 13,
+    "work_code_sha256": "e9634e11dc881d6859df10b2018efc720392fd56cf589f865727b128078eb878",
+    "local_source_hashes": {
+      "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+      "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+      "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0"
+    }
+  },
+  "fingerprint": "f6e1ed4e35acf19a142a8f0b1bbf883d39bbe839f48d6007fd6972891aabdd4b",
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "not_run": 0,
+    "required_in_scope": [
+      "counts",
+      "ids",
+      "schema",
+      "articles",
+      "regression",
+      "raw_sources"
+    ],
+    "passed_in_scope": false,
+    "all_semantics_verified": false,
+    "semantic_unverified": 22,
+    "execution": "work-local"
+  },
+  "checks": {
+    "counts": "pass",
+    "ids": "pass",
+    "schema": "pass",
+    "articles": "pass",
+    "regression": "fail",
+    "raw_sources": "pass"
+  },
+  "reuse": {
+    "status": "pass",
+    "reused_evidence": [
+      "EV-H27-01-2d1ee8",
+      "EV-H27-02-2d1ee8",
+      "EV-H27-03-2d1ee8",
+      "EV-H27-04-2d1ee8",
+      "EV-H27-05-2d1ee8",
+      "EV-K27-01-91dad1",
+      "EV-K27-02-91dad1",
+      "EV-K27-03-91dad1",
+      "EV-K27-04-91dad1",
+      "EV-K27-05-91dad1",
+      "EV-K27-06-91dad1",
+      "EV-K27-07-91dad1",
+      "EV-K27-08-91dad1",
+      "EV-K27-09-91dad1",
+      "EV-K27-10-91dad1",
+      "EV-K27-11-91dad1",
+      "EV-K27-12-91dad1",
+      "EV-K27-13-91dad1",
+      "EV-K27-14-91dad1",
+      "EV-K27-15-91dad1",
+      "EV-K27-16-91dad1",
+      "EV-N27-01-2d1ee8",
+      "EV-N27-02-2d1ee8",
+      "EV-N27-03-2d1ee8",
+      "EV-N27-04-2d1ee8",
+      "EV-N27-05-2d1ee8",
+      "EV-T27-01-49cb4d",
+      "EV-T27-02-49cb4d",
+      "EV-T27-03-49cb4d",
+      "EV-T27-04-49cb4d",
+      "EV-T27-05-49cb4d",
+      "EV-T27-06-49cb4d",
+      "EV-T27-07-49cb4d",
+      "EV-T27-08-49cb4d",
+      "EV-T27-09-49cb4d",
+      "EV-T27-10-49cb4d",
+      "EV-T27-11-49cb4d",
+      "EV-T27-12-49cb4d",
+      "EV-T27-13-49cb4d",
+      "EV-T27-14-49cb4d"
+    ],
+    "reused_articles": [
+      "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6",
+      "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859",
+      "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a",
+      "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+      "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+      "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f"
+    ],
+    "conflicts": []
+  },
+  "gate": {
+    "total": 50,
+    "ok_count": 50,
+    "invalid_count": 0,
+    "registry_version": "1.5.1",
+    "unregistered_fact_keys": [],
+    "proposed_fact_keys": [],
+    "records": {
+      "EV-T27-01-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-02-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-03-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-04-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-05-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-06-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-07-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-08-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-09-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-10-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-11-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-12-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-13-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-T27-14-49cb4d": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-01-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-02-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-03-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-04-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-05-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-06-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-07-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-08-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-09-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-10-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-11-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-12-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-13-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-14-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-15-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-K27-16-91dad1": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-N27-01-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-N27-02-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-N27-03-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-N27-04-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-N27-05-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-H27-01-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-H27-02-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-H27-03-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-H27-04-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-H27-05-2d1ee8": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-G27-02-e1137e": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-G27-03-e1137e": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-G27-04-e1137e": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-G27-05-e1137e": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-G27-06-e1137e": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-U-467264a91b3e": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-U-8d8e1d177883": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-U-9d70974174f6": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-U-b9e7fb33158b": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      },
+      "EV-U-2895dfe26d3b": {
+        "ok": true,
+        "errors": [],
+        "registry_notes": []
+      }
+    }
+  },
+  "articles": [
+    {
+      "article_id": "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-N27-02-2d1ee8": [
+            "common_test_required_false"
+          ],
+          "EV-N27-05-2d1ee8": [
+            "limit_kept",
+            "no_visit_kept",
+            "no_visit_not_denied",
+            "no_unconditional_claim"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-N27-01-2d1ee8",
+            "what": "qualifier '欠員分は一般選抜前期日程の募集人員に加える'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 2,
+          "unverified": 1
+        }
+      },
+      "content_sha256": "779949df84d3585ac6f0de7b575dc5a853a85bae417dc63b0d3054d2673444c4",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-N27-01-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          },
+          {
+            "evidence_id": "EV-N27-02-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          },
+          {
+            "evidence_id": "EV-N27-04-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          },
+          {
+            "evidence_id": "EV-N27-05-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-N27-05-2d1ee8": [
+            "limit_kept",
+            "no_visit_kept",
+            "no_visit_not_denied",
+            "no_unconditional_claim"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-N27-01-2d1ee8",
+            "what": "qualifier '欠員分は一般選抜前期日程の募集人員に加える'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 1,
+          "unverified": 1
+        }
+      },
+      "content_sha256": "6df565b280f307890fec63034ca74a8154bd0474cf713585272572342ba133af",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-N27-01-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          },
+          {
+            "evidence_id": "EV-N27-05-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-N27-02-2d1ee8": [
+            "common_test_required_false"
+          ]
+        },
+        "unverified": [],
+        "counts": {
+          "evidence_with_checks": 1,
+          "unverified": 0
+        }
+      },
+      "content_sha256": "8b843fa439ea65ec7e771fc52dc3951aa39dd6b48bec7bb0baa9e468f63f71ce",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-N27-02-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          },
+          {
+            "evidence_id": "EV-N27-03-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          },
+          {
+            "evidence_id": "EV-N27-04-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅰ型"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-H27-02-2d1ee8": [
+            "common_test_required_true"
+          ],
+          "EV-H27-05-2d1ee8": [
+            "limit_kept",
+            "no_visit_kept",
+            "no_visit_not_denied",
+            "no_unconditional_claim"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-H27-01-2d1ee8",
+            "what": "qualifier '欠員分は一般選抜前期日程の募集人員に加える'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 2,
+          "unverified": 1
+        }
+      },
+      "content_sha256": "694e3d2f84c07d37d54f3917b365605b9c587ec68c5747fecd42250be0615c14",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-H27-01-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          },
+          {
+            "evidence_id": "EV-H27-02-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          },
+          {
+            "evidence_id": "EV-H27-04-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          },
+          {
+            "evidence_id": "EV-H27-05-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-H27-05-2d1ee8": [
+            "limit_kept",
+            "no_visit_kept",
+            "no_visit_not_denied",
+            "no_unconditional_claim"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-H27-01-2d1ee8",
+            "what": "qualifier '欠員分は一般選抜前期日程の募集人員に加える'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 1,
+          "unverified": 1
+        }
+      },
+      "content_sha256": "e75b6905117e75e4cd287a86d7c940354d843a85bcb767fec230b72124af86fd",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-H27-01-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          },
+          {
+            "evidence_id": "EV-H27-05-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-H27-02-2d1ee8": [
+            "common_test_required_true"
+          ]
+        },
+        "unverified": [],
+        "counts": {
+          "evidence_with_checks": 1,
+          "unverified": 0
+        }
+      },
+      "content_sha256": "0fa8a3396e04330341f9cae3651afd6949609e729eb6aeebdc86ca92fdceed29",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-H27-02-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          },
+          {
+            "evidence_id": "EV-H27-03-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          },
+          {
+            "evidence_id": "EV-H27-04-2d1ee8",
+            "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+            "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "学校推薦型選抜Ⅱ型"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:interview:f3aba19dec818dca",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-G27-04-e1137e": [
+            "common_test_required_true"
+          ]
+        },
+        "unverified": [],
+        "counts": {
+          "evidence_with_checks": 1,
+          "unverified": 0
+        }
+      },
+      "content_sha256": "4061c2d10cb724fcc9cb47f2627a3151147521fd3d3b5028422fe8127337a3fe",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-G27-04-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-05-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-06-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-T27-01-49cb4d": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-T27-04-49cb4d": [
+            "hedge_kept",
+            "extension_not_denied",
+            "no_unconditional_claim"
+          ],
+          "EV-T27-06-49cb4d": [
+            "no_visit_kept",
+            "no_visit_not_denied"
+          ],
+          "EV-T27-07-49cb4d": [
+            "eligibility_not_waived"
+          ],
+          "EV-T27-08-49cb4d": [
+            "common_test_required_false"
+          ],
+          "EV-T27-09-49cb4d": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-T27-12-49cb4d": [
+            "statement_form_specified"
+          ],
+          "EV-T27-13-49cb4d": [
+            "supporting_materials_required"
+          ],
+          "EV-U-467264a91b3e": [
+            "ai_use_allowed"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-T27-05-49cb4d",
+            "what": "qualifier '出願登録と検定料の払い込み'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-T27-07-49cb4d",
+            "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-U-467264a91b3e",
+            "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+            "why": "the cited evidence records no structured value this could be compared with"
+          },
+          {
+            "evidence_id": "EV-U-467264a91b3e",
+            "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+            "why": "the cited evidence records no structured value this could be compared with"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 9,
+          "unverified": 4
+        }
+      },
+      "content_sha256": "a0765d678d8b048270fedcfddf14df52a1c93c891abf466fbf04b4ab611a0090",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-T27-01-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-02-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-03-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-04-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-05-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-06-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-07-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-08-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-09-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-10-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-11-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-12-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-13-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-U-2895dfe26d3b",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+            "sha256": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-10-01",
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-U-467264a91b3e",
+            "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+            "sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-T27-04-49cb4d": [
+            "hedge_kept",
+            "extension_not_denied",
+            "no_unconditional_claim"
+          ],
+          "EV-T27-07-49cb4d": [
+            "eligibility_not_waived"
+          ],
+          "EV-T27-09-49cb4d": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-U-467264a91b3e": [
+            "ai_use_allowed"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-T27-07-49cb4d",
+            "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-U-467264a91b3e",
+            "what": "necessity wording '不要': '文書校正機能による単純な誤字脱字修正は下線不要です。'",
+            "why": "the cited evidence records no structured value this could be compared with"
+          },
+          {
+            "evidence_id": "EV-U-467264a91b3e",
+            "what": "necessity wording '不要': '他人の添削・助言の修正も下線不要ですが、活動経過報告書への記'",
+            "why": "the cited evidence records no structured value this could be compared with"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 4,
+          "unverified": 3
+        }
+      },
+      "content_sha256": "ebf15813f9b044a2c17ef3835423a992915e1df29c821b1a8b99aabb626415c6",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-T27-02-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-03-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-04-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-07-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-09-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-10-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-T27-14-49cb4d",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+            "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-U-2895dfe26d3b",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf",
+            "sha256": "5da966a810ea465bc61e42e5834e7e4a4d826df9caebd6ae7923d6877c749cd0",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-10-01",
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          },
+          {
+            "evidence_id": "EV-U-467264a91b3e",
+            "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+            "sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "アドミッションセンター入試"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-G27-04-e1137e": [
+            "common_test_required_true"
+          ],
+          "EV-U-8d8e1d177883": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-G27-02-e1137e",
+            "what": "qualifier 'インターネット出願登録及び検定料払込期間'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-G27-03-e1137e",
+            "what": "qualifier '簡易書留・速達で郵送必着。持参・宅配便不可。期間後は受理しな'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 2,
+          "unverified": 2
+        }
+      },
+      "content_sha256": "73a7ac6a246b3b496e3dab8fe9b3ab0914176c551997689452c0cdd8abf212d0",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-G27-02-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-03-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-04-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-06-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-U-8d8e1d177883",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-10-30",
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-U-8d8e1d177883": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-G27-02-e1137e",
+            "what": "qualifier 'インターネット出願登録及び検定料払込期間'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-G27-03-e1137e",
+            "what": "qualifier '簡易書留・速達で郵送必着。持参・宅配便不可。期間後は受理しな'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 1,
+          "unverified": 2
+        }
+      },
+      "content_sha256": "695acd10ab20986d8fd1c645fd316d23a154c4bdff0a193912156eba0b9b980b",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-G27-02-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-03-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-G27-06-e1137e",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          },
+          {
+            "evidence_id": "EV-U-8d8e1d177883",
+            "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+            "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-10-30",
+            "fiscal_year": 2027,
+            "admission_method": "一般選抜 前期日程（学類・専門学群選抜）"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-K27-06-91dad1": [
+            "eligibility_not_waived"
+          ],
+          "EV-K27-07-91dad1": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-K27-08-91dad1": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-K27-14-91dad1": [
+            "referees_must_complete"
+          ],
+          "EV-K27-15-91dad1": [
+            "ai_use_allowed",
+            "ai_output_not_accepted"
+          ],
+          "EV-U-9d70974174f6": [
+            "multilingual_application_true",
+            "multilingual_languages_listed"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-K27-01-91dad1",
+            "what": "qualifier '年度内に実施するAO入試の合計であり、夏秋AO単独の枠ではな'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-K27-03-91dad1",
+            "what": "qualifier 'オンライン申請。期間内にシステム休止あり'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-K27-04-91dad1",
+            "what": "qualifier 'メンテナンス中はログイン等ができない'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-K27-05-91dad1",
+            "what": "qualifier '日本国内は締切日消印有効、海外は締切日必着'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-K27-06-91dad1",
+            "what": "qualifier '学歴等の条件に加え、第一志望・合格時の入学確約など全ての条件'",
+            "why": "no qualitative rule matches it"
+          },
+          {
+            "evidence_id": "EV-K27-04-91dad1",
+            "what": "necessity wording '必要があります': 'メンテナンス中はログイン等ができないため、手続きの計画からこ'",
+            "why": "the cited evidence records no structured value this could be compared with"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 6,
+          "unverified": 6
+        }
+      },
+      "content_sha256": "c0e650dc9dc105d6a9ed525a5a7b6dadbaece9eddf3f70f2873250a695ab0be5",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-K27-01-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-02-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-03-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-04-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-05-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-06-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-07-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-08-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-09-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-10-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-11-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-12-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-13-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-14-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-15-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-U-9d70974174f6",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-05-15",
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-U-b9e7fb33158b",
+            "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+            "sha256": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-10-21",
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc",
+      "ok": true,
+      "findings": [],
+      "notices": [],
+      "coverage": {
+        "checked": {
+          "EV-K27-06-91dad1": [
+            "eligibility_not_waived"
+          ],
+          "EV-K27-07-91dad1": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-K27-08-91dad1": [
+            "hedge_kept",
+            "no_unconditional_claim"
+          ],
+          "EV-K27-16-91dad1": [
+            "interview_language_choice",
+            "interview_languages_listed"
+          ],
+          "EV-U-9d70974174f6": [
+            "multilingual_application_true",
+            "multilingual_languages_listed"
+          ]
+        },
+        "unverified": [
+          {
+            "evidence_id": "EV-K27-06-91dad1",
+            "what": "qualifier '学歴等の条件に加え、第一志望・合格時の入学確約など全ての条件'",
+            "why": "no qualitative rule matches it"
+          }
+        ],
+        "counts": {
+          "evidence_with_checks": 5,
+          "unverified": 1
+        }
+      },
+      "content_sha256": "76001ef274b8bdace649347dd6235d1c3f37018ffa7c237f6fae38db3e973756",
+      "metadata": {
+        "status": "pass",
+        "findings": [],
+        "sources": [
+          {
+            "evidence_id": "EV-K27-06-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-07-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-08-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-09-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-10-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-K27-16-91dad1",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": null,
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-U-9d70974174f6",
+            "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-05-15",
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          },
+          {
+            "evidence_id": "EV-U-b9e7fb33158b",
+            "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/",
+            "sha256": "4df34401fd5665ea9556a6f12490411a86aabf646fda456c65c3dd5e4aa8f630",
+            "retrieved_at": "2026-11-01",
+            "published_date": "2026-10-21",
+            "fiscal_year": 2027,
+            "admission_method": "2026夏秋AO入試"
+          }
+        ],
+        "article_check_dates": [
+          "2026-11-01"
+        ],
+        "timestamp_precision": "date; time of day not asserted"
+      }
+    }
+  ],
+  "regression": {
+    "key": "active-view",
+    "records": 50,
+    "articles": 13,
+    "fact_keys": [
+      "common_test",
+      "eligibility",
+      "entry",
+      "fee_refund",
+      "final_result",
+      "first_stage",
+      "first_stage_result",
+      "generative_ai_policy",
+      "interview",
+      "interview_language",
+      "interview_scope",
+      "maintenance",
+      "maintenance_notice",
+      "multilingual_evaluation",
+      "online_period",
+      "optional_materials",
+      "personal_statement",
+      "policy",
+      "postal_period",
+      "quota",
+      "recommendation_format",
+      "referees",
+      "second_stage_date",
+      "statement_length"
+    ],
+    "gate": {
+      "ok": 50,
+      "invalid": 0
+    },
+    "registry": {
+      "version": "1.5.1",
+      "by_severity": {
+        "error": 0,
+        "warning": 0,
+        "notice": 0
+      }
+    },
+    "per_article": {
+      "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "niigata-law-recommendation-I-2027:documents:1085376afccdcc39": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "tsukuba-klis-general-front-2027:interview:f3aba19dec818dca": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      },
+      "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc": {
+        "ok": true,
+        "findings": [],
+        "notices": []
+      }
+    },
+    "mutation": {
+      "body": [
+        263,
+        267
+      ],
+      "citation_id": [
+        468,
+        468
+      ],
+      "as_of": [
+        39,
+        39
+      ],
+      "flip": [
+        78,
+        83
+      ],
+      "notation_invariance": [
+        520,
+        520
+      ],
+      "notation_detection": [
+        520,
+        520
+      ],
+      "flip_held_out": [
+        25,
+        51
+      ],
+      "swap": [
+        5708,
+        5733
+      ],
+      "overall": [
+        770,
+        774
+      ]
+    },
+    "versioning": {
+      "facts_checked": 50
+    },
+    "semantic_coverage": {
+      "evidence_with_checks": 36,
+      "unverified": 22
+    },
+    "failures": [
+      "meaning flips detected 78/83 < 95%"
+    ],
+    "warnings": [
+      "citation swaps not distinguishable by wording: 25 of 5733 (['fee_refund->first_stage_result', 'fee_refund->online_period', 'first_stage->online_period', 'generative_ai_policy->optional_materials'])",
+      "meaning flips in wordings the rules were never written from: 26 of 51 not detected (held-out C)"
+    ],
+    "ok": false
+  },
+  "sources": {
+    "status": "pass",
+    "pdf_independent": {
+      "status": "pass",
+      "non_pdf_evidence": [],
+      "pdfs_missing": [],
+      "pdfs_hash_mismatch": [],
+      "extraction_libraries": [
+        "pymupdf",
+        "pypdf"
+      ],
+      "library_errors": {},
+      "proofs_checked": {
+        "pymupdf": 64,
+        "pypdf": 64
+      },
+      "proofs_found": {
+        "pymupdf": 64,
+        "pypdf": 64
+      },
+      "proofs_not_found_by_any_library": [],
+      "weekday_checks": 20,
+      "weekday_mismatches": 0
+    },
+    "html_Work_exact_check": [
+      {
+        "evidence_id": "EV-U-467264a91b3e",
+        "exact_hash_quote_positions": true
+      },
+      {
+        "evidence_id": "EV-U-b9e7fb33158b",
+        "exact_hash_quote_positions": true
+      }
+    ],
+    "values": {
+      "status": "pass",
+      "integers_checked": 17,
+      "not_in_own_quotes": []
+    },
+    "html_semantic_independent": "not_run"
+  },
+  "delta": {
+    "previous_fingerprint": "5aecb9afad9cc4574ccdcc62dca80e71f0bc601962c72dd42ee95bfacad5aa49",
+    "current_fingerprint": "f6e1ed4e35acf19a142a8f0b1bbf883d39bbe839f48d6007fd6972891aabdd4b",
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "conditions_changed": true
+  }
+}

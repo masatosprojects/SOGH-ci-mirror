@@ -1,0 +1,239 @@
+{
+  "delivery_kind": "real_db_schema_metadata_only",
+  "files": [
+    {
+      "path": "databases/v02/real_db_integrity_report.json",
+      "sha256": "0ecaf7b3dd43f6ba4ca7d43c83cf73967eff995a01cbbba6a12b683f28d2d86d",
+      "bytes": 121
+    },
+    {
+      "path": "databases/v02/real_db_inventory.json",
+      "sha256": "c17331f61e0534fe9590f6b08c20e96b503c2a8ec872048db3edb1015d21a3e5",
+      "bytes": 39171
+    },
+    {
+      "path": "databases/v02/real_db_lineage.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2
+    },
+    {
+      "path": "databases/v02/real_db_privacy_report.json",
+      "sha256": "72428eb7c18f006925d5f5362585c1426a95199827cb294e8569ef1a9b17389b",
+      "bytes": 237
+    },
+    {
+      "path": "databases/v02/real_db_row_counts.json",
+      "sha256": "cebc70047a5be25c0672ff55314efa81c162e2e751ec5906db5026f751ed0d5d",
+      "bytes": 435
+    },
+    {
+      "path": "databases/v02/real_db_schema.sql",
+      "sha256": "919286bb4d475895f76af888dd935793302b5fdd1c7d942c86091cd648675517",
+      "bytes": 9439
+    },
+    {
+      "path": "databases/v02/work_execution_of_claude_audit.json",
+      "sha256": "a0542a2267fd5f804991ae6e281b719d7cdd9ae7a21352ad503481cd65b2cad0",
+      "bytes": 3138
+    },
+    {
+      "path": "databases/v03/real_db_integrity_report.json",
+      "sha256": "0ecaf7b3dd43f6ba4ca7d43c83cf73967eff995a01cbbba6a12b683f28d2d86d",
+      "bytes": 121
+    },
+    {
+      "path": "databases/v03/real_db_inventory.json",
+      "sha256": "713254d2d96311ec04ce5bfebca69c9a693c6781f95f0e04507a5890618dd8c9",
+      "bytes": 24638
+    },
+    {
+      "path": "databases/v03/real_db_lineage.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2
+    },
+    {
+      "path": "databases/v03/real_db_privacy_report.json",
+      "sha256": "3f1e400d3944ce7e3ee293051a06a91c2bc1d31404e4baf9b956e3fbefdb9db2",
+      "bytes": 1013
+    },
+    {
+      "path": "databases/v03/real_db_row_counts.json",
+      "sha256": "749e1f23e8cd7c01dcb93ffe70ab874f5a2b666cf2aa6fd2c7f9e8a433aa3372",
+      "bytes": 349
+    },
+    {
+      "path": "databases/v03/real_db_schema.sql",
+      "sha256": "251e02768f9994ddc899095adca51928003c9925d8788ee245b9b39af4be4459",
+      "bytes": 3780
+    },
+    {
+      "path": "databases/v03/work_execution_of_claude_audit.json",
+      "sha256": "bccaa2909ddf35aa08ebb0a247d2e2325ee5b5e1ab50e5fa30ae837cab54c7d1",
+      "bytes": 6855
+    },
+    {
+      "path": "databases/v04/real_db_integrity_report.json",
+      "sha256": "0ecaf7b3dd43f6ba4ca7d43c83cf73967eff995a01cbbba6a12b683f28d2d86d",
+      "bytes": 121
+    },
+    {
+      "path": "databases/v04/real_db_inventory.json",
+      "sha256": "5a509c16664ac94476a3ebfeb400fc27a683d1f90a9efbee62fcdb5fcc56e3b4",
+      "bytes": 24816
+    },
+    {
+      "path": "databases/v04/real_db_lineage.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2
+    },
+    {
+      "path": "databases/v04/real_db_privacy_report.json",
+      "sha256": "e4eb2a91d070ba82b7c5c410444a15b1329bddff765afffc57507f5b8d548d1f",
+      "bytes": 1132
+    },
+    {
+      "path": "databases/v04/real_db_row_counts.json",
+      "sha256": "b9d51b7b8eca5852016c20f6a36d7c74c0c232a2c57bfcd85119203ec48a6590",
+      "bytes": 349
+    },
+    {
+      "path": "databases/v04/real_db_schema.sql",
+      "sha256": "742715ce7edf5c70822140fb5ae552662bc63ac939a4625892b51c1f10b3d36b",
+      "bytes": 3799
+    },
+    {
+      "path": "databases/v04/work_execution_of_claude_audit.json",
+      "sha256": "a86f47186d868c6a2812eacc9ad6450e85782eef0b006fe0ccb2e2a2ecdac245",
+      "bytes": 6855
+    },
+    {
+      "path": "databases/v05/real_db_integrity_report.json",
+      "sha256": "0ecaf7b3dd43f6ba4ca7d43c83cf73967eff995a01cbbba6a12b683f28d2d86d",
+      "bytes": 121
+    },
+    {
+      "path": "databases/v05/real_db_inventory.json",
+      "sha256": "b586c794847fa497e6e3ca0a2cc4f5891ed6c8ba140cfdd3e78c9c9bff0e1cad",
+      "bytes": 35182
+    },
+    {
+      "path": "databases/v05/real_db_lineage.json",
+      "sha256": "4d3063589a8ee6f3af9886700e934def1c49121bc90543006dc4140034b9081c",
+      "bytes": 14936
+    },
+    {
+      "path": "databases/v05/real_db_privacy_report.json",
+      "sha256": "537729fd8d15386880ce56138cc9a6bd1b424314ac73a7dc2ed3d5a91e555c27",
+      "bytes": 1260
+    },
+    {
+      "path": "databases/v05/real_db_row_counts.json",
+      "sha256": "9bdfd7053d9869ed36a8ec317f6a5a643816c8c8bfeef91a8f8e6dd88834870b",
+      "bytes": 525
+    },
+    {
+      "path": "databases/v05/real_db_schema.sql",
+      "sha256": "f37837c48809ad787e18b5f22e651f2a12e4e4078a2077728028579337fc1113",
+      "bytes": 5197
+    },
+    {
+      "path": "databases/v05/work_execution_of_claude_audit.json",
+      "sha256": "b19578bf59f2958a150fcd71b35cf2eb310ec43906278bbbac2db3f53e2e5198",
+      "bytes": 8989
+    },
+    {
+      "path": "databases/v06/real_db_integrity_report.json",
+      "sha256": "0ecaf7b3dd43f6ba4ca7d43c83cf73967eff995a01cbbba6a12b683f28d2d86d",
+      "bytes": 121
+    },
+    {
+      "path": "databases/v06/real_db_inventory.json",
+      "sha256": "e934accf3393e93e08d0770f0fbf244da832c026b0190e01f2de125ef50e66b9",
+      "bytes": 35182
+    },
+    {
+      "path": "databases/v06/real_db_lineage.json",
+      "sha256": "45c2fc15488686e497bcc9debb235ce9a3cbe1163613f809d29c4bc15f56beee",
+      "bytes": 16356
+    },
+    {
+      "path": "databases/v06/real_db_privacy_report.json",
+      "sha256": "0f8900ee2a9e199132839333c89351043b86eb6c85f4a3c9fd3e13df76888c0e",
+      "bytes": 1260
+    },
+    {
+      "path": "databases/v06/real_db_row_counts.json",
+      "sha256": "15c52e7ffb5575cffb585ee9bcdce2b7804c3c722b6a2312ed1bb73ce0d07a16",
+      "bytes": 525
+    },
+    {
+      "path": "databases/v06/real_db_schema.sql",
+      "sha256": "f37837c48809ad787e18b5f22e651f2a12e4e4078a2077728028579337fc1113",
+      "bytes": 5197
+    },
+    {
+      "path": "databases/v06/work_execution_of_claude_audit.json",
+      "sha256": "273c545c2584b8d8370d5d589e668cb7c08b39a2608c51d001f2d21f350c79e2",
+      "bytes": 9388
+    },
+    {
+      "path": "qa/copy-audit-summary.json",
+      "sha256": "b8af208f03547b5a7f1d4e80a45f2c8e3ef0b8bc14f5d65ae68373249558b861",
+      "bytes": 2105
+    },
+    {
+      "path": "qa/database-to-view.json",
+      "sha256": "9feef8b9ab7b10e59d2ca3829a2ddd4a7c4931c93d63da211b38459b578dd396",
+      "bytes": 339
+    },
+    {
+      "path": "qa/F1-report-correction.json",
+      "sha256": "a861e05d7064f4d2bb995b397fc57fc6698cbcf4de77977afe969e4fd93e817c",
+      "bytes": 825
+    },
+    {
+      "path": "qa/F2-history-diff.json",
+      "sha256": "8b198502a33b56ee8d63cedc2c29b7e6f86ffd57775915137fc8748fea2b5b64",
+      "bytes": 14226
+    },
+    {
+      "path": "qa/v04-baseline-v03.json",
+      "sha256": "95887bed415b7d122fe292d0d34abfb813b8fc608e5d57d1d7dec8c93dd956bb",
+      "bytes": 7847
+    },
+    {
+      "path": "qa/work-tests.json",
+      "sha256": "511a0045209608d1678c7a46563fbd1d5d030083d5677928d558cfb342b6fe6e",
+      "bytes": 492
+    },
+    {
+      "path": "README.md",
+      "sha256": "b07f3262becb029e3e2fdaababdd6f32c2560277bf8bf5ba20b72df73c8db049",
+      "bytes": 8846
+    },
+    {
+      "path": "reproduction/scripts/audit_copied_real_databases.py",
+      "sha256": "a224459da4c3c01d41e75017d04daf6567da232dbee4f440063a3d881ac018f7",
+      "bytes": 1453
+    },
+    {
+      "path": "reproduction/scripts/compare_real_history.py",
+      "sha256": "f13eb38d55124353ffdc09f062a9c89836bfcdf58f67e1434f012c394395eb05",
+      "bytes": 4452
+    },
+    {
+      "path": "reproduction/scripts/inventory_real_databases.py",
+      "sha256": "59ad05ff23dec7d0e6a2266bafb8da54cc24c6ef252c5226ceca23c0d65072e5",
+      "bytes": 10823
+    },
+    {
+      "path": "reproduction/tests/test_real_db_inventory.py",
+      "sha256": "45a7cb9af7a7344a11e0d4baa15d479200e3e63ab3459c6a22b2eb69ec5e0b61",
+      "bytes": 6286
+    }
+  ],
+  "binary_database_included": false,
+  "source_page_text_included": false,
+  "claude_independent_execution": "not_run",
+  "publication_approved": false
+}

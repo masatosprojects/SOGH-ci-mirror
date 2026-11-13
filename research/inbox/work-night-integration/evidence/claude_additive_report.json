@@ -1,0 +1,311 @@
+{
+  "source_copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+  "source_copy_unchanged": true,
+  "pass": 20,
+  "fail": 0,
+  "cases": [
+    {
+      "case": "A1_plan_on_the_audited_copy_is_read_only_and_every_preflight_passes",
+      "result": "PASS",
+      "plan": [
+        {
+          "migration": "0002-g04-cycle-and-offering-identity",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0003-g05-evidence-root-alias",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0004-g09-append-only-and-head-integrity",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0005-g07-revised-article-evidence",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0006-g11-revision-reasons",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0007-g06-source-metadata-and-verification",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0008-g03-lookup-indexes",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        },
+        {
+          "migration": "0009-m14-head-history",
+          "applied": false,
+          "not_applicable": false,
+          "blocking_problems": [],
+          "would_apply": true
+        }
+      ]
+    },
+    {
+      "case": "A2_apply_adds_only_new_objects_every_old_row_unchanged_and_db_audit_still_passes",
+      "result": "PASS",
+      "applied": [
+        "0002-g04-cycle-and-offering-identity",
+        "0003-g05-evidence-root-alias",
+        "0004-g09-append-only-and-head-integrity",
+        "0005-g07-revised-article-evidence",
+        "0006-g11-revision-reasons",
+        "0007-g06-source-metadata-and-verification",
+        "0008-g03-lookup-indexes",
+        "0009-m14-head-history"
+      ],
+      "offering_sources_rows": 6,
+      "offerings": 6,
+      "schema_state_problems": [],
+      "new_objects": [
+        "trg_alias_is_append_only_delete",
+        "trg_alias_is_append_only_update",
+        "trg_alias_no_id_reuse",
+        "trg_alias_pinned_version_descends",
+        "trg_alias_root_exists_in_the_same_case",
+        "trg_alias_root_is_not_an_alias",
+        "trg_new_fact_id_is_not_an_alias",
+        "trg_new_revision_id_is_not_an_alias",
+        "ux_cycles_identity",
+        "ux_facts_identity_case_key",
+        "ux_offerings_identity"
+      ],
+      "db_audit_ok_db09": [
+        true,
+        "pass"
+      ],
+      "db_audit_warn": [
+        "DB-14",
+        "DB-15"
+      ]
+    },
+    {
+      "case": "A3_a_second_run_changes_nothing",
+      "result": "PASS",
+      "skipped": [
+        "0002-g04-cycle-and-offering-identity",
+        "0003-g05-evidence-root-alias",
+        "0004-g09-append-only-and-head-integrity",
+        "0005-g07-revised-article-evidence",
+        "0006-g11-revision-reasons",
+        "0007-g06-source-metadata-and-verification",
+        "0008-g03-lookup-indexes",
+        "0009-m14-head-history"
+      ]
+    },
+    {
+      "case": "A4_G04_missing_and_empty_department_collide_and_the_two_keio_entry_months_stay_two_offerings",
+      "result": "PASS",
+      "attempts": [
+        "null:refused",
+        "empty:refused"
+      ],
+      "keio_offerings": 2
+    },
+    {
+      "case": "A5_an_existing_collision_stops_the_run_and_the_file_is_unchanged",
+      "result": "PASS",
+      "blocked": {
+        "0002-g04-cycle-and-offering-identity": [
+          "cycle identity collision (2 rows): the same university, faculty, department-or-unspecified, method and entry year"
+        ]
+      }
+    },
+    {
+      "case": "A6_G05_the_six_legacy_ids_resolve_to_their_roots_01_to_the_corrected_current_head_and_no_old_row_changes",
+      "result": "PASS",
+      "resolved": {
+        "EV-G27C-01-e1137e": "EV-U-8d8e1d177883",
+        "EV-G27C-02-e1137e": "EV-G27-02-e1137e",
+        "EV-G27C-03-e1137e": "EV-G27-03-e1137e",
+        "EV-G27C-04-e1137e": "EV-G27-04-e1137e",
+        "EV-G27C-05-e1137e": "EV-G27-05-e1137e",
+        "EV-G27C-06-e1137e": "EV-G27-06-e1137e"
+      },
+      "roots_ok": true,
+      "old_tables_unchanged": true
+    },
+    {
+      "case": "A7_G05_same_value_in_another_cycle_is_independent_never_an_alias",
+      "result": "PASS",
+      "niigata_postal_period": "refused_by_the_code_layer|raw:refused_by_the_database"
+    },
+    {
+      "case": "A8_G05_unknown_root_alias_of_alias_id_reuse_and_edits_of_an_alias_are_refused",
+      "result": "PASS",
+      "attempts": {
+        "unknown_root": "refused",
+        "alias_of_alias": "refused",
+        "alias_named_like_a_real_id": "refused",
+        "update": "refused",
+        "delete": "refused"
+      }
+    },
+    {
+      "case": "B1_G02_history_user_version_and_from_version_follow_the_contract_without_an_invented_baseline",
+      "result": "PASS",
+      "history": [
+        [
+          "0002-g04-cycle-and-offering-identity",
+          "admissions-v0.5-qa-gated-revisions"
+        ],
+        [
+          "0003-g05-evidence-root-alias",
+          "0002-g04-cycle-and-offering-identity"
+        ],
+        [
+          "0004-g09-append-only-and-head-integrity",
+          "0003-g05-evidence-root-alias"
+        ],
+        [
+          "0005-g07-revised-article-evidence",
+          "0004-g09-append-only-and-head-integrity"
+        ],
+        [
+          "0006-g11-revision-reasons",
+          "0005-g07-revised-article-evidence"
+        ],
+        [
+          "0007-g06-source-metadata-and-verification",
+          "0006-g11-revision-reasons"
+        ],
+        [
+          "0008-g03-lookup-indexes",
+          "0007-g06-source-metadata-and-verification"
+        ],
+        [
+          "0009-m14-head-history",
+          "0008-g03-lookup-indexes"
+        ]
+      ],
+      "user_version": 9
+    },
+    {
+      "case": "B2_G02_a_changed_checksum_is_detected_and_apply_refuses",
+      "result": "PASS",
+      "drift": [
+        "checksum mismatch for '0002-g04-cycle-and-offering-identity': the SQL applied earlier differs from the SQL in this code (a migration is never edited after it was applied)",
+        "schema object 'trg_ao_schema_migrations_update' was created by an applied migration and is missing now"
+      ]
+    },
+    {
+      "case": "B3_G09_every_non_empty_append_only_table_of_the_real_clone_refuses_update_and_delete",
+      "result": "PASS",
+      "tables": {
+        "facts": "refused/refused",
+        "source_documents": "refused/refused",
+        "source_pages": "refused/refused",
+        "evidence_revisions": "refused/refused",
+        "article_versions": "refused/refused",
+        "revised_articles": "refused/refused",
+        "article_evidence": "refused/refused",
+        "batch_evidence": "refused/refused",
+        "update_events": "refused/refused",
+        "cycle_editions": "refused/refused",
+        "qa_runs": "refused/refused",
+        "schema_versions": "refused/refused",
+        "schema_migrations": "refused/refused"
+      }
+    },
+    {
+      "case": "B4_G09_the_protection_changed_no_existing_row",
+      "result": "PASS"
+    },
+    {
+      "case": "B5_G09_a_batch_cannot_be_reversed_or_rewritten_and_a_head_cannot_move_to_another_logical_id",
+      "result": "PASS",
+      "attempts": {
+        "approved_to_candidate": "refused",
+        "rewrite_before_json": "refused",
+        "delete_batch": "refused",
+        "head_to_another_logical_id": "refused"
+      }
+    },
+    {
+      "case": "B7_G09_a_bare_connection_and_a_replace_are_refused_on_the_real_clone_and_nothing_changes",
+      "result": "PASS",
+      "attempts": {
+        "insert_or_ignore_facts": "refused:gate",
+        "replace_article_versions": "refused:gate",
+        "update_head": "refused:gate",
+        "delete_heads": "refused:gate",
+        "approve_by_sql": "refused:gate",
+        "forged_batch": "refused:gate",
+        "replace_facts_by_a_sogh_connection": "refused:append-only"
+      }
+    },
+    {
+      "case": "C1_G07_the_relation_has_exactly_one_row_per_cited_version_of_every_revised_article_and_no_mismatch",
+      "result": "PASS",
+      "revised_articles": 22,
+      "relation_rows": 220,
+      "expected_from_the_records": 220,
+      "mismatches": 0,
+      "orphans": 0
+    },
+    {
+      "case": "C2_G11_no_reason_was_invented_for_the_past_and_the_status_view_says_so",
+      "result": "PASS",
+      "reasons": 0,
+      "status": {
+        "not_applicable": 19,
+        "not_recorded_before_the_contract": 10
+      },
+      "impacted_articles_for_the_root_of_EV_G27_01": 8
+    },
+    {
+      "case": "D1_G06_nothing_was_verified_or_given_a_date_and_every_stored_source_says_not_run_on_every_level",
+      "result": "PASS",
+      "stored_sources": 4,
+      "all_levels_not_run": 4,
+      "metadata_rows": 0,
+      "verification_events": 0
+    },
+    {
+      "case": "D2_G03_the_seven_lookups_use_an_index_on_the_audited_copys_clone_small_data_only",
+      "result": "PASS",
+      "scans": [],
+      "scale": "5 cases only; national-scale performance is not_run"
+    },
+    {
+      "case": "E1_M14_the_replay_of_the_recorded_approvals_equals_the_current_heads_of_the_real_clone",
+      "result": "PASS",
+      "events": 10,
+      "approvals": 10,
+      "evidence_heads": 5,
+      "article_heads": 6,
+      "db18": "pass"
+    },
+    {
+      "case": "B6_a_backup_of_the_migrated_clone_restores_with_its_rows_triggers_and_user_version",
+      "result": "PASS",
+      "triggers": 102,
+      "user_version": 9
+    }
+  ]
+}

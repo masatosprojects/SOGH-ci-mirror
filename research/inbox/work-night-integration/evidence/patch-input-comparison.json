@@ -1,0 +1,30 @@
+{
+  "current_vs_distribution": {
+    "store.py": {
+      "current_sha256": "6c3931f4a2021c7bbe4000bdfddb7eba065be539d29b32c5d8c96e300785effe",
+      "distributed_sha256": "e02accb876cdc900fcd752664a48a5cad08a7882ac099d9c883f0c766f4b13cd",
+      "equal": false,
+      "equal_after_newline_normalization": true
+    },
+    "generic.py": {
+      "current_sha256": "0bfb9cef5c6a653081fca35ca990000275eccc7a539a7f762172ce178bc9ae32",
+      "distributed_sha256": "a3957390934149fb985e8f7c90fbf194387409d4b5b47024c7d4c28df6cfd396",
+      "equal": false,
+      "equal_after_newline_normalization": true
+    },
+    "revisions.py": {
+      "current_sha256": "c297ea096fd9f9803eae99948c638f7f60891c20e0ff6b76585407923e1031cf",
+      "distributed_sha256": "d0251280d570fb6f03db6756696cb05879e1b55147939fce10760e448acb84f0",
+      "equal": false,
+      "equal_after_newline_normalization": true
+    }
+  },
+  "patch_sha256": "4b9afba287b0cfbf6da152eaf957a22b0d2df312e73f483cdad50c37ee0692a2",
+  "isolated_branch": "work/m1-night-integration",
+  "base": "38962d8af4b718266fdcf5f1ce28482c09577a1a",
+  "original_code_unchanged": true,
+  "patch_applied_in_isolation": true,
+  "operational_DB_applied": false,
+  "adaptation": "normalize only patch CRLF to match current Work LF; frozen original patch unchanged",
+  "adapted_patch_sha256": "994b44f93bfd09547c3c7dfa1751d9318103b2696531264bfeb018a5f2eb4dec"
+}

@@ -1,0 +1,23 @@
+{
+  "review_head": "e0533b6eec091148a6493a18bd2c31991b42fff8",
+  "labels": [
+    "SELF_VALIDATED",
+    "SYNTHETIC_ONLY"
+  ],
+  "new_tests": 11,
+  "previous_work_tests": 20,
+  "total": 31,
+  "failed": 0,
+  "skipped": 0,
+  "xml_sha256": "5745016bbfd9671b11b62237b77dfa3364aa57ddbdee4a496fbbeb94a4ce9ed9",
+  "patch_sha256": "72d125d1dcb594408e7b3d15d7985a93f57822ea450ec8662ae84d8d854c0ff7",
+  "browser_scenarios": 2,
+  "external_requests": 0,
+  "javascript_errors": 0,
+  "claude_known_issue_tests_need_inversion": [
+    "F1",
+    "F2a",
+    "F2b",
+    "F3"
+  ]
+}

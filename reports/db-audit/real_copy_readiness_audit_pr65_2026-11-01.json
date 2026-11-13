@@ -1,0 +1,122 @@
+{
+ "audited_at": "2026-11-01",
+ "subject": "Work PR #65 (read-only readiness diagnostic), head 56bc3853, manifest of 6 files verified; Work numbers recomputed by Claude with its own SQL on the v06 copy (mode=ro)",
+ "verdict": "PASS_WITH_WARNINGS",
+ "independence_level": "B (counts recomputed by Claude; the 10 packaged tests re-run: 10 passed)",
+ "input_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+ "input_sha_unchanged": true,
+ "agrees_with_work": {
+  "effective": true,
+  "fact_keys": true,
+  "source_not_registered": true,
+  "stage_annotation": true,
+  "proofs": true,
+  "field_proofs": true,
+  "verification_field": true,
+  "indexes": true,
+  "bytes_per_case": true,
+  "empty_department": true
+ },
+ "recomputed": {
+  "tables": 21,
+  "cases": 5,
+  "native_facts": 46,
+  "effective_evidence": 50,
+  "fact_keys": {
+   "common_test": 4,
+   "eligibility": 2,
+   "entry": 1,
+   "fee_refund": 1,
+   "final_result": 2,
+   "first_stage": 2,
+   "first_stage_result": 2,
+   "generative_ai_policy": 2,
+   "interview": 4,
+   "interview_language": 1,
+   "interview_scope": 4,
+   "maintenance": 1,
+   "maintenance_notice": 1,
+   "multilingual_evaluation": 1,
+   "online_period": 3,
+   "optional_materials": 1,
+   "personal_statement": 1,
+   "policy": 1,
+   "postal_period": 5,
+   "quota": 5,
+   "recommendation_format": 1,
+   "referees": 1,
+   "second_stage_date": 2,
+   "statement_length": 2
+  },
+  "source_not_registered": 3,
+  "with_stage_annotation": 0,
+  "with_proofs": 50,
+  "with_field_proofs": 1,
+  "explicit_verification_field": 45,
+  "empty_department_cases": 1,
+  "year_pairs": [
+   [
+    2027,
+    2026
+   ],
+   [
+    2027,
+    2027
+   ]
+  ],
+  "indexes": {
+   "explicit": 0,
+   "automatic": 22
+  },
+  "per_case_raw_record_json_bytes": {
+   "keio-environment-ao-2026s-2027": 25649,
+   "niigata-humanities-recommendation-II-2027": 8450,
+   "niigata-law-recommendation-I-2027": 8361,
+   "tsukuba-klis-ac-2027": 25112,
+   "tsukuba-klis-general-front-2027": 9846
+  }
+ },
+ "unregistered_source_references": [
+  {
+   "evidence_id": "EV-U-61c185ec5771",
+   "fact_key": "generative_ai_policy",
+   "source_sha12": "dad557c53e2e",
+   "is_revision_record": true,
+   "saved_file_found_locally": {
+    "ext": ".html",
+    "sha_matches": true
+   },
+   "same_source_registered_under_another_evidence": false
+  },
+  {
+   "evidence_id": "EV-U-b9e7fb33158b",
+   "fact_key": "maintenance_notice",
+   "source_sha12": "4df34401fd56",
+   "is_revision_record": true,
+   "saved_file_found_locally": {
+    "ext": ".html",
+    "sha_matches": true
+   },
+   "same_source_registered_under_another_evidence": false
+  },
+  {
+   "evidence_id": "EV-U-2895dfe26d3b",
+   "fact_key": "fee_refund",
+   "source_sha12": "5da966a810ea",
+   "is_revision_record": true,
+   "saved_file_found_locally": {
+    "ext": ".pdf",
+    "sha_matches": true
+   },
+   "same_source_registered_under_another_evidence": false
+  }
+ ],
+ "classification_of_unregistered": "all three are revision records; the saved files exist locally with a matching SHA-256: a missing reference structure (no registration, no foreign key from evidence_revisions), NOT a missing original",
+ "warnings": [
+  "warm local timing is not national performance",
+  "tokens not measured",
+  "original official pages were not re-fetched",
+  "service_ready=false"
+ ],
+ "m1_gates_changed": false
+}

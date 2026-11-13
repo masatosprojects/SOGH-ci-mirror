@@ -1,0 +1,159 @@
+{
+  "case_id": "tsukuba-klis-general-front-2027",
+  "code": "G27C",
+  "profile_version": "2026-11-01-v2",
+  "university": "筑波大学",
+  "faculty": "情報学群",
+  "department": "知識情報・図書館学類",
+  "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+  "fiscal_year": 2027,
+  "exam_year": 2027,
+  "sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+  "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+  "official_index": "https://ac.tsukuba.ac.jp/apply/application-guidelines/",
+  "cover_anchor": "令和9年度（2027年度）個別学力検査等学生募集要項（一般選抜）",
+  "dimensions": {
+    "selection_category": "general",
+    "entry_months": [
+      4
+    ],
+    "round_name": "前期日程（学類・専門学群選抜）",
+    "scope": {
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類"
+    }
+  },
+  "dimensions_evidence": {
+    "entry_month_url": "https://ac.tsukuba.ac.jp/apply/application-guidelines/",
+    "entry_month_quote": "前期日程 (総合選抜) (学類・専門学群選抜) 4月入学"
+  },
+  "visual_review": [
+    {
+      "page": 6,
+      "status": "reviewed",
+      "checked": "入学定員100・総合選抜の2年次受入40と、学類専門学群選抜の募集16を列で区別。欠員補充注記を含める"
+    },
+    {
+      "page": 9,
+      "status": "reviewed",
+      "checked": "医学地域枠の要件とは別節の全般出願期間。郵送必着・持参不可・簡易書留速達・宅配不可"
+    },
+    {
+      "page": 27,
+      "status": "reviewed",
+      "checked": "対象学類の個別面接と600字以内の小作文。AC入試800字とは別方式"
+    }
+  ],
+  "unresolved": [
+    "出願資格の個別判定",
+    "科目組合せ・配点と注意事項の全件構造化",
+    "面接の集合日時・所要時間",
+    "欠員補充による最新募集人数",
+    "追加の学類公式案内"
+  ],
+  "rules": [
+    {
+      "key": "quota",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 6,
+          "pattern": "知識情報・図書館学類10040(?P<count>16)―小計",
+          "include_capture_proofs": [
+            "count"
+          ]
+        },
+        {
+          "page": 6,
+          "pattern": "欠員補充について.*?その欠員分を個別学力検査等の募集人員に加えます。補充人員については,決定次第.*?大学入試情報サイトで発表します。"
+        }
+      ],
+      "value": {
+        "count": "$int:count",
+        "unit": "名",
+        "qualifier": "他方式の欠員補充で募集人数が増える場合がある"
+      },
+      "sentence": "学類・専門学群選抜の前期日程の募集人員は{count}名です。他方式の欠員補充で増える場合があるため、最新の募集人数の告知も確認してください。"
+    },
+    {
+      "key": "online_period",
+      "scope": "target_admission_cycle",
+      "anchors": [
+        {
+          "page": 9,
+          "pattern": "インターネット出願登録期間及び検定料払込期間令和(?P<ry>9)年(?P<sm>1)月(?P<sd>22)日\\(金\\)(?P<sh>10):(?P<smin>00)~(?P<em>2)月(?P<ed>3)日\\(水\\)(?P<eh>9):(?P<emin>00)"
+        }
+      ],
+      "value": {
+        "start": "$datetime:ry,sm,sd,sh,smin",
+        "end": "$datetime:ry,em,ed,eh,emin",
+        "timezone": "Asia/Tokyo",
+        "qualifier": "インターネット出願登録及び検定料払込期間"
+      },
+      "sentence": "オンライン出願登録と検定料払い込みの期間は2027年1月22日 10:00〜2027年2月3日 09:00です。"
+    },
+    {
+      "key": "postal_period",
+      "scope": "target_admission_cycle",
+      "anchors": [
+        {
+          "page": 9,
+          "pattern": "出願に必要な書類の郵送期間\\(持参不可\\)令和(?P<ry>9)年(?P<sm>1)月(?P<sd>25)日\\(月\\)~(?P<em>2)月(?P<ed>3)日\\(水\\)必着.*?簡易書留・速達で郵送してください。宅配便等による送付は受け付けません。なお,出願期間を過ぎた場合は,いかなる理由があっても受理しません。"
+        }
+      ],
+      "value": {
+        "start": "$date:ry,sm,sd",
+        "end": "$date:ry,em,ed",
+        "timezone": "Asia/Tokyo",
+        "qualifier": "簡易書留・速達で郵送必着。持参・宅配便不可。期間後は受理しない"
+      },
+      "sentence": "書類の郵送期間は2027年1月25日〜2027年2月3日（必着）です。簡易書留・速達で郵送し、持参と宅配便は受け付けません。期間後は受理されないため、配達日数を確認してください。"
+    },
+    {
+      "key": "common_test",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 14,
+          "pattern": "第1段階選抜合格者に対して個別学力検査等を課し,大学入学共通テスト成績,調査書等を含めて総合的に判定して最終合格者を決定します。"
+        }
+      ],
+      "value": {
+        "required": true
+      },
+      "sentence": "大学入学共通テストの成績、個別学力検査等、調査書等を含めて総合的に判定します。必要な科目の組合せ・配点・注意事項は募集要項の該当表と照合してください。"
+    },
+    {
+      "key": "interview_scope",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 27,
+          "pattern": "個別面接.*?論理的思考力,表現力,コミュニケーション能力を評価する。"
+        }
+      ],
+      "value": {
+        "topic_types": [
+          "論理的思考力",
+          "表現力",
+          "コミュニケーション能力"
+        ]
+      },
+      "sentence": "個別面接では、論理的思考力・表現力・コミュニケーション能力を評価すると記載されています。"
+    },
+    {
+      "key": "statement_length",
+      "scope": "department_and_method",
+      "anchors": [
+        {
+          "page": 27,
+          "pattern": "面接実施前に「知識情報・図書館学類で学びたいこと」に関する.*?小作文\\((?P<count>600)字以内\\)を課し、面接の参考にする。"
+        }
+      ],
+      "value": {
+        "max_characters": "$int:count"
+      },
+      "sentence": "面接の実施前に、知識情報・図書館学類で学びたいことに関する{count}字以内の小作文を課し、面接の参考とします。"
+    }
+  ]
+}

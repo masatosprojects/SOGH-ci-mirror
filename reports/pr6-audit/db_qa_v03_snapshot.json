@@ -1,0 +1,18 @@
+{
+  "db_path": "v03_snapshot.sqlite",
+  "tables": [
+    "schema_versions",
+    "admission_cycles",
+    "source_documents",
+    "source_pages",
+    "facts",
+    "article_versions",
+    "article_evidence",
+    "qa_runs",
+    "legacy_imports",
+    "legacy_records",
+    "legacy_fact_links"
+  ],
+  "issue_count": 0,
+  "issues": []
+}

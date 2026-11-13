@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "copy_only": true,
+  "live_database_unchanged": true,
+  "rollback_success": true,
+  "reapply_approved": true,
+  "repeat_registered": 0,
+  "repeat_articles": 0,
+  "versions_before": 22,
+  "versions_after": 24,
+  "invented_obligation_rejected_even_with_QA_true": true,
+  "heads_unchanged_after_fault": true,
+  "fake_QA_used_only_for_fault_injection": true,
+  "not_an_independent_QA_detection": true
+}

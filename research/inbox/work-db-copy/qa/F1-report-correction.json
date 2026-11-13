@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "database": "v05",
+      "previous_report_sha256": "78730daebd664fe8659e6137fcba28ed3ad7f1a84eba6c5fe2a9be38f994ae7e",
+      "corrected_report_sha256": "537729fd8d15386880ce56138cc9a6bd1b424314ac73a7dc2ed3d5a91e555c27",
+      "newly_reported_escaped_path_cells": 13,
+      "copy_bytes_changed": false
+    },
+    {
+      "database": "v06",
+      "previous_report_sha256": "ff2918c9a6238b61bad000a12ab21cf01b2a2c2b34706ad425292b4c0e1f8790",
+      "corrected_report_sha256": "0f8900ee2a9e199132839333c89351043b86eb6c85f4a3c9fd3e13df76888c0e",
+      "newly_reported_escaped_path_cells": 14,
+      "copy_bytes_changed": false
+    }
+  ],
+  "values_disclosed": false,
+  "independent_audit_of_initial_head": "PR60, head20cabce, PASS_WITH_WARNINGS; this correction still needs review"
+}

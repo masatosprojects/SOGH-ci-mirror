@@ -1,0 +1,7 @@
+{
+  "synthetic_mutation": "5 -> 999 with valid citation ID",
+  "qa_success": false,
+  "activation": false,
+  "heads_unchanged": true,
+  "claude_commit": "c3af31015abf49cd6af1d641bec32f617dc66615"
+}

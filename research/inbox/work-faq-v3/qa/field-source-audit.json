@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "field_count": 5,
+  "proof_references": 6,
+  "unique_source_ranges": 5,
+  "source_sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+  "semantic_independent_QA": false
+}

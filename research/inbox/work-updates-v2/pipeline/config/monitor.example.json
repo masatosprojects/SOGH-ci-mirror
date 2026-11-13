@@ -1,0 +1,45 @@
+{
+  "allowed_hosts": [
+    "ac.tsukuba.ac.jp",
+    "www.keio.ac.jp",
+    "www.niigata-u.ac.jp"
+  ],
+  "terms": [
+    "訂正",
+    "追補",
+    "変更",
+    "AC",
+    "アドミッション",
+    "AO",
+    "募集要項",
+    "メンテナンス",
+    "FAQ",
+    "Q&A"
+  ],
+  "targets": [
+    {
+      "case": "tsukuba",
+      "role": "faq",
+      "url": "https://ac.tsukuba.ac.jp/consultation/faq/"
+    },
+    {
+      "case": "keio",
+      "role": "emergency_maintenance",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/"
+    },
+    {
+      "case": "keio",
+      "role": "original_pdf",
+      "expected_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6"
+    },
+    {
+      "case": "tsukuba",
+      "role": "refund_details",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf"
+    }
+  ],
+  "interval_seconds": 3600,
+  "failure_backoff_seconds": 300,
+  "max_attempts": 2
+}

@@ -1,0 +1,14 @@
+{
+  "labels": [
+    "SYNTHETIC_ONLY",
+    "SELF_VALIDATED"
+  ],
+  "rubric_version": "practice-rubric-v1.1",
+  "numeric_vague_answer_clarity": "できている",
+  "numeric_vague_answer_limitation_confirmed": true,
+  "bad_enums_validation_errors": [],
+  "bad_enums_accepted_by_contract_validator": true,
+  "work_http_adapter_rejects_input_enums": "covered by test_demo.py, phase not user-settable",
+  "quality_pass": false,
+  "human_validity": "NOT_RUN"
+}

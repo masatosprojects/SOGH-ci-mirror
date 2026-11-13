@@ -1,0 +1,11 @@
+# Work's handoff directories carry a manifest.json with sha256 hashes of each file.
+# Without this, a Windows checkout (core.autocrlf=true) rewrites line endings in text
+# files and every hash looks "changed". Keep the bytes exactly as committed.
+research/inbox/** -text
+
+# a patch is applied with git apply to a copy of the delivered files: keep its bytes exactly as committed
+patches/** -text
+src/db_contract/migrations/** -text
+
+# ssh reads this file line by line: keep LF on every checkout (a CR would end up inside the key comment)
+approvals/allowed_signers text eol=lf

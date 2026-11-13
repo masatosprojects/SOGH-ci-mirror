@@ -1,0 +1,60 @@
+{
+  "evidence": {
+    "EV-0001": {
+      "evidence_id": "EV-0001",
+      "university": "〇〇大学",
+      "faculty": "理学部",
+      "department": "数学科",
+      "admission_method": "総合型選抜",
+      "fiscal_year": 2026,
+      "quota": 30,
+      "source_url": "https://example.ac.jp/admissions/2026/math-ao.pdf",
+      "source_pdf_sha256": null,
+      "retrieved_at": "2025-10-01"
+    },
+    "EV-0002": {
+      "evidence_id": "EV-0002",
+      "university": "△△大学",
+      "faculty": "工学部",
+      "department": null,
+      "admission_method": "学校推薦型選抜",
+      "fiscal_year": 2026,
+      "quota": 50,
+      "source_url": "https://example.ac.jp/admissions/2026/eng-suisen.pdf",
+      "source_pdf_sha256": null,
+      "retrieved_at": "2025-10-05"
+    }
+  },
+  "articles": [
+    {
+      "article_id": "sample-clean",
+      "claim": {
+        "university": "〇〇大学",
+        "faculty": "理学部",
+        "admission_method": "総合型選抜",
+        "fiscal_year": 2026
+      },
+      "text": "〇〇大学理学部数学科の総合型選抜の募集人数は30名[EV-0001]です。出願条件の詳細は変更される場合があります。最新情報は大学公式サイトでご確認ください。"
+    },
+    {
+      "article_id": "sample-unsupported-number",
+      "claim": {
+        "university": "△△大学",
+        "faculty": "工学部",
+        "admission_method": "学校推薦型選抜",
+        "fiscal_year": 2026
+      },
+      "text": "△△大学工学部の学校推薦型選抜では、毎年多くの受験生が出願し、合格率は高い傾向にあります。募集人数は50名程度です。"
+    },
+    {
+      "article_id": "sample-overconfident",
+      "claim": {
+        "university": "△△大学",
+        "faculty": "工学部",
+        "admission_method": "学校推薦型選抜",
+        "fiscal_year": 2026
+      },
+      "text": "△△大学工学部の学校推薦型選抜の募集人数は50名[EV-0002]です。この記事の対策をすれば必ず合格します。最新情報は大学公式サイトでご確認ください。"
+    }
+  ]
+}

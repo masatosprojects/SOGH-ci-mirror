@@ -1,0 +1,19 @@
+{
+  "whole_local_Work_suite": {
+    "tests": 177,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 177
+  },
+  "command": "python -B -m pytest tests -q -p no:cacheprovider",
+  "delivered_test_files": [
+    "test_full_view.py",
+    "test_import_activation.py",
+    "test_monitor_http.py",
+    "test_national.py",
+    "test_revision_guards.py",
+    "test_updates.py"
+  ],
+  "existing_GitHub_CI_runs_pipeline_tests": false
+}

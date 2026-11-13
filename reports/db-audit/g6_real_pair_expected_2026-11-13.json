@@ -1,0 +1,262 @@
+{
+ "schema": "g6-real-pair-expected/1",
+ "note": "IDs and hashes only. No original text. A checker fetches both editions itself, finds each proof quote in the OLD edition by sliding-window hash (g2_source_check_inputs), derives the changed evidence, maps it to articles through 'articles' and compares.",
+ "old_edition": {
+  "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2025/06/AC-2026-youkou_sec.pdf",
+  "sha256": "81a8635f855ce0cbb475c4b04cb22aa89f40cd8cf1ec10f744e8801aee39f571",
+  "pages": 15
+ },
+ "new_edition": {
+  "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+  "sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3"
+ },
+ "proof_status_recomputed_by_claude_from_hashes": [
+  {
+   "evidence_id": "EV-T27-01-49cb4d",
+   "proof_index": 0,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-01-49cb4d",
+   "proof_index": 1,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-02-49cb4d",
+   "proof_index": 0,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-03-49cb4d",
+   "proof_index": 0,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-04-49cb4d",
+   "proof_index": 0,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-04-49cb4d",
+   "proof_index": 1,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-05-49cb4d",
+   "proof_index": 0,
+   "new_page": 9,
+   "old_pages_with_the_quote": [],
+   "status": "changed_or_absent"
+  },
+  {
+   "evidence_id": "EV-T27-06-49cb4d",
+   "proof_index": 0,
+   "new_page": 9,
+   "old_pages_with_the_quote": [],
+   "status": "changed_or_absent"
+  },
+  {
+   "evidence_id": "EV-T27-07-49cb4d",
+   "proof_index": 0,
+   "new_page": 6,
+   "old_pages_with_the_quote": [
+    6
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-08-49cb4d",
+   "proof_index": 0,
+   "new_page": 6,
+   "old_pages_with_the_quote": [
+    6
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-09-49cb4d",
+   "proof_index": 0,
+   "new_page": 11,
+   "old_pages_with_the_quote": [],
+   "status": "changed_or_absent"
+  },
+  {
+   "evidence_id": "EV-T27-09-49cb4d",
+   "proof_index": 1,
+   "new_page": 4,
+   "old_pages_with_the_quote": [],
+   "status": "changed_or_absent"
+  },
+  {
+   "evidence_id": "EV-T27-09-49cb4d",
+   "proof_index": 2,
+   "new_page": 12,
+   "old_pages_with_the_quote": [
+    11
+   ],
+   "status": "moved_to_other_page"
+  },
+  {
+   "evidence_id": "EV-T27-10-49cb4d",
+   "proof_index": 0,
+   "new_page": 12,
+   "old_pages_with_the_quote": [],
+   "status": "changed_or_absent"
+  },
+  {
+   "evidence_id": "EV-T27-11-49cb4d",
+   "proof_index": 0,
+   "new_page": 4,
+   "old_pages_with_the_quote": [],
+   "status": "changed_or_absent"
+  },
+  {
+   "evidence_id": "EV-T27-12-49cb4d",
+   "proof_index": 0,
+   "new_page": 7,
+   "old_pages_with_the_quote": [
+    7
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-13-49cb4d",
+   "proof_index": 0,
+   "new_page": 7,
+   "old_pages_with_the_quote": [
+    7
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-13-49cb4d",
+   "proof_index": 1,
+   "new_page": 7,
+   "old_pages_with_the_quote": [
+    7
+   ],
+   "status": "unchanged_same_page"
+  },
+  {
+   "evidence_id": "EV-T27-14-49cb4d",
+   "proof_index": 0,
+   "new_page": 5,
+   "old_pages_with_the_quote": [
+    5
+   ],
+   "status": "unchanged_same_page"
+  }
+ ],
+ "changed_evidence_recomputed": [
+  "EV-T27-05-49cb4d",
+  "EV-T27-06-49cb4d",
+  "EV-T27-09-49cb4d",
+  "EV-T27-10-49cb4d",
+  "EV-T27-11-49cb4d"
+ ],
+ "changed_evidence_reported_by_the_product": [
+  "EV-T27-05-49cb4d",
+  "EV-T27-06-49cb4d",
+  "EV-T27-09-49cb4d",
+  "EV-T27-10-49cb4d",
+  "EV-T27-11-49cb4d"
+ ],
+ "product_equals_hash_recomputation": true,
+ "articles_cited_evidence_ids": {
+  "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc": [
+   "EV-K27-06-91dad1",
+   "EV-K27-07-91dad1",
+   "EV-K27-08-91dad1",
+   "EV-K27-09-91dad1",
+   "EV-K27-10-91dad1",
+   "EV-K27-16-91dad1"
+  ],
+  "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38": [
+   "EV-K27-01-91dad1",
+   "EV-K27-02-91dad1",
+   "EV-K27-03-91dad1",
+   "EV-K27-04-91dad1",
+   "EV-K27-05-91dad1",
+   "EV-K27-06-91dad1",
+   "EV-K27-07-91dad1",
+   "EV-K27-08-91dad1",
+   "EV-K27-09-91dad1",
+   "EV-K27-10-91dad1",
+   "EV-K27-11-91dad1",
+   "EV-K27-12-91dad1",
+   "EV-K27-13-91dad1",
+   "EV-K27-14-91dad1",
+   "EV-K27-15-91dad1"
+  ],
+  "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde": [
+   "EV-T27-02-49cb4d",
+   "EV-T27-03-49cb4d",
+   "EV-T27-04-49cb4d",
+   "EV-T27-07-49cb4d",
+   "EV-T27-09-49cb4d",
+   "EV-T27-10-49cb4d",
+   "EV-T27-14-49cb4d"
+  ],
+  "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373": [
+   "EV-T27-01-49cb4d",
+   "EV-T27-02-49cb4d",
+   "EV-T27-03-49cb4d",
+   "EV-T27-04-49cb4d",
+   "EV-T27-05-49cb4d",
+   "EV-T27-06-49cb4d",
+   "EV-T27-07-49cb4d",
+   "EV-T27-08-49cb4d",
+   "EV-T27-09-49cb4d",
+   "EV-T27-10-49cb4d",
+   "EV-T27-11-49cb4d",
+   "EV-T27-12-49cb4d",
+   "EV-T27-13-49cb4d"
+  ],
+  "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f": [
+   "EV-G27-01-e1137e",
+   "EV-G27-02-e1137e",
+   "EV-G27-03-e1137e",
+   "EV-G27-06-e1137e"
+  ],
+  "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66": [
+   "EV-G27-01-e1137e",
+   "EV-G27-02-e1137e",
+   "EV-G27-03-e1137e",
+   "EV-G27-04-e1137e",
+   "EV-G27-06-e1137e"
+  ]
+ },
+ "articles_flagged_expected": [
+  "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+  "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373"
+ ],
+ "articles_flagged_by_the_product": [
+  "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+  "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373"
+ ],
+ "flagged_equal": true
+}

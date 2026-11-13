@@ -1,0 +1,402 @@
+{
+ "audited_at": "2026-11-01",
+ "subject": "Work PR #61 (W-02 stage contract A candidates), head c0c8e75b, delivered under research/inbox/work-stage-a (manifest of 9 files verified; no database, PDF or absolute path)",
+ "qa_commit": "master 36bf15a plus this PR's fix to the ordinal reader (kanji spellings)",
+ "independence_level": "B (Claude recomputed from the delivered candidate view, the merged active view, the v06 copy read-only and the saved official PDFs read-only; Work's code run unchanged in disposable clones)",
+ "meaning_of_stage": "the ordinal a quoted sentence may use (the same fact_key serves either stage); NOT the selection stage in which an interview is held (Work's WR-01, recorded in PR #64)",
+ "evidence_and_articles": {
+  "evidence_counts": {
+   "active": 50,
+   "candidate": 50,
+   "removed_from_view": [
+    "EV-T27-04-49cb4d",
+    "EV-U-2895dfe26d3b"
+   ],
+   "added_to_view": [
+    "EV-S-04d9867b9ad7",
+    "EV-S-0738eaafc43c"
+   ],
+   "all_other_records_identical": true
+  },
+  "pairs": {
+   "EV-S-04d9867b9ad7": {
+    "parent": "EV-U-2895dfe26d3b",
+    "changed_keys": [
+     "evidence_id",
+     "parent_evidence_id",
+     "profile_version",
+     "stage"
+    ],
+    "stage": [
+     1
+    ],
+    "value_equal": true,
+    "proofs_equal": true,
+    "scope_equal": true,
+    "old_had_stage": false,
+    "logical_id_kept_or_added": true,
+    "source_sha_equal": true
+   },
+   "EV-S-0738eaafc43c": {
+    "parent": "EV-T27-04-49cb4d",
+    "changed_keys": [
+     "case_id",
+     "evidence_id",
+     "logical_id",
+     "parent_evidence_id",
+     "profile_version",
+     "source_sha256",
+     "stage"
+    ],
+    "stage": [
+     1
+    ],
+    "value_equal": true,
+    "proofs_equal": true,
+    "scope_equal": true,
+    "old_had_stage": false,
+    "logical_id_kept_or_added": true,
+    "source_sha_equal": true
+   }
+  },
+  "no_other_record_has_stage": true,
+  "database": {
+   "candidate_ids_already_in_db": [],
+   "parents_exist": {
+    "EV-U-2895dfe26d3b": true,
+    "EV-T27-04-49cb4d": true
+   },
+   "parents_are_current": {
+    "EV-U-2895dfe26d3b": true,
+    "EV-T27-04-49cb4d": true
+   },
+   "candidate_source_registered_in_source_documents": {
+    "EV-S-04d9867b9ad7": false,
+    "EV-S-0738eaafc43c": true
+   }
+  },
+  "articles": {
+   "candidate_count": 13,
+   "changed": [
+    {
+     "new": ":revision:5519131b22b44cdc",
+     "parent_is_current_head_in_v06": true,
+     "text_differs_only_by_the_id_substitution": true,
+     "evidence_ids_are_the_substituted_set": true,
+     "id_carries_its_revision_hash": true,
+     "revision_hash_equals_Works_formula": true,
+     "claim_and_case_equal": true,
+     "publish_allowed": false
+    },
+    {
+     "new": ":revision:e385f4eb8538413e",
+     "parent_is_current_head_in_v06": true,
+     "text_differs_only_by_the_id_substitution": true,
+     "evidence_ids_are_the_substituted_set": true,
+     "id_carries_its_revision_hash": true,
+     "revision_hash_equals_Works_formula": true,
+     "claim_and_case_equal": true,
+     "publish_allowed": false
+    }
+   ],
+   "unchanged_identical": 11,
+   "view_states": {
+    "approval_state": "candidate_not_active",
+    "publish_allowed": false
+   }
+  }
+ },
+ "mutation": {
+  "claude_helper_active_view": [
+   10,
+   14
+  ],
+  "claude_helper_candidate_view": [
+   14,
+   14
+  ],
+  "own_loop_active": [
+   10,
+   14
+  ],
+  "own_loop_candidate": [
+   14,
+   14
+  ],
+  "instances_newly_detected": [
+   [
+    "tsukuba-klis-ac-2027:ove",
+    "1"
+   ],
+   [
+    "tsukuba-klis-ac-2027:ove",
+    "1"
+   ],
+   [
+    "tsukuba-klis-ac-2027:int",
+    "1"
+   ],
+   [
+    "tsukuba-klis-ac-2027:int",
+    "1"
+   ]
+  ],
+  "instances_missed_after": [],
+  "reading": "10/14 on the merged active view and 14/14 on the candidate view, by Claude's own helper and by an own loop; the four newly detected flips are in the two changed Tsukuba articles"
+ },
+ "normal_examples": {
+  "articles_with_new_findings": {},
+  "stage_findings_on_unflipped_text": 0
+ },
+ "negatives": {
+  "N1_candidate_stage_tampered_to_2_original_sentence_is_flagged": {
+   "flip_detections": [
+    12,
+    14
+   ],
+   "stage_findings_on_the_unflipped_text_per_article": {
+    "5519131b22b44cdc": 1,
+    "e385f4eb8538413e": 1
+   }
+  },
+  "N2_stage_removed_returns_to_the_old_blind_spot": {
+   "flip_detections": [
+    12,
+    14
+   ]
+  },
+  "N3_stage_1_and_2_allows_both_ordinals_no_flip_flagged_for_that_record": {
+   "flip_detections": [
+    12,
+    14
+   ]
+  },
+  "N4_other_spellings_of_the_flipped_ordinal": {
+   "fullwidth_digit": {
+    "detected": 14,
+    "of": 14
+   },
+   "kanji_numeral": {
+    "detected": 14,
+    "of": 14
+   },
+   "no_dai_prefix": {
+    "detected": 14,
+    "of": 14
+   },
+   "kanji_no_dai": {
+    "detected": 14,
+    "of": 14
+   }
+  },
+  "N4_note": "BEFORE this PR the kanji spellings (第二次 / 二次選考) were detected 0/14: a blind spot of Claude's QA found by this audit; the ordinal reader now accepts them and N4 is 14/14 for all four spellings"
+ },
+ "sources": {
+  "EV-S-04d9867b9ad7": {
+   "pdf_found": true,
+   "sha256_matches": true,
+   "proofs": 3,
+   "proofs_on_the_cited_page": 3,
+   "proofs_naming_the_first_selection": 1,
+   "fact_key": "fee_refund",
+   "stage": [
+    1
+   ]
+  },
+  "EV-S-0738eaafc43c": {
+   "pdf_found": true,
+   "sha256_matches": true,
+   "proofs": 2,
+   "proofs_on_the_cited_page": 2,
+   "proofs_naming_the_first_selection": 1,
+   "fact_key": "interview",
+   "stage": [
+    1
+   ]
+  },
+  "note": "the saved official PDFs were read from the local copies, SHA-256 verified, every quote found on its cited page; the interview PDF is also registered in source_documents, the fee-refund PDF is NOT (see activation P8)"
+ },
+ "activation_on_disposable_clones": {
+  "pass": 8,
+  "fail": 0,
+  "finding": 1,
+  "cases": [
+   {
+    "case": "P1_activation_adds_two_revisions_moves_only_heads_and_removes_no_old_row",
+    "result": "PASS",
+    "stage_state": "candidate",
+    "row_diff_vs_original": {
+     "article_heads": [
+      0,
+      2,
+      0
+     ],
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "evidence_heads": [
+      0,
+      1,
+      1
+     ],
+     "evidence_revisions": [
+      0,
+      0,
+      2
+     ],
+     "revised_articles": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ],
+     "update_events": [
+      0,
+      0,
+      1
+     ]
+    },
+    "expected": {
+     "evidence_revisions": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ],
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "revised_articles": [
+      0,
+      0,
+      2
+     ],
+     "update_events": [
+      0,
+      0,
+      1
+     ],
+     "article_heads": [
+      0,
+      2,
+      0
+     ],
+     "evidence_heads": [
+      0,
+      1,
+      1
+     ]
+    },
+    "db_audit_ok_db09": [
+     true,
+     "pass"
+    ]
+   },
+   {
+    "case": "P2_the_effective_view_recomputed_from_the_clone_equals_the_delivered_candidate_view",
+    "result": "PASS",
+    "evidence": 50,
+    "only_in_clone": [],
+    "only_in_view": [],
+    "changed_articles_are_heads": true
+   },
+   {
+    "case": "P3_the_same_candidates_again_are_no_change_and_add_no_business_record",
+    "result": "PASS",
+    "state": "no_change",
+    "new_rows_beyond_the_first_run": {
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "P4_rollback_restores_the_old_heads_keeps_the_history_and_a_second_rollback_is_refused",
+    "result": "PASS",
+    "second_rollback": "refused"
+   },
+   {
+    "case": "P5_QA_rejection_keeps_the_heads_and_the_business_tables",
+    "result": "PASS",
+    "row_diff_vs_original": {
+     "batch_evidence": [
+      0,
+      0,
+      2
+     ],
+     "evidence_revisions": [
+      0,
+      0,
+      2
+     ],
+     "update_batches": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "case": "P6a_wrong_year_scope_is_rejected_atomically",
+    "result": "PASS",
+    "error": "cross-cycle update rejected"
+   },
+   {
+    "case": "P6b_parent_of_another_fact_is_rejected_atomically",
+    "result": "PASS",
+    "error": "correction parent has different case or fact key"
+   },
+   {
+    "case": "P7_candidate_ids_are_new_and_parents_exist",
+    "result": "PASS",
+    "candidate_ids_new": true,
+    "parents_found": [
+     1,
+     1
+    ]
+   },
+   {
+    "case": "P8_source_documents_registration_of_the_candidates_sources",
+    "result": "FINDING",
+    "registered_in_source_documents": [
+     1,
+     0
+    ],
+    "meaning": "a candidate whose source SHA is not in source_documents is accepted by the update path (evidence_revisions has no foreign key to source_documents); the reference gap is a g2 matter"
+   }
+  ],
+  "source_copy_unchanged": true,
+  "harness": "src/integration/real_copy_stage_audit.py"
+ },
+ "decision": {
+  "audit_result": "PASS_WITH_WARNINGS",
+  "activation_in_any_operational_database": "NOT DONE and not approved: Work's decision and the user's approval are required",
+  "issue_12": "stays open until the stamped records are activated and verified on the real flow",
+  "warnings": [
+   "the fee-refund source SHA is not registered in source_documents (g2)",
+   "an ordinal written in an unlisted spelling would still pass: the reader covers digits (half and full width), kanji 一/二, with or without 第",
+   "stage[1] says the sentence may use the first-selection ordinal; it does not say when interviews are held",
+   "original official pages were not re-fetched (saved PDFs only)"
+  ]
+ },
+ "m1_gates_changed": false
+}

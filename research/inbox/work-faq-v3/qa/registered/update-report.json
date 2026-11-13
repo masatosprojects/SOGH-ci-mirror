@@ -1,0 +1,504 @@
+{
+  "pending_contract": [],
+  "candidate_count": 1,
+  "interrupted_batches_recovered": [],
+  "source_review_pending": [],
+  "waiting_batch": null,
+  "approved": true,
+  "revised_articles": 2,
+  "batch_id": "9e7634a1d16b41eb8ab22292034bd768",
+  "qa": {
+    "success": true,
+    "claude_repo": "[local]\\inputs\\qa\\9856213",
+    "claude_commit": "985621340148c82cf9f29447256c434fbfc75485",
+    "calls": [
+      {
+        "module": "src.integration.validate_export",
+        "exit_code": 0,
+        "report_path": "[local]\\outputs\\faq-v3\\registered-v1\\claude-export-validation.json",
+        "report": {
+          "total": 50,
+          "ok_count": 50,
+          "invalid_count": 0,
+          "registry_version": "1.6.0",
+          "unregistered_fact_keys": [],
+          "proposed_fact_keys": [],
+          "records": {
+            "EV-T27-01-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-02-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-03-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-04-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-05-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-06-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-07-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-08-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-09-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-10-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-11-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-12-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-13-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-T27-14-49cb4d": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-01-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-02-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-03-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-04-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-05-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-06-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-07-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-08-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-09-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-10-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-11-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-12-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-13-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-14-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-15-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-K27-16-91dad1": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-N27-01-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-N27-02-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-N27-03-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-N27-04-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-N27-05-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-H27-01-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-H27-02-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-H27-03-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-H27-04-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-H27-05-2d1ee8": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-G27-02-e1137e": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-G27-03-e1137e": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-G27-04-e1137e": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-G27-05-e1137e": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-G27-06-e1137e": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-U-9d70974174f6": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-U-b9e7fb33158b": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-U-61c185ec5771": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-U-2895dfe26d3b": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            },
+            "EV-U-8d8e1d177883": {
+              "ok": true,
+              "errors": [],
+              "registry_notes": []
+            }
+          }
+        }
+      },
+      {
+        "module": "src.run_qa_suite",
+        "exit_code": 0,
+        "report_path": "[local]\\outputs\\faq-v3\\registered-v1\\claude-quality-report.json",
+        "report": {
+          "db_qa": {
+            "db_path": "[local]\\outputs\\faq-v3\\registered-v1\\qa-input.sqlite",
+            "tables": [
+              "schema_versions",
+              "admission_cycles",
+              "source_documents",
+              "source_pages",
+              "facts",
+              "article_versions",
+              "article_evidence",
+              "qa_runs",
+              "legacy_imports",
+              "legacy_records",
+              "legacy_fact_links",
+              "cycle_dimensions",
+              "cycle_editions",
+              "admission_offerings",
+              "evidence_revisions",
+              "evidence_heads",
+              "update_batches",
+              "batch_evidence",
+              "revised_articles",
+              "article_heads",
+              "update_events"
+            ],
+            "issue_count": 0,
+            "issues": []
+          },
+          "article_qa": {
+            "per_article": [
+              {
+                "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+                "ok": true,
+                "findings": [],
+                "notices": [],
+                "semantic_coverage": {
+                  "checked": {
+                    "EV-T27-01-49cb4d": [
+                      "hedge_kept",
+                      "no_unconditional_claim"
+                    ],
+                    "EV-T27-04-49cb4d": [
+                      "hedge_kept",
+                      "extension_not_denied",
+                      "no_unconditional_claim"
+                    ],
+                    "EV-T27-06-49cb4d": [
+                      "no_visit_kept",
+                      "no_visit_not_denied"
+                    ],
+                    "EV-T27-07-49cb4d": [
+                      "eligibility_not_waived"
+                    ],
+                    "EV-T27-08-49cb4d": [
+                      "common_test_required_false"
+                    ],
+                    "EV-T27-09-49cb4d": [
+                      "hedge_kept",
+                      "no_unconditional_claim"
+                    ],
+                    "EV-T27-12-49cb4d": [
+                      "statement_form_specified"
+                    ],
+                    "EV-T27-13-49cb4d": [
+                      "supporting_materials_required"
+                    ],
+                    "EV-U-61c185ec5771": [
+                      "ai_use_allowed",
+                      "ai_text_underline_true",
+                      "simple_spellcheck_underline_false",
+                      "human_advice_underline_false",
+                      "human_advice_report_true",
+                      "ai_visual_disclosure_true"
+                    ]
+                  },
+                  "unverified": [
+                    {
+                      "evidence_id": "EV-T27-05-49cb4d",
+                      "what": "qualifier '出願登録と検定料の払い込み'",
+                      "why": "no qualitative rule matches it"
+                    },
+                    {
+                      "evidence_id": "EV-T27-07-49cb4d",
+                      "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                      "why": "no qualitative rule matches it"
+                    }
+                  ],
+                  "counts": {
+                    "evidence_with_checks": 9,
+                    "unverified": 2
+                  }
+                }
+              },
+              {
+                "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+                "ok": true,
+                "findings": [],
+                "notices": [],
+                "semantic_coverage": {
+                  "checked": {
+                    "EV-T27-04-49cb4d": [
+                      "hedge_kept",
+                      "extension_not_denied",
+                      "no_unconditional_claim"
+                    ],
+                    "EV-T27-07-49cb4d": [
+                      "eligibility_not_waived"
+                    ],
+                    "EV-T27-09-49cb4d": [
+                      "hedge_kept",
+                      "no_unconditional_claim"
+                    ],
+                    "EV-U-61c185ec5771": [
+                      "ai_use_allowed",
+                      "ai_text_underline_true",
+                      "simple_spellcheck_underline_false",
+                      "human_advice_underline_false",
+                      "human_advice_report_true",
+                      "ai_visual_disclosure_true"
+                    ]
+                  },
+                  "unverified": [
+                    {
+                      "evidence_id": "EV-T27-07-49cb4d",
+                      "what": "qualifier '各区分の条件と個別資格審査の期限は要項で確認'",
+                      "why": "no qualitative rule matches it"
+                    }
+                  ],
+                  "counts": {
+                    "evidence_with_checks": 4,
+                    "unverified": 1
+                  }
+                }
+              }
+            ],
+            "batch_findings": [],
+            "registry": {
+              "registry_version": "1.6.0",
+              "ok": true,
+              "by_severity": {
+                "error": 0,
+                "warning": 0,
+                "notice": 0
+              },
+              "fact_keys_used": [
+                "common_test",
+                "eligibility",
+                "entry",
+                "fee_refund",
+                "final_result",
+                "first_stage",
+                "first_stage_result",
+                "generative_ai_policy",
+                "interview",
+                "interview_language",
+                "interview_scope",
+                "maintenance",
+                "maintenance_notice",
+                "multilingual_evaluation",
+                "online_period",
+                "optional_materials",
+                "personal_statement",
+                "policy",
+                "postal_period",
+                "quota",
+                "recommendation_format",
+                "referees",
+                "second_stage_date",
+                "statement_length"
+              ],
+              "unregistered_fact_keys": [],
+              "proposed_fact_keys": [],
+              "records_without_fact_key": []
+            }
+          }
+        }
+      }
+    ],
+    "note": "QA pass is not publication approval or full semantic verification.",
+    "source_values_gate": {
+      "success": true,
+      "qa_commit": "985621340148c82cf9f29447256c434fbfc75485",
+      "report": {
+        "status": "pass",
+        "integers_checked": 17,
+        "not_in_own_quotes": []
+      }
+    },
+    "batch_input_sha": "488d8944cc654edbb48a6be3eac0475d37c00775eefe6e84588dba3165a12f06",
+    "articles_sha256": "c516afef2810ccfff942cc810bab6c234e4de35854fcb1834200031444d7ec49",
+    "export_sha256": "50894c8315b4f1b5cc4acf20c8ab13582eedced8a2069fefaac42dcde478544f"
+  },
+  "registered_evidence": 1,
+  "heads": {
+    "evidence": {
+      "tsukuba-ac-ai-faq": "EV-U-61c185ec5771",
+      "tsukuba-general-quota-proof": "EV-U-8d8e1d177883",
+      "keio-ao-multilingual": "EV-U-9d70974174f6",
+      "keio-ao-system-notice": "EV-U-b9e7fb33158b",
+      "tsukuba-ac-refund": "EV-U-2895dfe26d3b"
+    },
+    "articles": {
+      "tsukuba-klis-ac-2027:overview:39b5d2172672c192": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "tsukuba-klis-ac-2027:interview:f57bf5213da13d66": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "tsukuba-klis-general-front-2027:overview:761fec457516aff8": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66",
+      "tsukuba-klis-general-front-2027:documents:475975acbb8891df": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f",
+      "keio-environment-ao-2026s-2027:overview:c763723defb99d32": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38",
+      "keio-environment-ao-2026s-2027:interview:b9609d0168420d09": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc"
+    }
+  },
+  "native_counts": {
+    "admission_cycles": 5,
+    "source_documents": 4,
+    "source_pages": 169,
+    "facts": 46,
+    "article_versions": 21,
+    "article_evidence": 129
+  },
+  "publication_allowed": false
+}

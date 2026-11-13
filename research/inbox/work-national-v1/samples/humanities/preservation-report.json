@@ -1,0 +1,12 @@
+{
+  "baseline_sha256": "b4b842e7663386aa8f8b28b9c545c4f493b3df55dabca2f2ff159b9dc4da3477",
+  "tables_checked": 11,
+  "old_rows_missing_or_modified": [],
+  "integrity_check": [
+    [
+      "ok"
+    ]
+  ],
+  "foreign_keys": [],
+  "success": true
+}

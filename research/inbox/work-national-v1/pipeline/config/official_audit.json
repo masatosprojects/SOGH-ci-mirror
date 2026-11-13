@@ -1,0 +1,138 @@
+{
+  "allowed_hosts": [
+    "ac.tsukuba.ac.jp",
+    "www.keio.ac.jp",
+    "www.niigata-u.ac.jp"
+  ],
+  "terms": [
+    "訂正",
+    "追補",
+    "変更",
+    "AC",
+    "アドミッション",
+    "AO",
+    "募集要項",
+    "メンテナンス",
+    "FAQ",
+    "Q&A"
+  ],
+  "targets": [
+    {
+      "case": "tsukuba",
+      "role": "guidelines_index",
+      "url": "https://ac.tsukuba.ac.jp/apply/application-guidelines/"
+    },
+    {
+      "case": "tsukuba",
+      "role": "news",
+      "url": "https://ac.tsukuba.ac.jp/"
+    },
+    {
+      "case": "tsukuba",
+      "role": "changes",
+      "url": "https://ac.tsukuba.ac.jp/examination/announcement/"
+    },
+    {
+      "case": "tsukuba",
+      "role": "faq",
+      "url": "https://ac.tsukuba.ac.jp/consultation/faq/"
+    },
+    {
+      "case": "tsukuba",
+      "role": "general_exam_correction_not_AC",
+      "url": "https://ac.tsukuba.ac.jp/news/13516/"
+    },
+    {
+      "case": "tsukuba",
+      "role": "AC_fee_refund_notice",
+      "url": "https://ac.tsukuba.ac.jp/news/13380/"
+    },
+    {
+      "case": "tsukuba",
+      "role": "original_pdf",
+      "expected_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf"
+    },
+    {
+      "case": "keio",
+      "role": "guidelines_index",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/examinations/ao-sfc-pem/"
+    },
+    {
+      "case": "keio",
+      "role": "news",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/"
+    },
+    {
+      "case": "keio",
+      "role": "all_admissions_news",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/"
+    },
+    {
+      "case": "keio",
+      "role": "faq_index",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/faq/"
+    },
+    {
+      "case": "keio",
+      "role": "emergency_maintenance",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/"
+    },
+    {
+      "case": "keio",
+      "role": "2027_AO_change",
+      "url": "https://www.keio.ac.jp/ja/admissions/faculty/news/20240303-01/"
+    },
+    {
+      "case": "keio",
+      "role": "2027_AO_change_detail",
+      "url": "https://www.keio.ac.jp/files/90f2de67e1ff9703923f8d4f4bb219c2d49f86675f8dabc5a0e57260613e3687"
+    },
+    {
+      "case": "keio",
+      "role": "2027_AO_advance_notice",
+      "url": "https://www.keio.ac.jp/files/b6eb6e4232e83844ce2e8953c96ef0abd8d87bd8cf5b0fc3da415a59eb75115b"
+    },
+    {
+      "case": "keio",
+      "role": "release_notice",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/20260518/"
+    },
+    {
+      "case": "keio",
+      "role": "original_pdf",
+      "expected_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6"
+    },
+    {
+      "case": "niigata",
+      "role": "guidelines_index",
+      "url": "https://www.niigata-u.ac.jp/admissions/faculty/recommendation/"
+    },
+    {
+      "case": "niigata",
+      "role": "original_pdf",
+      "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf"
+    },
+    {
+      "case": "keio",
+      "role": "news_page_2",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=2"
+    },
+    {
+      "case": "keio",
+      "role": "news_page_3",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=3"
+    },
+    {
+      "case": "keio",
+      "role": "news_page_4",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=4"
+    },
+    {
+      "case": "keio",
+      "role": "news_page_5",
+      "url": "https://www.keio.ac.jp/ja/sfc-pem/news-admissions/?page=5"
+    }
+  ]
+}

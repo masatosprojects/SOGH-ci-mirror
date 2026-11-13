@@ -1,0 +1,219 @@
+{
+ "audited_at": "2026-11-01",
+ "labels": [
+  "SELF_VALIDATED",
+  "WORK_REVIEW_PENDING"
+ ],
+ "subject": "M1 stage 1: Work's update path (research/inbox/work-faq-v3/pipeline, delivered, unchanged) with the proposed patch patches/m1-stage1/work-pipeline-stage1.patch applied to a COPY, run against disposable clones of the audited real database copy v06",
+ "harness": "src/integration/real_copy_g4_audit.py (the same 22 cases as the audit of PR #63), with the optional SOGH_G4_PREPARE hook",
+ "source_copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+ "source_copy_unchanged": true,
+ "production_database_touched": false,
+ "target_kind": "copied_real_db_disposable_clone",
+ "runs": {
+  "patched_pipeline_on_the_unchanged_clone": {
+   "meaning": "regression: the patched update path on the clone exactly as audited before (no guard rules)",
+   "pass": 21,
+   "fail": 0,
+   "known_limit": 1,
+   "cases": [
+    {
+     "case": "S1_crash_in_uncommitted_transaction",
+     "result": "PASS"
+    },
+    {
+     "case": "S2_candidate_then_crash_then_recover",
+     "result": "PASS"
+    },
+    {
+     "case": "S3_QA_failure_is_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "S4_head_changed_elsewhere_finalize_refused",
+     "result": "PASS"
+    },
+    {
+     "case": "S5_repeat_same_input_is_no_change",
+     "result": "PASS"
+    },
+    {
+     "case": "S6_second_process_refused_then_reacquire",
+     "result": "PASS"
+    },
+    {
+     "case": "X1_wrong_scope_record_rejected_atomically",
+     "result": "PASS"
+    },
+    {
+     "case": "X2_parent_of_another_fact_rejected_atomically",
+     "result": "PASS"
+    },
+    {
+     "case": "X3_duplicate_logical_identity_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X4_same_id_different_content_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X5_unbound_QA_result_rejected_batch_stays_candidate",
+     "result": "PASS"
+    },
+    {
+     "case": "X6_article_marked_publishable_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X7_finalize_of_a_rejected_batch_refused",
+     "result": "PASS"
+    },
+    {
+     "case": "X8_article_citing_another_case_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X9A_valid_approval_moves_only_the_article_head_and_keeps_all_old_rows",
+     "result": "PASS"
+    },
+    {
+     "case": "X9B_crash_in_the_middle_of_the_approval_leaves_heads_untouched",
+     "result": "PASS"
+    },
+    {
+     "case": "X9C_rollback_restores_heads_keeps_history_second_rollback_refused",
+     "result": "PASS"
+    },
+    {
+     "case": "X11_0_two_simultaneous_writers_serialize_without_damage",
+     "result": "PASS"
+    },
+    {
+     "case": "X11_1_two_simultaneous_writers_serialize_without_damage",
+     "result": "PASS"
+    },
+    {
+     "case": "X11_2_two_simultaneous_writers_serialize_without_damage",
+     "result": "PASS"
+    },
+    {
+     "case": "X12_existing_or_partial_backup_target_stops_the_update_before_any_change",
+     "result": "PASS"
+    },
+    {
+     "case": "X10_direct_head_write_bypasses_the_update_path",
+     "result": "KNOWN_LIMIT_G09"
+    }
+   ]
+  },
+  "patched_pipeline_on_a_clone_with_the_proposed_guard_rules": {
+   "meaning": "the merged additive migrations 0002-0004, then a test-local capability gate and approved-only heads (src/integration/guard_rules_prototype.py); X10 (a direct write to a head) is refused here instead of being the known limit",
+   "pass": 22,
+   "fail": 0,
+   "known_limit": 0,
+   "cases": [
+    {
+     "case": "S1_crash_in_uncommitted_transaction",
+     "result": "PASS"
+    },
+    {
+     "case": "S2_candidate_then_crash_then_recover",
+     "result": "PASS"
+    },
+    {
+     "case": "S3_QA_failure_is_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "S4_head_changed_elsewhere_finalize_refused",
+     "result": "PASS"
+    },
+    {
+     "case": "S5_repeat_same_input_is_no_change",
+     "result": "PASS"
+    },
+    {
+     "case": "S6_second_process_refused_then_reacquire",
+     "result": "PASS"
+    },
+    {
+     "case": "X1_wrong_scope_record_rejected_atomically",
+     "result": "PASS"
+    },
+    {
+     "case": "X2_parent_of_another_fact_rejected_atomically",
+     "result": "PASS"
+    },
+    {
+     "case": "X3_duplicate_logical_identity_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X4_same_id_different_content_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X5_unbound_QA_result_rejected_batch_stays_candidate",
+     "result": "PASS"
+    },
+    {
+     "case": "X6_article_marked_publishable_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X7_finalize_of_a_rejected_batch_refused",
+     "result": "PASS"
+    },
+    {
+     "case": "X8_article_citing_another_case_rejected",
+     "result": "PASS"
+    },
+    {
+     "case": "X9A_valid_approval_moves_only_the_article_head_and_keeps_all_old_rows",
+     "result": "PASS"
+    },
+    {
+     "case": "X9B_crash_in_the_middle_of_the_approval_leaves_heads_untouched",
+     "result": "PASS"
+    },
+    {
+     "case": "X9C_rollback_restores_heads_keeps_history_second_rollback_refused",
+     "result": "PASS"
+    },
+    {
+     "case": "X11_0_two_simultaneous_writers_serialize_without_damage",
+     "result": "PASS"
+    },
+    {
+     "case": "X11_1_two_simultaneous_writers_serialize_without_damage",
+     "result": "PASS"
+    },
+    {
+     "case": "X11_2_two_simultaneous_writers_serialize_without_damage",
+     "result": "PASS"
+    },
+    {
+     "case": "X12_existing_or_partial_backup_target_stops_the_update_before_any_change",
+     "result": "PASS"
+    },
+    {
+     "case": "X10_direct_head_write_to_a_foreign_revision_is_refused",
+     "result": "PASS"
+    }
+   ]
+  },
+  "delivered_pipeline_on_a_clone_with_the_proposed_guard_rules": {
+   "result": "STOPPED",
+   "meaning": "the delivered code cannot work under the guard rules: recover_candidates fails with 'no such function: sogh_write_ok' (and finalize with the approved-only head rule). This is the dependency that makes stage 1 come before the database side",
+   "cases_completed": "not_applicable"
+  }
+ },
+ "limits": [
+  "synthetic and copied-real clones only; the original database and the official sources are not_run",
+  "the guard rules used here are a test-local rendering, not the frozen migrations (they come in later PRs, which re-run this harness)",
+  "disk full and power loss are not_run",
+  "reason recording (G-11) is proven on synthetic databases only; the real clones have no revision_reasons table yet"
+ ],
+ "not_a_review": "Claude implemented the patch and the harness: this is a self-validation, not Work's independent audit. M1 stays 2/8, NOT ACCEPTED."
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "logical_id": "tsukuba-ac-ai-faq",
+    "case_id": "tsukuba-klis-ac-2027",
+    "fiscal_year": 2027,
+    "fact_key": "generative_ai_policy",
+    "profile_version": "faq-conditions-2026-11-01-v1",
+    "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+    "expected_sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+    "published_date": null,
+    "anchors": [
+      {
+        "page": 1,
+        "pattern": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか[?？]文章チェックも含め、生成AIが実際に生成・修正した箇所には、すべて下線を引いてください。.*?活動経過報告書での記載は必須です。"
+      },
+      {
+        "page": 1,
+        "pattern": "生成AIで作成した画像.*?画像・図・表等の説明文や脚注に、生成AIで作成したことが分かるように明示してください。"
+      }
+    ],
+    "value": {
+      "allowed": "生成AI使用時の表示方法がFAQで案内されている",
+      "not_accepted": ""
+    },
+    "sentences": [
+      "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、その修正で間接的に影響した箇所すべてに下線を引くよう案内しています。",
+      "文書校正機能による単純な誤字脱字修正は下線不要です。他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は必須です。",
+      "生成AIで作成した画像・図・表等は、説明文や脚注にその使用を明示します。"
+    ],
+    "temporal_status": "current_faq_as_of_retrieval_publication_date_unknown",
+    "applicability": "公式FAQのAC入試節に限定。今年度実施分に基づく説明で、個別出願可否の判定ではない",
+    "section_start": "ＡＣ入試の選考で重視されるのはどのようなことですか？",
+    "section_end": "国際科学オリンピック特別入試に出願できるのはどのような者ですか？",
+    "source_role": "faq",
+    "condition_profile": "tsukuba-ac-faq-v1",
+    "parent_evidence_id": "EV-U-467264a91b3e"
+  }
+]

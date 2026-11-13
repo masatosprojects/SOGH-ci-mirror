@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-01",
+  "universities": 2,
+  "admission_cycles": 2,
+  "source_documents": 2,
+  "downloaded_original_pdfs": 0,
+  "source_extracts": 2,
+  "verified_official_claims": 27,
+  "drafts_not_published": 6,
+  "publication_records": 0,
+  "experience_reports": 0,
+  "integrity_check": "ok",
+  "foreign_key_check": "ok",
+  "review_needed": true
+}

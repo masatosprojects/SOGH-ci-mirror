@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.2.0",
+  "cycle_id": "cy_tsu_klis_2027",
+  "plan_id": "plan_cy_tsu_klis_2027_interview",
+  "series_key": "interview",
+  "official_source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/06/AC_youkou2027_sec.pdf",
+  "title": "筑波大学・知識情報・図書館学類 2027年度AC入試｜面接の形式と対策",
+  "facts": [
+    {
+      "id": "fact_t06",
+      "field_key": "selection_second",
+      "statement": "第2次選考は個別面接・口述試験で30分程度（必要に応じ延長あり）。",
+      "value": {
+        "extension_possible": true,
+        "minutes_approx": 30
+      },
+      "evidence": "PDF閲覧ページ5／4 選考方法"
+    },
+    {
+      "id": "fact_t07",
+      "field_key": "interview_day",
+      "statement": "知識情報・図書館学類の2027年度AC入試の第2次選考日は2026年10月8日。",
+      "value": {
+        "date": "2026-10-08"
+      },
+      "evidence": "PDF閲覧ページ11／9 第2次選考日程及び試験場"
+    },
+    {
+      "id": "fact_t13",
+      "field_key": "interview_scope",
+      "statement": "第2次選考では提出書類の内容と学類への学習適応性などについて問われる。",
+      "value": {
+        "topic_types": [
+          "出願書類",
+          "学習能力",
+          "知識",
+          "意欲"
+        ]
+      },
+      "evidence": "PDF閲覧ページ5／4 選考方法"
+    }
+  ],
+  "unsupported_claims": [
+    "面接官人数",
+    "過去の質問例",
+    "個人の合否可能性"
+  ],
+  "publication_allowed": false
+}

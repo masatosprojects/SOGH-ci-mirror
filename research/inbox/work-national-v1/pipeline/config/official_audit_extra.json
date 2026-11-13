@@ -1,0 +1,29 @@
+{
+  "allowed_hosts": [
+    "ac.tsukuba.ac.jp"
+  ],
+  "terms": [
+    "訂正",
+    "AC",
+    "アドミッション",
+    "返還",
+    "被災"
+  ],
+  "targets": [
+    {
+      "case": "tsukuba",
+      "role": "2027_changes_pdf",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/R9_nyusi_henkouten_202608ide.pdf"
+    },
+    {
+      "case": "tsukuba",
+      "role": "disaster_fee_waiver",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/08/20260825140500.pdf"
+    },
+    {
+      "case": "tsukuba",
+      "role": "refund_details",
+      "url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/09/20261001_AC_kenteiryohenkan_01_notice.pdf"
+    }
+  ]
+}

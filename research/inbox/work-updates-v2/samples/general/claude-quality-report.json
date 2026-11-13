@@ -1,0 +1,129 @@
+{
+  "db_qa": {
+    "db_path": "[local]\\outputs\\updates-v2\\general-final-151\\qa-input.sqlite",
+    "tables": [
+      "schema_versions",
+      "admission_cycles",
+      "source_documents",
+      "source_pages",
+      "facts",
+      "article_versions",
+      "article_evidence",
+      "qa_runs",
+      "legacy_imports",
+      "legacy_records",
+      "legacy_fact_links",
+      "cycle_dimensions",
+      "cycle_editions",
+      "admission_offerings"
+    ],
+    "issue_count": 0,
+    "issues": []
+  },
+  "article_qa": {
+    "per_article": [
+      {
+        "article_id": "tsukuba-klis-general-front-2027:overview:78bbb8c06e95167d",
+        "ok": true,
+        "findings": [],
+        "notices": [],
+        "semantic_coverage": {
+          "checked": {
+            "EV-G27C-01-e1137e": [
+              "hedge_kept",
+              "no_unconditional_claim"
+            ],
+            "EV-G27C-04-e1137e": [
+              "common_test_required_true"
+            ]
+          },
+          "unverified": [
+            {
+              "evidence_id": "EV-G27C-02-e1137e",
+              "what": "qualifier 'インターネット出願登録及び検定料払込期間'",
+              "why": "no qualitative rule matches it"
+            },
+            {
+              "evidence_id": "EV-G27C-03-e1137e",
+              "what": "qualifier '簡易書留・速達で郵送必着。持参・宅配便不可。期間後は受理しな'",
+              "why": "no qualitative rule matches it"
+            }
+          ],
+          "counts": {
+            "evidence_with_checks": 2,
+            "unverified": 2
+          }
+        }
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:documents:acbf074f3706b666",
+        "ok": true,
+        "findings": [],
+        "notices": [],
+        "semantic_coverage": {
+          "checked": {
+            "EV-G27C-01-e1137e": [
+              "hedge_kept",
+              "no_unconditional_claim"
+            ]
+          },
+          "unverified": [
+            {
+              "evidence_id": "EV-G27C-02-e1137e",
+              "what": "qualifier 'インターネット出願登録及び検定料払込期間'",
+              "why": "no qualitative rule matches it"
+            },
+            {
+              "evidence_id": "EV-G27C-03-e1137e",
+              "what": "qualifier '簡易書留・速達で郵送必着。持参・宅配便不可。期間後は受理しな'",
+              "why": "no qualitative rule matches it"
+            }
+          ],
+          "counts": {
+            "evidence_with_checks": 1,
+            "unverified": 2
+          }
+        }
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:interview:691d9be277467c59",
+        "ok": true,
+        "findings": [],
+        "notices": [],
+        "semantic_coverage": {
+          "checked": {
+            "EV-G27C-04-e1137e": [
+              "common_test_required_true"
+            ]
+          },
+          "unverified": [],
+          "counts": {
+            "evidence_with_checks": 1,
+            "unverified": 0
+          }
+        }
+      }
+    ],
+    "batch_findings": [],
+    "registry": {
+      "registry_version": "1.5.1",
+      "ok": true,
+      "by_severity": {
+        "error": 0,
+        "warning": 0,
+        "notice": 0
+      },
+      "fact_keys_used": [
+        "common_test",
+        "interview_scope",
+        "online_period",
+        "postal_period",
+        "quota",
+        "statement_length"
+      ],
+      "unregistered_fact_keys": [],
+      "proposed_fact_keys": [],
+      "records_without_fact_key": []
+    }
+  }
+}

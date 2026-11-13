@@ -1,0 +1,55 @@
+{
+  "source_pdfs": {
+    "status": "pass",
+    "non_pdf_evidence": [],
+    "pdfs_missing": [],
+    "pdfs_hash_mismatch": [],
+    "extraction_libraries": [
+      "pymupdf",
+      "pypdf"
+    ],
+    "library_errors": {},
+    "proofs_checked": {
+      "pymupdf": 8,
+      "pypdf": 8
+    },
+    "proofs_found": {
+      "pymupdf": 8,
+      "pypdf": 8
+    },
+    "proofs_not_found_by_any_library": [],
+    "weekday_checks": 2,
+    "weekday_mismatches": 0
+  },
+  "values_in_quotes": {
+    "status": "pass",
+    "integers_checked": 2,
+    "not_in_own_quotes": []
+  },
+  "export": {
+    "status": "pass",
+    "evidence_records": 6,
+    "gate": {
+      "total": 6,
+      "ok_count": 6,
+      "invalid_count": 0
+    },
+    "articles": [
+      {
+        "article_id": "tsukuba-klis-general-front-2027:overview:78bbb8c06e95167d",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:documents:acbf074f3706b666",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:interview:691d9be277467c59",
+        "ok": true,
+        "findings": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,1182 @@
+{
+ "evidence": "a real SQLite file delivered in the repository (rows counted; schema read)",
+ "foreign_key_count": 20,
+ "foreign_key_violations": 0,
+ "has_schema_migrations_table": false,
+ "id": "v0_2_sample_db",
+ "index_count": 6,
+ "integrity_check": "ok",
+ "kind": "repository_sample",
+ "status": "read",
+ "table_count": 17,
+ "tables": {
+  "academic_units": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "university_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "parent_unit_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "unit_type",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "active_from_year",
+     "not_null": false,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "active_to_year",
+     "not_null": false,
+     "pk": 0,
+     "type": "INTEGER"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "parent_unit_id",
+     "on_delete": "RESTRICT",
+     "table": "academic_units",
+     "to": "id"
+    },
+    {
+     "from": "university_id",
+     "on_delete": "RESTRICT",
+     "table": "universities",
+     "to": "id"
+    }
+   ],
+   "indexes": [
+    "ix_academic_units_university"
+   ],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 3,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  },
+  "admission_cycles": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "route_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "entry_year",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "round_name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "cycle_status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "updated_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "route_id",
+     "on_delete": "RESTRICT",
+     "table": "admission_routes",
+     "to": "id"
+    }
+   ],
+   "indexes": [
+    "ix_cycles_year"
+   ],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 2,
+   "unique": [
+    [
+     "id"
+    ],
+    [
+     "route_id",
+     "entry_year",
+     "round_name"
+    ]
+   ]
+  },
+  "admission_routes": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "academic_unit_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "route_name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "route_category",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "official_route_url",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "is_active",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "academic_unit_id",
+     "on_delete": "RESTRICT",
+     "table": "academic_units",
+     "to": "id"
+    }
+   ],
+   "indexes": [
+    "ix_routes_unit"
+   ],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 2,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  },
+  "article_plans": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "cycle_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "series_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "subject_key",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "working_title",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "state",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "priority",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "series_id",
+     "on_delete": "RESTRICT",
+     "table": "article_series",
+     "to": "id"
+    },
+    {
+     "from": "cycle_id",
+     "on_delete": "RESTRICT",
+     "table": "admission_cycles",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 6,
+   "unique": [
+    [
+     "cycle_id",
+     "series_id",
+     "subject_key"
+    ],
+    [
+     "id"
+    ]
+   ]
+  },
+  "article_series": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "series_key",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "series_name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "template_version",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "audience",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "purpose",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 3,
+   "unique": [
+    [
+     "id"
+    ],
+    [
+     "series_key"
+    ]
+   ]
+  },
+  "article_version_facts": {
+   "checks": 0,
+   "columns": [
+    {
+     "name": "article_version_id",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "fact_id",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "fact_id",
+     "on_delete": "RESTRICT",
+     "table": "fact_claims",
+     "to": "id"
+    },
+    {
+     "from": "article_version_id",
+     "on_delete": "CASCADE",
+     "table": "article_versions",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "article_version_id",
+    "fact_id"
+   ],
+   "rows": 29,
+   "unique": [
+    [
+     "article_version_id",
+     "fact_id"
+    ]
+   ]
+  },
+  "article_versions": {
+   "checks": 3,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "plan_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "version_no",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "markdown_path",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "generation_model",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "prompt_version",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "input_fingerprint",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "review_status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "approved_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "plan_id",
+     "on_delete": "RESTRICT",
+     "table": "article_plans",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 6,
+   "unique": [
+    [
+     "id"
+    ],
+    [
+     "plan_id",
+     "version_no"
+    ]
+   ]
+  },
+  "audit_events": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "event_type",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "entity_type",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "entity_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "details_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 6,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  },
+  "experience_observations": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "experience_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "stage_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "observation_type",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "anonymized_summary",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "confidence",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "stage_id",
+     "on_delete": "RESTRICT",
+     "table": "selection_stages",
+     "to": "id"
+    },
+    {
+     "from": "experience_id",
+     "on_delete": "CASCADE",
+     "table": "experience_reports",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 0,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  },
+  "experience_reports": {
+   "checks": 4,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "cycle_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "anonymous_token",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "consent_scope",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "consent_recorded_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "outcome",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "submitted_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "redaction_status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "cycle_id",
+     "on_delete": "RESTRICT",
+     "table": "admission_cycles",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 0,
+   "unique": [
+    [
+     "anonymous_token"
+    ],
+    [
+     "id"
+    ]
+   ]
+  },
+  "fact_claims": {
+   "checks": 3,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "cycle_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "stage_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "field_key",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "display_statement",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "value_json",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "basis",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "review_status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "observed_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_verified_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "superseded_by",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "superseded_by",
+     "on_delete": "NO ACTION",
+     "table": "fact_claims",
+     "to": "id"
+    },
+    {
+     "from": "stage_id",
+     "on_delete": "RESTRICT",
+     "table": "selection_stages",
+     "to": "id"
+    },
+    {
+     "from": "cycle_id",
+     "on_delete": "RESTRICT",
+     "table": "admission_cycles",
+     "to": "id"
+    }
+   ],
+   "indexes": [
+    "ix_fact_review",
+    "ix_fact_cycle_field"
+   ],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 27,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  },
+  "fact_evidence": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "fact_id",
+     "not_null": true,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "snapshot_id",
+     "not_null": true,
+     "pk": 2,
+     "type": "TEXT"
+    },
+    {
+     "name": "relation",
+     "not_null": true,
+     "pk": 3,
+     "type": "TEXT"
+    },
+    {
+     "name": "locator",
+     "not_null": true,
+     "pk": 4,
+     "type": "TEXT"
+    },
+    {
+     "name": "excerpt",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "snapshot_id",
+     "on_delete": "RESTRICT",
+     "table": "source_snapshots",
+     "to": "id"
+    },
+    {
+     "from": "fact_id",
+     "on_delete": "CASCADE",
+     "table": "fact_claims",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "fact_id",
+    "snapshot_id",
+    "relation",
+    "locator"
+   ],
+   "rows": 27,
+   "unique": [
+    [
+     "fact_id",
+     "snapshot_id",
+     "relation",
+     "locator"
+    ]
+   ]
+  },
+  "publications": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "article_version_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "platform",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "idempotency_key",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "external_post_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "external_url",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "publish_status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_attempt_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "published_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "article_version_id",
+     "on_delete": "RESTRICT",
+     "table": "article_versions",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 0,
+   "unique": [
+    [
+     "id"
+    ],
+    [
+     "platform",
+     "external_post_id"
+    ],
+    [
+     "platform",
+     "idempotency_key"
+    ]
+   ]
+  },
+  "selection_stages": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "cycle_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "stage_order",
+     "not_null": true,
+     "pk": 0,
+     "type": "INTEGER"
+    },
+    {
+     "name": "stage_name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "stage_type",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "stage_format",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "cycle_id",
+     "on_delete": "RESTRICT",
+     "table": "admission_cycles",
+     "to": "id"
+    }
+   ],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 4,
+   "unique": [
+    [
+     "cycle_id",
+     "stage_order"
+    ],
+    [
+     "id"
+    ]
+   ]
+  },
+  "source_documents": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "source_kind",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "title",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "publisher",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "canonical_url",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "issued_at",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "license_notes",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 2,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  },
+  "source_snapshots": {
+   "checks": 2,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "document_id",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "retrieved_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "content_sha256",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "storage_uri",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "drive_file_id",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "media_type",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "from": "document_id",
+     "on_delete": "RESTRICT",
+     "table": "source_documents",
+     "to": "id"
+    }
+   ],
+   "indexes": [
+    "ix_snapshots_doc_time"
+   ],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 2,
+   "unique": [
+    [
+     "document_id",
+     "content_sha256"
+    ],
+    [
+     "id"
+    ]
+   ]
+  },
+  "universities": {
+   "checks": 1,
+   "columns": [
+    {
+     "name": "id",
+     "not_null": false,
+     "pk": 1,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "official_url",
+     "not_null": false,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "school_type",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "not_null": true,
+     "pk": 0,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "indexes": [],
+   "primary_key": [
+    "id"
+   ],
+   "rows": 2,
+   "unique": [
+    [
+     "id"
+    ]
+   ]
+  }
+ }
+}

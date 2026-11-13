@@ -1,0 +1,24 @@
+{
+  "db_path": "v02_copy.sqlite",
+  "tables": [
+    "universities",
+    "academic_units",
+    "admission_routes",
+    "admission_cycles",
+    "selection_stages",
+    "source_documents",
+    "source_snapshots",
+    "fact_claims",
+    "fact_evidence",
+    "experience_reports",
+    "experience_observations",
+    "article_series",
+    "article_plans",
+    "article_versions",
+    "article_version_facts",
+    "publications",
+    "audit_events"
+  ],
+  "issue_count": 0,
+  "issues": []
+}

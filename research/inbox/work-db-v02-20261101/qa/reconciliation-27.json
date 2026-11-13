@@ -1,0 +1,446 @@
+{
+  "integrated": true,
+  "mode": "immutable_legacy_records_and_original_fact_links",
+  "legacy_snapshot": "SOGH\\outputs\\admissions\\run-20261101T080524-9e760c\\legacy-v0_2-original-copy.sqlite",
+  "legacy_sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+  "legacy_table_counts": {
+    "academic_units": 3,
+    "admission_cycles": 2,
+    "admission_routes": 2,
+    "article_plans": 6,
+    "article_series": 3,
+    "article_version_facts": 29,
+    "article_versions": 6,
+    "audit_events": 6,
+    "experience_observations": 0,
+    "experience_reports": 0,
+    "fact_claims": 27,
+    "fact_evidence": 27,
+    "publications": 0,
+    "selection_stages": 4,
+    "source_documents": 2,
+    "source_snapshots": 2,
+    "universities": 2
+  },
+  "records_preserved": 121,
+  "reconciliation_counts": {
+    "matched_saved_original": 20,
+    "matched_with_added_context": 7,
+    "needs_review": 0,
+    "conflict": 0
+  },
+  "fact_links": [
+    {
+      "legacy_fact_id": "fact_t01",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "intake_count",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-01-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        5
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t02",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "web_application_open",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-05-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        9
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t03",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "web_application_close",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-05-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        9
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t04",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "mail_window",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-06-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        9
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t05",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "selection_first",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-03-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        5
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t06",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "selection_second",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-04-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        5
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t07",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "interview_day",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-09-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        4,
+        11,
+        12
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t08",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "first_stage_result",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-11-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        4
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t09",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "final_result",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-10-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        12
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t10",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "statement_length",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-12-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        7
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t11",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "recommendation_format",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-13-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        7
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t12",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "common_test",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-08-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        6
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_t13",
+      "legacy_cycle_id": "cy_tsu_klis_2027",
+      "case_id": "tsukuba-klis-ac-2027",
+      "legacy_field": "interview_scope",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-T27-14-49cb4d",
+      "new_pdf_sha256": "49cb4d7de07f47b13109b0a494f232ed7c83b89223b532ca8a8df5eb136439e3",
+      "pages": [
+        5
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k01",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "intake_count",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-01-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        8
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k02",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "web_application_open",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-03-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        9
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k03",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "web_application_close",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-03-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        9
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k04",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "mail_window",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-05-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        9
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k05",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "selection_first",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-10-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        8
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k06",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "selection_second",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-08-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        31
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k07",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "interview_day",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-07-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        16,
+        31
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k08",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "first_stage_result",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-11-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        31
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k09",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "final_result",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-09-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        31
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k10",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "personal_statement",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-12-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        19
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k11",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "optional_materials",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-13-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        19
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k12",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "referees",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-14-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        13
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k13",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "generative_ai_policy",
+      "status": "matched_saved_original",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-15-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        3
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    },
+    {
+      "legacy_fact_id": "fact_k14",
+      "legacy_cycle_id": "cy_keio_env_2027apr",
+      "case_id": "keio-environment-ao-2026s-2027",
+      "legacy_field": "interview_language",
+      "status": "matched_with_added_context",
+      "reason": "original_pdf_profile_checked",
+      "evidence_id": "EV-K27-16-91dad1",
+      "new_pdf_sha256": "91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+      "pages": [
+        31
+      ],
+      "legacy_review_status_not_trusted": "verified",
+      "legacy_entry_scope": "2027-04"
+    }
+  ],
+  "privacy_findings": [],
+  "old_verified_flags_promoted": false,
+  "summary_hashes_used_as_pdf_hashes": false,
+  "publication_allowed": false
+}

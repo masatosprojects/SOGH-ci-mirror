@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "original_v05_sha_unchanged": true,
+  "original_view_sha_unchanged": true,
+  "immutable_tables_checked": [
+    "schema_versions",
+    "admission_cycles",
+    "source_documents",
+    "source_pages",
+    "facts",
+    "article_versions",
+    "article_evidence",
+    "qa_runs",
+    "legacy_imports",
+    "legacy_records",
+    "legacy_fact_links",
+    "cycle_dimensions",
+    "cycle_editions",
+    "admission_offerings",
+    "evidence_revisions",
+    "batch_evidence",
+    "revised_articles",
+    "update_events"
+  ],
+  "old_rows_missing_or_changed": [],
+  "illegal_batch_changes": [],
+  "head_changes": {
+    "evidence_heads": [
+      {
+        "key": "tsukuba-ac-ai-faq",
+        "before": "EV-U-467264a91b3e",
+        "after": "EV-U-61c185ec5771"
+      }
+    ],
+    "article_heads": [
+      {
+        "key": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+        "before": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+        "after": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde"
+      },
+      {
+        "key": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+        "before": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+        "after": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373"
+      }
+    ]
+  },
+  "lineage_ok": true,
+  "article_diffs": [
+    {
+      "base_article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "before": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+      "after": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373",
+      "diff": "article-1.diff"
+    },
+    {
+      "base_article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "before": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+      "after": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde",
+      "diff": "article-2.diff"
+    }
+  ],
+  "unchanged_articles": [
+    "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f",
+    "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+    "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+    "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a",
+    "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6",
+    "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859",
+    "tsukuba-klis-general-front-2027:interview:f3aba19dec818dca",
+    "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66",
+    "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f",
+    "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38",
+    "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc"
+  ],
+  "effective_facts": 50,
+  "current_articles": 13,
+  "retained_article_versions": 22,
+  "integrity": "ok",
+  "foreign_key_errors": 0
+}

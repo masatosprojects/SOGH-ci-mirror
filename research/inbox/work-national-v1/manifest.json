@@ -1,0 +1,282 @@
+{
+  "files": [
+    {
+      "path": "database-schema.sql",
+      "sha256": "ac1065ffcf8e39d5008fa4f40f46c2b6bc30a87e6cbaa749d5d80383b35af042",
+      "bytes": 3773
+    },
+    {
+      "path": "NATIONAL_PIPELINE.md",
+      "sha256": "59cad3efc776d90a9ffa38e8f9af456fc7f7bd3fd85e3a65a129e535bbfde6d4",
+      "bytes": 6314
+    },
+    {
+      "path": "NEXT_SESSION.md",
+      "sha256": "c1e661286ff95a57355a42dbd92e4a665a7e93d058208c3004548f05b123be07",
+      "bytes": 1355
+    },
+    {
+      "path": "OFFICIAL_UPDATE_AUDIT.md",
+      "sha256": "561e7e21247048466ac9986da42ad7dbec3516eab39e1f6f114997b9b2bc29dd",
+      "bytes": 5014
+    },
+    {
+      "path": "pipeline/admissions_pipeline/__init__.py",
+      "sha256": "58638a63facae43de6ad9ed3ec9873e10d46c2a8fce2e2df85160e8a39d6d08e",
+      "bytes": 81
+    },
+    {
+      "path": "pipeline/admissions_pipeline/__main__.py",
+      "sha256": "73c579e4ad3cb6bae02284be81fe8d36506940e1e42620a8c50199b9d4738509",
+      "bytes": 7776
+    },
+    {
+      "path": "pipeline/admissions_pipeline/articles.py",
+      "sha256": "a6ea0dc66874576b625ea6530ac7622c77cf530c0f98e8a8f5d2b12d6c8597bc",
+      "bytes": 17830
+    },
+    {
+      "path": "pipeline/admissions_pipeline/claude_adapter.py",
+      "sha256": "938ae5ba5b9aec4423f2f0becea4b11d8539d94de69ca7adab5a0ab6ab0c27e5",
+      "bytes": 2121
+    },
+    {
+      "path": "pipeline/admissions_pipeline/collector.py",
+      "sha256": "291d1a533f9c82be2c538e4e5025b30629ac2671c775d1b5fd53b90f2b67f963",
+      "bytes": 8360
+    },
+    {
+      "path": "pipeline/admissions_pipeline/dimensions.py",
+      "sha256": "26c081fc6d12839fc7fdaef1482a01a98b364a67a71a5f542a42efe3daab9f17",
+      "bytes": 4200
+    },
+    {
+      "path": "pipeline/admissions_pipeline/extract.py",
+      "sha256": "9ae8b65666734fd791abdfef7738bb19a6ecbed0b0df092d9b59806dae210e24",
+      "bytes": 18715
+    },
+    {
+      "path": "pipeline/admissions_pipeline/generic.py",
+      "sha256": "531e55cabad824eaa2f36e0537bfe977d706151add92a9712ab858593996b85c",
+      "bytes": 7935
+    },
+    {
+      "path": "pipeline/admissions_pipeline/legacy.py",
+      "sha256": "68a3c017d186dfd36db88caca289c4f5f68334c2f6f0df3c0922d17e79ea5820",
+      "bytes": 10835
+    },
+    {
+      "path": "pipeline/admissions_pipeline/profiles.py",
+      "sha256": "cbdb0f182731967f10c72f03c35cd6dcdb4e6034c58ae4542c3989725dd1a4d5",
+      "bytes": 4665
+    },
+    {
+      "path": "pipeline/admissions_pipeline/store.py",
+      "sha256": "f3ea56d33ca993cd9f6556826bcb0f1e06eda1d25085025f70307ab4df9c87f2",
+      "bytes": 7125
+    },
+    {
+      "path": "pipeline/config/official_audit.json",
+      "sha256": "70bc6e6fc55edd191113e7c7e15a210a3a448d0b0118e70b4f559ae9deedd886",
+      "bytes": 3906
+    },
+    {
+      "path": "pipeline/config/official_audit_extra.json",
+      "sha256": "281f6948ca5f2bbda6de93de4a9c3e03344c3d2eb1d854f957985d78f3a781f9",
+      "bytes": 717
+    },
+    {
+      "path": "pipeline/config/profiles/niigata-humanities-recommendation-2027.json",
+      "sha256": "f6ebd652b5921aa9f1955ab6559296315a14d00fda3b90483a000b8ff837855c",
+      "bytes": 5545
+    },
+    {
+      "path": "pipeline/config/profiles/niigata-law-recommendation-2027.json",
+      "sha256": "8f7db6f7c677ec3661b226253ffeac3ad236b29f8f6f6974b5cd1fb502857325",
+      "bytes": 5336
+    },
+    {
+      "path": "pipeline/scripts/audit_official_sites.py",
+      "sha256": "43ce473b460b174ada987d627d6492258db7d65ac4557516646bbafea17adc49",
+      "bytes": 3100
+    },
+    {
+      "path": "pipeline/scripts/check_collected_versions.py",
+      "sha256": "827334324eb43c2be9d022126241aad0aa8bf4aa7218cbc15a60638b8ae68554",
+      "bytes": 2831
+    },
+    {
+      "path": "pipeline/scripts/verify_national.py",
+      "sha256": "e69680464fd4f3d9e840efd65c9b4ea9c1e0b8f5fd3ff65cf3e136b13dbe49cc",
+      "bytes": 3215
+    },
+    {
+      "path": "pipeline/tests/test_national.py",
+      "sha256": "b53517625f02d1bedc598482e6697ed71a0223f50b5c821e5c9bd53925c66204",
+      "bytes": 9592
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "74b33a01631ccbe1b256d5c0b36323b5b5e989db31f52d19c9a6e72645726eb7",
+      "bytes": 789
+    },
+    {
+      "path": "qa/claude-regression.txt",
+      "sha256": "3fd3d86cf57701fdd02db16e4f726407d17b85c4ac703acd17fcfc83558ba921",
+      "bytes": 264
+    },
+    {
+      "path": "qa/collection-metadata.json",
+      "sha256": "eae907bc88d4b2ffaf84e3cb9db9d51cc8433f9a5735c8c17d16b428a87a0a9a",
+      "bytes": 19982
+    },
+    {
+      "path": "qa/pdf-version-diff.json",
+      "sha256": "75c311687f493eea84e4c8d52f6f69303d880e85bb9a18bfcaf493884b1abf04",
+      "bytes": 959
+    },
+    {
+      "path": "qa/snapshot-manifest.json",
+      "sha256": "a1d404f4c97ad058aee48dad0cfbf73a5bd1a01398df78227bef616abd33a77d",
+      "bytes": 7039
+    },
+    {
+      "path": "qa/version-impact-report.json",
+      "sha256": "5147cbd8e85b647f07ff986cdc63850f45d06f06de6b77aec395c4c7d4093744",
+      "bytes": 20053
+    },
+    {
+      "path": "qa/work-regression.txt",
+      "sha256": "d07fa38faacb77b797cf93555ba54afe74e9119bf7bf94b3d7e23c39a541346b",
+      "bytes": 184
+    },
+    {
+      "path": "README.md",
+      "sha256": "948dd31248388c55b6f90d950016b53e86c4752025a07d71bbdb0aa3e5cc3162",
+      "bytes": 2910
+    },
+    {
+      "path": "samples/humanities/article-input.json",
+      "sha256": "b50b1e0028239708d34df9037e8b766a358b63747decc5c1277f06ace8c7f4e9",
+      "bytes": 10788
+    },
+    {
+      "path": "samples/humanities/claude-compatible-export.json",
+      "sha256": "d2962f9762fbcb78a171ddf707626933de10ea596f7c413d0e6c130953e1c07e",
+      "bytes": 20530
+    },
+    {
+      "path": "samples/humanities/claude-export-validation.json",
+      "sha256": "619f61d21c54a63f13532f14c7c487467c5256a98adbfad91f548d38082c0e98",
+      "bytes": 450
+    },
+    {
+      "path": "samples/humanities/claude-quality-report.json",
+      "sha256": "7f160b96ad821a8262ab581920f9948a1c1202a824eac39cb8199be5c37c4a82",
+      "bytes": 1078
+    },
+    {
+      "path": "samples/humanities/documents.md",
+      "sha256": "520992d402db81f2be376d2841721d111e69cc89433270c8a13cc42bca4b15c7",
+      "bytes": 1628
+    },
+    {
+      "path": "samples/humanities/independent-source-audit.json",
+      "sha256": "9fda881f9292bc095e034c9be74f845889fb6a7c023311af400b41fdf2822c69",
+      "bytes": 1222
+    },
+    {
+      "path": "samples/humanities/interview.md",
+      "sha256": "f0eb4fffa4720b85e767319ab3cb13b34c481d68e431c31966339c9ff97d0936",
+      "bytes": 1846
+    },
+    {
+      "path": "samples/humanities/overview.md",
+      "sha256": "3af890b87b6fe5bf4a9b9106f99a2d21d76f2064c5ab0ecf27c3e25fee2e6313",
+      "bytes": 2210
+    },
+    {
+      "path": "samples/humanities/preservation-report.json",
+      "sha256": "8f64b9a0b58db672d67264394b550b2e6c9a3de0ca58b511ee884f31241bb145",
+      "bytes": 256
+    },
+    {
+      "path": "samples/humanities/profile.json",
+      "sha256": "f6ebd652b5921aa9f1955ab6559296315a14d00fda3b90483a000b8ff837855c",
+      "bytes": 5545
+    },
+    {
+      "path": "samples/humanities/run-report.json",
+      "sha256": "bb721dc68487feceeb9fc1d8afa6e34262e2a0dfdc1b6d5d59889cfa226faeac",
+      "bytes": 4358
+    },
+    {
+      "path": "samples/humanities/source-facts.json",
+      "sha256": "6a51932ae21a6d16e46b862c8216ae29fcb1a5be61a5914c8f1ca5f62da6c4a7",
+      "bytes": 9610
+    },
+    {
+      "path": "samples/law/article-input.json",
+      "sha256": "80a3d1583113fa89ea9fd8b266e78a23e0ac2084fc4d8b39c08fde32eefbc72d",
+      "bytes": 10719
+    },
+    {
+      "path": "samples/law/claude-compatible-export.json",
+      "sha256": "0fe9797f39c2215481969f83190c8ef49b7ae4f8e9d86cd6e32ccd5ec287f632",
+      "bytes": 19861
+    },
+    {
+      "path": "samples/law/claude-export-validation.json",
+      "sha256": "7ff6679634ee2633d7874b51b09b54d6585a9eb82207c870be70d7f94cc9c0aa",
+      "bytes": 450
+    },
+    {
+      "path": "samples/law/claude-quality-report.json",
+      "sha256": "3019798098fbe35cb2056f6c1191ab45abb5bd8559d5645b1668048cc4d54c41",
+      "bytes": 1052
+    },
+    {
+      "path": "samples/law/documents.md",
+      "sha256": "0ed021d7e2d00f8d0a8a78ef5ec90b51fd6743db602fa80e6304cd766b30b50c",
+      "bytes": 1620
+    },
+    {
+      "path": "samples/law/independent-source-audit.json",
+      "sha256": "6cbe1f82813a45d4fd413391e1cbde2363208f0bfa4740dd7f6554a7469cbace",
+      "bytes": 1198
+    },
+    {
+      "path": "samples/law/interview.md",
+      "sha256": "dfe6e15288d924ba853ea01a6f713dc1ad2f7940983d2a6a4bedd6a0e10d2893",
+      "bytes": 1728
+    },
+    {
+      "path": "samples/law/overview.md",
+      "sha256": "de2bada11a93ca74f7e24d18b117bd871a6aa6540a6637f9f6a2c8280a3c9030",
+      "bytes": 2008
+    },
+    {
+      "path": "samples/law/preservation-report.json",
+      "sha256": "8f64b9a0b58db672d67264394b550b2e6c9a3de0ca58b511ee884f31241bb145",
+      "bytes": 256
+    },
+    {
+      "path": "samples/law/profile.json",
+      "sha256": "8f7db6f7c677ec3661b226253ffeac3ad236b29f8f6f6974b5cd1fb502857325",
+      "bytes": 5336
+    },
+    {
+      "path": "samples/law/run-report.json",
+      "sha256": "c397d17420415ca42c59cd81509b4ccbad2e92ccc3924a5a51f6d762ce3e19d2",
+      "bytes": 4142
+    },
+    {
+      "path": "samples/law/source-facts.json",
+      "sha256": "f639e7a11f444817625d0ac3fc01782ad1e9d7229ab0858ccac4ef604baf088a",
+      "bytes": 9549
+    }
+  ],
+  "original_pdfs_included": false,
+  "full_page_text_included": false,
+  "native_database_included": false
+}

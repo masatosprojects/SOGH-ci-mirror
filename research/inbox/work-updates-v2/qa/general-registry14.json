@@ -1,0 +1,80 @@
+{
+  "key": "general",
+  "records": 6,
+  "articles": 3,
+  "fact_keys": [
+    "common_test",
+    "interview_scope",
+    "online_period",
+    "postal_period",
+    "quota",
+    "statement_length"
+  ],
+  "gate": {
+    "ok": 6,
+    "invalid": 0
+  },
+  "registry": {
+    "version": "1.4.0",
+    "by_severity": {
+      "error": 0,
+      "warning": 0,
+      "notice": 0
+    }
+  },
+  "per_article": {
+    "tsukuba-klis-general-front-2027:overview:78bbb8c06e95167d": {
+      "ok": false,
+      "findings": [
+        "citation_topic_mismatch"
+      ],
+      "notices": []
+    },
+    "tsukuba-klis-general-front-2027:documents:acbf074f3706b666": {
+      "ok": false,
+      "findings": [
+        "citation_topic_mismatch"
+      ],
+      "notices": []
+    },
+    "tsukuba-klis-general-front-2027:interview:691d9be277467c59": {
+      "ok": false,
+      "findings": [
+        "citation_topic_mismatch"
+      ],
+      "notices": []
+    }
+  },
+  "mutation": {
+    "body": [
+      40,
+      40
+    ],
+    "citation_id": [
+      75,
+      75
+    ],
+    "as_of": [
+      9,
+      9
+    ],
+    "swap": [
+      125,
+      125
+    ],
+    "overall": [
+      124,
+      124
+    ]
+  },
+  "versioning": {
+    "facts_checked": 6
+  },
+  "failures": [
+    "article 27:overview:78bbb8c06e95167d: ['citation_topic_mismatch']",
+    "article 7:documents:acbf074f3706b666: ['citation_topic_mismatch']",
+    "article 7:interview:691d9be277467c59: ['citation_topic_mismatch']"
+  ],
+  "warnings": [],
+  "ok": false
+}

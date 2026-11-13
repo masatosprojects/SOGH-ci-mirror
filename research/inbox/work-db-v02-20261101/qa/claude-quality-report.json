@@ -1,0 +1,45 @@
+{
+  "db_qa": {
+    "db_path": "SOGH\\outputs\\admissions\\run-20261101T080524-9e760c\\database-for-claude-qa.sqlite",
+    "tables": [
+      "schema_versions",
+      "admission_cycles",
+      "source_documents",
+      "source_pages",
+      "facts",
+      "article_versions",
+      "article_evidence",
+      "qa_runs",
+      "legacy_imports",
+      "legacy_records",
+      "legacy_fact_links"
+    ],
+    "issue_count": 0,
+    "issues": []
+  },
+  "article_qa": {
+    "per_article": [
+      {
+        "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+        "ok": true,
+        "findings": []
+      }
+    ],
+    "batch_findings": []
+  }
+}

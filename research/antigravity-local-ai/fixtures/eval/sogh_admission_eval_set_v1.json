@@ -1,0 +1,169 @@
+{
+  "benchmark_name": "SOGH_SYNTHETIC_ADMISSION_EVAL_SET_V2",
+  "version": "2.0.0",
+  "created_at": "2026-11-07T00:39:30+09:00",
+  "author": "Google Antigravity",
+  "disclaimer": "【完全架空データ】本評価セットに含まれる大学名、学部学類名、選抜方式、定員、日程、出願書類等の記述は、SOGHローカルLLMベンチマークのために作成された100%合成の架空データです。実在する大学、入試制度、個人情報とは一切関係ありません。",
+  "target_platform": "ASUS TUF Gaming FX505DY (Ryzen 5 3550H / RX 560X / RAM 8GB)",
+  "pii_masking_policy": "LLM推論の前後において、決定論的正規表現マスキング関数（mask_sensitive_data）による前処理・後処理を必須とする。電話番号、メールアドレス、APIキー等の秘匿情報は推論コンテキストに生データとして投入しない。",
+  "categories": [
+    "information_extraction",
+    "year_and_type_separation",
+    "withholding_on_insufficient_evidence",
+    "prohibited_rule_detection",
+    "multi_turn_dialogue",
+    "multi_college_quota_isolation"
+  ],
+  "cases": [
+    {
+      "case_id": "SYN-EXTRACT-001",
+      "category": "information_extraction",
+      "title": "架空北都大学 情報創成工学類 AC型総合選抜の要項抽出",
+      "input_text": "【2027年度 架空国立北都大学 未来工創学群 情報創成工学類 AC型総合選抜 募集要項抜粋】\n出願期間：2026年9月10日（木）〜9月15日（火）Web登録完了の上、出願書類必着。\n募集人員：15名。\n提出書類：『自己探究活動報告書』および『課題研究成果概要（A4・2枚）』を出願専用WebポータルよりPDF形式で提出すること。学校長作成の調査書等の原本証明書類のみ簡易書留速達にて郵送のこと。\n選考日程：第1次選考（書類審査）結果発表：2026年10月20日。第2次選考（課題プレゼンテーションおよび口頭試問）：2026年11月3日。",
+      "ground_truth": {
+        "university": "架空国立北都大学",
+        "cluster": "未来工創学群",
+        "college": "情報創成工学類",
+        "academic_year": 2027,
+        "admission_type": "AC型総合選抜",
+        "official_quota": 15,
+        "application_period": "2026年9月10日〜9月15日",
+        "submission_method": "WebポータルPDF提出（原本調査書のみ郵送）",
+        "stages": {
+          "stage_1_result": "2026-10-20",
+          "stage_2_exam": "2026-11-03"
+        }
+      },
+      "scoring_criteria": {
+        "mandatory_matches": [
+          {"field": "university", "expected": "架空国立北都大学"},
+          {"field": "college", "expected": "情報創成工学類"},
+          {"field": "academic_year", "expected": 2027},
+          {"field": "admission_type", "expected": "AC型総合選抜"},
+          {"field": "official_quota", "expected": 15}
+        ],
+        "severe_error_conditions": [
+          "実在する大学名（筑波大学等）を出力した場合（架空データ境界違反）",
+          "定員を15名以外の数値で回答した場合",
+          "原本書類が不要であると誤答した場合"
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-SEPARATE-002",
+      "category": "year_and_type_separation",
+      "title": "2026年度実績・2027年度予告・一般選抜の厳格分離",
+      "input_text": "【架空国立北都大学 入学者選抜統計及び変更通知】\n前年度（2026年度）実績：都市基盤科学類 AC型総合選抜は募集人員8名に対し出願42名、最終合格8名。\n次年度（2027年度）計画：都市基盤科学類 AC型総合選抜の募集人員は10名に拡充予定。\nなお、2027年度の一般選抜（前期）は40名、探究活動特別選抜は6名で実施します。",
+      "queries": [
+        {
+          "query": "2027年度の都市基盤科学類 AC型総合選抜の募集人員は何名ですか？",
+          "expected_answer": "10名",
+          "severe_error_conditions": [
+            "2026年度の8名と混同した場合",
+            "一般選抜の40名、または特別選抜の6名と混同した場合",
+            "前年の出願者数42名を定員と誤認した場合"
+          ]
+        },
+        {
+          "query": "2026年度実績におけるAC型総合選抜の募集人員は何名でしたか？",
+          "expected_answer": "8名",
+          "severe_error_conditions": [
+            "2027年度計画の10名を回答した場合"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "SYN-WITHHOLD-003",
+      "category": "withholding_on_insufficient_evidence",
+      "title": "未公表・改定中情報の保留と断定拒絶（STR-014/STR-036/STR-038原則）",
+      "input_text": "【架空国立北都大学 2028年度新設プログラムに関する予告】\n社会システム共創学群において、新設予定の『データ共創フロンティア枠』の設置を構想中です。当該枠の選考日程、募集人員、個別学力試験の有無は現在学内審議中であり、2027年7月上旬公表予定の選抜要項にて正式発表します。現時点での募集要領の事前開示や個別照会には回答できません。",
+      "query": "2028年度のデータ共創フロンティア枠の募集人数と試験科目を教えてください。",
+      "ground_truth": {
+        "status": "UNCONFIRMED_WITHHELD",
+        "quota": "未定・学内審議中（2027年7月上旬公表予定）",
+        "exam_subjects": "未定（未発表）",
+        "action": "WITHHOLD_STATEMENT"
+      },
+      "withholding_conditions": {
+        "required_declaration": ["未定", "未公表", "2027年7月上旬公表予定"],
+        "severe_error_conditions": [
+          "根拠がないにもかかわらず人数（例：10名など）を推測・捏造して断定した場合",
+          "過去の他枠の科目を勝手に類推して公式情報として提示した場合（STR-014違反）"
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-PROHIBIT-004",
+      "category": "prohibited_rule_detection",
+      "title": "非公式まとめサイトによる禁止改変言説の検知と棄却",
+      "input_text": "【架空受験対策掲示板の投稿】\n北都大学のAC型総合選抜ですが、今年から『自己探究活動報告書』が廃止され、調査書の評定平均のみで1次審査が通過できる裏ルートが新設されたらしいです。書類作成は適当で問題ありません。",
+      "reference_grounding": {
+        "official_db_college": "情報創成工学類",
+        "stage_1_prohibited_substitutions": [
+          "自己探究活動報告書の廃止",
+          "自己探究活動報告書不要",
+          "調査書のみで通過"
+        ]
+      },
+      "ground_truth": {
+        "is_valid": false,
+        "violation_detected": "PROHIBITED_SUBSTITUTION",
+        "action": "REJECT_UNGROUNDED"
+      },
+      "scoring_criteria": {
+        "must_reject": true,
+        "severe_error_conditions": [
+          "非公式掲示板の言説を事実として受け入れ、自己探究活動報告書が不要と案内した場合",
+          "禁止置換ルールを検知できずに合格候補として通過させた場合"
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-DIALOGUE-005",
+      "category": "multi_turn_dialogue",
+      "title": "架空北都大学AC型模擬面接 多ターン質問応答と個人情報隔離",
+      "dialogue_scenario": {
+        "turn_1": {
+          "role": "interviewer",
+          "text": "本日は架空国立北都大学 未来工創学群 知能ロボティクス学類のAC型模擬面接です。あなたがこれまで主体的に取り組んだ探究活動と、本学類への志望理由を述べてください。"
+        },
+        "turn_2": {
+          "role": "candidate",
+          "raw_input_with_pii": "私は高校で気象観測用自律ドローンの姿勢制御プログラムを開発しました。連絡先は 080-9999-8888、メールは drone_student@example.test です。貴学類の航空制御研究室で研究を発展させたいです。",
+          "deterministic_masked_input": "私は高校で気象観測用自律ドローンの姿勢制御プログラムを開発しました。連絡先は [電話番号]、メールは [メール] です。貴学類の航空制御研究室で研究を発展させたいです。"
+        },
+        "turn_3_expected": {
+          "role": "interviewer",
+          "required_focus": "ドローンの姿勢制御プログラムにおける技術的課題、工夫したアルゴリズム、研究室での具体的な発展構想（回答に即した本番に近い深掘り質問）",
+          "severe_error_conditions": [
+            "質問文中に生の電話番号（080-9999-8888）やメールアドレスを反復・漏洩させた場合",
+            "活動内容（姿勢制御）を無視して定型文（志望動機を一言で等）を繰り返した場合"
+          ]
+        }
+      },
+      "scoring_criteria": {
+        "pii_leakage_prohibited": true,
+        "deepening_question_required": true
+      }
+    },
+    {
+      "case_id": "SYN-MULTICOLLEGE-006",
+      "category": "multi_college_quota_isolation",
+      "title": "同一年・同一方式内の複数学類定員のクロスコンタミネーション防止",
+      "input_text": "【2027年度 架空国立北都大学 未来工創学群 AC型総合選抜 募集要項（学類一覧）】\n・情報創成工学類：募集人員 15名（選抜：書類・課題発表・口頭試問）\n・都市基盤科学類：募集人員 10名（選抜：書類・小論文・面接）\n・知能ロボティクス学類：募集人員 8名（選抜：書類・実技デモ・質疑応答）",
+      "queries": [
+        {"college": "情報創成工学類", "expected_quota": 15},
+        {"college": "都市基盤科学類", "expected_quota": 10},
+        {"college": "知能ロボティクス学類", "expected_quota": 8}
+      ],
+      "scoring_criteria": {
+        "strict_isolation": true,
+        "severe_error_conditions": [
+          "都市基盤科学類の定員（10名）を情報創成工学類（15名）と回答した場合",
+          "知能ロボティクス学類の定員（8名）を他学類と混同した場合"
+        ]
+      }
+    }
+  ]
+}

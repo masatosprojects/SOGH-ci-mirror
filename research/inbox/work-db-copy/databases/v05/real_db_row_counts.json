@@ -1,0 +1,23 @@
+{
+  "admission_cycles": 5,
+  "admission_offerings": 6,
+  "article_evidence": 129,
+  "article_heads": 6,
+  "article_versions": 21,
+  "batch_evidence": 52,
+  "cycle_dimensions": 5,
+  "cycle_editions": 5,
+  "evidence_heads": 5,
+  "evidence_revisions": 8,
+  "facts": 46,
+  "legacy_fact_links": 27,
+  "legacy_imports": 1,
+  "legacy_records": 121,
+  "qa_runs": 7,
+  "revised_articles": 20,
+  "schema_versions": 3,
+  "source_documents": 4,
+  "source_pages": 169,
+  "update_batches": 26,
+  "update_events": 14
+}

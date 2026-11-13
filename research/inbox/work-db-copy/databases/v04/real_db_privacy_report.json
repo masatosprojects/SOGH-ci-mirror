@@ -1,0 +1,51 @@
+{
+  "text_cells_scanned": 1784,
+  "binary_cells_not_text_scanned": 0,
+  "findings": [
+    {
+      "table": "article_versions",
+      "column": "artifact_path",
+      "category": "user_path",
+      "cells": 12
+    },
+    {
+      "table": "legacy_imports",
+      "column": "copy_path",
+      "category": "user_path",
+      "cells": 1
+    },
+    {
+      "table": "legacy_imports",
+      "column": "original_path",
+      "category": "user_path",
+      "cells": 1
+    },
+    {
+      "table": "qa_runs",
+      "column": "report_path",
+      "category": "user_path",
+      "cells": 3
+    },
+    {
+      "table": "qa_runs",
+      "column": "run_id",
+      "category": "user_path",
+      "cells": 3
+    },
+    {
+      "table": "source_documents",
+      "column": "local_path",
+      "category": "user_path",
+      "cells": 2
+    },
+    {
+      "table": "source_pages",
+      "column": "text",
+      "category": "email",
+      "cells": 4
+    }
+  ],
+  "values_disclosed": false,
+  "database_upload_allowed": false,
+  "scope": "pattern scan; absence of all personal information is not proven"
+}

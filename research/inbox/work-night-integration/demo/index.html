@@ -1,0 +1,18 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOGH 練習体験デモ</title><link rel="stylesheet" href="/style.css"></head><body>
+<header><strong>SOGH</strong><span>面接練習の体験デモ</span><b>架空データ限定・保存なし</b></header>
+<main><h1>自分の言葉を、次の練習へ。</h1><p class="intro">すべて架空の大学・方式です。決まった規則による練習で、実際の出題・大学の採点・合格予測ではありません。氏名や連絡先、実際の志望理由書は入力しないでください。</p>
+<nav><button id="practice-tab" class="selected">面接を練習する</button><button id="report-tab">受験報告を試す</button></nav><p id="status" role="status" aria-live="polite"></p>
+<section id="practice"><div class="grid"><aside><h2>1. 架空ケースを選ぶ</h2><div id="cases"></div><button id="clear" class="quiet">練習内容を消去</button></aside><article>
+<section id="briefing"><h2>2. 条件を確認する</h2><p>左からケースを選んでください。</p></section>
+<button id="start" hidden>条件を確認して練習を始める</button>
+<section id="conversation" hidden><div class="session-head"><span>AI練習素材</span><b id="remaining"></b></div><div id="turns" aria-live="polite"></div>
+<form id="answer-form"><label for="answer">架空の回答</label><textarea id="answer" maxlength="2000" rows="4" placeholder="例：探究活動で、私は記録を担当しました。大学では情報の伝え方を学びたいからです。"></textarea><div class="actions"><button type="button" id="sample" class="quiet">架空の回答例を入れる</button><button id="send" type="submit">回答する</button><button id="end" class="quiet" type="button">終了して振り返る</button></div></form></section>
+<section id="feedback" hidden><h2>4. 振り返りと次の一歩</h2><p>練習用の目安です。人による評価の妥当性検証はまだ行っていません。</p><div id="feedback-items"></div><div id="comparison"></div><button id="retry">同じ条件でもう一度</button></section></article></div></section>
+<section id="report" hidden><h2>架空の受験報告を試す</h2><p>架空第一大学・練習学部・2027年度の体験を想定したフォームです。送信・保存・一般公開は行いません。</p><form id="report-form" class="report-form">
+<label>面接の形式<select id="format"><option value="unknown">覚えていない</option><option value="individual">個人</option><option value="group">集団</option><option value="presentation_then_qa">発表と質疑</option><option value="online">オンライン</option><option value="other">その他</option></select></label>
+<label>およその時間<select id="duration"><option value="">覚えていない</option><option value="10">10分</option><option value="15">15分</option><option value="20">20分</option><option value="30">30分</option></select></label>
+<label>記憶の確かさ<select id="certainty"><option value="unknown">わからない</option><option value="sure">確か</option><option value="unsure">不確か</option></select></label>
+<label>覚えている質問をひとつ（架空の例）<input id="question" maxlength="300" required value="志望する分野を学びたい理由を教えてください。"></label>
+<details><summary>希望する場合だけ、共有の選択を試す</summary><p>選択はそれぞれ独立です。実際の同意取得や公開はしません。</p><label><input type="checkbox" id="school">学校内での共有</label><label><input type="checkbox" id="internal">SOGH内部での利用</label><label><input type="checkbox" id="public">一般利用者への公開</label></details>
+<button type="submit">確認結果を見る（保存しません）</button></form><div id="report-result" aria-live="polite"></div></section>
+<footer>文字だけの試作です。音声・映像・外部AI・入試DBには接続しません。画面を離れるときは「練習内容を消去」を押してください。</footer></main><script src="/app.js"></script></body></html>

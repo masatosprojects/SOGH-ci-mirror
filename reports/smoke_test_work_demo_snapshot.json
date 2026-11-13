@@ -1,0 +1,14 @@
+{
+  "db_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\claude\\C--Users-USER--claude-spares-spare-KZTpgv\\88cd5cbb-026f-4673-8c91-d0e9a77f25fc\\scratchpad\\work_demo_copy.sqlite3",
+  "tables": [
+    "attempts",
+    "cache",
+    "reviews",
+    "quota",
+    "events",
+    "texts",
+    "chunks"
+  ],
+  "issue_count": 0,
+  "issues": []
+}

@@ -1,0 +1,44 @@
+{
+  "audited_at": "2026-11-01",
+  "subject": "Work PR #59, head 4dd4cf5b63645f385a8292c78a95a356f1657a5d (previous audited head 20cabcef52c90ec5105f51a96b940fb117e1e9cc); base b22519f6be6acebcd05e6241991b846cbf7ea9a6",
+  "verdict": "PASS_WITH_WARNINGS",
+  "independence_level": "B (copies read by Claude itself; originals and official sources not_run)",
+  "delivery": {
+    "files_outside_research/inbox/work-db-copy": 0,
+    "metadata_checks": 227,
+    "metadata_checks_passed": 227,
+    "unlisted_files": [],
+    "no_database_pdf_secret_or_absolute_user_path_in_delivery": true
+  },
+  "copies": {
+    "sha256_unchanged_in_the_audited_directory": true,
+    "second_take_by_work_in_a_new_directory_has_the_same_sha256": true,
+    "inventory_copy_sha256_unchanged_between_heads": true,
+    "inventory_changes": ["copy.started_at", "copy.finished_at", "copy.copy_valid", "copy.atomic_final_filename_after_validation"]
+  },
+  "F-1_privacy_report": {
+    "status": "fixed",
+    "work_user_path_cells": {"v05": 36, "v06": 37},
+    "claude_independent_count": {"v05": 36, "v06": 37},
+    "update_batches.qa_json_cells": {"v05": 13, "v06": 14},
+    "v02_v03_v04_reports_unchanged": true,
+    "correction_record_hashes_match_the_files": true,
+    "values_disclosed": false
+  },
+  "F-2_history_v03_to_v04": {
+    "status": "recorded_not_explained",
+    "work_difference_counts": {"article_evidence": 24, "article_versions": 6, "cycle_editions": 1, "facts": 5},
+    "claude_independent_counts_equal": true,
+    "facts_changed_columns": "record_json in 4; record_json and value_json in 1 (one value lost the exam_year key)",
+    "work_execution_cause": "not_confirmed_from_current_code_or_saved_history",
+    "work_claims_append_only": false,
+    "decision_on_accepting_the_history_rewrite": "user (not decided here)"
+  },
+  "F-4_copy_tool": {
+    "status": "fixed",
+    "behaviour_checked_in_code": ["writes to a .partial name and renames only after integrity, foreign-key and identity checks", "free-space check before the online backup", "copy_failure.json on an interrupted backup"],
+    "packaged_tests_run_independently": {"passed": 8, "failed": 0, "skipped": 0}
+  },
+  "still_open": ["F-2 cause", "F-3 G-04 and G-05 in the real copies", "original database versus copy (not_run)", "official sources (not_run)", "CI does not run the local database audit"],
+  "m1_gates_changed": false
+}

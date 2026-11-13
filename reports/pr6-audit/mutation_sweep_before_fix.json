@@ -1,0 +1,2256 @@
+{
+  "mutations": 317,
+  "detected": 11,
+  "survived": 306,
+  "detection_rate": 0.0347,
+  "by_class": {
+    "body": {
+      "mutations": 141,
+      "detected": 2
+    },
+    "as_of_date": {
+      "mutations": 12,
+      "detected": 0
+    },
+    "citation_id": {
+      "mutations": 164,
+      "detected": 9
+    }
+  },
+  "per_article": [
+    {
+      "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+      "baseline_ok": true,
+      "mutations": 95,
+      "detected": 3,
+      "survived": 92,
+      "by_class": {
+        "body": {
+          "mutations": 40,
+          "detected": 0
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 52,
+          "detected": 3
+        }
+      },
+      "survivors": [
+        {
+          "class": "body",
+          "offset": 3,
+          "from": "2027",
+          "to": "2028",
+          "context": "# 【2027年度入学】筑波大学 情報学群"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 71,
+          "from": "2026",
+          "to": "2027",
+          "context": "式要項で確認  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 76,
+          "from": "11",
+          "to": "12",
+          "context": "認  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 79,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "body",
+          "offset": 205,
+          "from": "5",
+          "to": "6",
+          "context": "館学類のAC入試の募集人員は5名[EV-T27-01-49"
+        },
+        {
+          "class": "citation_id",
+          "offset": 215,
+          "from": "01",
+          "to": "02",
+          "context": "集人員は5名[EV-T27-01-49cb4d]です。ただし"
+        },
+        {
+          "class": "body",
+          "offset": 279,
+          "from": "6",
+          "to": "7",
+          "context": "。  出願資格は募集要項p.6の（1）〜（3）のいずれかに"
+        },
+        {
+          "class": "body",
+          "offset": 282,
+          "from": "1",
+          "to": "2",
+          "context": "出願資格は募集要項p.6の（1）〜（3）のいずれかに該当す"
+        },
+        {
+          "class": "body",
+          "offset": 286,
+          "from": "3",
+          "to": "4",
+          "context": "は募集要項p.6の（1）〜（3）のいずれかに該当することが"
+        },
+        {
+          "class": "citation_id",
+          "offset": 376,
+          "from": "27",
+          "to": "28",
+          "context": "判定は行いません。[EV-T27-07-49cb4d]  こ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 379,
+          "from": "07",
+          "to": "08",
+          "context": "行いません。[EV-T27-07-49cb4d]  このAC"
+        },
+        {
+          "class": "citation_id",
+          "offset": 382,
+          "from": "49",
+          "to": "50",
+          "context": "せん。[EV-T27-07-49cb4d]  このAC入試で"
+        },
+        {
+          "class": "citation_id",
+          "offset": 386,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-07-49cb4d]  このAC入試では、大"
+        },
+        {
+          "class": "citation_id",
+          "offset": 437,
+          "from": "27",
+          "to": "28",
+          "context": "記載されています。[EV-T27-08-49cb4d]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 440,
+          "from": "08",
+          "to": "09",
+          "context": "れています。[EV-T27-08-49cb4d]  ## オ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 443,
+          "from": "49",
+          "to": "50",
+          "context": "ます。[EV-T27-08-49cb4d]  ## オンライ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 447,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-08-49cb4d]  ## オンライン申請"
+        },
+        {
+          "class": "body",
+          "offset": 490,
+          "from": "2026",
+          "to": "2027",
+          "context": "ンラインでの登録・申請期間は2026年8月6日 09:00〜20"
+        },
+        {
+          "class": "body",
+          "offset": 495,
+          "from": "8",
+          "to": "9",
+          "context": "の登録・申請期間は2026年8月6日 09:00〜2026"
+        },
+        {
+          "class": "body",
+          "offset": 497,
+          "from": "6",
+          "to": "7",
+          "context": "録・申請期間は2026年8月6日 09:00〜2026年9"
+        },
+        {
+          "class": "body",
+          "offset": 500,
+          "from": "09",
+          "to": "10",
+          "context": "請期間は2026年8月6日 09:00〜2026年9月2日 "
+        },
+        {
+          "class": "body",
+          "offset": 503,
+          "from": "00",
+          "to": "01",
+          "context": "は2026年8月6日 09:00〜2026年9月2日 09:"
+        },
+        {
+          "class": "body",
+          "offset": 506,
+          "from": "2026",
+          "to": "2027",
+          "context": "26年8月6日 09:00〜2026年9月2日 09:00です。"
+        },
+        {
+          "class": "body",
+          "offset": 511,
+          "from": "9",
+          "to": "10",
+          "context": "6日 09:00〜2026年9月2日 09:00です。出願"
+        },
+        {
+          "class": "body",
+          "offset": 513,
+          "from": "2",
+          "to": "3",
+          "context": " 09:00〜2026年9月2日 09:00です。出願登録"
+        },
+        {
+          "class": "body",
+          "offset": 516,
+          "from": "09",
+          "to": "10",
+          "context": ":00〜2026年9月2日 09:00です。出願登録と検定料"
+        },
+        {
+          "class": "body",
+          "offset": 519,
+          "from": "00",
+          "to": "01",
+          "context": "〜2026年9月2日 09:00です。出願登録と検定料の払い"
+        },
+        {
+          "class": "citation_id",
+          "offset": 550,
+          "from": "27",
+          "to": "28",
+          "context": "みを行う期間です。[EV-T27-05-49cb4d]  郵"
+        },
+        {
+          "class": "citation_id",
+          "offset": 553,
+          "from": "05",
+          "to": "06",
+          "context": "う期間です。[EV-T27-05-49cb4d]  郵送書類"
+        },
+        {
+          "class": "citation_id",
+          "offset": 556,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-05-49cb4d]  郵送書類の提出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 560,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-05-49cb4d]  郵送書類の提出期間は"
+        },
+        {
+          "class": "body",
+          "offset": 575,
+          "from": "2026",
+          "to": "2027",
+          "context": "d]  郵送書類の提出期間は2026年9月1日〜2026年9月3"
+        },
+        {
+          "class": "body",
+          "offset": 580,
+          "from": "9",
+          "to": "10",
+          "context": "送書類の提出期間は2026年9月1日〜2026年9月3日で"
+        },
+        {
+          "class": "body",
+          "offset": 582,
+          "from": "1",
+          "to": "2",
+          "context": "類の提出期間は2026年9月1日〜2026年9月3日です。"
+        },
+        {
+          "class": "body",
+          "offset": 585,
+          "from": "2026",
+          "to": "2027",
+          "context": "出期間は2026年9月1日〜2026年9月3日です。書類は郵送必"
+        },
+        {
+          "class": "body",
+          "offset": 590,
+          "from": "9",
+          "to": "10",
+          "context": "026年9月1日〜2026年9月3日です。書類は郵送必着で"
+        },
+        {
+          "class": "body",
+          "offset": 592,
+          "from": "3",
+          "to": "4",
+          "context": "6年9月1日〜2026年9月3日です。書類は郵送必着で、持"
+        },
+        {
+          "class": "citation_id",
+          "offset": 647,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-T27-06-49cb4d]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 650,
+          "from": "06",
+          "to": "07",
+          "context": "てください。[EV-T27-06-49cb4d]  ## 選"
+        },
+        {
+          "class": "citation_id",
+          "offset": 653,
+          "from": "49",
+          "to": "50",
+          "context": "さい。[EV-T27-06-49cb4d]  ## 選考と結"
+        },
+        {
+          "class": "citation_id",
+          "offset": 657,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-06-49cb4d]  ## 選考と結果発表"
+        },
+        {
+          "class": "body",
+          "offset": 675,
+          "from": "1",
+          "to": "2",
+          "context": " ## 選考と結果発表  第1次選考は、提出書類で選考し、"
+        },
+        {
+          "class": "citation_id",
+          "offset": 716,
+          "from": "27",
+          "to": "28",
+          "context": "重視する方式です。[EV-T27-03-49cb4d]  要"
+        },
+        {
+          "class": "citation_id",
+          "offset": 719,
+          "from": "03",
+          "to": "04",
+          "context": "る方式です。[EV-T27-03-49cb4d]  要項に記"
+        },
+        {
+          "class": "citation_id",
+          "offset": 722,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-03-49cb4d]  要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 726,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-03-49cb4d]  要項に記載された第1"
+        },
+        {
+          "class": "body",
+          "offset": 740,
+          "from": "1",
+          "to": "2",
+          "context": "4d]  要項に記載された第1次選考の結果発表は、2026"
+        },
+        {
+          "class": "body",
+          "offset": 751,
+          "from": "2026",
+          "to": "2027",
+          "context": "れた第1次選考の結果発表は、2026年10月1日 10:00（日"
+        },
+        {
+          "class": "body",
+          "offset": 756,
+          "from": "10",
+          "to": "11",
+          "context": "選考の結果発表は、2026年10月1日 10:00（日本時間"
+        },
+        {
+          "class": "body",
+          "offset": 759,
+          "from": "1",
+          "to": "2",
+          "context": "結果発表は、2026年10月1日 10:00（日本時間）か"
+        },
+        {
+          "class": "body",
+          "offset": 762,
+          "from": "10",
+          "to": "11",
+          "context": "表は、2026年10月1日 10:00（日本時間）からです。"
+        },
+        {
+          "class": "body",
+          "offset": 765,
+          "from": "00",
+          "to": "01",
+          "context": "2026年10月1日 10:00（日本時間）からです。[EV"
+        },
+        {
+          "class": "citation_id",
+          "offset": 783,
+          "from": "27",
+          "to": "28",
+          "context": "本時間）からです。[EV-T27-11-49cb4d]  対"
+        },
+        {
+          "class": "citation_id",
+          "offset": 786,
+          "from": "11",
+          "to": "12",
+          "context": "）からです。[EV-T27-11-49cb4d]  対象の学"
+        },
+        {
+          "class": "citation_id",
+          "offset": 789,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-11-49cb4d]  対象の学部・学"
+        },
+        {
+          "class": "citation_id",
+          "offset": 793,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-11-49cb4d]  対象の学部・学類の第"
+        },
+        {
+          "class": "body",
+          "offset": 808,
+          "from": "2",
+          "to": "3",
+          "context": "d]  対象の学部・学類の第2次選考日は2026年10月8"
+        },
+        {
+          "class": "body",
+          "offset": 814,
+          "from": "2026",
+          "to": "2027",
+          "context": "の学部・学類の第2次選考日は2026年10月8日と要項に記載され"
+        },
+        {
+          "class": "body",
+          "offset": 819,
+          "from": "10",
+          "to": "11",
+          "context": "類の第2次選考日は2026年10月8日と要項に記載されていま"
+        },
+        {
+          "class": "body",
+          "offset": 822,
+          "from": "8",
+          "to": "9",
+          "context": "2次選考日は2026年10月8日と要項に記載されています。"
+        },
+        {
+          "class": "citation_id",
+          "offset": 868,
+          "from": "27",
+          "to": "28",
+          "context": "る場合もあります。[EV-T27-09-49cb4d]  要"
+        },
+        {
+          "class": "citation_id",
+          "offset": 871,
+          "from": "09",
+          "to": "10",
+          "context": "もあります。[EV-T27-09-49cb4d]  要項に記"
+        },
+        {
+          "class": "citation_id",
+          "offset": 874,
+          "from": "49",
+          "to": "50",
+          "context": "ます。[EV-T27-09-49cb4d]  要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 878,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-09-49cb4d]  要項に記載された最終"
+        },
+        {
+          "class": "body",
+          "offset": 902,
+          "from": "2026",
+          "to": "2027",
+          "context": "された最終段階の合格発表は、2026年11月2日 10:00（日"
+        },
+        {
+          "class": "body",
+          "offset": 907,
+          "from": "11",
+          "to": "12",
+          "context": "段階の合格発表は、2026年11月2日 10:00（日本時間"
+        },
+        {
+          "class": "body",
+          "offset": 910,
+          "from": "2",
+          "to": "3",
+          "context": "合格発表は、2026年11月2日 10:00（日本時間）か"
+        },
+        {
+          "class": "body",
+          "offset": 913,
+          "from": "10",
+          "to": "11",
+          "context": "表は、2026年11月2日 10:00（日本時間）からです。"
+        },
+        {
+          "class": "body",
+          "offset": 916,
+          "from": "00",
+          "to": "01",
+          "context": "2026年11月2日 10:00（日本時間）からです。[EV"
+        },
+        {
+          "class": "citation_id",
+          "offset": 934,
+          "from": "27",
+          "to": "28",
+          "context": "本時間）からです。[EV-T27-10-49cb4d]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 937,
+          "from": "10",
+          "to": "11",
+          "context": "）からです。[EV-T27-10-49cb4d]  ## 書"
+        },
+        {
+          "class": "citation_id",
+          "offset": 940,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-10-49cb4d]  ## 書類と面"
+        },
+        {
+          "class": "citation_id",
+          "offset": 944,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-10-49cb4d]  ## 書類と面接をつ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1019,
+          "from": "27",
+          "to": "28",
+          "context": "評価する方針です。[EV-T27-02-49cb4d]  第"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1022,
+          "from": "02",
+          "to": "03",
+          "context": "る方針です。[EV-T27-02-49cb4d]  第1次選"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1025,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-02-49cb4d]  第1次選考の合"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1029,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-02-49cb4d]  第1次選考の合格者に"
+        },
+        {
+          "class": "body",
+          "offset": 1035,
+          "from": "1",
+          "to": "2",
+          "context": "-02-49cb4d]  第1次選考の合格者には、面接・口"
+        },
+        {
+          "class": "body",
+          "offset": 1057,
+          "from": "30",
+          "to": "31",
+          "context": "には、面接・口述試験を個別に30分程度[EV-T27-04-"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1067,
+          "from": "27",
+          "to": "28",
+          "context": "を個別に30分程度[EV-T27-04-49cb4d]実施し"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1070,
+          "from": "04",
+          "to": "05",
+          "context": "に30分程度[EV-T27-04-49cb4d]実施し、提出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1073,
+          "from": "49",
+          "to": "50",
+          "context": "分程度[EV-T27-04-49cb4d]実施し、提出書類な"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1077,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-04-49cb4d]実施し、提出書類なども含"
+        },
+        {
+          "class": "body",
+          "offset": 1185,
+          "from": "800",
+          "to": "801",
+          "context": "願理由書は所定の様式を使い、800字以内でまとめる指定です。作"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1226,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-T27-12-49cb4d]  自"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1229,
+          "from": "12",
+          "to": "13",
+          "context": "てください。[EV-T27-12-49cb4d]  自己推薦"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1232,
+          "from": "49",
+          "to": "50",
+          "context": "さい。[EV-T27-12-49cb4d]  自己推薦書の本"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1236,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-12-49cb4d]  自己推薦書の本文は様"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1333,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-T27-13-49cb4d]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1336,
+          "from": "13",
+          "to": "14",
+          "context": "てください。[EV-T27-13-49cb4d]  ### "
+        },
+        {
+          "class": "citation_id",
+          "offset": 1339,
+          "from": "49",
+          "to": "50",
+          "context": "さい。[EV-T27-13-49cb4d]  ### 読者向"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1343,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-13-49cb4d]  ### 読者向けの整"
+        }
+      ]
+    },
+    {
+      "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+      "baseline_ok": true,
+      "mutations": 47,
+      "detected": 0,
+      "survived": 47,
+      "by_class": {
+        "body": {
+          "mutations": 16,
+          "detected": 0
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 28,
+          "detected": 0
+        }
+      },
+      "survivors": [
+        {
+          "class": "body",
+          "offset": 3,
+          "from": "2027",
+          "to": "2028",
+          "context": "# 【2027年度入学】筑波大学 情報学群"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 68,
+          "from": "2026",
+          "to": "2027",
+          "context": "と準備の整理  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 73,
+          "from": "11",
+          "to": "12",
+          "context": "理  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 76,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "body",
+          "offset": 189,
+          "from": "2",
+          "to": "3",
+          "context": "み方  対象の学部・学類の第2次選考日は2026年10月8"
+        },
+        {
+          "class": "body",
+          "offset": 195,
+          "from": "2026",
+          "to": "2027",
+          "context": "の学部・学類の第2次選考日は2026年10月8日と要項に記載され"
+        },
+        {
+          "class": "body",
+          "offset": 200,
+          "from": "10",
+          "to": "11",
+          "context": "類の第2次選考日は2026年10月8日と要項に記載されていま"
+        },
+        {
+          "class": "body",
+          "offset": 203,
+          "from": "8",
+          "to": "9",
+          "context": "2次選考日は2026年10月8日と要項に記載されています。"
+        },
+        {
+          "class": "citation_id",
+          "offset": 249,
+          "from": "27",
+          "to": "28",
+          "context": "る場合もあります。[EV-T27-09-49cb4d]  第"
+        },
+        {
+          "class": "citation_id",
+          "offset": 252,
+          "from": "09",
+          "to": "10",
+          "context": "もあります。[EV-T27-09-49cb4d]  第1次選"
+        },
+        {
+          "class": "citation_id",
+          "offset": 255,
+          "from": "49",
+          "to": "50",
+          "context": "ます。[EV-T27-09-49cb4d]  第1次選考の合"
+        },
+        {
+          "class": "citation_id",
+          "offset": 259,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-09-49cb4d]  第1次選考の合格者に"
+        },
+        {
+          "class": "body",
+          "offset": 265,
+          "from": "1",
+          "to": "2",
+          "context": "-09-49cb4d]  第1次選考の合格者には、面接・口"
+        },
+        {
+          "class": "body",
+          "offset": 287,
+          "from": "30",
+          "to": "31",
+          "context": "には、面接・口述試験を個別に30分程度[EV-T27-04-"
+        },
+        {
+          "class": "citation_id",
+          "offset": 297,
+          "from": "27",
+          "to": "28",
+          "context": "を個別に30分程度[EV-T27-04-49cb4d]実施し"
+        },
+        {
+          "class": "citation_id",
+          "offset": 300,
+          "from": "04",
+          "to": "05",
+          "context": "に30分程度[EV-T27-04-49cb4d]実施し、提出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 303,
+          "from": "49",
+          "to": "50",
+          "context": "分程度[EV-T27-04-49cb4d]実施し、提出書類な"
+        },
+        {
+          "class": "citation_id",
+          "offset": 307,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-04-49cb4d]実施し、提出書類なども含"
+        },
+        {
+          "class": "body",
+          "offset": 400,
+          "from": "1",
+          "to": "2",
+          "context": "が示している選考の前提  第1次選考は、提出書類で選考し、"
+        },
+        {
+          "class": "citation_id",
+          "offset": 441,
+          "from": "27",
+          "to": "28",
+          "context": "重視する方式です。[EV-T27-03-49cb4d]  情"
+        },
+        {
+          "class": "citation_id",
+          "offset": 444,
+          "from": "03",
+          "to": "04",
+          "context": "る方式です。[EV-T27-03-49cb4d]  情報・知"
+        },
+        {
+          "class": "citation_id",
+          "offset": 447,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-03-49cb4d]  情報・知識への"
+        },
+        {
+          "class": "citation_id",
+          "offset": 451,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-03-49cb4d]  情報・知識への関心、"
+        },
+        {
+          "class": "citation_id",
+          "offset": 507,
+          "from": "27",
+          "to": "28",
+          "context": "評価する方針です。[EV-T27-02-49cb4d]  要"
+        },
+        {
+          "class": "citation_id",
+          "offset": 510,
+          "from": "02",
+          "to": "03",
+          "context": "る方針です。[EV-T27-02-49cb4d]  要項は、"
+        },
+        {
+          "class": "citation_id",
+          "offset": 513,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-02-49cb4d]  要項は、提出し"
+        },
+        {
+          "class": "citation_id",
+          "offset": 517,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-02-49cb4d]  要項は、提出した自己"
+        },
+        {
+          "class": "citation_id",
+          "offset": 635,
+          "from": "27",
+          "to": "28",
+          "context": "のではありません。[EV-T27-14-49cb4d]  出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 638,
+          "from": "14",
+          "to": "15",
+          "context": "ありません。[EV-T27-14-49cb4d]  出願資格"
+        },
+        {
+          "class": "citation_id",
+          "offset": 641,
+          "from": "49",
+          "to": "50",
+          "context": "せん。[EV-T27-14-49cb4d]  出願資格は募集"
+        },
+        {
+          "class": "citation_id",
+          "offset": 645,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-14-49cb4d]  出願資格は募集要項p"
+        },
+        {
+          "class": "body",
+          "offset": 661,
+          "from": "6",
+          "to": "7",
+          "context": "]  出願資格は募集要項p.6の（1）〜（3）のいずれかに"
+        },
+        {
+          "class": "body",
+          "offset": 664,
+          "from": "1",
+          "to": "2",
+          "context": "出願資格は募集要項p.6の（1）〜（3）のいずれかに該当す"
+        },
+        {
+          "class": "body",
+          "offset": 668,
+          "from": "3",
+          "to": "4",
+          "context": "は募集要項p.6の（1）〜（3）のいずれかに該当することが"
+        },
+        {
+          "class": "citation_id",
+          "offset": 758,
+          "from": "27",
+          "to": "28",
+          "context": "判定は行いません。[EV-T27-07-49cb4d]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 761,
+          "from": "07",
+          "to": "08",
+          "context": "行いません。[EV-T27-07-49cb4d]  ## 結"
+        },
+        {
+          "class": "citation_id",
+          "offset": 764,
+          "from": "49",
+          "to": "50",
+          "context": "せん。[EV-T27-07-49cb4d]  ## 結果を確"
+        },
+        {
+          "class": "citation_id",
+          "offset": 768,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-07-49cb4d]  ## 結果を確認する"
+        },
+        {
+          "class": "body",
+          "offset": 804,
+          "from": "2026",
+          "to": "2027",
+          "context": "された最終段階の合格発表は、2026年11月2日 10:00（日"
+        },
+        {
+          "class": "body",
+          "offset": 809,
+          "from": "11",
+          "to": "12",
+          "context": "段階の合格発表は、2026年11月2日 10:00（日本時間"
+        },
+        {
+          "class": "body",
+          "offset": 812,
+          "from": "2",
+          "to": "3",
+          "context": "合格発表は、2026年11月2日 10:00（日本時間）か"
+        },
+        {
+          "class": "body",
+          "offset": 815,
+          "from": "10",
+          "to": "11",
+          "context": "表は、2026年11月2日 10:00（日本時間）からです。"
+        },
+        {
+          "class": "body",
+          "offset": 818,
+          "from": "00",
+          "to": "01",
+          "context": "2026年11月2日 10:00（日本時間）からです。[EV"
+        },
+        {
+          "class": "citation_id",
+          "offset": 836,
+          "from": "27",
+          "to": "28",
+          "context": "本時間）からです。[EV-T27-10-49cb4d]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 839,
+          "from": "10",
+          "to": "11",
+          "context": "）からです。[EV-T27-10-49cb4d]  ### "
+        },
+        {
+          "class": "citation_id",
+          "offset": 842,
+          "from": "49",
+          "to": "50",
+          "context": "です。[EV-T27-10-49cb4d]  ### 練習を"
+        },
+        {
+          "class": "citation_id",
+          "offset": 846,
+          "from": "4",
+          "to": "5",
+          "context": "EV-T27-10-49cb4d]  ### 練習を組み立"
+        }
+      ]
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+      "baseline_ok": true,
+      "mutations": 129,
+      "detected": 7,
+      "survived": 122,
+      "by_class": {
+        "body": {
+          "mutations": 66,
+          "detected": 1
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 60,
+          "detected": 6
+        }
+      },
+      "survivors": [
+        {
+          "class": "body",
+          "offset": 3,
+          "from": "2027",
+          "to": "2028",
+          "context": "# 【2027年度入学】慶應義塾大学 環境"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 61,
+          "from": "2026",
+          "to": "2027",
+          "context": "式要項で確認  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 66,
+          "from": "11",
+          "to": "12",
+          "context": "認  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 69,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "body",
+          "offset": 196,
+          "from": "150",
+          "to": "151",
+          "context": "れた環境情報学部の募集人員は150名[EV-K27-01-91"
+        },
+        {
+          "class": "citation_id",
+          "offset": 208,
+          "from": "01",
+          "to": "02",
+          "context": "員は150名[EV-K27-01-91dad1]です。この人"
+        },
+        {
+          "class": "body",
+          "offset": 227,
+          "from": "2026",
+          "to": "2027",
+          "context": "dad1]です。この人数は、2026年度に実施するAO入試（4月"
+        },
+        {
+          "class": "body",
+          "offset": 243,
+          "from": "4",
+          "to": "5",
+          "context": "26年度に実施するAO入試（4月入学・9月入学）の合計です"
+        },
+        {
+          "class": "body",
+          "offset": 248,
+          "from": "9",
+          "to": "10",
+          "context": "実施するAO入試（4月入学・9月入学）の合計です。夏秋AO"
+        },
+        {
+          "class": "body",
+          "offset": 296,
+          "from": "2027",
+          "to": "2028",
+          "context": "してください。  入学時期は2027年4月または2027年9月で"
+        },
+        {
+          "class": "body",
+          "offset": 301,
+          "from": "4",
+          "to": "5",
+          "context": "い。  入学時期は2027年4月または2027年9月です。"
+        },
+        {
+          "class": "body",
+          "offset": 306,
+          "from": "2027",
+          "to": "2028",
+          "context": "学時期は2027年4月または2027年9月です。出願時に選ぶ入学"
+        },
+        {
+          "class": "body",
+          "offset": 311,
+          "from": "9",
+          "to": "10",
+          "context": "027年4月または2027年9月です。出願時に選ぶ入学時期"
+        },
+        {
+          "class": "citation_id",
+          "offset": 341,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-K27-02-91dad1]  出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 344,
+          "from": "02",
+          "to": "03",
+          "context": "てください。[EV-K27-02-91dad1]  出願資格"
+        },
+        {
+          "class": "citation_id",
+          "offset": 347,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-02-91dad1]  出願資格は募集"
+        },
+        {
+          "class": "citation_id",
+          "offset": 352,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-02-91dad1]  出願資格は募集要項p."
+        },
+        {
+          "class": "body",
+          "offset": 367,
+          "from": "10",
+          "to": "11",
+          "context": "]  出願資格は募集要項p.10の共通条件（1）〜（4）を全"
+        },
+        {
+          "class": "body",
+          "offset": 375,
+          "from": "1",
+          "to": "2",
+          "context": "募集要項p.10の共通条件（1）〜（4）を全て満たすことが"
+        },
+        {
+          "class": "body",
+          "offset": 379,
+          "from": "4",
+          "to": "5",
+          "context": "p.10の共通条件（1）〜（4）を全て満たすことが必要です"
+        },
+        {
+          "class": "citation_id",
+          "offset": 474,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-K27-06-91dad1]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 477,
+          "from": "06",
+          "to": "07",
+          "context": "てください。[EV-K27-06-91dad1]  ## オ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 480,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-06-91dad1]  ## オンライ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 485,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-06-91dad1]  ## オンライン申請と"
+        },
+        {
+          "class": "body",
+          "offset": 527,
+          "from": "2026",
+          "to": "2027",
+          "context": "ンラインでの登録・申請期間は2026年8月3日 10:00〜20"
+        },
+        {
+          "class": "body",
+          "offset": 532,
+          "from": "8",
+          "to": "9",
+          "context": "の登録・申請期間は2026年8月3日 10:00〜2026"
+        },
+        {
+          "class": "body",
+          "offset": 534,
+          "from": "3",
+          "to": "4",
+          "context": "録・申請期間は2026年8月3日 10:00〜2026年9"
+        },
+        {
+          "class": "body",
+          "offset": 537,
+          "from": "10",
+          "to": "11",
+          "context": "請期間は2026年8月3日 10:00〜2026年9月1日 "
+        },
+        {
+          "class": "body",
+          "offset": 540,
+          "from": "00",
+          "to": "01",
+          "context": "は2026年8月3日 10:00〜2026年9月1日 15:"
+        },
+        {
+          "class": "body",
+          "offset": 543,
+          "from": "2026",
+          "to": "2027",
+          "context": "26年8月3日 10:00〜2026年9月1日 15:00です。"
+        },
+        {
+          "class": "body",
+          "offset": 548,
+          "from": "9",
+          "to": "10",
+          "context": "3日 10:00〜2026年9月1日 15:00です。期間"
+        },
+        {
+          "class": "body",
+          "offset": 550,
+          "from": "1",
+          "to": "2",
+          "context": " 10:00〜2026年9月1日 15:00です。期間内に"
+        },
+        {
+          "class": "body",
+          "offset": 553,
+          "from": "15",
+          "to": "16",
+          "context": ":00〜2026年9月1日 15:00です。期間内にはシステ"
+        },
+        {
+          "class": "body",
+          "offset": 556,
+          "from": "00",
+          "to": "01",
+          "context": "〜2026年9月1日 15:00です。期間内にはシステム休止"
+        },
+        {
+          "class": "citation_id",
+          "offset": 601,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-K27-03-91dad1]  要"
+        },
+        {
+          "class": "citation_id",
+          "offset": 604,
+          "from": "03",
+          "to": "04",
+          "context": "てください。[EV-K27-03-91dad1]  要項に記"
+        },
+        {
+          "class": "citation_id",
+          "offset": 607,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-03-91dad1]  要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 612,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-03-91dad1]  要項に記載されたシステ"
+        },
+        {
+          "class": "body",
+          "offset": 633,
+          "from": "2026",
+          "to": "2027",
+          "context": "記載されたシステム休止期間は2026年8月7日 16:30〜20"
+        },
+        {
+          "class": "body",
+          "offset": 638,
+          "from": "8",
+          "to": "9",
+          "context": "システム休止期間は2026年8月7日 16:30〜2026"
+        },
+        {
+          "class": "body",
+          "offset": 640,
+          "from": "7",
+          "to": "8",
+          "context": "テム休止期間は2026年8月7日 16:30〜2026年8"
+        },
+        {
+          "class": "body",
+          "offset": 643,
+          "from": "16",
+          "to": "17",
+          "context": "止期間は2026年8月7日 16:30〜2026年8月18日"
+        },
+        {
+          "class": "body",
+          "offset": 646,
+          "from": "30",
+          "to": "31",
+          "context": "は2026年8月7日 16:30〜2026年8月18日 10"
+        },
+        {
+          "class": "body",
+          "offset": 649,
+          "from": "2026",
+          "to": "2027",
+          "context": "26年8月7日 16:30〜2026年8月18日 10:00です"
+        },
+        {
+          "class": "body",
+          "offset": 654,
+          "from": "8",
+          "to": "9",
+          "context": "7日 16:30〜2026年8月18日 10:00です。メ"
+        },
+        {
+          "class": "body",
+          "offset": 656,
+          "from": "18",
+          "to": "19",
+          "context": " 16:30〜2026年8月18日 10:00です。メンテナ"
+        },
+        {
+          "class": "body",
+          "offset": 660,
+          "from": "10",
+          "to": "11",
+          "context": "30〜2026年8月18日 10:00です。メンテナンス中は"
+        },
+        {
+          "class": "body",
+          "offset": 663,
+          "from": "00",
+          "to": "01",
+          "context": "2026年8月18日 10:00です。メンテナンス中はログイ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 718,
+          "from": "27",
+          "to": "28",
+          "context": "す必要があります。[EV-K27-04-91dad1]  郵"
+        },
+        {
+          "class": "citation_id",
+          "offset": 721,
+          "from": "04",
+          "to": "05",
+          "context": "があります。[EV-K27-04-91dad1]  郵送書類"
+        },
+        {
+          "class": "citation_id",
+          "offset": 724,
+          "from": "91",
+          "to": "92",
+          "context": "ます。[EV-K27-04-91dad1]  郵送書類の提出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 729,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-04-91dad1]  郵送書類の提出期間は2"
+        },
+        {
+          "class": "body",
+          "offset": 743,
+          "from": "2026",
+          "to": "2027",
+          "context": "1]  郵送書類の提出期間は2026年9月1日〜2026年9月2"
+        },
+        {
+          "class": "body",
+          "offset": 748,
+          "from": "9",
+          "to": "10",
+          "context": "送書類の提出期間は2026年9月1日〜2026年9月2日で"
+        },
+        {
+          "class": "body",
+          "offset": 750,
+          "from": "1",
+          "to": "2",
+          "context": "類の提出期間は2026年9月1日〜2026年9月2日です。"
+        },
+        {
+          "class": "body",
+          "offset": 753,
+          "from": "2026",
+          "to": "2027",
+          "context": "出期間は2026年9月1日〜2026年9月2日です。日本国内は締"
+        },
+        {
+          "class": "body",
+          "offset": 758,
+          "from": "9",
+          "to": "10",
+          "context": "026年9月1日〜2026年9月2日です。日本国内は締切日"
+        },
+        {
+          "class": "body",
+          "offset": 760,
+          "from": "2",
+          "to": "3",
+          "context": "6年9月1日〜2026年9月2日です。日本国内は締切日消印"
+        },
+        {
+          "class": "citation_id",
+          "offset": 821,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-K27-05-91dad1]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 824,
+          "from": "05",
+          "to": "06",
+          "context": "てください。[EV-K27-05-91dad1]  ## 選"
+        },
+        {
+          "class": "citation_id",
+          "offset": 827,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-05-91dad1]  ## 選考と結"
+        },
+        {
+          "class": "citation_id",
+          "offset": 832,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-05-91dad1]  ## 選考と結果発表 "
+        },
+        {
+          "class": "body",
+          "offset": 849,
+          "from": "1",
+          "to": "2",
+          "context": " ## 選考と結果発表  第1次選考は、オンライン入力・提"
+        },
+        {
+          "class": "citation_id",
+          "offset": 891,
+          "from": "27",
+          "to": "28",
+          "context": "選考する方式です。[EV-K27-10-91dad1]  要"
+        },
+        {
+          "class": "citation_id",
+          "offset": 894,
+          "from": "10",
+          "to": "11",
+          "context": "る方式です。[EV-K27-10-91dad1]  要項に記"
+        },
+        {
+          "class": "citation_id",
+          "offset": 897,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-10-91dad1]  要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 902,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-10-91dad1]  要項に記載された第1次"
+        },
+        {
+          "class": "body",
+          "offset": 915,
+          "from": "1",
+          "to": "2",
+          "context": "d1]  要項に記載された第1次選考の結果発表は、2026"
+        },
+        {
+          "class": "body",
+          "offset": 926,
+          "from": "2026",
+          "to": "2027",
+          "context": "れた第1次選考の結果発表は、2026年10月8日 11:00（日"
+        },
+        {
+          "class": "body",
+          "offset": 931,
+          "from": "10",
+          "to": "11",
+          "context": "選考の結果発表は、2026年10月8日 11:00（日本時間"
+        },
+        {
+          "class": "body",
+          "offset": 934,
+          "from": "8",
+          "to": "9",
+          "context": "結果発表は、2026年10月8日 11:00（日本時間）か"
+        },
+        {
+          "class": "body",
+          "offset": 937,
+          "from": "11",
+          "to": "12",
+          "context": "表は、2026年10月8日 11:00（日本時間）からです。"
+        },
+        {
+          "class": "body",
+          "offset": 940,
+          "from": "00",
+          "to": "01",
+          "context": "2026年10月8日 11:00（日本時間）からです。[EV"
+        },
+        {
+          "class": "citation_id",
+          "offset": 958,
+          "from": "27",
+          "to": "28",
+          "context": "本時間）からです。[EV-K27-11-91dad1]  対"
+        },
+        {
+          "class": "citation_id",
+          "offset": 961,
+          "from": "11",
+          "to": "12",
+          "context": "）からです。[EV-K27-11-91dad1]  対象の学"
+        },
+        {
+          "class": "citation_id",
+          "offset": 964,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-11-91dad1]  対象の学部・学"
+        },
+        {
+          "class": "citation_id",
+          "offset": 969,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-11-91dad1]  対象の学部・学類の第2"
+        },
+        {
+          "class": "body",
+          "offset": 983,
+          "from": "2",
+          "to": "3",
+          "context": "1]  対象の学部・学類の第2次選考日は2026年10月2"
+        },
+        {
+          "class": "body",
+          "offset": 989,
+          "from": "2026",
+          "to": "2027",
+          "context": "の学部・学類の第2次選考日は2026年10月24日・2026年1"
+        },
+        {
+          "class": "body",
+          "offset": 994,
+          "from": "10",
+          "to": "11",
+          "context": "類の第2次選考日は2026年10月24日・2026年10月2"
+        },
+        {
+          "class": "body",
+          "offset": 997,
+          "from": "24",
+          "to": "25",
+          "context": "2次選考日は2026年10月24日・2026年10月25日の"
+        },
+        {
+          "class": "body",
+          "offset": 1001,
+          "from": "2026",
+          "to": "2027",
+          "context": "日は2026年10月24日・2026年10月25日のいずれかと要"
+        },
+        {
+          "class": "body",
+          "offset": 1006,
+          "from": "10",
+          "to": "11",
+          "context": "6年10月24日・2026年10月25日のいずれかと要項に記"
+        },
+        {
+          "class": "body",
+          "offset": 1009,
+          "from": "25",
+          "to": "26",
+          "context": "0月24日・2026年10月25日のいずれかと要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1076,
+          "from": "27",
+          "to": "28",
+          "context": "る場合もあります。[EV-K27-07-91dad1]  要"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1079,
+          "from": "07",
+          "to": "08",
+          "context": "もあります。[EV-K27-07-91dad1]  要項に記"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1082,
+          "from": "91",
+          "to": "92",
+          "context": "ます。[EV-K27-07-91dad1]  要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1087,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-07-91dad1]  要項に記載された最終段"
+        },
+        {
+          "class": "body",
+          "offset": 1110,
+          "from": "2026",
+          "to": "2027",
+          "context": "された最終段階の合格発表は、2026年11月2日 11:00（日"
+        },
+        {
+          "class": "body",
+          "offset": 1115,
+          "from": "11",
+          "to": "12",
+          "context": "段階の合格発表は、2026年11月2日 11:00（日本時間"
+        },
+        {
+          "class": "body",
+          "offset": 1118,
+          "from": "2",
+          "to": "3",
+          "context": "合格発表は、2026年11月2日 11:00（日本時間）か"
+        },
+        {
+          "class": "body",
+          "offset": 1121,
+          "from": "11",
+          "to": "12",
+          "context": "表は、2026年11月2日 11:00（日本時間）からです。"
+        },
+        {
+          "class": "body",
+          "offset": 1124,
+          "from": "00",
+          "to": "01",
+          "context": "2026年11月2日 11:00（日本時間）からです。[EV"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1142,
+          "from": "27",
+          "to": "28",
+          "context": "本時間）からです。[EV-K27-09-91dad1]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1145,
+          "from": "09",
+          "to": "10",
+          "context": "）からです。[EV-K27-09-91dad1]  ## 書"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1148,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-09-91dad1]  ## 書類と面"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1153,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-09-91dad1]  ## 書類と面接をつな"
+        },
+        {
+          "class": "body",
+          "offset": 1190,
+          "from": "30",
+          "to": "31",
+          "context": "面接試験の実施時間の枠は一人30分程度[EV-K27-08-"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1200,
+          "from": "27",
+          "to": "28",
+          "context": "枠は一人30分程度[EV-K27-08-91dad1]です。"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1203,
+          "from": "08",
+          "to": "09",
+          "context": "人30分程度[EV-K27-08-91dad1]です。これは"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1206,
+          "from": "91",
+          "to": "92",
+          "context": "分程度[EV-K27-08-91dad1]です。これは要項上"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1211,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-08-91dad1]です。これは要項上の実施時"
+        },
+        {
+          "class": "body",
+          "offset": 1359,
+          "from": "2000",
+          "to": "2001",
+          "context": "組み合わせます。文章は日本語2000字以内、英語4000字以内で"
+        },
+        {
+          "class": "body",
+          "offset": 1369,
+          "from": "4000",
+          "to": "4001",
+          "context": "は日本語2000字以内、英語4000字以内です。自由記述はA4サ"
+        },
+        {
+          "class": "body",
+          "offset": 1385,
+          "from": "4",
+          "to": "5",
+          "context": "00字以内です。自由記述はA4サイズ2枚以内、10メガバイ"
+        },
+        {
+          "class": "body",
+          "offset": 1389,
+          "from": "2",
+          "to": "3",
+          "context": "内です。自由記述はA4サイズ2枚以内、10メガバイト以内の"
+        },
+        {
+          "class": "body",
+          "offset": 1394,
+          "from": "10",
+          "to": "11",
+          "context": "由記述はA4サイズ2枚以内、10メガバイト以内のPDFという"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1420,
+          "from": "27",
+          "to": "28",
+          "context": "Fという指定です。[EV-K27-12-91dad1]  任"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1423,
+          "from": "12",
+          "to": "13",
+          "context": "う指定です。[EV-K27-12-91dad1]  任意提出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1426,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-12-91dad1]  任意提出資料は"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1431,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-12-91dad1]  任意提出資料は10点ま"
+        },
+        {
+          "class": "body",
+          "offset": 1442,
+          "from": "10",
+          "to": "11",
+          "context": "dad1]  任意提出資料は10点まで提出できます。必要性と"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1491,
+          "from": "27",
+          "to": "28",
+          "context": "て選んでください。[EV-K27-13-91dad1]  オ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1494,
+          "from": "13",
+          "to": "14",
+          "context": "でください。[EV-K27-13-91dad1]  オンライ"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1497,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-13-91dad1]  オンライン申請"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1502,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-13-91dad1]  オンライン申請には評価"
+        },
+        {
+          "class": "body",
+          "offset": 1518,
+          "from": "2",
+          "to": "3",
+          "context": "  オンライン申請には評価者2名[EV-K27-14-91"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1528,
+          "from": "14",
+          "to": "15",
+          "context": "は評価者2名[EV-K27-14-91dad1]による評価入"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1744,
+          "from": "27",
+          "to": "28",
+          "context": "ることが前提です。[EV-K27-15-91dad1]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1747,
+          "from": "15",
+          "to": "16",
+          "context": "が前提です。[EV-K27-15-91dad1]  ### "
+        },
+        {
+          "class": "citation_id",
+          "offset": 1750,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-15-91dad1]  ### 読者向"
+        },
+        {
+          "class": "citation_id",
+          "offset": 1755,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-15-91dad1]  ### 読者向けの整理"
+        }
+      ]
+    },
+    {
+      "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+      "baseline_ok": true,
+      "mutations": 46,
+      "detected": 1,
+      "survived": 45,
+      "by_class": {
+        "body": {
+          "mutations": 19,
+          "detected": 1
+        },
+        "as_of_date": {
+          "mutations": 3,
+          "detected": 0
+        },
+        "citation_id": {
+          "mutations": 24,
+          "detected": 0
+        }
+      },
+      "survivors": [
+        {
+          "class": "body",
+          "offset": 3,
+          "from": "2027",
+          "to": "2028",
+          "context": "# 【2027年度入学】慶應義塾大学 環境"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 58,
+          "from": "2026",
+          "to": "2027",
+          "context": "と準備の整理  作業基準日：2026-11-01。保存した公式要"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 63,
+          "from": "11",
+          "to": "12",
+          "context": "理  作業基準日：2026-11-01。保存した公式要項の内"
+        },
+        {
+          "class": "as_of_date",
+          "offset": 66,
+          "from": "01",
+          "to": "02",
+          "context": "作業基準日：2026-11-01。保存した公式要項の内容を整"
+        },
+        {
+          "class": "body",
+          "offset": 179,
+          "from": "2",
+          "to": "3",
+          "context": "み方  対象の学部・学類の第2次選考日は2026年10月2"
+        },
+        {
+          "class": "body",
+          "offset": 185,
+          "from": "2026",
+          "to": "2027",
+          "context": "の学部・学類の第2次選考日は2026年10月24日・2026年1"
+        },
+        {
+          "class": "body",
+          "offset": 190,
+          "from": "10",
+          "to": "11",
+          "context": "類の第2次選考日は2026年10月24日・2026年10月2"
+        },
+        {
+          "class": "body",
+          "offset": 193,
+          "from": "24",
+          "to": "25",
+          "context": "2次選考日は2026年10月24日・2026年10月25日の"
+        },
+        {
+          "class": "body",
+          "offset": 197,
+          "from": "2026",
+          "to": "2027",
+          "context": "日は2026年10月24日・2026年10月25日のいずれかと要"
+        },
+        {
+          "class": "body",
+          "offset": 202,
+          "from": "10",
+          "to": "11",
+          "context": "6年10月24日・2026年10月25日のいずれかと要項に記"
+        },
+        {
+          "class": "body",
+          "offset": 205,
+          "from": "25",
+          "to": "26",
+          "context": "0月24日・2026年10月25日のいずれかと要項に記載され"
+        },
+        {
+          "class": "citation_id",
+          "offset": 272,
+          "from": "27",
+          "to": "28",
+          "context": "る場合もあります。[EV-K27-07-91dad1]  面"
+        },
+        {
+          "class": "citation_id",
+          "offset": 275,
+          "from": "07",
+          "to": "08",
+          "context": "もあります。[EV-K27-07-91dad1]  面接試験"
+        },
+        {
+          "class": "citation_id",
+          "offset": 278,
+          "from": "91",
+          "to": "92",
+          "context": "ます。[EV-K27-07-91dad1]  面接試験の実施"
+        },
+        {
+          "class": "citation_id",
+          "offset": 283,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-07-91dad1]  面接試験の実施時間の枠"
+        },
+        {
+          "class": "body",
+          "offset": 301,
+          "from": "30",
+          "to": "31",
+          "context": "面接試験の実施時間の枠は一人30分程度[EV-K27-08-"
+        },
+        {
+          "class": "citation_id",
+          "offset": 311,
+          "from": "27",
+          "to": "28",
+          "context": "枠は一人30分程度[EV-K27-08-91dad1]です。"
+        },
+        {
+          "class": "citation_id",
+          "offset": 314,
+          "from": "08",
+          "to": "09",
+          "context": "人30分程度[EV-K27-08-91dad1]です。これは"
+        },
+        {
+          "class": "citation_id",
+          "offset": 317,
+          "from": "91",
+          "to": "92",
+          "context": "分程度[EV-K27-08-91dad1]です。これは要項上"
+        },
+        {
+          "class": "citation_id",
+          "offset": 322,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-08-91dad1]です。これは要項上の実施時"
+        },
+        {
+          "class": "body",
+          "offset": 426,
+          "from": "1",
+          "to": "2",
+          "context": "が示している選考の前提  第1次選考は、オンライン入力・提"
+        },
+        {
+          "class": "citation_id",
+          "offset": 468,
+          "from": "27",
+          "to": "28",
+          "context": "選考する方式です。[EV-K27-10-91dad1]  面"
+        },
+        {
+          "class": "citation_id",
+          "offset": 471,
+          "from": "10",
+          "to": "11",
+          "context": "る方式です。[EV-K27-10-91dad1]  面接は日"
+        },
+        {
+          "class": "citation_id",
+          "offset": 474,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-10-91dad1]  面接は日本語ま"
+        },
+        {
+          "class": "citation_id",
+          "offset": 479,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-10-91dad1]  面接は日本語または英語"
+        },
+        {
+          "class": "citation_id",
+          "offset": 558,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-K27-16-91dad1]  出"
+        },
+        {
+          "class": "citation_id",
+          "offset": 561,
+          "from": "16",
+          "to": "17",
+          "context": "てください。[EV-K27-16-91dad1]  出願資格"
+        },
+        {
+          "class": "citation_id",
+          "offset": 564,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-16-91dad1]  出願資格は募集"
+        },
+        {
+          "class": "citation_id",
+          "offset": 569,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-16-91dad1]  出願資格は募集要項p."
+        },
+        {
+          "class": "body",
+          "offset": 584,
+          "from": "10",
+          "to": "11",
+          "context": "]  出願資格は募集要項p.10の共通条件（1）〜（4）を全"
+        },
+        {
+          "class": "body",
+          "offset": 592,
+          "from": "1",
+          "to": "2",
+          "context": "募集要項p.10の共通条件（1）〜（4）を全て満たすことが"
+        },
+        {
+          "class": "body",
+          "offset": 596,
+          "from": "4",
+          "to": "5",
+          "context": "p.10の共通条件（1）〜（4）を全て満たすことが必要です"
+        },
+        {
+          "class": "citation_id",
+          "offset": 691,
+          "from": "27",
+          "to": "28",
+          "context": "確認してください。[EV-K27-06-91dad1]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 694,
+          "from": "06",
+          "to": "07",
+          "context": "てください。[EV-K27-06-91dad1]  ## 結"
+        },
+        {
+          "class": "citation_id",
+          "offset": 697,
+          "from": "91",
+          "to": "92",
+          "context": "さい。[EV-K27-06-91dad1]  ## 結果を確"
+        },
+        {
+          "class": "citation_id",
+          "offset": 702,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-06-91dad1]  ## 結果を確認する "
+        },
+        {
+          "class": "body",
+          "offset": 737,
+          "from": "2026",
+          "to": "2027",
+          "context": "された最終段階の合格発表は、2026年11月2日 11:00（日"
+        },
+        {
+          "class": "body",
+          "offset": 742,
+          "from": "11",
+          "to": "12",
+          "context": "段階の合格発表は、2026年11月2日 11:00（日本時間"
+        },
+        {
+          "class": "body",
+          "offset": 745,
+          "from": "2",
+          "to": "3",
+          "context": "合格発表は、2026年11月2日 11:00（日本時間）か"
+        },
+        {
+          "class": "body",
+          "offset": 748,
+          "from": "11",
+          "to": "12",
+          "context": "表は、2026年11月2日 11:00（日本時間）からです。"
+        },
+        {
+          "class": "body",
+          "offset": 751,
+          "from": "00",
+          "to": "01",
+          "context": "2026年11月2日 11:00（日本時間）からです。[EV"
+        },
+        {
+          "class": "citation_id",
+          "offset": 769,
+          "from": "27",
+          "to": "28",
+          "context": "本時間）からです。[EV-K27-09-91dad1]  #"
+        },
+        {
+          "class": "citation_id",
+          "offset": 772,
+          "from": "09",
+          "to": "10",
+          "context": "）からです。[EV-K27-09-91dad1]  ### "
+        },
+        {
+          "class": "citation_id",
+          "offset": 775,
+          "from": "91",
+          "to": "92",
+          "context": "です。[EV-K27-09-91dad1]  ### 練習を"
+        },
+        {
+          "class": "citation_id",
+          "offset": 780,
+          "from": "1",
+          "to": "2",
+          "context": "V-K27-09-91dad1]  ### 練習を組み立て"
+        }
+      ]
+    }
+  ]
+}

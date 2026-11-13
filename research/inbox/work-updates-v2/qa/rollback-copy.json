@@ -1,0 +1,9 @@
+{
+  "rollback_success": true,
+  "heads": {
+    "evidence": {},
+    "articles": {}
+  },
+  "revisions_retained": 4,
+  "live_database_untouched": true
+}

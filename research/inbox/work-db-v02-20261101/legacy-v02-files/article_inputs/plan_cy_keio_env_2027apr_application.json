@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.2.0",
+  "cycle_id": "cy_keio_env_2027apr",
+  "plan_id": "plan_cy_keio_env_2027apr_application",
+  "series_key": "application",
+  "official_source_url": "https://www.keio.ac.jp/files/91dad17f3e88ef4a0706cfa0fd02c03eefe8010dac2cda39c8e8c1bb02f46ac6",
+  "title": "慶應SFC・環境情報学部 2026夏秋AO（2027年4月入学）｜出願の準備",
+  "facts": [
+    {
+      "id": "fact_k02",
+      "field_key": "web_application_open",
+      "statement": "オンライン申請は2026年8月3日10時から。",
+      "value": {
+        "datetime": "2026-08-03T10:00:00+09:00"
+      },
+      "evidence": "PDF閲覧ページ9／D 日程フローチャート"
+    },
+    {
+      "id": "fact_k03",
+      "field_key": "web_application_close",
+      "statement": "オンライン申請の締切は2026年9月1日15時。",
+      "value": {
+        "datetime": "2026-09-01T15:00:00+09:00"
+      },
+      "evidence": "PDF閲覧ページ9／D 日程フローチャート"
+    },
+    {
+      "id": "fact_k04",
+      "field_key": "mail_window",
+      "statement": "郵送書類の提出期間は2026年9月1日～9月2日（国内は締切日の消印有効）。",
+      "value": {
+        "deadline_rule": "国内は消印有効",
+        "end": "2026-09-02",
+        "start": "2026-09-01"
+      },
+      "evidence": "PDF閲覧ページ9／D 日程フローチャート"
+    },
+    {
+      "id": "fact_k10",
+      "field_key": "personal_statement",
+      "statement": "志望理由・入学後の学習計画・自己アピールは日本語2000字以内の文章とA4二枚以内の自由記述を提出する。",
+      "value": {
+        "essay_max_ja_chars": 2000,
+        "free_format_a4_pages_max": 2
+      },
+      "evidence": "PDF閲覧ページ17・19／FとG 出願に必要なもの"
+    },
+    {
+      "id": "fact_k11",
+      "field_key": "optional_materials",
+      "statement": "任意提出資料は最大10点。",
+      "value": {
+        "max_items": 10
+      },
+      "evidence": "PDF閲覧ページ19／G 出願に必要なものの作成"
+    },
+    {
+      "id": "fact_k12",
+      "field_key": "referees",
+      "statement": "オンライン出願には評価者2名による入力が必要。",
+      "value": {
+        "evaluators_required": 2
+      },
+      "evidence": "PDF閲覧ページ13／B 出願方法"
+    }
+  ],
+  "unsupported_claims": [
+    "面接官人数",
+    "過去の質問例",
+    "個人の合否可能性"
+  ],
+  "publication_allowed": false
+}

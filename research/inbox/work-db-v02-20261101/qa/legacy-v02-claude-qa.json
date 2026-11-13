@@ -1,0 +1,31 @@
+{
+  "db_path": "SOGH\\inputs\\db_v02\\38756fceed2048d8\\admission_media_v0_2.sqlite",
+  "tables": [
+    "universities",
+    "academic_units",
+    "admission_routes",
+    "admission_cycles",
+    "selection_stages",
+    "source_documents",
+    "source_snapshots",
+    "fact_claims",
+    "fact_evidence",
+    "experience_reports",
+    "experience_observations",
+    "article_series",
+    "article_plans",
+    "article_versions",
+    "article_version_facts",
+    "publications",
+    "audit_events"
+  ],
+  "issue_count": 1,
+  "issues": [
+    {
+      "severity": "warning",
+      "category": "duplicate_rows",
+      "table": "fact_evidence",
+      "detail": "1 distinct row-value(s) repeated"
+    }
+  ]
+}

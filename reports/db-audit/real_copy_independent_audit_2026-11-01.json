@@ -1,0 +1,874 @@
+{
+ "audited_at": "2026-11-01",
+ "subject": "Work PR #59 (research/inbox/work-db-copy), head 20cabcef52c90ec5105f51a96b940fb117e1e9cc, base b84d3a41015570edb4ff1e8646b495222eaea7fb",
+ "qa_commit_used": "b84d3a41015570edb4ff1e8646b495222eaea7fb",
+ "db_audit_identical_to_work_pinned_a6c4474": true,
+ "independence_level": "B (the copies were read by Claude itself on the same PC; the originals and the official PDFs/HTML were NOT examined: levels D and E are not_run)",
+ "metadata_audit": {
+  "checks": 215,
+  "passed": 215,
+  "problems": [],
+  "unlisted_files": [],
+  "note": "checksums.json is not self-listed (expected); all 43 files of the delivery are under research/inbox/work-db-copy; no database, PDF or large file; no absolute user path or e-mail in the delivery text"
+ },
+ "copies": {
+  "sha256_before_and_after_audit_unchanged": true,
+  "sha256_match_inventory": {
+   "v02": true,
+   "v03": true,
+   "v04": true,
+   "v05": true,
+   "v06": true
+  },
+  "sha256": {
+   "v02": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+   "v03": "ca3cb262ca2d90a2f6d29816d9b6df2d1435269976a00f0c78b6169e3d7d2b01",
+   "v04": "83d197f731ef2f5fd6eed060b959e3ae9c70d0e091cd6262daff48086b5bc510",
+   "v05": "b4bb9d1a3f2590fe3321cb235933c796be87a2bb4ec9642b4f21f5c67acfa228",
+   "v06": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578"
+  },
+  "sidecar_files": []
+ },
+ "db_audit_runs": {
+  "v02": {
+   "lineage": "normalized_v0_2",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "V02-02",
+     "V02-03",
+     "V02-04"
+    ],
+    "fail": [],
+    "warn": [],
+    "not_run": [
+     "DB-09",
+     "V02-05"
+    ]
+   },
+   "same_as_work_summary": {
+    "pass": true,
+    "fail": true,
+    "warn": true,
+    "not_run": true
+   }
+  },
+  "v03": {
+   "lineage": "flat",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "ca3cb262ca2d90a2f6d29816d9b6df2d1435269976a00f0c78b6169e3d7d2b01",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-06",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": [
+     "DB-05",
+     "DB-07",
+     "DB-08",
+     "DB-09"
+    ]
+   },
+   "same_as_work_summary": {
+    "pass": true,
+    "fail": true,
+    "warn": true,
+    "not_run": true
+   }
+  },
+  "v04": {
+   "lineage": "flat",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "83d197f731ef2f5fd6eed060b959e3ae9c70d0e091cd6262daff48086b5bc510",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-06",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": [
+     "DB-05",
+     "DB-07",
+     "DB-08",
+     "DB-09"
+    ]
+   },
+   "same_as_work_summary": {
+    "pass": true,
+    "fail": true,
+    "warn": true,
+    "not_run": true
+   }
+  },
+  "v05": {
+   "lineage": "flat",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "b4bb9d1a3f2590fe3321cb235933c796be87a2bb4ec9642b4f21f5c67acfa228",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-05",
+     "DB-06",
+     "DB-07",
+     "DB-08",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": [
+     "DB-09"
+    ]
+   },
+   "same_as_work_summary": {
+    "pass": true,
+    "fail": true,
+    "warn": true,
+    "not_run": true
+   }
+  },
+  "v06": {
+   "lineage": "flat",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-05",
+     "DB-06",
+     "DB-07",
+     "DB-08",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": [
+     "DB-09"
+    ]
+   },
+   "same_as_work_summary": "not comparable alone: Work's v06 summary was run with --baseline v05; see v06_vs_v05"
+  },
+  "v04_vs_v03": {
+   "lineage": "flat",
+   "ok": false,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "83d197f731ef2f5fd6eed060b959e3ae9c70d0e091cd6262daff48086b5bc510",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-06",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [
+     "DB-09"
+    ],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": [
+     "DB-05",
+     "DB-07",
+     "DB-08"
+    ]
+   }
+  },
+  "v05_vs_v04": {
+   "lineage": "flat",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "b4bb9d1a3f2590fe3321cb235933c796be87a2bb4ec9642b4f21f5c67acfa228",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-05",
+     "DB-06",
+     "DB-07",
+     "DB-08",
+     "DB-09",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": []
+   }
+  },
+  "v06_vs_v05": {
+   "lineage": "flat",
+   "ok": true,
+   "target_kind": "copied_real_db",
+   "original_source_comparison": "not_run",
+   "copy_sha256": "a8e48b5b16239368e9b5c05aad1dbeb692a657f28dab909bf3c99fff41539578",
+   "summary": {
+    "pass": [
+     "DB-01",
+     "DB-02",
+     "DB-03",
+     "DB-04",
+     "DB-05",
+     "DB-06",
+     "DB-07",
+     "DB-08",
+     "DB-09",
+     "DB-10",
+     "DB-11",
+     "DB-12"
+    ],
+    "fail": [],
+    "warn": [
+     "DB-14",
+     "DB-15"
+    ],
+    "not_run": []
+   },
+   "same_as_work_summary": {
+    "pass": true,
+    "fail": true,
+    "warn": true,
+    "not_run": true
+   }
+  }
+ },
+ "row_preservation_independent_implementation": [
+  {
+   "old": "v03",
+   "new": "v04",
+   "tables": {
+    "admission_cycles": {
+     "old_rows": 3,
+     "new_rows": 4,
+     "pk": [
+      "case_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "admission_offerings": {
+     "old_rows": 1,
+     "new_rows": 5,
+     "pk": [
+      "offering_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 4,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "article_evidence": {
+     "old_rows": 123,
+     "new_rows": 117,
+     "pk": [
+      "article_id",
+      "evidence_id"
+     ],
+     "removed": 24,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 18,
+     "cols_added": [],
+     "first_removed": [
+      [
+       "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+       "EV-N27-01-2d1ee8"
+      ],
+      [
+       "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+       "EV-N27-02-2d1ee8"
+      ],
+      [
+       "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c",
+       "EV-N27-03-2d1ee8"
+      ]
+     ],
+     "first_changed": []
+    },
+    "article_versions": {
+     "old_rows": 18,
+     "new_rows": 18,
+     "pk": [
+      "article_id"
+     ],
+     "removed": 6,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 6,
+     "cols_added": [],
+     "first_removed": [
+      [
+       "niigata-law-recommendation-I-2027:overview:d4a1a3552d772d1c"
+      ],
+      [
+       "niigata-law-recommendation-I-2027:documents:217e951cd2de8ca6"
+      ],
+      [
+       "niigata-law-recommendation-I-2027:interview:4ac673c7e1b94a6a"
+      ]
+     ],
+     "first_changed": []
+    },
+    "cycle_dimensions": {
+     "old_rows": 1,
+     "new_rows": 4,
+     "pk": [
+      "case_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 3,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "cycle_editions": {
+     "old_rows": 1,
+     "new_rows": 4,
+     "pk": [
+      "case_id",
+      "source_sha256",
+      "profile_sha256"
+     ],
+     "removed": 1,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 4,
+     "cols_added": [
+      "profile_json"
+     ],
+     "first_removed": [
+      [
+       "niigata-law-recommendation-I-2027",
+       "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+       "98b3e6c4b0c8ad6d0c5812535b989be5a7f11d93b430af1b0004d44eabfe54a2"
+      ]
+     ],
+     "first_changed": []
+    },
+    "facts": {
+     "old_rows": 35,
+     "new_rows": 40,
+     "pk": [
+      "evidence_id"
+     ],
+     "removed": 0,
+     "changed": 5,
+     "changed_columns": [
+      "record_json",
+      "value_json"
+     ],
+     "added": 5,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": [
+      [
+       "EV-N27-01-2d1ee8"
+      ],
+      [
+       "EV-N27-02-2d1ee8"
+      ],
+      [
+       "EV-N27-03-2d1ee8"
+      ]
+     ]
+    },
+    "qa_runs": {
+     "old_rows": 3,
+     "new_rows": 6,
+     "pk": [
+      "run_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 3,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    }
+   }
+  },
+  {
+   "old": "v04",
+   "new": "v05",
+   "tables": {
+    "admission_cycles": {
+     "old_rows": 4,
+     "new_rows": 5,
+     "pk": [
+      "case_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "admission_offerings": {
+     "old_rows": 5,
+     "new_rows": 6,
+     "pk": [
+      "offering_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "article_evidence": {
+     "old_rows": 117,
+     "new_rows": 129,
+     "pk": [
+      "article_id",
+      "evidence_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 12,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "article_versions": {
+     "old_rows": 18,
+     "new_rows": 21,
+     "pk": [
+      "article_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 3,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "cycle_dimensions": {
+     "old_rows": 4,
+     "new_rows": 5,
+     "pk": [
+      "case_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "cycle_editions": {
+     "old_rows": 4,
+     "new_rows": 5,
+     "pk": [
+      "case_id",
+      "source_sha256",
+      "profile_sha256"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "facts": {
+     "old_rows": 40,
+     "new_rows": 46,
+     "pk": [
+      "evidence_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 6,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "qa_runs": {
+     "old_rows": 6,
+     "new_rows": 7,
+     "pk": [
+      "run_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "schema_versions": {
+     "old_rows": 2,
+     "new_rows": 3,
+     "pk": [
+      "version"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "source_documents": {
+     "old_rows": 3,
+     "new_rows": 4,
+     "pk": [
+      "sha256"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "source_pages": {
+     "old_rows": 124,
+     "new_rows": 169,
+     "pk": [
+      "source_sha256",
+      "page"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 45,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    }
+   }
+  },
+  {
+   "old": "v05",
+   "new": "v06",
+   "tables": {
+    "article_heads": {
+     "old_rows": 6,
+     "new_rows": 6,
+     "pk": [
+      "base_article_id"
+     ],
+     "removed": 0,
+     "changed": 2,
+     "changed_columns": [
+      "article_id"
+     ],
+     "added": 0,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": [
+      [
+       "tsukuba-klis-ac-2027:overview:39b5d2172672c192"
+      ],
+      [
+       "tsukuba-klis-ac-2027:interview:f57bf5213da13d66"
+      ]
+     ]
+    },
+    "batch_evidence": {
+     "old_rows": 52,
+     "new_rows": 55,
+     "pk": [
+      "batch_id",
+      "evidence_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 3,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "evidence_heads": {
+     "old_rows": 5,
+     "new_rows": 5,
+     "pk": [
+      "logical_id"
+     ],
+     "removed": 0,
+     "changed": 1,
+     "changed_columns": [
+      "evidence_id"
+     ],
+     "added": 0,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": [
+      [
+       "tsukuba-ac-ai-faq"
+      ]
+     ]
+    },
+    "evidence_revisions": {
+     "old_rows": 8,
+     "new_rows": 9,
+     "pk": [
+      "evidence_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "revised_articles": {
+     "old_rows": 20,
+     "new_rows": 22,
+     "pk": [
+      "article_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 2,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "update_batches": {
+     "old_rows": 26,
+     "new_rows": 29,
+     "pk": [
+      "batch_id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 3,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    },
+    "update_events": {
+     "old_rows": 14,
+     "new_rows": 15,
+     "pk": [
+      "id"
+     ],
+     "removed": 0,
+     "changed": 0,
+     "changed_columns": [],
+     "added": 1,
+     "cols_added": [],
+     "first_removed": [],
+     "first_changed": []
+    }
+   }
+  },
+  {
+   "heads": "evidence_heads",
+   "moved": {
+    "tsukuba-ac-ai-faq": [
+     "EV-U-467264a91b3e",
+     "EV-U-61c185ec5771"
+    ]
+   },
+   "added": [],
+   "removed": []
+  },
+  {
+   "heads": "article_heads",
+   "moved": {
+    "tsukuba-klis-ac-2027:overview:39b5d2172672c192": [
+     "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+     "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:87e7b937b33f5373"
+    ],
+    "tsukuba-klis-ac-2027:interview:f57bf5213da13d66": [
+     "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+     "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:427febe8d5f07fde"
+    ]
+   },
+   "added": [],
+   "removed": []
+  }
+ ],
+ "v06_independent_checks": {
+  "integrity_check": [
+   [
+    "ok"
+   ]
+  ],
+  "fk_errors": 0,
+  "user_version": 0,
+  "journal_mode": "delete",
+  "cycles_null_or_empty_university": 0,
+  "cycles_null_or_empty_faculty": 0,
+  "cycles_null_or_empty_department": 1,
+  "cycles_null_or_empty_admission_method": 0,
+  "cycles_null_or_empty_fiscal_year": 0,
+  "g05_same_source_factkey_value_multiple_rows": 1,
+  "g05_of_which_different_case_ids": 1,
+  "facts_unique_case_source_factkey_violations": 0,
+  "evidence_id_prefix_families": [
+   "EV-G27",
+   "EV-H27",
+   "EV-K27",
+   "EV-N27",
+   "EV-T27"
+  ],
+  "publish_allowed_values": [
+   [
+    0,
+    21
+   ]
+  ],
+  "revision_cycles": 0,
+  "parents_missing": 0,
+  "heads_missing_revision": 0,
+  "multiple_heads_per_logical": 0,
+  "heads_are_not_ancestors_of_other_heads": true,
+  "batch_states": {
+   "approved": 10,
+   "interrupted": 5,
+   "pending_contract": 10,
+   "rejected": 4
+  },
+  "event_names": {
+   "approved": 10,
+   "interrupted": 5
+  },
+  "privacy_independent_counts": {
+   "user_path": 37,
+   "email": 7,
+   "email_domain_classes": {
+    "ac.jp": 6,
+    "other_domain": 1
+   }
+  }
+ },
+ "effective_view_recomputed_from_db_only": {
+  "effective_evidence": 50,
+  "distinct_current_article_series": 13,
+  "definition": "facts minus ancestors of heads plus heads; (case, series) groups",
+  "identity_with_the_delivered_view_of_PR42": "not_run (PR #42 is being re-integrated; Work's database-to-view.json was not counted as an independent regeneration)"
+ },
+ "privacy_cross_check": {
+  "work_report_gap": {
+   "table.column": "update_batches.qa_json",
+   "generations": [
+    "v05",
+    "v06"
+   ],
+   "user_path_cells_missing_from_work_report": {
+    "v05": 13,
+    "v06": 14
+   },
+   "cause": "Work's user_path pattern accepts a single path separator; the cells hold JSON-escaped (doubled) backslashes"
+  },
+  "email_cells_v06": 6,
+  "email_domain_classes_v06": {
+   "ac.jp": 6,
+   "other_domain": 1
+  },
+  "note": "classification only; whether a contact is official was not confirmed and no value is shown here"
+ },
+ "findings": [
+  {
+   "id": "F-1",
+   "severity": "warn",
+   "text": "Work privacy_report of v05/v06 omits update_batches.qa_json (13/14 cells with user paths)"
+  },
+  {
+   "id": "F-2",
+   "severity": "info",
+   "text": "v03->v04 is NOT append-only: 5 facts changed in place (profile_version; one value lost the exam_year key), 6 article versions replaced, 24 article_evidence rows and 1 cycle_editions row removed (DB-09 fail with --baseline v03). v04->v05 and v05->v06 preserved every old row. Work did not run this pair"
+  },
+  {
+   "id": "F-3",
+   "severity": "known",
+   "text": "G-04 (1 admission_cycles row with an empty department) exists in v03..v06; G-05 (one source/fact_key/value group stored under two case ids) exists in v04..v06; neither is resolved nor accepted"
+  },
+  {
+   "id": "F-4",
+   "severity": "minor",
+   "text": "reproduction/inventory_real_databases.py leaves a partly written or unverified copy file behind when the integrity/identity check fails (a rerun then refuses to overwrite); no explicit disk-full handling"
+  }
+ ]
+}

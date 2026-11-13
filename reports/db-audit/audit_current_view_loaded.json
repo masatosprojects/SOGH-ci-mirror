@@ -1,0 +1,324 @@
+{
+ "built_from": "repository files (exports / view / base state) via src/db_contract/load_export.py — NOT Work's database",
+ "copy_identity": {
+  "bytes": 466944,
+  "file_name": "audit_current_view_loaded.sqlite",
+  "sha256": "760b60159bbb8f439f8df6d706e9ef415e5977d5e23c3976673c52c6336cc1dd"
+ },
+ "invariants": {
+  "DB-01": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "integrity and foreign keys"
+  },
+  "DB-02": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "cycle identity (university / faculty / department / method / entry year) and exam year"
+  },
+  "DB-03": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "source documents and page hashes"
+  },
+  "DB-04": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "facts agree with their cycle (year, method, school) and with their own record"
+  },
+  "DB-05": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "revision parents, ancestry, heads"
+  },
+  "DB-06": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "articles cite only evidence of their own cycle; never publishable; heads are revisions of their base"
+  },
+  "DB-07": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "update batches: states, bound QA, events, unrecovered candidates"
+  },
+  "DB-08": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "no two revisions of one logical fact with identical content"
+  },
+  "DB-09": {
+   "problems": [],
+   "reason": "no --baseline given",
+   "status": "not_run",
+   "title": "history preserved against an older copy"
+  },
+  "DB-10": {
+   "problems": [],
+   "reason": "table cycle_dimensions has no rows: nothing was examined",
+   "status": "not_run",
+   "title": "cycle_dimensions agrees with admission_cycles about the entry / exam year"
+  },
+  "DB-11": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "every fact / revision uses a registered fact_key and a value of the registered shape"
+  },
+  "DB-12": {
+   "problem_count": 0,
+   "problems": [],
+   "status": "pass",
+   "title": "each quote of a fact is on the stored page it cites (the stored copy, not the original)"
+  },
+  "DB-14": {
+   "problem_count": 12,
+   "problems": [
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "admission_cycles",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "source_documents",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "source_pages",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "facts",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "article_versions",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "article_evidence",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "evidence_revisions",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "revised_articles",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "update_batches",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "update_events",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "legacy_imports",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    },
+    {
+     "missing": [
+      "DELETE",
+      "UPDATE"
+     ],
+     "severity": "warn",
+     "table": "legacy_records",
+     "what": "an append-only table has no trigger refusing UPDATE/DELETE of old rows"
+    }
+   ],
+   "status": "warn",
+   "title": "append-only tables are protected by triggers (structure; needs no rows)"
+  },
+  "DB-15": {
+   "problem_count": 5,
+   "problems": [
+    {
+     "column": "case_id",
+     "severity": "warn",
+     "table": "evidence_revisions",
+     "what": "a lookup column has no index that starts with it"
+    },
+    {
+     "column": "case_id",
+     "severity": "warn",
+     "table": "article_versions",
+     "what": "a lookup column has no index that starts with it"
+    },
+    {
+     "column": "base_article_id",
+     "severity": "warn",
+     "table": "revised_articles",
+     "what": "a lookup column has no index that starts with it"
+    },
+    {
+     "column": "evidence_id",
+     "severity": "warn",
+     "table": "batch_evidence",
+     "what": "a lookup column has no index that starts with it"
+    },
+    {
+     "column": "batch_id",
+     "severity": "warn",
+     "table": "update_events",
+     "what": "a lookup column has no index that starts with it"
+    }
+   ],
+   "status": "warn",
+   "title": "lookup columns are indexed (structure; needs no rows)"
+  }
+ },
+ "lineage": "flat",
+ "loader_assumptions": [
+  "case-26ff8719e13b: exam_year not in the export, set to entry year - 1",
+  "case-906c14814d38: exam_year not in the export, set to entry year - 1",
+  "case-13879794f655: exam_year not in the export, set to entry year - 1",
+  "case-9c20b746b355: exam_year not in the export, set to entry year - 1",
+  "case-a78f0b82e232: exam_year not in the export, set to entry year - 1"
+ ],
+ "loader_skipped": [],
+ "ok": true,
+ "original_source_comparison": "not_run",
+ "schema": {
+  "has_schema_migrations": false,
+  "indexes": [],
+  "schema_versions": [
+   "reference-load-from-export"
+  ],
+  "tables": [
+   "admission_cycles",
+   "admission_offerings",
+   "article_evidence",
+   "article_heads",
+   "article_versions",
+   "batch_evidence",
+   "cycle_dimensions",
+   "cycle_editions",
+   "evidence_heads",
+   "evidence_revisions",
+   "facts",
+   "legacy_fact_links",
+   "legacy_imports",
+   "legacy_records",
+   "qa_runs",
+   "revised_articles",
+   "schema_versions",
+   "source_documents",
+   "source_pages",
+   "update_batches",
+   "update_events"
+  ],
+  "triggers": [],
+  "user_version": 0
+ },
+ "summary": {
+  "fail": [],
+  "not_run": [
+   "DB-09",
+   "DB-10"
+  ],
+  "pass": [
+   "DB-01",
+   "DB-02",
+   "DB-03",
+   "DB-04",
+   "DB-05",
+   "DB-06",
+   "DB-07",
+   "DB-08",
+   "DB-11",
+   "DB-12"
+  ],
+  "warn": [
+   "DB-14",
+   "DB-15"
+  ]
+ },
+ "table_row_counts": {
+  "admission_cycles": 5,
+  "admission_offerings": 0,
+  "article_evidence": 71,
+  "article_heads": 6,
+  "article_versions": 13,
+  "batch_evidence": 0,
+  "cycle_dimensions": 0,
+  "cycle_editions": 0,
+  "evidence_heads": 5,
+  "evidence_revisions": 5,
+  "facts": 46,
+  "legacy_fact_links": 0,
+  "legacy_imports": 0,
+  "legacy_records": 0,
+  "qa_runs": 0,
+  "revised_articles": 6,
+  "schema_versions": 1,
+  "source_documents": 7,
+  "source_pages": 28,
+  "update_batches": 6,
+  "update_events": 6
+ },
+ "target_kind": "repository_sample"
+}

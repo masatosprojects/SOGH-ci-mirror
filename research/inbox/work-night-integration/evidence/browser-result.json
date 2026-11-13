@@ -1,0 +1,8 @@
+{
+  "status": "SELF_VALIDATED",
+  "data_kind": "SYNTHETIC_ONLY",
+  "scenario_count": 2,
+  "javascript_errors": [],
+  "external_requests": [],
+  "real_user_validation": "NOT_RUN"
+}

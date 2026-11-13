@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-11-01T03:45:40+00:00",
+  "commit": "c3af310",
+  "registry_version": "1.1.0",
+  "tests": {
+    "total": 313,
+    "passed": 313,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "skipped_tests": [],
+    "failed_tests": []
+  },
+  "exports": {
+    "work-db-v02-20261101/samples/claude-compatible-export.json": {
+      "key": "work-db-v02-20261101/samples/claude-compatible-export.json",
+      "records": 30,
+      "articles": 4,
+      "fact_keys": [
+        "common_test",
+        "eligibility",
+        "entry",
+        "final_result",
+        "first_stage",
+        "first_stage_result",
+        "generative_ai_policy",
+        "interview",
+        "interview_language",
+        "interview_scope",
+        "maintenance",
+        "online_period",
+        "optional_materials",
+        "personal_statement",
+        "policy",
+        "postal_period",
+        "quota",
+        "recommendation_format",
+        "referees",
+        "second_stage_date",
+        "statement_length"
+      ],
+      "gate": {
+        "ok": 30,
+        "invalid": 0
+      },
+      "registry": {
+        "version": "1.1.0",
+        "by_severity": {
+          "error": 0,
+          "warning": 0,
+          "notice": 0
+        }
+      },
+      "per_article": {
+        "tsukuba-klis-ac-2027:overview:39b5d2172672c192": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "tsukuba-klis-ac-2027:interview:f57bf5213da13d66": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "keio-environment-ao-2026s-2027:overview:c763723defb99d32": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "keio-environment-ao-2026s-2027:interview:b9609d0168420d09": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        }
+      },
+      "mutation": {
+        "body": [
+          139,
+          141
+        ],
+        "citation_id": [
+          162,
+          164
+        ],
+        "overall": [
+          301,
+          317
+        ]
+      },
+      "versioning": {
+        "facts_checked": 30
+      },
+      "failures": [],
+      "warnings": [
+        "mutation: as-of date edits detected 0/12 (Issue #11)"
+      ],
+      "ok": true
+    },
+    "work-national-v1/samples/humanities/claude-compatible-export.json": {
+      "key": "work-national-v1/samples/humanities/claude-compatible-export.json",
+      "records": 5,
+      "articles": 3,
+      "fact_keys": [
+        "common_test",
+        "interview",
+        "interview_scope",
+        "postal_period",
+        "quota"
+      ],
+      "gate": {
+        "ok": 5,
+        "invalid": 0
+      },
+      "registry": {
+        "version": "1.1.0",
+        "by_severity": {
+          "error": 0,
+          "warning": 0,
+          "notice": 0
+        }
+      },
+      "per_article": {
+        "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        }
+      },
+      "mutation": {
+        "body": [
+          33,
+          33
+        ],
+        "citation_id": [
+          90,
+          95
+        ],
+        "overall": [
+          123,
+          137
+        ]
+      },
+      "versioning": {
+        "facts_checked": 5
+      },
+      "failures": [],
+      "warnings": [
+        "mutation: as-of date edits detected 0/9 (Issue #11)"
+      ],
+      "ok": true
+    },
+    "work-national-v1/samples/law/claude-compatible-export.json": {
+      "key": "work-national-v1/samples/law/claude-compatible-export.json",
+      "records": 5,
+      "articles": 3,
+      "fact_keys": [
+        "common_test",
+        "interview",
+        "interview_scope",
+        "postal_period",
+        "quota"
+      ],
+      "gate": {
+        "ok": 5,
+        "invalid": 0
+      },
+      "registry": {
+        "version": "1.1.0",
+        "by_severity": {
+          "error": 0,
+          "warning": 0,
+          "notice": 0
+        }
+      },
+      "per_article": {
+        "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "niigata-law-recommendation-I-2027:documents:1085376afccdcc39": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        },
+        "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68": {
+          "ok": true,
+          "findings": [],
+          "notices": []
+        }
+      },
+      "mutation": {
+        "body": [
+          35,
+          35
+        ],
+        "citation_id": [
+          83,
+          85
+        ],
+        "overall": [
+          118,
+          129
+        ]
+      },
+      "versioning": {
+        "facts_checked": 5
+      },
+      "failures": [],
+      "warnings": [
+        "mutation: as-of date edits detected 0/9 (Issue #11)"
+      ],
+      "ok": true
+    }
+  },
+  "isolation": {
+    "exports": 3,
+    "evidence": 40,
+    "articles": 10,
+    "near_duplicates": [
+      "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6 and niigata-law-recommendation-I-2027:documents:1085376afccdcc39 are 87% similar"
+    ],
+    "template_phrases": 239,
+    "failures": [],
+    "warnings": [
+      "1 near-duplicate draft pair(s) across exports: niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6 and niigata-law-recommendation-I-2027:documents:1085376afccdcc39 are 87% similar"
+    ],
+    "ok": true
+  },
+  "audits": {
+    "work-db-v02-20261101": {
+      "statuses": {
+        "manifest": "pass",
+        "database": "pass",
+        "reconciliation": "review",
+        "privacy": "pass",
+        "source_pdfs": "skipped",
+        "values_in_quotes": "pass",
+        "export": "pass"
+      },
+      "failed": [],
+      "skipped": [
+        "source_pdfs"
+      ],
+      "needs_review": [
+        "reconciliation"
+      ]
+    },
+    "work-national-v1": {
+      "statuses": {
+        "manifest": "pass",
+        "database": "skipped",
+        "reconciliation": "skipped",
+        "privacy": "pass",
+        "source_pdfs": "skipped",
+        "values_in_quotes": "pass",
+        "export": "pass"
+      },
+      "failed": [],
+      "skipped": [
+        "database",
+        "reconciliation",
+        "source_pdfs"
+      ],
+      "needs_review": []
+    }
+  },
+  "baseline": {
+    "unchanged": [
+      "work-db-v02-20261101/samples/claude-compatible-export.json",
+      "work-national-v1/samples/humanities/claude-compatible-export.json",
+      "work-national-v1/samples/law/claude-compatible-export.json"
+    ],
+    "changed": [],
+    "new_without_baseline": [],
+    "baseline_not_delivered": []
+  },
+  "verdict": {
+    "ok": true,
+    "reasons": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "master": "5db1de01830283d93064ed10ab2a9715339d8997",
+  "rubric": "practice-rubric-v1.1",
+  "tests": 35,
+  "failures": 0,
+  "skipped": 0,
+  "includes_12_repeated_demo_tests": true,
+  "xml_sha256": "fead9fd6352eeb1ff0a628b349291fe076dfba2d48bb5c80db470e5a19cae2ac"
+}

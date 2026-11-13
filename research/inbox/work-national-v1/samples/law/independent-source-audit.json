@@ -1,0 +1,54 @@
+{
+  "source_pdfs": {
+    "status": "pass",
+    "pdfs_missing": [],
+    "pdfs_hash_mismatch": [],
+    "extraction_libraries": [
+      "pymupdf",
+      "pypdf"
+    ],
+    "library_errors": {},
+    "proofs_checked": {
+      "pymupdf": 5,
+      "pypdf": 5
+    },
+    "proofs_found": {
+      "pymupdf": 5,
+      "pypdf": 5
+    },
+    "proofs_not_found_by_any_library": [],
+    "weekday_checks": 3,
+    "weekday_mismatches": 0
+  },
+  "values_in_quotes": {
+    "status": "pass",
+    "integers_checked": 1,
+    "not_in_own_quotes": []
+  },
+  "export": {
+    "status": "pass",
+    "evidence_records": 5,
+    "gate": {
+      "total": 5,
+      "ok_count": 5,
+      "invalid_count": 0
+    },
+    "articles": [
+      {
+        "article_id": "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+        "ok": true,
+        "findings": []
+      }
+    ]
+  }
+}

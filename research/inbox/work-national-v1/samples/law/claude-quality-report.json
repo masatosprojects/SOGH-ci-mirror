@@ -1,0 +1,43 @@
+{
+  "db_qa": {
+    "db_path": "[local]\\outputs\\national\\niigata-verified\\qa-input.sqlite",
+    "tables": [
+      "schema_versions",
+      "admission_cycles",
+      "source_documents",
+      "source_pages",
+      "facts",
+      "article_versions",
+      "article_evidence",
+      "qa_runs",
+      "legacy_imports",
+      "legacy_records",
+      "legacy_fact_links",
+      "cycle_dimensions",
+      "cycle_editions",
+      "admission_offerings"
+    ],
+    "issue_count": 0,
+    "issues": []
+  },
+  "article_qa": {
+    "per_article": [
+      {
+        "article_id": "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+        "ok": true,
+        "findings": []
+      }
+    ],
+    "batch_findings": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "synthetic_on_real_db_copy": true,
+  "injected_value": 999999,
+  "original_value": 16,
+  "qa_commit": "475a1f55ae09bae188f3c5266fa261030f84e9a3",
+  "heads_unchanged": true,
+  "live_database_written": false,
+  "quote_gate": {
+    "success": false,
+    "qa_commit": "475a1f55ae09bae188f3c5266fa261030f84e9a3",
+    "report": {
+      "status": "fail",
+      "integers_checked": 1,
+      "not_in_own_quotes": [
+        {
+          "evidence_id": "EV-U-negative-copy",
+          "key": "count",
+          "value": 999999
+        }
+      ]
+    }
+  }
+}

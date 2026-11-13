@@ -1,0 +1,1776 @@
+{
+  "label": "v02",
+  "status": "confirmed",
+  "target_kind": "copied_real_db",
+  "source_location_kind": "user_download",
+  "production_designation": "not_confirmed",
+  "source_file_sha256_before": "38756fceed2048d8056dc94c61b1e710c0bf1a1147b10ecd6aef80a82ae82c6f",
+  "source_file_sha256_after": "38756fceed2048d8056dc94c61b1e710c0bf1a1147b10ecd6aef80a82ae82c6f",
+  "source_main_file_unchanged": true,
+  "sidecars_before": {
+    "-wal": {
+      "exists": false,
+      "sha256": null
+    },
+    "-shm": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "sidecars_after": {
+    "-wal": {
+      "exists": false,
+      "sha256": null
+    },
+    "-shm": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "copy": {
+    "file_name": "v02.sqlite",
+    "bytes": 225280,
+    "sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+    "started_at": "2026-11-01T10:21:46.730395+00:00",
+    "finished_at": "2026-11-01T10:21:46.782129+00:00",
+    "method": "SQLite online backup from mode=ro read transaction",
+    "sanitized": false,
+    "read_snapshot_logically_identical": true,
+    "copy_valid": true,
+    "atomic_final_filename_after_validation": true
+  },
+  "user_version": 0,
+  "schema_versions": null,
+  "tables": {
+    "academic_units": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "university_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "parent_unit_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "unit_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "active_from_year",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "active_to_year",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "academic_units",
+          "parent_unit_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "universities",
+          "university_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "ix_academic_units_university",
+          "unique": false,
+          "origin": "c",
+          "partial": false,
+          "columns": [
+            "university_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_academic_units_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "admission_cycles": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "route_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "entry_year",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "round_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'main'",
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "cycle_status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'researching'",
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "updated_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "admission_routes",
+          "route_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "ix_cycles_year",
+          "unique": false,
+          "origin": "c",
+          "partial": false,
+          "columns": [
+            "entry_year"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_admission_cycles_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "route_id",
+            "entry_year",
+            "round_name"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_admission_cycles_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "admission_routes": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "academic_unit_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "route_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "route_category",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "official_route_url",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "is_active",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "1",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "academic_units",
+          "academic_unit_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "ix_routes_unit",
+          "unique": false,
+          "origin": "c",
+          "partial": false,
+          "columns": [
+            "academic_unit_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_admission_routes_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "article_plans": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "cycle_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "series_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "subject_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "working_title",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "state",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'planned'",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "priority",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "50",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "article_series",
+          "series_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "admission_cycles",
+          "cycle_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_article_plans_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "cycle_id",
+            "series_id",
+            "subject_key"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_article_plans_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "article_series": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "series_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "series_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "template_version",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "audience",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "purpose",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_article_series_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "series_key"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_article_series_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "article_version_facts": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "article_version_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "fact_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "fact_claims",
+          "fact_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "article_versions",
+          "article_version_id",
+          "id",
+          "NO ACTION",
+          "CASCADE",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_article_version_facts_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "article_version_id",
+            "fact_id"
+          ]
+        }
+      ],
+      "has_check_constraint": false
+    },
+    "article_versions": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "plan_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "version_no",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "markdown_path",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "generation_model",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "prompt_version",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "input_fingerprint",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "review_status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'draft'",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "approved_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "article_plans",
+          "plan_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_article_versions_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "plan_id",
+            "version_no"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_article_versions_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "audit_events": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "event_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "entity_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "entity_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "details_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'{}'",
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_audit_events_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "experience_observations": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "experience_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "stage_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "observation_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "anonymized_summary",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "confidence",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'self_reported'",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "selection_stages",
+          "stage_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "experience_reports",
+          "experience_id",
+          "id",
+          "NO ACTION",
+          "CASCADE",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_experience_observations_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "experience_reports": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "cycle_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "anonymous_token",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "consent_scope",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "consent_recorded_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "outcome",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'unreported'",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "submitted_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "redaction_status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'needs_review'",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "admission_cycles",
+          "cycle_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_experience_reports_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "anonymous_token"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_experience_reports_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "fact_claims": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "cycle_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "stage_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "field_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "display_statement",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "value_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "basis",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "review_status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'candidate'",
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "observed_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "last_verified_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "superseded_by",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "fact_claims",
+          "superseded_by",
+          "id",
+          "NO ACTION",
+          "NO ACTION",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "selection_stages",
+          "stage_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ],
+        [
+          2,
+          0,
+          "admission_cycles",
+          "cycle_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "ix_fact_review",
+          "unique": false,
+          "origin": "c",
+          "partial": false,
+          "columns": [
+            "review_status"
+          ]
+        },
+        {
+          "name": "ix_fact_cycle_field",
+          "unique": false,
+          "origin": "c",
+          "partial": false,
+          "columns": [
+            "cycle_id",
+            "field_key"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_fact_claims_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "fact_evidence": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "fact_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "snapshot_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 2
+        },
+        {
+          "cid": 2,
+          "name": "relation",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 3
+        },
+        {
+          "cid": 3,
+          "name": "locator",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 4
+        },
+        {
+          "cid": 4,
+          "name": "excerpt",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "source_snapshots",
+          "snapshot_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ],
+        [
+          1,
+          0,
+          "fact_claims",
+          "fact_id",
+          "id",
+          "NO ACTION",
+          "CASCADE",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_fact_evidence_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "fact_id",
+            "snapshot_id",
+            "relation",
+            "locator"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "publications": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "article_version_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "platform",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "external_post_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "external_url",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "publish_status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'queued'",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "last_attempt_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "published_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "article_versions",
+          "article_version_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_publications_3",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "platform",
+            "external_post_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_publications_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "platform",
+            "idempotency_key"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_publications_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "selection_stages": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "cycle_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "stage_order",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "stage_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "stage_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "stage_format",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "admission_cycles",
+          "cycle_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_selection_stages_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "cycle_id",
+            "stage_order"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_selection_stages_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "source_documents": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "source_kind",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "title",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "publisher",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "canonical_url",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "issued_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "license_notes",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_source_documents_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "source_snapshots": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "document_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "retrieved_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "content_sha256",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "storage_uri",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "drive_file_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "media_type",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'captured'",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [
+        [
+          0,
+          0,
+          "source_documents",
+          "document_id",
+          "id",
+          "NO ACTION",
+          "RESTRICT",
+          "NONE"
+        ]
+      ],
+      "indexes": [
+        {
+          "name": "ix_snapshots_doc_time",
+          "unique": false,
+          "origin": "c",
+          "partial": false,
+          "columns": [
+            "document_id",
+            "retrieved_at"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_source_snapshots_2",
+          "unique": true,
+          "origin": "u",
+          "partial": false,
+          "columns": [
+            "document_id",
+            "content_sha256"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_source_snapshots_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    },
+    "universities": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "official_url",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "school_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'unspecified'",
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "datetime('now')",
+          "pk": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_universities_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false,
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "has_check_constraint": true
+    }
+  },
+  "objects": [
+    {
+      "type": "index",
+      "name": "ix_academic_units_university",
+      "table": "academic_units"
+    },
+    {
+      "type": "index",
+      "name": "ix_cycles_year",
+      "table": "admission_cycles"
+    },
+    {
+      "type": "index",
+      "name": "ix_fact_cycle_field",
+      "table": "fact_claims"
+    },
+    {
+      "type": "index",
+      "name": "ix_fact_review",
+      "table": "fact_claims"
+    },
+    {
+      "type": "index",
+      "name": "ix_routes_unit",
+      "table": "admission_routes"
+    },
+    {
+      "type": "index",
+      "name": "ix_snapshots_doc_time",
+      "table": "source_snapshots"
+    },
+    {
+      "type": "table",
+      "name": "academic_units",
+      "table": "academic_units"
+    },
+    {
+      "type": "table",
+      "name": "admission_cycles",
+      "table": "admission_cycles"
+    },
+    {
+      "type": "table",
+      "name": "admission_routes",
+      "table": "admission_routes"
+    },
+    {
+      "type": "table",
+      "name": "article_plans",
+      "table": "article_plans"
+    },
+    {
+      "type": "table",
+      "name": "article_series",
+      "table": "article_series"
+    },
+    {
+      "type": "table",
+      "name": "article_version_facts",
+      "table": "article_version_facts"
+    },
+    {
+      "type": "table",
+      "name": "article_versions",
+      "table": "article_versions"
+    },
+    {
+      "type": "table",
+      "name": "audit_events",
+      "table": "audit_events"
+    },
+    {
+      "type": "table",
+      "name": "experience_observations",
+      "table": "experience_observations"
+    },
+    {
+      "type": "table",
+      "name": "experience_reports",
+      "table": "experience_reports"
+    },
+    {
+      "type": "table",
+      "name": "fact_claims",
+      "table": "fact_claims"
+    },
+    {
+      "type": "table",
+      "name": "fact_evidence",
+      "table": "fact_evidence"
+    },
+    {
+      "type": "table",
+      "name": "publications",
+      "table": "publications"
+    },
+    {
+      "type": "table",
+      "name": "selection_stages",
+      "table": "selection_stages"
+    },
+    {
+      "type": "table",
+      "name": "source_documents",
+      "table": "source_documents"
+    },
+    {
+      "type": "table",
+      "name": "source_snapshots",
+      "table": "source_snapshots"
+    },
+    {
+      "type": "table",
+      "name": "universities",
+      "table": "universities"
+    },
+    {
+      "type": "trigger",
+      "name": "trg_fact_stage_cycle_insert",
+      "table": "fact_claims"
+    },
+    {
+      "type": "trigger",
+      "name": "trg_fact_stage_cycle_update",
+      "table": "fact_claims"
+    },
+    {
+      "type": "view",
+      "name": "v_article_fact_health",
+      "table": "v_article_fact_health"
+    }
+  ],
+  "source_writes_performed_by_this_tool": false,
+  "copy_binary_not_for_github": true
+}

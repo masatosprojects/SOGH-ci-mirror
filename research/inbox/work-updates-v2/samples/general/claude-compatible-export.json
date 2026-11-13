@@ -1,0 +1,335 @@
+{
+  "evidence": {
+    "EV-G27C-01-e1137e": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-G27C-01-e1137e",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_pdf_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "quota",
+      "value": {
+        "count": 16,
+        "qualifier": "他方式の欠員補充で募集人数が増える場合がある",
+        "unit": "名"
+      },
+      "scope": "department_and_method",
+      "proofs": [
+        {
+          "normalized_end": 726,
+          "normalized_start": 706,
+          "page": 6,
+          "pattern": "知識情報・図書館学類10040(?P<count>16)―小計",
+          "quote": "知識情報・図書館学類\n100\n40\n16\n―\n小\n計",
+          "quote_normalized": "知識情報・図書館学類1004016―小計"
+        },
+        {
+          "capture_group": "count",
+          "context_pattern": "知識情報・図書館学類10040(?P<count>16)―小計",
+          "normalized_end": 723,
+          "normalized_start": 721,
+          "page": 6,
+          "quote": "16"
+        },
+        {
+          "normalized_end": 369,
+          "normalized_start": 205,
+          "page": 6,
+          "pattern": "欠員補充について.*?その欠員分を個別学力検査等の募集人員に加えます。補充人員については,決定次第.*?大学入試情報サイトで発表します。",
+          "quote": "欠員補充について〕 \nアドミッションセンター入試，国際バカロレア特別入試，海外教育プログラム特別入試，外国学校経験者特別入試（10月\n募集）及び推薦入試において入学手続者が募集人員に満たない場合は，その欠員分を個別学力検査等の募集人員に加\nえます。補充人員については，決定次第（令和9年1月中旬以降順次）大学入試情報サイトで発表します。",
+          "quote_normalized": "欠員補充について〕アドミッションセンター入試,国際バカロレア特別入試,海外教育プログラム特別入試,外国学校経験者特別入試(10月募集)及び推薦入試において入学手続者が募集人員に満たない場合は,その欠員分を個別学力検査等の募集人員に加えます。補充人員については,決定次第(令和9年1月中旬以降順次)大学入試情報サイトで発表します。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false,
+      "quota": 16
+    },
+    "EV-G27C-02-e1137e": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-G27C-02-e1137e",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_pdf_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "online_period",
+      "value": {
+        "end": "2027-02-03T09:00:00+09:00",
+        "qualifier": "インターネット出願登録及び検定料払込期間",
+        "start": "2027-01-22T10:00:00+09:00",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1531,
+          "normalized_start": 1480,
+          "page": 9,
+          "pattern": "インターネット出願登録期間及び検定料払込期間令和(?P<ry>9)年(?P<sm>1)月(?P<sd>22)日\\(金\\)(?P<sh>10):(?P<smin>00)~(?P<em>2)月(?P<ed>3)日\\(水\\)(?P<eh>9):(?P<emin>00)",
+          "quote": "インターネット出願登録期間及び検定料払込期間 \n令和9年1月22日（金）10：00～2月3日（水）9:00",
+          "quote_normalized": "インターネット出願登録期間及び検定料払込期間令和9年1月22日(金)10:00~2月3日(水)9:00"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-G27C-03-e1137e": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-G27C-03-e1137e",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_pdf_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "postal_period",
+      "value": {
+        "end": "2027-02-03",
+        "qualifier": "簡易書留・速達で郵送必着。持参・宅配便不可。期間後は受理しない",
+        "start": "2027-01-25",
+        "timezone": "Asia/Tokyo"
+      },
+      "scope": "target_admission_cycle",
+      "proofs": [
+        {
+          "normalized_end": 1672,
+          "normalized_start": 1532,
+          "page": 9,
+          "pattern": "出願に必要な書類の郵送期間\\(持参不可\\)令和(?P<ry>9)年(?P<sm>1)月(?P<sd>25)日\\(月\\)~(?P<em>2)月(?P<ed>3)日\\(水\\)必着.*?簡易書留・速達で郵送してください。宅配便等による送付は受け付けません。なお,出願期間を過ぎた場合は,いかなる理由があっても受理しません。",
+          "quote": "出願に必要な書類の郵送期間（持参不可） \n令和9年1月25日（月）～2月3日（水）必着 \n「（5）出願に当たっての注意事項」を確認の上，「Ⅴ 問合せ先」へ簡易書留・速達で郵送してください。宅配便等による送付は\n受け付けません。 \nなお，出願期間を過ぎた場合は，いかなる理由があっても受理しません。",
+          "quote_normalized": "出願に必要な書類の郵送期間(持参不可)令和9年1月25日(月)~2月3日(水)必着「(5)出願に当たっての注意事項」を確認の上,「V問合せ先」へ簡易書留・速達で郵送してください。宅配便等による送付は受け付けません。なお,出願期間を過ぎた場合は,いかなる理由があっても受理しません。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-G27C-04-e1137e": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-G27C-04-e1137e",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_pdf_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "common_test",
+      "value": {
+        "required": true
+      },
+      "scope": "department_and_method",
+      "proofs": [
+        {
+          "normalized_end": 1463,
+          "normalized_start": 1399,
+          "page": 14,
+          "pattern": "第1段階選抜合格者に対して個別学力検査等を課し,大学入学共通テスト成績,調査書等を含めて総合的に判定して最終合格者を決定します。",
+          "quote": "第1段階選抜合格者に対して個別学力検査等を課し，大学入学共通テスト成績，調査書等を含めて総合的に判定して最終合格者を\n決定します。",
+          "quote_normalized": "第1段階選抜合格者に対して個別学力検査等を課し,大学入学共通テスト成績,調査書等を含めて総合的に判定して最終合格者を決定します。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-G27C-05-e1137e": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-G27C-05-e1137e",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_pdf_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "interview_scope",
+      "value": {
+        "topic_types": [
+          "論理的思考力",
+          "表現力",
+          "コミュニケーション能力"
+        ]
+      },
+      "scope": "department_and_method",
+      "proofs": [
+        {
+          "normalized_end": 114,
+          "normalized_start": 67,
+          "page": 27,
+          "pattern": "個別面接.*?論理的思考力,表現力,コミュニケーション能力を評価する。",
+          "quote": "個別面接\n「数学Ⅱ，数学Ｂ，数学Ｃ」\n〔論理的思考力，表現力，コミュニケーション能力を評価する。",
+          "quote_normalized": "個別面接「数学II,数学B,数学C」〔論理的思考力,表現力,コミュニケーション能力を評価する。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    },
+    "EV-G27C-06-e1137e": {
+      "university": "筑波大学",
+      "faculty": "情報学群",
+      "department": "知識情報・図書館学類",
+      "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+      "fiscal_year": 2027,
+      "evidence_id": "EV-G27C-06-e1137e",
+      "source_url": "https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf",
+      "source_pdf_sha256": "e1137e2a05dcd128c471278da4d0e231de27e42263173518a224596f8c3cdd3c",
+      "retrieved_at": "2026-11-01",
+      "fact_key": "statement_length",
+      "value": {
+        "max_characters": 600
+      },
+      "scope": "department_and_method",
+      "proofs": [
+        {
+          "normalized_end": 220,
+          "normalized_start": 161,
+          "page": 27,
+          "pattern": "面接実施前に「知識情報・図書館学類で学びたいこと」に関する.*?小作文\\((?P<count>600)字以内\\)を課し、面接の参考にする。",
+          "quote": "面接実施前に「知識情報・図書館学類で学びたいこと」に関する\n情\n「情報Ⅰ」\n小作文（６００字以内）を課し、面接の参考にする。",
+          "quote_normalized": "面接実施前に「知識情報・図書館学類で学びたいこと」に関する情「情報I」小作文(600字以内)を課し、面接の参考にする。"
+        }
+      ],
+      "verification": "source_checked_for_saved_version",
+      "publication_allowed": false
+    }
+  },
+  "articles": [
+    {
+      "article_id": "tsukuba-klis-general-front-2027:overview:78bbb8c06e95167d",
+      "case_id": "tsukuba-klis-general-front-2027",
+      "series": "overview",
+      "input_hash": "78bbb8c06e95167d0f819913198d0014b8d0c944c05ee0665cfc78b61eee7598",
+      "title": "【2027年度入学】筑波大学 情報学群 一般選抜 前期日程（学類・専門学群選抜）｜制度と手続の確認",
+      "text": "# 【2027年度入学】筑波大学 情報学群 一般選抜 前期日程（学類・専門学群選抜）｜制度と手続の確認\n\n作業基準日：2026-11-01。未公開草案。\n\n## 公式資料で確認した事実\n\n学類・専門学群選抜の前期日程の募集人員は16名[EV-G27C-01-e1137e]です[EV-G27C-01-e1137e]。他方式の欠員補充で増える場合があるため、最新の募集人数の告知も確認してください[EV-G27C-01-e1137e]。\n\nオンライン出願登録と検定料払い込みの期間は2027年1月22日 10:00〜2027年2月3日 09:00です[EV-G27C-02-e1137e]。\n\n書類の郵送期間は2027年1月25日〜2027年2月3日（必着）です[EV-G27C-03-e1137e]。簡易書留・速達で郵送し、持参と宅配便は受け付けません[EV-G27C-03-e1137e]。期間後は受理されないため、配達日数を確認してください[EV-G27C-03-e1137e]。\n\n大学入学共通テストの成績、個別学力検査等、調査書等を含めて総合的に判定します[EV-G27C-04-e1137e]。必要な科目の組合せ・配点・注意事項は募集要項の該当表と照合してください[EV-G27C-04-e1137e]。\n\n面接の実施前に、知識情報・図書館学類で学びたいことに関する600字[EV-G27C-06-e1137e]以内の小作文を課し、面接の参考とします[EV-G27C-06-e1137e]。\n\n## 編集上の助言（大学公表の事実とは区別）\n\n全体を見渡し、必要な確認事項を自分用の一覧に整理してください。\n\n## 追加確認が必要な項目\n\n出願資格の個別判定、必要書類の全件、最新の訂正・追加案内は別途確認が必要です。不明な項目は推測していません。最新情報は大学公式サイトでご確認ください。合否を保証するものではありません。\n\n## 根拠資料\n\n- [EV-G27C-01-e1137e] 公式募集要項 PDF p.6：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=6\n- [EV-G27C-02-e1137e] 公式募集要項 PDF p.9：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=9\n- [EV-G27C-03-e1137e] 公式募集要項 PDF p.9：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=9\n- [EV-G27C-04-e1137e] 公式募集要項 PDF p.14：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=14\n- [EV-G27C-06-e1137e] 公式募集要項 PDF p.27：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=27\n",
+      "claims": [
+        {
+          "key": "quota",
+          "evidence_id": "EV-G27C-01-e1137e",
+          "text": "学類・専門学群選抜の前期日程の募集人員は16名[EV-G27C-01-e1137e]です[EV-G27C-01-e1137e]。他方式の欠員補充で増える場合があるため、最新の募集人数の告知も確認してください[EV-G27C-01-e1137e]。"
+        },
+        {
+          "key": "online_period",
+          "evidence_id": "EV-G27C-02-e1137e",
+          "text": "オンライン出願登録と検定料払い込みの期間は2027年1月22日 10:00〜2027年2月3日 09:00です[EV-G27C-02-e1137e]。"
+        },
+        {
+          "key": "postal_period",
+          "evidence_id": "EV-G27C-03-e1137e",
+          "text": "書類の郵送期間は2027年1月25日〜2027年2月3日（必着）です[EV-G27C-03-e1137e]。簡易書留・速達で郵送し、持参と宅配便は受け付けません[EV-G27C-03-e1137e]。期間後は受理されないため、配達日数を確認してください[EV-G27C-03-e1137e]。"
+        },
+        {
+          "key": "common_test",
+          "evidence_id": "EV-G27C-04-e1137e",
+          "text": "大学入学共通テストの成績、個別学力検査等、調査書等を含めて総合的に判定します[EV-G27C-04-e1137e]。必要な科目の組合せ・配点・注意事項は募集要項の該当表と照合してください[EV-G27C-04-e1137e]。"
+        },
+        {
+          "key": "statement_length",
+          "evidence_id": "EV-G27C-06-e1137e",
+          "text": "面接の実施前に、知識情報・図書館学類で学びたいことに関する600字[EV-G27C-06-e1137e]以内の小作文を課し、面接の参考とします[EV-G27C-06-e1137e]。"
+        }
+      ],
+      "evidence_ids": [
+        "EV-G27C-01-e1137e",
+        "EV-G27C-02-e1137e",
+        "EV-G27C-03-e1137e",
+        "EV-G27C-04-e1137e",
+        "EV-G27C-06-e1137e"
+      ],
+      "publish_allowed": false,
+      "claim": {
+        "university": "筑波大学",
+        "faculty": "情報学群",
+        "department": "知識情報・図書館学類",
+        "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+        "fiscal_year": 2027
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:documents:acbf074f3706b666",
+      "case_id": "tsukuba-klis-general-front-2027",
+      "series": "documents",
+      "input_hash": "acbf074f3706b666521852a18af9709ad61d2ae1a08ec0a3320e8b6e60a26551",
+      "title": "【2027年度入学】筑波大学 情報学群 一般選抜 前期日程（学類・専門学群選抜）｜出願準備と書類の整理",
+      "text": "# 【2027年度入学】筑波大学 情報学群 一般選抜 前期日程（学類・専門学群選抜）｜出願準備と書類の整理\n\n作業基準日：2026-11-01。未公開草案。\n\n## 公式資料で確認した事実\n\n学類・専門学群選抜の前期日程の募集人員は16名[EV-G27C-01-e1137e]です[EV-G27C-01-e1137e]。他方式の欠員補充で増える場合があるため、最新の募集人数の告知も確認してください[EV-G27C-01-e1137e]。\n\nオンライン出願登録と検定料払い込みの期間は2027年1月22日 10:00〜2027年2月3日 09:00です[EV-G27C-02-e1137e]。\n\n書類の郵送期間は2027年1月25日〜2027年2月3日（必着）です[EV-G27C-03-e1137e]。簡易書留・速達で郵送し、持参と宅配便は受け付けません[EV-G27C-03-e1137e]。期間後は受理されないため、配達日数を確認してください[EV-G27C-03-e1137e]。\n\n面接の実施前に、知識情報・図書館学類で学びたいことに関する600字[EV-G27C-06-e1137e]以内の小作文を課し、面接の参考とします[EV-G27C-06-e1137e]。\n\n## 編集上の助言（大学公表の事実とは区別）\n\n所定様式を大学公式サイトから取得し、学校への作成依頼と自分で書く部分を分けて管理してください。活動の名称だけでなく、取り組んだ目的と自分の役割を整理すると説明に役立ちます。\n\n## 追加確認が必要な項目\n\n出願資格の個別判定、必要書類の全件、最新の訂正・追加案内は別途確認が必要です。不明な項目は推測していません。最新情報は大学公式サイトでご確認ください。合否を保証するものではありません。\n\n## 根拠資料\n\n- [EV-G27C-01-e1137e] 公式募集要項 PDF p.6：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=6\n- [EV-G27C-02-e1137e] 公式募集要項 PDF p.9：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=9\n- [EV-G27C-03-e1137e] 公式募集要項 PDF p.9：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=9\n- [EV-G27C-06-e1137e] 公式募集要項 PDF p.27：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=27\n",
+      "claims": [
+        {
+          "key": "quota",
+          "evidence_id": "EV-G27C-01-e1137e",
+          "text": "学類・専門学群選抜の前期日程の募集人員は16名[EV-G27C-01-e1137e]です[EV-G27C-01-e1137e]。他方式の欠員補充で増える場合があるため、最新の募集人数の告知も確認してください[EV-G27C-01-e1137e]。"
+        },
+        {
+          "key": "online_period",
+          "evidence_id": "EV-G27C-02-e1137e",
+          "text": "オンライン出願登録と検定料払い込みの期間は2027年1月22日 10:00〜2027年2月3日 09:00です[EV-G27C-02-e1137e]。"
+        },
+        {
+          "key": "postal_period",
+          "evidence_id": "EV-G27C-03-e1137e",
+          "text": "書類の郵送期間は2027年1月25日〜2027年2月3日（必着）です[EV-G27C-03-e1137e]。簡易書留・速達で郵送し、持参と宅配便は受け付けません[EV-G27C-03-e1137e]。期間後は受理されないため、配達日数を確認してください[EV-G27C-03-e1137e]。"
+        },
+        {
+          "key": "statement_length",
+          "evidence_id": "EV-G27C-06-e1137e",
+          "text": "面接の実施前に、知識情報・図書館学類で学びたいことに関する600字[EV-G27C-06-e1137e]以内の小作文を課し、面接の参考とします[EV-G27C-06-e1137e]。"
+        }
+      ],
+      "evidence_ids": [
+        "EV-G27C-01-e1137e",
+        "EV-G27C-02-e1137e",
+        "EV-G27C-03-e1137e",
+        "EV-G27C-06-e1137e"
+      ],
+      "publish_allowed": false,
+      "claim": {
+        "university": "筑波大学",
+        "faculty": "情報学群",
+        "department": "知識情報・図書館学類",
+        "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+        "fiscal_year": 2027
+      }
+    },
+    {
+      "article_id": "tsukuba-klis-general-front-2027:interview:691d9be277467c59",
+      "case_id": "tsukuba-klis-general-front-2027",
+      "series": "interview",
+      "input_hash": "691d9be277467c5905ae1f8c1af7308a948a84c39e6d104b48b4049798ee1362",
+      "title": "【2027年度入学】筑波大学 情報学群 一般選抜 前期日程（学類・専門学群選抜）｜面接に向けた準備",
+      "text": "# 【2027年度入学】筑波大学 情報学群 一般選抜 前期日程（学類・専門学群選抜）｜面接に向けた準備\n\n作業基準日：2026-11-01。未公開草案。\n\n## 公式資料で確認した事実\n\n大学入学共通テストの成績、個別学力検査等、調査書等を含めて総合的に判定します[EV-G27C-04-e1137e]。必要な科目の組合せ・配点・注意事項は募集要項の該当表と照合してください[EV-G27C-04-e1137e]。\n\n個別面接では、論理的思考力・表現力・コミュニケーション能力を評価すると記載されています[EV-G27C-05-e1137e]。\n\n面接の実施前に、知識情報・図書館学類で学びたいことに関する600字[EV-G27C-06-e1137e]以内の小作文を課し、面接の参考とします[EV-G27C-06-e1137e]。\n\n## 編集上の助言（大学公表の事実とは区別）\n\n提出する書類と大学で学びたいことを読み直し、取り組んだ理由、根拠、学んだことを自分の言葉で説明する練習をしてください。これは練習のための助言であり、大学が公表した想定質問や採点基準ではありません。\n\n## 追加確認が必要な項目\n\n出願資格の個別判定、必要書類の全件、最新の訂正・追加案内は別途確認が必要です。不明な項目は推測していません。最新情報は大学公式サイトでご確認ください。合否を保証するものではありません。\n\n## 根拠資料\n\n- [EV-G27C-04-e1137e] 公式募集要項 PDF p.14：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=14\n- [EV-G27C-05-e1137e] 公式募集要項 PDF p.27：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=27\n- [EV-G27C-06-e1137e] 公式募集要項 PDF p.27：https://ac.tsukuba.ac.jp/wp/wp-content/uploads/2026/10/R9_kobetu_sec-v2.pdf#page=27\n",
+      "claims": [
+        {
+          "key": "common_test",
+          "evidence_id": "EV-G27C-04-e1137e",
+          "text": "大学入学共通テストの成績、個別学力検査等、調査書等を含めて総合的に判定します[EV-G27C-04-e1137e]。必要な科目の組合せ・配点・注意事項は募集要項の該当表と照合してください[EV-G27C-04-e1137e]。"
+        },
+        {
+          "key": "interview_scope",
+          "evidence_id": "EV-G27C-05-e1137e",
+          "text": "個別面接では、論理的思考力・表現力・コミュニケーション能力を評価すると記載されています[EV-G27C-05-e1137e]。"
+        },
+        {
+          "key": "statement_length",
+          "evidence_id": "EV-G27C-06-e1137e",
+          "text": "面接の実施前に、知識情報・図書館学類で学びたいことに関する600字[EV-G27C-06-e1137e]以内の小作文を課し、面接の参考とします[EV-G27C-06-e1137e]。"
+        }
+      ],
+      "evidence_ids": [
+        "EV-G27C-04-e1137e",
+        "EV-G27C-05-e1137e",
+        "EV-G27C-06-e1137e"
+      ],
+      "publish_allowed": false,
+      "claim": {
+        "university": "筑波大学",
+        "faculty": "情報学群",
+        "department": "知識情報・図書館学類",
+        "admission_method": "一般選抜 前期日程（学類・専門学群選抜）",
+        "fiscal_year": 2027
+      }
+    }
+  ]
+}

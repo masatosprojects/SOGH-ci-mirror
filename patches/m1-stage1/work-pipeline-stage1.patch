@@ -1,0 +1,91 @@
+diff --git a/admissions_pipeline/generic.py b/admissions_pipeline/generic.py
+--- a/admissions_pipeline/generic.py
++++ b/admissions_pipeline/generic.py
+@@ -14,7 +14,7 @@
+ from .dimensions import migrate, save_dimensions
+ from .extract import PROFILES, PROFILE_VERSION
+ from .profiles import extract_profile, load_profile
+-from .store import EvidenceStore, canonical
++from .store import EvidenceStore, canonical, configure_connection
+ from .process_lock import ProcessLock
+ 
+ SERIES = {
+@@ -84,7 +84,7 @@
+     target=Path(target)
+     if before is None and target.exists():raise ValueError('target appeared during validation')
+     with closing(sqlite3.connect(target,timeout=20)) as db:
+-        db.execute('PRAGMA foreign_keys=ON')
++        configure_connection(db)
+         db.execute('ATTACH DATABASE ? AS candidate',(str(Path(candidate).resolve()),))
+         db.execute('BEGIN IMMEDIATE')
+         try:
+diff --git a/admissions_pipeline/revisions.py b/admissions_pipeline/revisions.py
+--- a/admissions_pipeline/revisions.py
++++ b/admissions_pipeline/revisions.py
+@@ -118,7 +118,7 @@
+             db.executemany("INSERT INTO batch_evidence VALUES(?,?)", [(batch_id, r["evidence_id"]) for r in records])
+         return {"batch_id": batch_id, "input_sha": input_sha, "state": state, "pending_contract": pending, "before": before, "after": after}
+ 
+-    def finalize(self, batch, articles, qa, registry):
++    def finalize(self, batch, articles, qa, registry, reason=None):
+         with self.connect() as db:
+             db.execute("BEGIN IMMEDIATE")
+             saved = db.execute("SELECT * FROM update_batches WHERE batch_id=?", (batch["batch_id"],)).fetchone()
+@@ -156,13 +156,25 @@
+                             check_article_conditions(article,source_record)
+                 db.execute("INSERT INTO revised_articles VALUES(?,?,?,?)", (article["article_id"], article["base_article_id"], batch["batch_id"], canonical(article)))
+                 after["articles"][article["base_article_id"]] = article["article_id"]
++            # M1 stage 1 (G-09, INV-06): the batch becomes approved first, and only then may a head point at its revisions (same transaction, so nothing is visible half done).
++            db.execute("UPDATE update_batches SET state='approved',after_json=?,qa_json=? WHERE batch_id=?", (canonical(after), canonical(qa), batch["batch_id"]))
+             for logical, eid in after["evidence"].items():
+                 db.execute("INSERT INTO evidence_heads VALUES(?,?) ON CONFLICT(logical_id) DO UPDATE SET evidence_id=excluded.evidence_id", (logical, eid))
+             for base, aid in after["articles"].items():
+                 db.execute("INSERT INTO article_heads VALUES(?,?) ON CONFLICT(base_article_id) DO UPDATE SET article_id=excluded.article_id", (base, aid))
+-            db.execute("UPDATE update_batches SET state='approved',after_json=?,qa_json=? WHERE batch_id=?", (canonical(after), canonical(qa), batch["batch_id"]))
+             db.execute("INSERT INTO update_events(batch_id,event,created_at,detail_json) VALUES(?,'approved',?,?)", (batch["batch_id"], datetime.now(timezone.utc).isoformat(), canonical({"evidence": len(expected_ids), "articles": len(articles)})))
++            if reason is not None:
++                self._record_reason(db, batch["batch_id"], reason)
+         return True
++
++    @staticmethod
++    def _record_reason(db, batch_id, reason):
++        """G-11: the one reason of a batch, written by the caller's decision (nothing is guessed here). The database refuses an empty or contradictory reason and a second one."""
++        if not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='revision_reasons'").fetchone():
++            raise ValueError("a reason was given but this database has no revision_reasons table")
++        db.execute("INSERT INTO revision_reasons(batch_id,reason_class,reason_text,source_changed,source_sha256_before,source_sha256_after,actor,recorded_at) VALUES(?,?,?,?,?,?,?,?)", (
++            batch_id, reason["reason_class"], reason["reason_text"], reason["source_changed"], reason.get("source_sha256_before"), reason.get("source_sha256_after"),
++            reason["actor"], datetime.now(timezone.utc).isoformat()))
+ 
+     def rollback_batch(self, batch_id):
+         with self.connect() as db:
+diff --git a/admissions_pipeline/store.py b/admissions_pipeline/store.py
+--- a/admissions_pipeline/store.py
++++ b/admissions_pipeline/store.py
+@@ -46,6 +46,18 @@
+ """
+ 
+ 
++def configure_connection(db):
++    """M1 stage 1 (G-09): every SOGH connection that writes the evidence database is configured here.
++    `sogh_write_ok` is the write capability that the database's guard triggers call; a connection that does not register it is refused
++    by those triggers (fail closed). `recursive_triggers=ON` makes the implicit DELETE of INSERT OR REPLACE fire the delete guards."""
++    db.create_function("sogh_write_ok", 0, lambda: 1)
++    import hashlib  # the guard of migration 0014 (source_document_series_editions) compares an edition's hash with its content through this function; any writer connection must register it, like sogh_write_ok
++    db.create_function("_g6_sha256_hex", 1, lambda t: hashlib.sha256(t.encode("utf-8")).hexdigest() if isinstance(t, str) else "")
++    db.execute("PRAGMA recursive_triggers=ON")
++    db.execute("PRAGMA foreign_keys=ON")
++    return db
++
++
+ class EvidenceStore:
+     def __init__(self, path):
+         self.path = Path(path).resolve()
+@@ -57,7 +69,7 @@
+     def connect(self):
+         db = sqlite3.connect(self.path, timeout=20)
+         db.row_factory = sqlite3.Row
+-        db.execute("PRAGMA foreign_keys=ON")
++        configure_connection(db)
+         try:
+             yield db
+             db.commit()

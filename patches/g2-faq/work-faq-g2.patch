@@ -1,0 +1,288 @@
+diff --git a/admissions_pipeline/faq_policy.py b/admissions_pipeline/faq_policy.py
+index f69b267..42b6ba8 100644
+--- a/admissions_pipeline/faq_policy.py
++++ b/admissions_pipeline/faq_policy.py
+@@ -6,6 +6,7 @@ No unknown condition is coerced to False; original v0.5 heads are not changed he
+ import hashlib
+ import re
+ from .extract import normalized_with_positions,normalize
++from .headings import immediate_heading
+ from .store import canonical
+ from .supplements import extract_notice,source_pages
+ 
+@@ -31,7 +32,11 @@ POLARITY={'下線を引いてください':True,'下線を引く必要はあり
+ 
+ 
+ def extract_conditions(record,spec,cycle):
+-    if (cycle['case_id']!='tsukuba-klis-ac-2027' or cycle['fiscal_year']!=2027 or cycle['exam_year']!=2026
++    unknown=spec.get('scope_status')=='unknown'
++    if unknown:  # STR-076: the FAQ gives no year/faculty; nothing may bind it to a cycle
++        if cycle is not None or spec.get('case_id') is not None or spec.get('fiscal_year') is not None or not spec.get('section_headings'):
++            raise ValueError('FAQ scope is UNKNOWN (STR-076): no cycle, case or year may be bound and the question headings must be declared')
++    elif (cycle['case_id']!='tsukuba-klis-ac-2027' or cycle['fiscal_year']!=2027 or cycle['exam_year']!=2026
+         or spec['case_id']!=cycle['case_id']):raise ValueError('FAQ AC cycle not reviewed; no year/method extrapolation')
+     original=extract_notice(spec,record,cycle)
+     raw=source_pages(record)[0];text,positions=normalized_with_positions(raw)
+@@ -44,19 +49,23 @@ def extract_conditions(record,spec,cycle):
+             quote=normalize(clause);hits=list(re.finditer(re.escape(quote),text[a:b]))
+             if len(hits)!=1:raise ValueError('condition is unknown or ambiguous: '+name)
+             start=a+hits[0].start();end=a+hits[0].end()
++            headings=spec.get('section_headings')
+             proof={'page':1,'quote':raw[positions[start]:positions[end-1]+1],'normalized_start':start,'normalized_end':end,
+-                   'section':spec['section_start'],'source_kind':'html'}
++                   'section':immediate_heading(text,start,end,a,b,headings) if headings else spec['section_start'],'source_kind':'html'}
+             if rule['polarity'] not in quote:raise ValueError('condition polarity missing from its own quote')
+             indices.append(len(proofs));proofs.append(proof)
+         values[name]=POLARITY[rule['polarity']]
+         field_proofs[name]={'value':values[name],'actor':rule['actor'],'action':rule['action'],'proof_indices':indices,
+-                            'exceptions':rule['exceptions'],'applies_to':'tsukuba-klis-ac-2027'}
++                            'exceptions':rule['exceptions'],'applies_to':None if unknown else 'tsukuba-klis-ac-2027'}
+     return {'base_record':original,'values':values,'proofs':proofs,'field_proofs':field_proofs,'unknown_conditions':[],
+             'retrieved_at':record['retrieved_at'],'published_date':None,'contract_status':'pending'}
+ 
+ 
+ def validate_condition_bindings(record):
+-    if record.get('case_id')!='tsukuba-klis-ac-2027' or record.get('fiscal_year')!=2027:
++    if record.get('scope_status')=='unknown':
++        if record.get('scope')!='general_admission_faq' or any(record.get(k) is not None for k in ('case_id','fiscal_year','faculty','department')):
++            raise ValueError('FAQ scope is UNKNOWN but the record carries a binding (STR-076)')
++    elif record.get('case_id')!='tsukuba-klis-ac-2027' or record.get('fiscal_year')!=2027:
+         raise ValueError('FAQ condition scope was not reviewed')
+     if set(record['value'])-{'allowed','not_accepted'}-set(FIELDS):raise ValueError('unsupported FAQ obligation')
+     for name,rule in FIELDS.items():
+@@ -99,6 +108,10 @@ def audit_condition_source(record,body_path):
+         if (proof.get('page')!=1 or type(start) is not int or type(end) is not int or not 0<=start<end<=len(text)
+             or text[start:end]!=normalize(proof['quote'])):raise ValueError('FAQ proof does not match its raw source position')
+         unique.add((1,start,end))
++        section=normalize(proof.get('section') or '');hits=[i for i in range(len(text)) if section and text.startswith(section,i)]
++        owner=[i for i in hits if i<=start]
++        if len(hits)!=1 or not owner or '?' in text[owner[0]+len(section):start]:
++            raise ValueError('FAQ proof section is not the immediate question of its quote')
+     return {'status':'pass','field_count':len(FIELDS),'proof_references':len(record['proofs']),'unique_source_ranges':len(unique),
+             'source_sha256':record['source_sha256'],'semantic_independent_QA':False}
+ 
+diff --git a/b/admissions_pipeline/headings.py b/admissions_pipeline/headings.py
+new file mode 100644
+index 0000000..815a879
+--- /dev/null
++++ b/admissions_pipeline/headings.py
+@@ -0,0 +1,38 @@
++"""Immediate question heading of a source position (proposal g2; companion of STR-076).
++
++The FAQ page is a list of question lines, each followed by its answer. A proof must name the question whose answer it quotes, not the section heading in
++front of the whole group of questions. The questions that hold the facts are DECLARED in the reviewed spec (`section_headings`, original wording); nothing
++is guessed from punctuation. Offsets are never touched: this module only reads the normalized text.
++"""
++import re
++
++from .extract import normalize
++
++
++def immediate_heading(text, start, end, scope_start, scope_end, headings):
++    """Return the declared heading (original wording) that owns the normalized span [start, end).
++
++    Fails closed (ValueError) when: no heading is declared; a declared heading is absent or occurs more than once inside the scope; no declared heading
++    starts at or before the span; the span starts inside a heading; a second declared heading starts inside the span (the span would quote two
++    questions); or an undeclared question mark lies between the heading and the span (an undeclared question is in between).
++    """
++    if not headings:
++        raise ValueError("no section headings are declared for this FAQ")
++    located = []
++    for heading in headings:
++        wanted = normalize(heading)
++        hits = list(re.finditer(re.escape(wanted), text[scope_start:scope_end]))
++        if len(hits) != 1:
++            raise ValueError("declared FAQ heading is absent or ambiguous")
++        located.append((scope_start + hits[0].start(), scope_start + hits[0].end(), heading))
++    before = [h for h in located if h[0] <= start]
++    if not before:
++        raise ValueError("no declared FAQ heading precedes this proof")
++    h_start, h_end, heading = max(before)
++    if h_start < start < h_end:
++        raise ValueError("proof starts inside a heading")
++    if any(start < other[0] < end for other in located):
++        raise ValueError("proof spans two FAQ questions")
++    if start >= h_end and "?" in text[h_end:start]:
++        raise ValueError("an undeclared question lies between the heading and the proof")
++    return heading
+diff --git a/admissions_pipeline/supplements.py b/admissions_pipeline/supplements.py
+index fa6555f..7f7a76b 100644
+--- a/admissions_pipeline/supplements.py
++++ b/admissions_pipeline/supplements.py
+@@ -6,6 +6,7 @@ from pathlib import Path
+ from .collector import Page
+ from .extract import normalized_with_positions, normalize
+ from .profiles import substitute
++from .headings import immediate_heading
+ from .store import canonical
+ 
+ 
+@@ -23,7 +24,11 @@ def source_pages(record):
+ def extract_notice(spec, record, cycle):
+     if record["url"] != spec["url"] or record["sha256"] != spec["expected_sha256"]:
+         raise ValueError("unreviewed notice edition")
+-    if cycle["case_id"] != spec["case_id"] or cycle["fiscal_year"] != spec["fiscal_year"]:
++    unknown = spec.get("scope_status") == "unknown"
++    if unknown:  # STR-076: scope attributes the source does not state stay UNKNOWN; a cycle may not be supplied
++        if cycle is not None or spec.get("case_id") is not None or spec.get("fiscal_year") is not None:
++            raise ValueError("notice scope is UNKNOWN (STR-076): no cycle, case or year may be bound")
++    elif cycle["case_id"] != spec["case_id"] or cycle["fiscal_year"] != spec["fiscal_year"]:
+         raise ValueError("notice applicability mismatch")
+     pages = source_pages(record)
+     groups, proofs = {}, []
+@@ -50,9 +55,11 @@ def extract_notice(spec, record, cycle):
+             if value is None or (key in groups and groups[key] != value):
+                 raise ValueError("conflicting notice captures")
+             groups[key] = value
++        headings = spec.get("section_headings")
+         proofs.append({"page": page, "quote": pages[page-1][positions[start]:positions[end-1]+1],
+                        "normalized_start": start, "normalized_end": end,
+-                       "section": spec.get("section_start"), "source_kind": record["kind"]})
++                       "section": immediate_heading(text, start, end, scope_start, scope_end, headings) if headings else spec.get("section_start"),
++                       "source_kind": record["kind"]})
+         for group in anchor.get("include_capture_proofs", []):
+             a,b=hit.span(group); a+=scope_start; b+=scope_start
+             if a < scope_start or a == b: raise ValueError("missing captured table cell")
+@@ -63,9 +70,15 @@ def extract_notice(spec, record, cycle):
+     value = substitute(spec["value"], groups)
+     identity = [spec["logical_id"], record["sha256"], value, spec["profile_version"]]
+     eid = "EV-U-" + hashlib.sha256(canonical(identity).encode()).hexdigest()[:12]
+-    return {"evidence_id": eid, "logical_id": spec["logical_id"], "case_id": cycle["case_id"],
+-            **{k: cycle[k] for k in ("university", "faculty", "department", "admission_method", "fiscal_year")},
+-            "fact_key": spec["fact_key"], "value": value, "scope": "target_admission_cycle",
++    if unknown:
++        head = {"case_id": None, "university": spec.get("university"), "faculty": None, "department": None,
++                "admission_method": spec.get("admission_method"), "fiscal_year": None}
++        tail = {"scope": "general_admission_faq", "scope_status": "unknown", "scope_reverification": "required"}
++    else:
++        head = {"case_id": cycle["case_id"], **{k: cycle[k] for k in ("university", "faculty", "department", "admission_method", "fiscal_year")}}
++        tail = {"scope": "target_admission_cycle"}
++    return {"evidence_id": eid, "logical_id": spec["logical_id"], **head,
++            "fact_key": spec["fact_key"], "value": value, **tail,
+             "source_url": record["url"], "source_sha256": record["sha256"],
+             "source_pdf_sha256": record["sha256"] if record["kind"] == "pdf" else None,
+             "source_kind": record["kind"], "retrieved_at": record["retrieved_at"][:10],
+diff --git a/config/faq-structured-v3.json b/config/faq-structured-v3.json
+index 9415664..d1cf767 100644
+--- a/config/faq-structured-v3.json
++++ b/config/faq-structured-v3.json
+@@ -1,38 +1,43 @@
+-[
+-  {
+-    "logical_id": "tsukuba-ac-ai-faq",
+-    "case_id": "tsukuba-klis-ac-2027",
+-    "fiscal_year": 2027,
+-    "fact_key": "generative_ai_policy",
+-    "profile_version": "faq-conditions-2026-11-01-v1",
+-    "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
+-    "expected_sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
+-    "published_date": null,
+-    "anchors": [
+-      {
+-        "page": 1,
+-        "pattern": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか[?？]文章チェックも含め、生成AIが実際に生成・修正した箇所には、すべて下線を引いてください。.*?活動経過報告書での記載は必須です。"
+-      },
+-      {
+-        "page": 1,
+-        "pattern": "生成AIで作成した画像.*?画像・図・表等の説明文や脚注に、生成AIで作成したことが分かるように明示してください。"
+-      }
+-    ],
+-    "value": {
+-      "allowed": "生成AI使用時の表示方法がFAQで案内されている",
+-      "not_accepted": ""
+-    },
+-    "sentences": [
+-      "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、その修正で間接的に影響した箇所すべてに下線を引くよう案内しています。",
+-      "文書校正機能による単純な誤字脱字修正は下線不要です。他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は必須です。",
+-      "生成AIで作成した画像・図・表等は、説明文や脚注にその使用を明示します。"
+-    ],
+-    "temporal_status": "current_faq_as_of_retrieval_publication_date_unknown",
+-    "applicability": "公式FAQのAC入試節に限定。今年度実施分に基づく説明で、個別出願可否の判定ではない",
+-    "section_start": "ＡＣ入試の選考で重視されるのはどのようなことですか？",
+-    "section_end": "国際科学オリンピック特別入試に出願できるのはどのような者ですか？",
+-    "source_role": "faq",
+-    "condition_profile": "tsukuba-ac-faq-v1",
+-    "parent_evidence_id": "EV-U-467264a91b3e"
+-  }
++[
++  {
++    "logical_id": "tsukuba-ac-ai-faq",
++    "scope_status": "unknown",
++    "university": "筑波大学",
++    "admission_method": "アドミッションセンター入試",
++    "fact_key": "generative_ai_policy",
++    "profile_version": "faq-conditions-2026-11-08-v2-scope-unknown",
++    "url": "https://ac.tsukuba.ac.jp/consultation/faq/",
++    "expected_sha256": "dad557c53e2e66f6f05807d90abb6cfc708a55b6200dec579d1bf2389cf9a770",
++    "published_date": null,
++    "anchors": [
++      {
++        "page": 1,
++        "pattern": "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか[?？]文章チェックも含め、生成AIが実際に生成・修正した箇所には、すべて下線を引いてください。.*?活動経過報告書での記載は必須です。"
++      },
++      {
++        "page": 1,
++        "pattern": "生成AIで作成した画像.*?画像・図・表等の説明文や脚注に、生成AIで作成したことが分かるように明示してください。"
++      }
++    ],
++    "value": {
++      "allowed": "生成AI使用時の表示方法がFAQで案内されている",
++      "not_accepted": ""
++    },
++    "sentences": [
++      "AC入試のFAQでは、文章チェックを含め生成AIが生成・修正した箇所と、その修正で間接的に影響した箇所すべてに下線を引くよう案内しています。",
++      "文書校正機能による単純な誤字脱字修正は下線不要です。他人の添削・助言の修正も下線不要ですが、活動経過報告書への記載は必須です。",
++      "生成AIで作成した画像・図・表等は、説明文や脚注にその使用を明示します。"
++    ],
++    "temporal_status": "current_faq_as_of_retrieval_publication_date_unknown",
++    "applicability": "公式FAQのAC入試節に限定。適用年度・学類・実施年の対象は原典から確定できない（UNKNOWN、STR-076）。特定の年度・学類の出願可否や選考の判定、模擬面接の事実断定の根拠にしない",
++    "section_start": "ＡＣ入試の選考で重視されるのはどのようなことですか？",
++    "section_end": "国際科学オリンピック特別入試に出願できるのはどのような者ですか？",
++    "section_headings": [
++      "生成AIを使用した場合は、どこまで下線を引けばよいのでしょうか？",
++      "生成AIで作成した画像（図や表等も含む）はどのようにすればよいでしょうか？"
++    ],
++    "source_role": "faq",
++    "condition_profile": "tsukuba-ac-faq-v1",
++    "parent_evidence_id": null
++  }
+ ]
+\ No newline at end of file
+diff --git a/scripts/revise_notices.py b/scripts/revise_notices.py
+index c5acdc2..8ec5880 100644
+--- a/scripts/revise_notices.py
++++ b/scripts/revise_notices.py
+@@ -31,7 +31,7 @@ def _run(specs_path, monitor_root, base_export, base_db, work_db, qa_root, outpu
+     with sqlite3.connect(Path(monitor_root) / "monitor.sqlite") as db:
+         db.row_factory = sqlite3.Row; targets = {r["url"]: dict(r) for r in db.execute("SELECT * FROM targets")}
+     with store.connect() as db: cycles = {r["case_id"]: dict(r) for r in db.execute("SELECT * FROM admission_cycles")}
+-    records, source_review_pending = [], []
++    records, source_review_pending, scope_unknown_held = [], [], []
+     for spec in json.loads(Path(specs_path).read_text(encoding="utf-8")):
+         row = targets.get(spec["url"])
+         if not row or not row["last_success"] or row["last_error"]:
+@@ -44,9 +44,11 @@ def _run(specs_path, monitor_root, base_export, base_db, work_db, qa_root, outpu
+                   "retrieved_at": datetime.fromtimestamp(row["last_success"], timezone.utc).isoformat()}
+         try:
+             if spec.get('condition_profile')=='tsukuba-ac-faq-v1':
+-                candidate=extract_conditions(record,spec,cycles[spec['case_id']])
++                unknown_scope=spec.get('scope_status')=='unknown'
++                candidate=extract_conditions(record,spec,None if unknown_scope else cycles[spec['case_id']])
+                 proposed=structured_record(candidate,spec.get('parent_evidence_id'),spec['profile_version'])
+                 audit_condition_source(proposed,record['local_path'])
++                if unknown_scope:scope_unknown_held.append(proposed);continue  # STR-076: held for re-verification, never staged or attached to an article
+                 records.append(proposed)
+             elif spec.get('condition_profile'):
+                 raise ValueError('unreviewed condition profile')
+@@ -60,9 +62,11 @@ def _run(specs_path, monitor_root, base_export, base_db, work_db, qa_root, outpu
+     newly_registered=sum(current_heads.get(r["logical_id"]) != r["evidence_id"] for r in eligible)
+     if not refresh_articles:eligible=[r for r in eligible if current_heads.get(r["logical_id"]) != r["evidence_id"]]
+     (output / "notice-candidates.json").write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
++    if scope_unknown_held:(output / "scope-unknown-held.json").write_text(json.dumps(scope_unknown_held, ensure_ascii=False, indent=2), encoding="utf-8")
+     waiting_batch = store.stage(pending, registry) if pending else None
+     report = {"pending_contract": [r["fact_key"] for r in pending], "candidate_count": len(records),
+               "interrupted_batches_recovered": recovered,
++              "scope_unknown_held": [r["evidence_id"] for r in scope_unknown_held],
+               "source_review_pending": source_review_pending,
+               "waiting_batch": waiting_batch["batch_id"] if waiting_batch else None, "approved": False, "revised_articles": 0}
+     if eligible:

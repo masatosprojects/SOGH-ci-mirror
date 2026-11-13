@@ -1,0 +1,168 @@
+{
+  "handoff": "work-db-v02-20261101",
+  "manifest": {
+    "status": "pass",
+    "files_checked": 43,
+    "problems": [],
+    "note": "hash a checkout made with core.autocrlf=false; CRLF conversion changes text-file hashes"
+  },
+  "database": {
+    "integrity_check": [
+      "ok"
+    ],
+    "foreign_key_violations": 0,
+    "tables": 17,
+    "rows": 121,
+    "row_counts": {
+      "academic_units": 3,
+      "admission_cycles": 2,
+      "admission_routes": 2,
+      "article_plans": 6,
+      "article_series": 3,
+      "article_version_facts": 29,
+      "article_versions": 6,
+      "audit_events": 6,
+      "experience_observations": 0,
+      "experience_reports": 0,
+      "fact_claims": 27,
+      "fact_evidence": 27,
+      "publications": 0,
+      "selection_stages": 4,
+      "source_documents": 2,
+      "source_snapshots": 2,
+      "universities": 2
+    },
+    "sha256": "d389cc132614c0f8a8aa32a2e52b99ba90f7d8957a131888a5e3775dfbdcc8df",
+    "original_sha256": "38756fceed2048d8056dc94c61b1e710c0bf1a1147b10ecd6aef80a82ae82c6f",
+    "same_tables_as_original": true,
+    "tables_with_different_rows": [],
+    "status": "pass",
+    "matches_manifest_gzip_uncompressed_sha256": true
+  },
+  "reconciliation": {
+    "status": "review",
+    "links": 27,
+    "independent_conflicts": [],
+    "needs_manual_review": [
+      {
+        "legacy_fact_id": "fact_t06",
+        "legacy_flags_not_in_new_fact": [
+          "True"
+        ],
+        "new_value": {
+          "minutes": 30,
+          "qualifier": "必要に応じて試験時間を延長する場合がある",
+          "type": "individual_interview_and_oral_exam"
+        }
+      }
+    ],
+    "links_to_missing_evidence": [],
+    "link_page_not_in_evidence_proofs": [],
+    "new_fact_adds_values_beyond_legacy": [
+      "fact_t02",
+      "fact_t03",
+      "fact_t05",
+      "fact_t06",
+      "fact_t07",
+      "fact_t09",
+      "fact_t10",
+      "fact_t11",
+      "fact_k01",
+      "fact_k02",
+      "fact_k03",
+      "fact_k05",
+      "fact_k06",
+      "fact_k07",
+      "fact_k10",
+      "fact_k12",
+      "fact_k14"
+    ],
+    "work_reported_counts": {
+      "matched_saved_original": 20,
+      "matched_with_added_context": 7,
+      "needs_review": 0,
+      "conflict": 0
+    },
+    "work_reported_total": 27,
+    "note": "'added values' is a leaf-level measure and need not equal Work's 'matched_with_added_context' set"
+  },
+  "privacy": {
+    "status": "pass",
+    "files_scanned": 43,
+    "db_text_cells_scanned": 659,
+    "findings": []
+  },
+  "source_pdfs": {
+    "status": "pass",
+    "pdfs_missing": [],
+    "pdfs_hash_mismatch": [],
+    "extraction_libraries": [
+      "pymupdf",
+      "pypdf"
+    ],
+    "library_errors": {},
+    "proofs_checked": {
+      "pymupdf": 40,
+      "pypdf": 40
+    },
+    "proofs_found": {
+      "pymupdf": 40,
+      "pypdf": 40
+    },
+    "proofs_not_found_by_any_library": [],
+    "weekday_checks": 11,
+    "weekday_mismatches": 0
+  },
+  "values_in_quotes": {
+    "status": "pass",
+    "integers_checked": 12,
+    "not_in_own_quotes": []
+  },
+  "export": {
+    "status": "pass",
+    "evidence_records": 30,
+    "gate": {
+      "total": 30,
+      "ok_count": 30,
+      "invalid_count": 0
+    },
+    "articles": [
+      {
+        "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09",
+        "ok": true,
+        "findings": []
+      }
+    ]
+  },
+  "summary": {
+    "statuses": {
+      "manifest": "pass",
+      "database": "pass",
+      "reconciliation": "review",
+      "privacy": "pass",
+      "source_pdfs": "pass",
+      "values_in_quotes": "pass",
+      "export": "pass"
+    },
+    "failed": [],
+    "needs_review": [
+      "reconciliation"
+    ],
+    "skipped": []
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "success": true,
+  "pdf": {
+    "status": "pass",
+    "non_pdf_evidence": [],
+    "pdfs_missing": [],
+    "pdfs_hash_mismatch": [],
+    "extraction_libraries": [
+      "pymupdf",
+      "pypdf"
+    ],
+    "library_errors": {},
+    "proofs_checked": {
+      "pymupdf": 64,
+      "pypdf": 64
+    },
+    "proofs_found": {
+      "pymupdf": 64,
+      "pypdf": 64
+    },
+    "proofs_not_found_by_any_library": [],
+    "weekday_checks": 20,
+    "weekday_mismatches": 0
+  },
+  "html": {
+    "method": "Work byte hash + normalized exact quote/position check; not a PDF audit",
+    "records": [
+      {
+        "evidence_id": "EV-U-467264a91b3e",
+        "hash_and_exact_positions_match": true,
+        "source_url": "https://ac.tsukuba.ac.jp/consultation/faq/"
+      },
+      {
+        "evidence_id": "EV-U-b9e7fb33158b",
+        "hash_and_exact_positions_match": true,
+        "source_url": "https://www.keio.ac.jp/ja/sfc-pem/news/sfcao20261021/"
+      }
+    ]
+  },
+  "values": {
+    "status": "pass",
+    "integers_checked": 17,
+    "not_in_own_quotes": []
+  },
+  "articles": {
+    "status": "pass",
+    "evidence_records": 50,
+    "gate": {
+      "total": 50,
+      "ok_count": 50,
+      "invalid_count": 0
+    },
+    "articles": [
+      {
+        "article_id": "niigata-law-recommendation-I-2027:overview:e7cf767fc33f4d1f",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-law-recommendation-I-2027:documents:1085376afccdcc39",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-law-recommendation-I-2027:interview:afe2a25ff1c0bb68",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-humanities-recommendation-II-2027:overview:98e8f1b81d6ddc3a",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-humanities-recommendation-II-2027:documents:b23ea2aa7d4fbcf6",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "niigata-humanities-recommendation-II-2027:interview:a9354aa194b94859",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:interview:f3aba19dec818dca",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-ac-2027:overview:39b5d2172672c192:revision:2e34d3940d9d74c8",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-ac-2027:interview:f57bf5213da13d66:revision:a287eb1f3f872fc9",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:overview:761fec457516aff8:revision:3ecae68d11a3aa66",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "tsukuba-klis-general-front-2027:documents:475975acbb8891df:revision:3e38d4cb70f4d28f",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "keio-environment-ao-2026s-2027:overview:c763723defb99d32:revision:0cb8295ef9012b38",
+        "ok": true,
+        "findings": []
+      },
+      {
+        "article_id": "keio-environment-ao-2026s-2027:interview:b9609d0168420d09:revision:f3f9d802d6221bcc",
+        "ok": true,
+        "findings": []
+      }
+    ]
+  },
+  "baseline_tables_checked": 14,
+  "old_rows_missing_or_modified": [],
+  "baseline_sha256": "e72420fc8ac260f80c3dcd3cebe1fc44f912b6f67cec9b4ffe061fe80ca01541",
+  "integrity": [
+    [
+      "ok"
+    ]
+  ],
+  "foreign_keys": [],
+  "counts": {
+    "native_facts": 46,
+    "active_update_heads": 5,
+    "revised_original_articles": 6,
+    "revision_history_versions": 20
+  },
+  "effective_facts": 50,
+  "current_articles": 13
+}

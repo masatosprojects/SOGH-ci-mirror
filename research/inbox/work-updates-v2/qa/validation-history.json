@@ -1,0 +1,18 @@
+{
+  "original_table_proof": "joined PDF cell 100/40/16 was not a standalone integer proof; rejected by source audit; corrected by original cell position plus table/footnote context",
+  "combined_six_article_batch": "rejected by existing CLI duplicate template phrase checks; NOT activated; per-cycle atomic batches and separate full-corpus regression used",
+  "latest_registry_1_4": "new semantic cues detected legitimate general-selection essay/interview paragraphs; contract discussion in Issue #34; see latest QA reports for resolution",
+  "simulated_negative": "real draft 5 -> 999, valid citation; QA failure left active heads unchanged",
+  "latest_registry_clean_import": {
+    "registry": "1.5.0",
+    "approved": false,
+    "promoted": false,
+    "native_facts_before": 40,
+    "native_facts_after": 40,
+    "native_articles_before": 18,
+    "native_articles_after": 18,
+    "reason": "same semantic cue false positives; working target unchanged"
+  },
+  "registry_1_5_1": "#34 resolved in #37; clean import 40->46 facts and 18->21 articles passed; 6 existing drafts reapproved; whole-view regression still fails flip78/83, explicitly retained; #39 proposes stronger FAQ contract",
+  "publication_allowed": false
+}

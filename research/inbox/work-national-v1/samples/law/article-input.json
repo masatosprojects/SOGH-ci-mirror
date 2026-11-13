@@ -1,0 +1,176 @@
+{
+  "cycle": {
+    "case_id": "niigata-law-recommendation-I-2027",
+    "university": "新潟大学",
+    "faculty": "法学部",
+    "department": "法学科",
+    "admission_method": "学校推薦型選抜Ⅰ型",
+    "fiscal_year": 2027,
+    "exam_year": 2026
+  },
+  "source": {
+    "sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+    "url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+    "local_path": "outputs\\official-audit\\bodies\\2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37.pdf",
+    "retrieved_at": "2026-11-01",
+    "revision_clearance": "not_cleared_for_publication"
+  },
+  "facts": [
+    {
+      "case_id": "niigata-law-recommendation-I-2027",
+      "draft_sentence": "法学科の学校推薦型選抜Ⅰ型の募集人員は50人です。欠員分は一般選抜の前期日程に加えます。",
+      "evidence_id": "EV-N27-01-2d1ee8",
+      "fiscal_year": 2027,
+      "key": "quota",
+      "notes": [],
+      "profile_version": "2026-11-01-v1.1",
+      "proofs": [
+        {
+          "normalized_end": 197,
+          "normalized_start": 152,
+          "page": 7,
+          "pattern": "法学科(?P<count>\\d+)人欠員が生じた場合は、その欠員分を一般選抜における前期日程の募集人員に加えます。",
+          "quote": "法学科 \n50人 \n欠員が生じた場合は、その欠員分を一般選抜における前期日程の募集人員に加えます。",
+          "quote_normalized": "法学科50人欠員が生じた場合は、その欠員分を一般選抜における前期日程の募集人員に加えます。"
+        }
+      ],
+      "related_keys": [],
+      "revision_clearance": "not_cleared_for_publication",
+      "scope": "department_and_method",
+      "source_pdf_sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "source_url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "value": {
+        "count": 50,
+        "qualifier": "欠員分は一般選抜前期日程の募集人員に加える",
+        "unit": "人"
+      },
+      "verification": "source_checked_for_saved_version"
+    },
+    {
+      "case_id": "niigata-law-recommendation-I-2027",
+      "draft_sentence": "大学入学共通テストを免除し、面接と出願書類の審査を総合して選抜します。",
+      "evidence_id": "EV-N27-02-2d1ee8",
+      "fiscal_year": 2027,
+      "key": "common_test",
+      "notes": [],
+      "profile_version": "2026-11-01-v1.1",
+      "proofs": [
+        {
+          "normalized_end": 548,
+          "normalized_start": 510,
+          "page": 7,
+          "pattern": "大学入学共通テストを免除し、面接の結果及び出願書類の審査を総合して行います。",
+          "quote": "大学入学共通テストを免除し、面接の結果及び出願書類の審査を総合して行います。",
+          "quote_normalized": "大学入学共通テストを免除し、面接の結果及び出願書類の審査を総合して行います。"
+        }
+      ],
+      "related_keys": [],
+      "revision_clearance": "not_cleared_for_publication",
+      "scope": "department_and_method",
+      "source_pdf_sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "source_url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "value": {
+        "required": false
+      },
+      "verification": "source_checked_for_saved_version"
+    },
+    {
+      "case_id": "niigata-law-recommendation-I-2027",
+      "draft_sentence": "面接には、自己申告書を中心とした出願書類等を踏まえた基礎知識や思考力などの評価を含みます。",
+      "evidence_id": "EV-N27-03-2d1ee8",
+      "fiscal_year": 2027,
+      "key": "interview_scope",
+      "notes": [],
+      "profile_version": "2026-11-01-v1.1",
+      "proofs": [
+        {
+          "normalized_end": 627,
+          "normalized_start": 579,
+          "page": 7,
+          "pattern": "面接には、自己申告書を中心とした出願書類等の内容を踏まえた基礎知識や思考力などの評価を含みます。",
+          "quote": "面接には、自己申告書を中心とした出願書類等の内容を踏まえた基礎知識や思考力などの評価\nを含みます。",
+          "quote_normalized": "面接には、自己申告書を中心とした出願書類等の内容を踏まえた基礎知識や思考力などの評価を含みます。"
+        }
+      ],
+      "related_keys": [],
+      "revision_clearance": "not_cleared_for_publication",
+      "scope": "department_and_method",
+      "source_pdf_sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "source_url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "value": {
+        "text": "自己申告書を中心とした出願書類等を踏まえた基礎知識・思考力等の評価"
+      },
+      "verification": "source_checked_for_saved_version"
+    },
+    {
+      "case_id": "niigata-law-recommendation-I-2027",
+      "draft_sentence": "面接日は2026年11月14日・2026年11月15日のいずれかです。時間は受験案内で通知されます。",
+      "evidence_id": "EV-N27-04-2d1ee8",
+      "fiscal_year": 2027,
+      "key": "interview",
+      "notes": [],
+      "profile_version": "2026-11-01-v1.1",
+      "proofs": [
+        {
+          "normalized_end": 709,
+          "normalized_start": 653,
+          "page": 7,
+          "pattern": "令和(?P<ry>8)年(?P<month>11)月(?P<d1>14)日\\(土\\)(?P=month)月(?P<d2>15)日\\(日\\)\\(いずれかの1日\\)面接受験案内.*?で通知します。",
+          "quote": "令和８年11月14日(土) \n11月15日(日) \n（いずれかの１日） \n面 接 \n受験案内（35～37ページ参\n照）で通知します。",
+          "quote_normalized": "令和8年11月14日(土)11月15日(日)(いずれかの1日)面接受験案内(35~37ページ参照)で通知します。"
+        }
+      ],
+      "related_keys": [],
+      "revision_clearance": "not_cleared_for_publication",
+      "scope": "department_and_method",
+      "source_pdf_sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "source_url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "value": {
+        "dates": [
+          "2026-11-14",
+          "2026-11-15"
+        ],
+        "selection": "one_of_not_both",
+        "type": "interview_date_not_duration"
+      },
+      "verification": "source_checked_for_saved_version"
+    },
+    {
+      "case_id": "niigata-law-recommendation-I-2027",
+      "draft_sentence": "出願書類の郵送期間は2026年11月2日〜2026年11月5日（必着）です。ただし、日本国内の2026年11月3日以前の消印の書留速達郵便に限り、期間後の到着でも受理します。持参は受け付けません。",
+      "evidence_id": "EV-N27-05-2d1ee8",
+      "fiscal_year": 2027,
+      "key": "postal_period",
+      "notes": [],
+      "profile_version": "2026-11-01-v1.1",
+      "proofs": [
+        {
+          "normalized_end": 602,
+          "normalized_start": 295,
+          "page": 38,
+          "pattern": "令和(?P<ry>8)年(?P<month>11)月(?P<sd>2)日\\(月\\)から(?P=month)月(?P<ed>5)日\\(木\\)まで\\(郵送必着\\).*?\\(注1\\)出願期間後に到着したものは受理しません。ただし、(?P=month)月(?P<exception_day>3)日\\(火\\).*?以前の発信局.*?消印のある書留速達郵便に限り、期間後に到着した場合でも受理します。.*?\\(注3\\)郵送受付のみ。出願書類の直接持参は受け付けておりません。",
+          "quote": "令和８年11月２日(月)から11月５日(木)まで（郵送必着）\n※ WEB登録は令和８年10月26日（月）10:00から可能です。\n（注１）出願期間後に到着したものは受理しません。ただし、11月３日（火）(※)以前の発信局（日\n　　　本国内）消印のある書留速達郵便に限り、期間後に到着した場合でも受理します。 \n　　　※　工学部に限り、11月４日（水）以前の発信局（日本国内）消印のある書留速達郵便であれ\n　　　　ば、期間後に到着した場合でも受理します。\n（注２）同一学部を志願する複数人の出願書類等を高等学校等で一括して郵送する場合は、個人別に\n厳封のうえ、当該志願学部へ郵送してください。\n（注３）郵送受付のみ。出願書類の直接持参は受け付けておりません。",
+          "quote_normalized": "令和8年11月2日(月)から11月5日(木)まで(郵送必着)※WEB登録は令和8年10月26日(月)10:00から可能です。(注1)出願期間後に到着したものは受理しません。ただし、11月3日(火)(※)以前の発信局(日本国内)消印のある書留速達郵便に限り、期間後に到着した場合でも受理します。※工学部に限り、11月4日(水)以前の発信局(日本国内)消印のある書留速達郵便であれば、期間後に到着した場合でも受理します。(注2)同一学部を志願する複数人の出願書類等を高等学校等で一括して郵送する場合は、個人別に厳封のうえ、当該志願学部へ郵送してください。(注3)郵送受付のみ。出願書類の直接持参は受け付けておりません。"
+        }
+      ],
+      "related_keys": [],
+      "revision_clearance": "not_cleared_for_publication",
+      "scope": "department_and_method",
+      "source_pdf_sha256": "2d1ee89f2e084a1bf3a6b824b5333ff8b28daa9110e40ff6a534d02fe3f48e37",
+      "source_url": "https://www.niigata-u.ac.jp/wp-content/uploads/2026/08/gakkousuisen_youkou.pdf",
+      "value": {
+        "end": "2026-11-05",
+        "late_arrival_domestic_registered_express_postmark_by": "2026-11-03",
+        "qualifier": "郵送必着。日本国内発信局の11月3日以前消印の書留速達に限り期限後到着も受理。持参不可",
+        "start": "2026-11-02",
+        "timezone": "Asia/Tokyo"
+      },
+      "verification": "source_checked_for_saved_version"
+    }
+  ],
+  "publish_allowed": false,
+  "unresolved": [
+    "latest_corrections_and_publication_approval"
+  ],
+  "generation_method": "source_bound_python_template"
+}

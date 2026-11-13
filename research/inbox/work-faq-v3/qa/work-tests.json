@@ -1,0 +1,11 @@
+{
+  "scope": "Work local full suite",
+  "counts": {
+    "tests": 219,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 219
+  },
+  "existing_CI_executes_these_tests": false
+}
